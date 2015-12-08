@@ -23,7 +23,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 #makes sure that the API endpoints work
-router.register(r'getshops', views.ShopViewSet, base_name='ShopView')
+router.register(r'getshops', views.ShopViewSet, base_name='shop-list')
 admin.autodiscover()
 
 urlpatterns = [
