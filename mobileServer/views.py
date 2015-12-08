@@ -11,8 +11,8 @@ def index(request):
 def getshops(request):
     return
 
-
-@api_view(['GET'])
+#
+# @api_view(['GET'])
 # ViewSets define the view behavior.
 class ShopViewSet(viewsets.ModelViewSet):
     queryset = Shop.objects.all()
