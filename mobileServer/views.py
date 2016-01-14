@@ -1,13 +1,18 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from mobileServer.models import *
-from mobileServer.serializer import ShopSerializer
+from mobileServer.serializer import *
 from django.http import HttpResponse
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework import permissions
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.authentication import SessionAuthentication, TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
+from rest_framework.authtoken.models import Token
+
 
 
 # Create your views here.
@@ -35,6 +40,14 @@ def shops_list(request):
         serializer = ShopSerializer(shops, many=True)
         return JSONResponse(serializer.data)
 
+@api_view(['GET'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((IsAuthenticated,))
+def products_list(request):
+    if request.method == 'GET':
+        products = Product.objects.all()
+        serializer = ProductSerializer(products, many=True)
+        return JSONResponse(serializer.data)
     # elif request.method == 'POST':
     #     data = JSONParser().parse(request)
     #     serializer = SnippetSerializer(data=data)
@@ -42,6 +55,26 @@ def shops_list(request):
     #         serializer.save()
     #         return JSONResponse(serializer.data, status=201)
     #     return JSONResponse(serializer.errors, status=400)
+
+@api_view(['GET'])
+@permission_classes((permissions.AllowAny,))
+def carts_list(request):
+    carts = Cart.objects.all()
+    serializer = CartSerializer(carts, many=True)
+    return JSONResponse(serializer.data)
+
+
+
+@api_view(['GET'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((IsAuthenticated,))
+def get_userbaskets(request):
+    user = request.user
+    print(user)
+    baskets = Basket.objects.filter(owner=user.id)
+    serializer = BasketSerializer(baskets, many=True)
+    return JSONResponse(serializer.data)
+
 
 # def getshops(request):
 #     return

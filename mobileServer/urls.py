@@ -7,6 +7,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'getshops/$', views.shops_list),
+    url(r'getproducts/$', views.products_list),
+    url(r'getcarts/$', views.carts_list),
+    url(r'getbaskets/$', views.get_userbaskets),
     url(r'^$', views.index),
 ]
 

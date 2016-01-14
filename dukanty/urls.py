@@ -28,6 +28,9 @@ from rest_framework import routers
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+  #  url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^', include(urls)),
+    url(r'^auth/', include('djoser.urls.authtoken')),
+    url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
 ]
