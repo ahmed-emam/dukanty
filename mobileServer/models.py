@@ -123,7 +123,7 @@ class ShopInventory(models.Model):
     shop = models.OneToOneField(Shop)
     stock = models.BooleanField(default=True)
     # Shop owner
-    owner = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.product)+" @ "+str(self.shop)+" "+str(self.stock)
