@@ -36,7 +36,7 @@ def shops_list(request):
     List all code snippets, or create a new snippet.
     """
     if request.method == 'GET':
-        shops = Shop.objects.all()
+        shops = MobileserverShop.objects.all()
         serializer = ShopSerializer(shops, many=True)
         return JSONResponse(serializer.data)
 
@@ -45,7 +45,7 @@ def shops_list(request):
 @permission_classes((IsAuthenticated,))
 def products_list(request):
     if request.method == 'GET':
-        products = Product.objects.all()
+        products = MobileserverProduct.objects.all()
         serializer = ProductSerializer(products, many=True)
         return JSONResponse(serializer.data)
     # elif request.method == 'POST':
@@ -59,7 +59,7 @@ def products_list(request):
 @api_view(['GET'])
 @permission_classes((permissions.AllowAny,))
 def carts_list(request):
-    carts = Cart.objects.all()
+    carts = MobileserverCart.objects.all()
     serializer = CartSerializer(carts, many=True)
     return JSONResponse(serializer.data)
 
@@ -71,7 +71,7 @@ def carts_list(request):
 def get_userbaskets(request):
     user = request.user
     print(user)
-    baskets = Basket.objects.filter(owner=user.id)
+    baskets = MobileserverBasket.objects.filter(owner=user.id)
     serializer = BasketSerializer(baskets, many=True)
     return JSONResponse(serializer.data)
 

@@ -1,6 +1,6 @@
 from django.db import models
 from taggit.managers import TaggableManager
-from users.models import CustomUser
+from users.models import UsersCustomUser
 from django.utils.translation import ugettext_lazy as _
 
 # User = get_user_model()

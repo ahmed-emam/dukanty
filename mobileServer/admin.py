@@ -17,11 +17,11 @@ from django.contrib.auth.models import Group
 #     )
 
 # Register your models here.
-admin.site.register(Shop)
-admin.site.register(Product)
-admin.site.register(ShopInventory)
-admin.site.register(Cart)
-admin.site.register(CartItem)
-admin.site.register(Basket)
-admin.site.register(ShopProductInventory)
+admin.site.register(MobileserverShop)
+admin.site.register(MobileserverProduct)
+admin.site.register(MobileserverShopinventory)
+admin.site.register(MobileserverCart)
+admin.site.register(MobileserverCartitem)
+admin.site.register(MobileserverBasket)
+admin.site.register(MobileserverShopproductinventory)
 #admin.site.unregister(Group)
