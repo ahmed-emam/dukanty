@@ -12,7 +12,7 @@ from django.utils.translation import ugettext_lazy as _
 class MobileserverBasket(models.Model):
     id = models.IntegerField(primary_key=True)  # AutoField?
     name = models.CharField(max_length=30)
-    owner = models.ForeignKey('UsersCustomuser', models.DO_NOTHING)
+    owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
     cart = models.ForeignKey('MobileserverCart', models.DO_NOTHING, blank=True, null=True)
 
     class Meta:
@@ -24,7 +24,7 @@ class MobileserverCart(models.Model):
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
     checked_out = models.BooleanField()
-    owner = models.ForeignKey('UsersCustomuser', models.DO_NOTHING)
+    owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
 
     class Meta:
         db_table = 'mobileServer_cart'
@@ -43,7 +43,7 @@ class MobileserverCartitem(models.Model):
 class MobileserverOrder(models.Model):
     id = models.IntegerField(primary_key=True)  # AutoField?
     totalprice = models.FloatField(db_column='totalPrice')  # Field name made lowercase.
-    owner = models.ForeignKey('UsersCustomuser', models.DO_NOTHING)
+    owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
     shop = models.ForeignKey('MobileserverShop', models.DO_NOTHING, unique=True)
 
     class Meta:
