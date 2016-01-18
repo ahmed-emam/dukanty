@@ -151,7 +151,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'users.CustomUser'
+AUTH_USER_MODEL = 'users.UsersCustomUser'
 SITE_ID = 1
 
 ACCOUNT_USER_EMAIL_FIELD = 'email'
