@@ -11,42 +11,42 @@ User = get_user_model()
 
 class ShopSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Shop
+        model = MobileserverShop
         fields = ('id', 'name', 'rating', 'lat', 'lon')
 
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Product
+        model = MobileserverProduct
         fields = ('id', 'name', 'company', 'price', 'img', 'category', 'tags')
 
 
 class ShopInventorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = ShopInventory
+        model = MobileserverShopinventory
         fields = ('id', 'product', 'shop', 'stock', 'price')
 
 
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Order
+        model = MobileserverOrder
         fields = ('id', 'product', 'shop', 'stock', 'price')
 
 class ShopProductInventory(serializers.ModelSerializer):
     class Meta:
-        model = ShopProductInventory
+        model = MobileserverShopproductinventory
 
 class CartItemSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CartItem
+        model = MobileserverCartitem
 
 class CartSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Cart
+        model = MobileserverCart
         fields = ('id', 'checked_out', 'owner', 'cartitem_set',)
 
 class BasketSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Basket
+        model = MobileserverBasket
 
 
