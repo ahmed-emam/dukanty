@@ -84,7 +84,7 @@ class MobileserverShop(models.Model):
 class MobileserverShopinventory(models.Model):
     id = models.IntegerField(primary_key=True)  # AutoField?
     stock = models.BooleanField()
-    owner = models.ForeignKey('UsersCustomuser', models.DO_NOTHING, unique=True)
+    owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING, unique=True)
     shop = models.ForeignKey(MobileserverShop, models.DO_NOTHING, unique=True)
 
     class Meta:
