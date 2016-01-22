@@ -60,14 +60,13 @@ class MobileserverProduct(models.Model):
     category = models.IntegerField()
     img = models.TextField()
 
+    def __str__(self):
+        return self.name+" by "+self.company
+
     class Meta:
         db_table = 'mobileServer_product'
 
-    def __str__(self):
-        return self.name
 
-    def __unicode__(self):
-        return self.name
 
 
 class MobileserverShop(models.Model):
@@ -76,11 +75,11 @@ class MobileserverShop(models.Model):
     lat = models.FloatField()
     lon = models.FloatField()
 
-    class Meta:
-        db_table = 'mobileServer_shop'
-
     def __str__(self):
         return self.name
+
+    class Meta:
+        db_table = 'mobileServer_shop'
 
     def __unicode__(self):
         return self.name
