@@ -30,7 +30,8 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 @api_view(['GET'])
-@permission_classes((permissions.AllowAny,))
+@authentication_classes((TokenAuthentication,))
+@permission_classes((IsAuthenticated,))
 def shops_list(request):
     """
     List all code snippets, or create a new snippet.
