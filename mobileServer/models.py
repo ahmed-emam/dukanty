@@ -66,6 +66,9 @@ class MobileserverProduct(models.Model):
     def __str__(self):
         return self.name
 
+    def __unicode__(self):
+        return self.name
+
 
 class MobileserverShop(models.Model):
     name = models.CharField(max_length=30)
@@ -78,6 +81,10 @@ class MobileserverShop(models.Model):
 
     def __str__(self):
         return self.name
+
+    def __unicode__(self):
+        return self.name
+
 
 
 class MobileserverShopinventory(models.Model):
