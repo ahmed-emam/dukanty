@@ -21,10 +21,10 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'company', 'price', 'img', 'category', 'tags')
 
 
-class ShopInventorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = MobileserverShopinventory
-        fields = ('id', 'product', 'shop', 'stock', 'price')
+# class ShopInventorySerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = MobileserverShopinventory
+#         fields = ('id', 'product', 'shop', 'stock', 'price')
 
 
 class OrderSerializer(serializers.ModelSerializer):

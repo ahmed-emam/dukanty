@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Django default" uuid="836664a2-8368-4af0-944f-372669ab473a">
-      <secret-storage>memory</secret-storage>
-      <user-name>dukantyadmin</user-name>
+    <data-source name="Sqlite (Xerial) - db.sqlite3" uuid="ccc1471b-8381-4443-b81d-6ee69889b700">
+      <secret-storage>master_key</secret-storage>
+      <auth-required>false</auth-required>
     </data-source>
   </component>
 </project>

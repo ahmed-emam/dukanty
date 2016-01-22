@@ -84,29 +84,33 @@ class MobileserverShop(models.Model):
     def __unicode__(self):
         return self.name
 
+#
+#
+# class MobileserverShopinventory(models.Model):
+#     stock = models.BooleanField()
+#     owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING, unique=True)
+#     shop = models.ForeignKey(MobileserverShop, models.DO_NOTHING, unique=True)
+#
+#     class Meta:
+#         db_table = 'mobileServer_shopinventory'
 
 
-class MobileserverShopinventory(models.Model):
-    stock = models.BooleanField()
-    owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING, unique=True)
-    shop = models.ForeignKey(MobileserverShop, models.DO_NOTHING, unique=True)
-
-    class Meta:
-        db_table = 'mobileServer_shopinventory'
-
-
-class MobileserverShopinventoryProduct(models.Model):
-    shopinventory = models.ForeignKey(MobileserverShopinventory, models.DO_NOTHING)
-    shopproductinventory = models.ForeignKey('MobileserverShopproductinventory', models.DO_NOTHING)
-
-    class Meta:
-        db_table = 'mobileServer_shopinventory_product'
-        unique_together = (('shopinventory', 'shopproductinventory'),)
+# class MobileserverShopinventoryProduct(models.Model):
+#     shopinventory = models.ForeignKey(MobileserverShopinventory, models.DO_NOTHING)
+#     shopproductinventory = models.ForeignKey('MobileserverShopproductinventory', models.DO_NOTHING)
+#
+#     class Meta:
+#         db_table = 'mobileServer_shopinventory_product'
+#         unique_together = (('shopinventory', 'shopproductinventory'),)
 
 
 class MobileserverShopproductinventory(models.Model):
     price = models.FloatField()
+    stock = models.BooleanField()
+
     product = models.ForeignKey(MobileserverProduct, models.DO_NOTHING)
+    owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING, unique=True)
+    shop = models.ForeignKey(MobileserverShop, models.DO_NOTHING, unique=True)
 
     class Meta:
         db_table = 'mobileServer_shopproductinventory'

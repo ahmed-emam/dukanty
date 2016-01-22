@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'getproducts/$', views.products_list),
     url(r'getcarts/$', views.carts_list),
     url(r'getbaskets/$', views.get_userbaskets),
+    url(r'getshopInventory/$', views.get_shopInventory),
     url(r'^$', views.index),
 ]
 

@@ -76,6 +76,34 @@ def get_userbaskets(request):
     serializer = BasketSerializer(baskets, many=True)
     return JSONResponse(serializer.data)
 
+@api_view(['GET'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((IsAuthenticated,))
+def get_shopInventory(request):
+    shop_id = request['shop_id']
+    # Get the shop using shop ID
+    shop = MobileserverShop.objects.get(pk=shop_id)
+    # if the shop exists
+    if shop:
+        # Get all inventory entries that are linked to that shop
+        inventory = MobileserverShopproductinventory.objects.filter(shop=shop)
+        # Response sent back to the user
+        response = []
+        # loop over all the inventory entries found
+        for inventoryEntry in inventory:
+            related_product = inventoryEntry.product
+            productSerialized = ProductSerializer(related_product)
+            response.extend([{
+                "product": productSerialized,
+                "price": inventoryEntry.price,
+                "stock": inventoryEntry.stock
+            }])
+
+        return JSONResponse(response)
+
+
+#else:
+        #TODO: Return an error
 
 # def getshops(request):
 #     return

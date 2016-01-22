@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="Django default" uuid="836664a2-8368-4af0-944f-372669ab473a">
+  <data-source name="Sqlite (Xerial) - db.sqlite3" uuid="ccc1471b-8381-4443-b81d-6ee69889b700">
     <database-info product="SQLite" version="3.6.23.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="pure"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
@@ -11,7 +11,7 @@
       <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="email" sqlType="VARCHAR(254)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_account_emailaddress_1" columns="user_id" ref-table="users_customuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_account_emailaddress_1" columns="user_id" ref-table="users_userscustomuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <exported-key name="#FAKE_account_emailconfirmation_1" table="account_emailconfirmation" schema="" catalog="" columns="email_address_id"/>
       <index name="account_emailaddress_e8701ad4" unique="true" columns="user_id"/>
     </table>
@@ -30,7 +30,7 @@
       <column name="name" sqlType="VARCHAR(80)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <exported-key name="#FAKE_auth_group_permissions_2" table="auth_group_permissions" schema="" catalog="" columns="group_id"/>
-      <exported-key name="#FAKE_users_customuser_groups_1" table="users_customuser_groups" schema="" catalog="" columns="group_id"/>
+      <exported-key name="#FAKE_users_userscustomuser_groups_1" table="users_userscustomuser_groups" schema="" catalog="" columns="group_id"/>
     </table>
     <table name="auth_group_permissions" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
@@ -51,7 +51,7 @@
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_auth_permission_1" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <exported-key name="#FAKE_auth_group_permissions_1" table="auth_group_permissions" schema="" catalog="" columns="permission_id"/>
-      <exported-key name="#FAKE_users_customuser_user_permissions_1" table="users_customuser_user_permissions" schema="" catalog="" columns="permission_id"/>
+      <exported-key name="#FAKE_users_userscustomuser_user_permissions_1" table="users_userscustomuser_user_permissions" schema="" catalog="" columns="permission_id"/>
       <index name="auth_permission_417f1b1c" unique="true" columns="content_type_id"/>
       <index name="auth_permission_content_type_id_01ab375a_uniq" unique="true" columns="content_type_id,codename"/>
     </table>
@@ -60,7 +60,7 @@
       <column name="created" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <primary-key columns="key"/>
-      <foreign-key name="#FAKE_authtoken_token_1" columns="user_id" ref-table="users_customuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_authtoken_token_1" columns="user_id" ref-table="users_userscustomuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
     </table>
     <table name="django_admin_log" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
@@ -72,7 +72,7 @@
       <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="action_time" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_django_admin_log_1" columns="user_id" ref-table="users_customuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_django_admin_log_1" columns="user_id" ref-table="users_userscustomuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <foreign-key name="#FAKE_django_admin_log_2" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <index name="django_admin_log_e8701ad4" unique="true" columns="user_id"/>
       <index name="django_admin_log_417f1b1c" unique="true" columns="content_type_id"/>
@@ -111,33 +111,67 @@
     <table name="mobileServer_basket" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="name" sqlType="VARCHAR(30)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="cart_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="owner_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
+      <foreign-key name="#FAKE_mobileServer_basket_1" columns="owner_id" ref-table="users_userscustomuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_mobileServer_basket_2" columns="cart_id" ref-table="mobileServer_cart" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="mobileServer_basket_5e7b1936" unique="true" columns="owner_id"/>
+      <index name="mobileServer_basket_c44d83f7" unique="true" columns="cart_id"/>
     </table>
-    <table name="mobileServer_inventory" schema="" catalog="" type="TABLE">
+    <table name="mobileServer_cart" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="stock" sqlType="BOOL" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="shop_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="checked_out" sqlType="BOOL" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="owner_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_mobileServer_inventory_1" columns="shop_id" ref-table="mobileServer_shop" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <exported-key name="#FAKE_mobileServer_inventory_product_2" table="mobileServer_inventory_product" schema="" catalog="" columns="inventory_id"/>
+      <foreign-key name="#FAKE_mobileServer_cart_1" columns="owner_id" ref-table="users_userscustomuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_mobileServer_basket_2" table="mobileServer_basket" schema="" catalog="" columns="cart_id"/>
+      <exported-key name="#FAKE_mobileServer_cartitem_2" table="mobileServer_cartitem" schema="" catalog="" columns="cart_id"/>
+      <index name="mobileServer_cart_5e7b1936" unique="true" columns="owner_id"/>
     </table>
-    <table name="mobileServer_inventory_product" schema="" catalog="" type="TABLE">
+    <table name="mobileServer_cartitem" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="inventory_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="quantity" sqlType="INTEGER UNSIGNED" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="cart_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="product_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_mobileServer_inventory_product_1" columns="product_id" ref-table="mobileServer_product" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <foreign-key name="#FAKE_mobileServer_inventory_product_2" columns="inventory_id" ref-table="mobileServer_inventory" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_mobileServer_cartitem_1" columns="product_id" ref-table="mobileServer_shopproductinventory" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_mobileServer_cartitem_2" columns="cart_id" ref-table="mobileServer_cart" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="mobileServer_cartitem_9bea82de" unique="true" columns="product_id"/>
+      <index name="mobileServer_cartitem_c44d83f7" unique="true" columns="cart_id"/>
+    </table>
+    <table name="mobileServer_order" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="totalPrice" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="owner_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="shop_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_mobileServer_order_1" columns="shop_id" ref-table="mobileServer_shop" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_mobileServer_order_2" columns="owner_id" ref-table="users_userscustomuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_mobileServer_order_product_2" table="mobileServer_order_product" schema="" catalog="" columns="order_id"/>
+      <index name="mobileServer_order_5e7b1936" unique="true" columns="owner_id"/>
+    </table>
+    <table name="mobileServer_order_product" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="order_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="product_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_mobileServer_order_product_1" columns="product_id" ref-table="mobileServer_product" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_mobileServer_order_product_2" columns="order_id" ref-table="mobileServer_order" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="mobileServer_order_product_9bea82de" unique="true" columns="product_id"/>
+      <index name="mobileServer_order_product_69dfcb07" unique="true" columns="order_id"/>
     </table>
     <table name="mobileServer_product" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="name" sqlType="VARCHAR(30)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="company" sqlType="VARCHAR(30)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="price" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
-      <column name="img" sqlType="VARCHAR(200)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="category" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="img" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
-      <exported-key name="#FAKE_mobileServer_inventory_product_1" table="mobileServer_inventory_product" schema="" catalog="" columns="product_id"/>
+      <exported-key name="#FAKE_mobileServer_order_product_1" table="mobileServer_order_product" schema="" catalog="" columns="product_id"/>
+      <exported-key name="#FAKE_mobileServer_shopproductinventory_1" table="mobileServer_shopproductinventory" schema="" catalog="" columns="product_id"/>
     </table>
     <table name="mobileServer_shop" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
@@ -146,7 +180,39 @@
       <column name="lat" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
       <column name="lon" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
       <primary-key columns="id"/>
-      <exported-key name="#FAKE_mobileServer_inventory_1" table="mobileServer_inventory" schema="" catalog="" columns="shop_id"/>
+      <exported-key name="#FAKE_mobileServer_order_1" table="mobileServer_order" schema="" catalog="" columns="shop_id"/>
+      <exported-key name="#FAKE_mobileServer_shopinventory_1" table="mobileServer_shopinventory" schema="" catalog="" columns="shop_id"/>
+    </table>
+    <table name="mobileServer_shopinventory" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="stock" sqlType="BOOL" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="owner_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="shop_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_mobileServer_shopinventory_1" columns="shop_id" ref-table="mobileServer_shop" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_mobileServer_shopinventory_2" columns="owner_id" ref-table="users_userscustomuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_mobileServer_shopinventory_product_2" table="mobileServer_shopinventory_product" schema="" catalog="" columns="shopinventory_id"/>
+    </table>
+    <table name="mobileServer_shopinventory_product" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="shopinventory_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="shopproductinventory_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_mobileServer_shopinventory_product_1" columns="shopproductinventory_id" ref-table="mobileServer_shopproductinventory" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_mobileServer_shopinventory_product_2" columns="shopinventory_id" ref-table="mobileServer_shopinventory" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="mobileServer_shopinventory_product_20111da2" unique="true" columns="shopproductinventory_id"/>
+      <index name="mobileServer_shopinventory_product_d60c2fb1" unique="true" columns="shopinventory_id"/>
+      <index name="mobileServer_shopinventory_product_shopinventory_id_70998a7d_uniq" unique="true" columns="shopinventory_id,shopproductinventory_id"/>
+    </table>
+    <table name="mobileServer_shopproductinventory" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="price" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="product_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_mobileServer_shopproductinventory_1" columns="product_id" ref-table="mobileServer_product" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_mobileServer_cartitem_1" table="mobileServer_cartitem" schema="" catalog="" columns="product_id"/>
+      <exported-key name="#FAKE_mobileServer_shopinventory_product_1" table="mobileServer_shopinventory_product" schema="" catalog="" columns="shopproductinventory_id"/>
+      <index name="mobileServer_shopproductinventory_9bea82de" unique="true" columns="product_id"/>
     </table>
     <table name="socialaccount_socialaccount" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
@@ -157,7 +223,7 @@
       <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="uid" sqlType="VARCHAR(191)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_socialaccount_socialaccount_1" columns="user_id" ref-table="users_customuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_socialaccount_socialaccount_1" columns="user_id" ref-table="users_userscustomuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <exported-key name="#FAKE_socialaccount_socialtoken_2" table="socialaccount_socialtoken" schema="" catalog="" columns="account_id"/>
       <index name="socialaccount_socialaccount_e8701ad4" unique="true" columns="user_id"/>
       <index name="socialaccount_socialaccount_provider_fc810c6e_uniq" unique="true" columns="provider,uid"/>
@@ -222,7 +288,7 @@
       <index name="taggit_taggeditem_417f1b1c" unique="true" columns="content_type_id"/>
       <index name="taggit_taggeditem_af31437c" unique="true" columns="object_id"/>
     </table>
-    <table name="users_customuser" schema="" catalog="" type="TABLE">
+    <table name="users_userscustomuser" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="password" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="last_login" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
@@ -238,31 +304,35 @@
       <exported-key name="#FAKE_account_emailaddress_1" table="account_emailaddress" schema="" catalog="" columns="user_id"/>
       <exported-key name="#FAKE_authtoken_token_1" table="authtoken_token" schema="" catalog="" columns="user_id"/>
       <exported-key name="#FAKE_django_admin_log_1" table="django_admin_log" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_mobileServer_basket_1" table="mobileServer_basket" schema="" catalog="" columns="owner_id"/>
+      <exported-key name="#FAKE_mobileServer_cart_1" table="mobileServer_cart" schema="" catalog="" columns="owner_id"/>
+      <exported-key name="#FAKE_mobileServer_order_2" table="mobileServer_order" schema="" catalog="" columns="owner_id"/>
+      <exported-key name="#FAKE_mobileServer_shopinventory_2" table="mobileServer_shopinventory" schema="" catalog="" columns="owner_id"/>
       <exported-key name="#FAKE_socialaccount_socialaccount_1" table="socialaccount_socialaccount" schema="" catalog="" columns="user_id"/>
-      <exported-key name="#FAKE_users_customuser_groups_2" table="users_customuser_groups" schema="" catalog="" columns="customuser_id"/>
-      <exported-key name="#FAKE_users_customuser_user_permissions_2" table="users_customuser_user_permissions" schema="" catalog="" columns="customuser_id"/>
+      <exported-key name="#FAKE_users_userscustomuser_groups_2" table="users_userscustomuser_groups" schema="" catalog="" columns="userscustomuser_id"/>
+      <exported-key name="#FAKE_users_userscustomuser_user_permissions_2" table="users_userscustomuser_user_permissions" schema="" catalog="" columns="userscustomuser_id"/>
     </table>
-    <table name="users_customuser_groups" schema="" catalog="" type="TABLE">
+    <table name="users_userscustomuser_groups" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="customuser_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="userscustomuser_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="group_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_users_customuser_groups_1" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <foreign-key name="#FAKE_users_customuser_groups_2" columns="customuser_id" ref-table="users_customuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="users_customuser_groups_0e939a4f" unique="true" columns="group_id"/>
-      <index name="users_customuser_groups_721e74b0" unique="true" columns="customuser_id"/>
-      <index name="users_customuser_groups_customuser_id_76b619e3_uniq" unique="true" columns="customuser_id,group_id"/>
+      <foreign-key name="#FAKE_users_userscustomuser_groups_1" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_users_userscustomuser_groups_2" columns="userscustomuser_id" ref-table="users_userscustomuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="users_userscustomuser_groups_0e939a4f" unique="true" columns="group_id"/>
+      <index name="users_userscustomuser_groups_21477b19" unique="true" columns="userscustomuser_id"/>
+      <index name="users_userscustomuser_groups_userscustomuser_id_aae941a2_uniq" unique="true" columns="userscustomuser_id,group_id"/>
     </table>
-    <table name="users_customuser_user_permissions" schema="" catalog="" type="TABLE">
+    <table name="users_userscustomuser_user_permissions" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="customuser_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="userscustomuser_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="permission_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_users_customuser_user_permissions_1" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <foreign-key name="#FAKE_users_customuser_user_permissions_2" columns="customuser_id" ref-table="users_customuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="users_customuser_user_permissions_8373b171" unique="true" columns="permission_id"/>
-      <index name="users_customuser_user_permissions_721e74b0" unique="true" columns="customuser_id"/>
-      <index name="users_customuser_user_permissions_customuser_id_7a7debf6_uniq" unique="true" columns="customuser_id,permission_id"/>
+      <foreign-key name="#FAKE_users_userscustomuser_user_permissions_1" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_users_userscustomuser_user_permissions_2" columns="userscustomuser_id" ref-table="users_userscustomuser" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="users_userscustomuser_user_permissions_8373b171" unique="true" columns="permission_id"/>
+      <index name="users_userscustomuser_user_permissions_21477b19" unique="true" columns="userscustomuser_id"/>
+      <index name="users_userscustomuser_user_permissions_userscustomuser_id_80565c62_uniq" unique="true" columns="userscustomuser_id,permission_id"/>
     </table>
   </data-source>
 </component>

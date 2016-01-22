@@ -102,12 +102,10 @@ WSGI_APPLICATION = 'dukanty.wsgi.application'
 
 DATABASES = {
    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dukanty',
-        'USER': 'dukantyadmin',
-        'PASSWORD': 'douh0115373730',
-        'HOST': 'localhost',
-        'PORT': '',
+        # SQLITE3 BACKEND VERSION FOR IMMEDIATE TESTING
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        
     }
 }
 
