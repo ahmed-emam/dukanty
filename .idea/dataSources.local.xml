@@ -3,6 +3,7 @@
   <component name="dataSourceStorageLocal">
     <data-source name="Django default" uuid="836664a2-8368-4af0-944f-372669ab473a">
       <secret-storage>memory</secret-storage>
+      <user-name>dukantyadmin</user-name>
     </data-source>
   </component>
 </project>
