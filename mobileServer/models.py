@@ -10,7 +10,6 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class MobileserverBasket(models.Model):
-   # id = models.IntegerField(primary_key=True)  # AutoField?
     name = models.CharField(max_length=30)
     owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
     cart = models.ForeignKey('MobileserverCart', models.DO_NOTHING, blank=True, null=True)
@@ -20,7 +19,6 @@ class MobileserverBasket(models.Model):
 
 
 class MobileserverCart(models.Model):
- #   id = models.IntegerField(primary_key=True)  # AutoField?
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
     checked_out = models.BooleanField()
@@ -31,7 +29,6 @@ class MobileserverCart(models.Model):
 
 
 class MobileserverCartitem(models.Model):
-  #  id = models.IntegerField(primary_key=True)  # AutoField?
     quantity = models.PositiveIntegerField()
     cart = models.ForeignKey(MobileserverCart, models.DO_NOTHING)
     product = models.ForeignKey('MobileserverShopproductinventory', models.DO_NOTHING)
@@ -41,7 +38,6 @@ class MobileserverCartitem(models.Model):
 
 
 class MobileserverOrder(models.Model):
-   # id = models.IntegerField(primary_key=True)  # AutoField?
     totalprice = models.FloatField(db_column='totalPrice')  # Field name made lowercase.
     owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
     shop = models.ForeignKey('MobileserverShop', models.DO_NOTHING, unique=True)
@@ -51,7 +47,6 @@ class MobileserverOrder(models.Model):
 
 
 class MobileserverOrderProduct(models.Model):
-  #  id = models.IntegerField(primary_key=True)  # AutoField?
     order = models.ForeignKey(MobileserverOrder, models.DO_NOTHING)
     product = models.ForeignKey('MobileserverProduct', models.DO_NOTHING)
 
@@ -60,7 +55,6 @@ class MobileserverOrderProduct(models.Model):
 
 
 class MobileserverProduct(models.Model):
-   # id = models.IntegerField(primary_key=True)  # AutoField?
     name = models.CharField(max_length=30)
     company = models.CharField(max_length=30)
     category = models.IntegerField()
@@ -74,7 +68,6 @@ class MobileserverProduct(models.Model):
 
 
 class MobileserverShop(models.Model):
-  #  id = models.IntegerField(primary_key=True)  # AutoField?
     name = models.CharField(max_length=30)
     rating = models.DecimalField(max_digits=10, decimal_places=5)  # max_digits and decimal_places have been guessed, as this database handles decimal fields as float
     lat = models.FloatField()
@@ -88,7 +81,6 @@ class MobileserverShop(models.Model):
 
 
 class MobileserverShopinventory(models.Model):
-  #  id = models.IntegerField(primary_key=True)  # AutoField?
     stock = models.BooleanField()
     owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING, unique=True)
     shop = models.ForeignKey(MobileserverShop, models.DO_NOTHING, unique=True)
@@ -98,7 +90,6 @@ class MobileserverShopinventory(models.Model):
 
 
 class MobileserverShopinventoryProduct(models.Model):
-  #  id = models.IntegerField(primary_key=True)  # AutoField?
     shopinventory = models.ForeignKey(MobileserverShopinventory, models.DO_NOTHING)
     shopproductinventory = models.ForeignKey('MobileserverShopproductinventory', models.DO_NOTHING)
 
@@ -108,7 +99,6 @@ class MobileserverShopinventoryProduct(models.Model):
 
 
 class MobileserverShopproductinventory(models.Model):
-  #  id = models.IntegerField(primary_key=True)  # AutoField?
     price = models.FloatField()
     product = models.ForeignKey(MobileserverProduct, models.DO_NOTHING)
 
