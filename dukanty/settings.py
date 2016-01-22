@@ -101,7 +101,6 @@ WSGI_APPLICATION = 'dukanty.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-<<<<<<< HEAD
    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dukanty',
@@ -109,11 +108,6 @@ DATABASES = {
         'PASSWORD': 'douh0115373730',
         'HOST': 'localhost',
         'PORT': '',
-=======
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
->>>>>>> c338d0d926c70266ee8ca0a8dd57d76a320906bb
     }
 }
 
@@ -140,11 +134,7 @@ DJOSER = {
     'SITE_NAME': 'Dukanty',
     'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': '#/activate/{uid}/{token}',
-<<<<<<< HEAD
     'SEND_ACTIVATION_EMAIL': False,
-=======
-    'SEND_ACTIVATION_EMAIL': True,
->>>>>>> c338d0d926c70266ee8ca0a8dd57d76a320906bb
 }
 
 # Password validation
@@ -196,12 +186,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static/')
-<<<<<<< HEAD
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/')
-#,)
-=======
-
->>>>>>> c338d0d926c70266ee8ca0a8dd57d76a320906bb
 
 # Parse database configuration from $DATABASE_URL
 # import dj_database_url
