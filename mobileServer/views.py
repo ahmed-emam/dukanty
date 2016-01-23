@@ -171,6 +171,10 @@ def create_inventory(request):
 
     price = request.POST.get('price')
     stock = request.POST.get('stock')
+    if stock=="False":
+        stock = False
+    else:
+        stock = True
 
     print(price)
     print(stock)
