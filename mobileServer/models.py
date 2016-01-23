@@ -105,7 +105,7 @@ class MobileserverShop(models.Model):
 
 
 class MobileserverShopproductinventory(models.Model):
-    price = models.FloatField(default=0)
+    price = models.FloatField(default=0.0)
     stock = models.BooleanField(default=False)
 
     product = models.ForeignKey(MobileserverProduct, models.DO_NOTHING)
