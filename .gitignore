@@ -3,5 +3,6 @@ venv
 staticfiles
 .env
 db.sqlite3
-*/migrations
-dukanty/settings.py
+mobileServer/migrations/*
+dukanty/settings.py*
+users/migrations/*
