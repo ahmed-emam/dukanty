@@ -66,7 +66,7 @@ def create_order(request):
         #TODO: This has to impact the order linked by foreign key 'order'
         if productsList.count() > 0:
             try:
-                productAddedToOrder = productsList.get(product=product_name)
+                productAddedToOrder = productsList.get(product=product)
                 productAddedToOrder.quantity = quantity
                 productAddedToOrder.price = price
 
