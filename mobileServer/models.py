@@ -105,8 +105,8 @@ class MobileserverShop(models.Model):
 
 
 class MobileserverShopproductinventory(models.Model):
-    price = models.FloatField()
-    stock = models.BooleanField()
+    price = models.FloatField(default=0)
+    stock = models.BooleanField(default=False)
 
     product = models.ForeignKey(MobileserverProduct, models.DO_NOTHING)
     owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING, unique=True)
