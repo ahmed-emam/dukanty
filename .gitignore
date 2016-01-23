@@ -1,7 +1,8 @@
-venv
 *.pyc
+*.html
 staticfiles
 .env
+venv
 db.sqlite3
 mobileServer/migrations/*
 dukanty/settings.py*

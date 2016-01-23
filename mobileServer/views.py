@@ -6,14 +6,16 @@ from django.http import HttpResponse
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
+from rest_framework import generics, permissions, status, response, views
+from rest_framework.response import Response
+
 from rest_framework import permissions
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
-
-
+import json
 
 # Create your views here.
 def index(request):
@@ -104,6 +106,12 @@ def get_shopInventory(request):
 
 #else:
         #TODO: Return an error
+
+def add_shop(request):
+    print(request.body)
+    shop = json.load(request.body)
+    print(shop)
+    return Response(status=status.HTTP_200_OK)
 
 # def getshops(request):
 #     return
