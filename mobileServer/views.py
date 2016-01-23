@@ -152,6 +152,8 @@ def add_product(request):
 
 @csrf_exempt
 def create_inventory(request):
+    print(request)
+    
     shop_name = request.POST.get('shop_name')
     try:
         shop = MobileserverShop.objects.get(name=shop_name)
