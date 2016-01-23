@@ -170,13 +170,13 @@ def create_inventory(request):
 
     price = request.POST.get('price')
     stock = request.POST.get('stock')
-    
+
     print(price)
     print(stock)
     try:
-        inventory_entry = MobileserverShopproductinventory.objects.get_or_create(shop=shop, product=product, owner=owner)
+        inventory_entry, created = MobileserverShopproductinventory.objects.get_or_create(shop=shop, product=product, owner=owner)
         print(inventory_entry)
-        inventory_entry.price = price
+        inventory_entry.price = float(price)
         inventory_entry.stock = stock
         inventory_entry.save()
     except MultipleObjectsReturned:
