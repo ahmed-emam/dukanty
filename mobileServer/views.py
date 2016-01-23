@@ -155,6 +155,7 @@ def add_product(request):
 '''
 Function that will create/update inventory of a shop
 '''
+#TODO: Remove csrf_exempt
 @csrf_exempt
 def create_inventory(request):
     print(request)

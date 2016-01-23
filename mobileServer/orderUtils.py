@@ -1,19 +1,11 @@
-from django.shortcuts import render
-from rest_framework import viewsets
-from mobileServer.models import *
-from users.models import  *
-from mobileServer.serializer import *
-from django.http import HttpResponse
-from rest_framework.parsers import JSONParser
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.renderers import JSONRenderer
-from rest_framework import generics, permissions, status, response, views
-from rest_framework.response import Response
 from django.core.exceptions import *
-from rest_framework import permissions
-from rest_framework.decorators import api_view, permission_classes, authentication_classes
-from rest_framework.authentication import SessionAuthentication, TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework import status
+from rest_framework.renderers import JSONRenderer
+
+from mobileServer.serializer import *
+
 
 class JSONResponse(HttpResponse):
     """
@@ -39,7 +31,10 @@ TODO:
     check status of order
 '''
 #TODO: Write this in a cleaner way
+#TODO: Remove csrf_exempt
+
 # @api_view(['POST'])
+@csrf_exempt
 def create_order(request):
     print(request)
 
