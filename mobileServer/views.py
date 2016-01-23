@@ -110,9 +110,13 @@ def get_shopInventory(request):
 @csrf_exempt
 def add_shop(request):
     print(request)
-    print(request.body)
-    shop = json.loads(request.body)
-    print(shop)
+    # print(request.body)
+    shop_name = request['name']
+    shop_rating = request['rating']
+    shop_lat = request['lat']
+    shop_lon = request['lon']
+    # shop = json.loads(request.body)
+    print(shop_name)
     return Response(status=status.HTTP_200_OK)
 
 # def getshops(request):
