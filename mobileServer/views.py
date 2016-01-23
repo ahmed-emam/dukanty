@@ -109,8 +109,9 @@ def get_shopInventory(request):
 
 @csrf_exempt
 def add_shop(request):
+    print(request)
     print(request.body)
-    shop = json.load(request.body)
+    shop = json.loads(request.body)
     print(shop)
     return Response(status=status.HTTP_200_OK)
 
