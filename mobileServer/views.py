@@ -173,6 +173,7 @@ def create_inventory(request):
 
     try:
         inventory_entry = MobileserverShopproductinventory.objects.get_or_create(shop=shop, product=product, owner=owner)
+        print(inventory_entry)
         inventory_entry.price = price
         inventory_entry.stock = stock
         inventory_entry.save()
