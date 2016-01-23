@@ -111,10 +111,10 @@ def get_shopInventory(request):
 def add_shop(request):
     print(request)
     # print(request.body)
-    shop_name = request.POST["name"]
-    shop_rating = request.POST["rating"]
-    shop_lat = request.POST["lat"]
-    shop_lon = request.POST["lon"]
+    shop_name = request.POST.get('name')
+    shop_rating = request.POST.get('rating')
+    shop_lat = request.POST.get('lat')
+    shop_lon = request.POST.get('lon')
     # shop = json.loads(request.body)
     print(shop_name)
     return Response(status=status.HTTP_200_OK)
