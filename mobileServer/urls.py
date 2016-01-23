@@ -1,7 +1,7 @@
 __author__ = 'ahmedemam'
 from django.conf.urls import patterns, url, include
 from django.conf import settings
-from . import views
+from . import views, orderUtils
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'debug/addshop/', views.add_shop),
     url(r'debug/addproduct/', views.add_product),
     url(r'debug/inventory/', views.create_inventory),
+    url(r'debug/createorder/', orderUtils.create_order),
     url(r'^$', views.index),
 ]
 

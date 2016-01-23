@@ -151,6 +151,10 @@ def add_product(request):
         print("Didnt add "+product_name)
         return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+
+'''
+Function that will create/update inventory of a shop
+'''
 @csrf_exempt
 def create_inventory(request):
     print(request)

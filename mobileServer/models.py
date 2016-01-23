@@ -19,8 +19,8 @@ class MobileserverBasket(models.Model):
 
 
 class MobileserverCart(models.Model):
-    created_at = models.DateTimeField()
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     checked_out = models.BooleanField()
     owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
 
@@ -29,18 +29,27 @@ class MobileserverCart(models.Model):
 
 
 class MobileserverCartitem(models.Model):
-    quantity = models.PositiveIntegerField()
+    quantity = models.PositiveSmallIntegerField()
     cart = models.ForeignKey(MobileserverCart, models.DO_NOTHING)
     product = models.ForeignKey('MobileserverShopproductinventory', models.DO_NOTHING)
 
     class Meta:
         db_table = 'mobileServer_cartitem'
 
-
+'''
+status:
+0 -> not ordered
+1 -> order issued
+2 -> order on delivery
+3 -> order delivered
+'''
 class MobileserverOrder(models.Model):
-    totalprice = models.FloatField(db_column='totalPrice')  # Field name made lowercase.
+    totalprice = models.FloatField(db_column='totalPrice', default=0.0)  # Field name made lowercase.
     owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
     shop = models.ForeignKey('MobileserverShop', models.DO_NOTHING, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    status = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
         db_table = 'mobileServer_order'
@@ -49,6 +58,8 @@ class MobileserverOrder(models.Model):
 class MobileserverOrderProduct(models.Model):
     order = models.ForeignKey(MobileserverOrder, models.DO_NOTHING)
     product = models.ForeignKey('MobileserverProduct', models.DO_NOTHING)
+    quantity = models.PositiveSmallIntegerField(default=0)
+    price = models.FloatField(default=0.0)
 
     class Meta:
         db_table = 'mobileServer_order_product'
