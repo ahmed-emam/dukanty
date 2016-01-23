@@ -1,0 +1,3 @@
+safwan  pringles    3   True
+safwan  pepsi   6   True
+safwan  bread   1   False
