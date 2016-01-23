@@ -116,7 +116,7 @@ class MobileserverShopproductinventory(models.Model):
         db_table = 'mobileServer_shopproductinventory'
 
     def __str__(self):
-        return self.product.name+" "+self.shop.name+" "+str(self.price)+" "+self.stock
+        return self.product.name+" "+self.shop.name+" "+str(self.price)+" "+str(self.stock)
 
 
 
