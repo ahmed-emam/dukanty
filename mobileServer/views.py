@@ -17,7 +17,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 import json
-from django.core import serializers
+
 from django.core.exceptions import *
 
 # Create your views here.
@@ -180,8 +180,8 @@ def create_inventory(request):
         inventory_entry.price = float(price)
         inventory_entry.stock = stock
         inventory_entry.save()
-
-        return JSONResponse(serializers.serialize('json', inventory_entry), status=status.HTTP_200_OK)
+        serializedData = ShopProductInventory(inventory_entry)
+        return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
     except MultipleObjectsReturned:
         return JSONResponse({'error': 'Found multiple entries'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
