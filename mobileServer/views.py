@@ -179,6 +179,7 @@ def create_inventory(request):
         inventory_entry.price = float(price)
         inventory_entry.stock = stock
         inventory_entry.save()
+        return JSONResponse(json.dumps(inventory_entry), status=status.HTTP_200_OK)
     except MultipleObjectsReturned:
         return JSONResponse({'error': 'Found multiple entries'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
