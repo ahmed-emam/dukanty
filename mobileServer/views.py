@@ -170,7 +170,9 @@ def create_inventory(request):
 
     price = request.POST.get('price')
     stock = request.POST.get('stock')
-
+    
+    print(price)
+    print(stock)
     try:
         inventory_entry = MobileserverShopproductinventory.objects.get_or_create(shop=shop, product=product, owner=owner)
         print(inventory_entry)
