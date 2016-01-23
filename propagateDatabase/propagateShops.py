@@ -1,5 +1,5 @@
 import requests
-url = 'http://104.236.115.239:8001/addshop'
+url = 'http://104.236.115.239:8001/addshop/'
 
 
 def main():

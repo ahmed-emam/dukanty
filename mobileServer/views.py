@@ -107,6 +107,7 @@ def get_shopInventory(request):
 #else:
         #TODO: Return an error
 
+@csrf_exempt
 def add_shop(request):
     print(request.body)
     shop = json.load(request.body)

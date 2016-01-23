@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df97b03-fea7-4e19-95a9-c66cafaeb114" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/propagateDatabase/list_shops" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/propagateDatabase/propagateShops.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/urls.py" afterPath="$PROJECT_DIR$/mobileServer/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/views.py" afterPath="$PROJECT_DIR$/mobileServer/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/propagateDatabase/propagateShops.py" afterPath="$PROJECT_DIR$/propagateDatabase/propagateShops.py" />
     </list>
     <ignored path="dukanty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,11 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mobileServer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.518518">
-              <caret line="113" column="45" selection-start-line="113" selection-start-column="45" selection-end-line="113" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.40433213">
+              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -57,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="propagateShops.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="propagateShops.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/propagateDatabase/propagateShops.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.027075812">
-              <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
+            <state vertical-scroll-proportion="-0.5555556">
+              <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -129,10 +126,10 @@
         <option value="$PROJECT_DIR$/mobileServer/serializer.py" />
         <option value="$PROJECT_DIR$/mobileServer/admin.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/mobileServer/views.py" />
         <option value="$PROJECT_DIR$/mobileServer/urls.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/list_shops" />
         <option value="$PROJECT_DIR$/propagateDatabase/propagateShops.py" />
+        <option value="$PROJECT_DIR$/mobileServer/views.py" />
       </list>
     </option>
   </component>
@@ -1150,14 +1147,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/propagateDatabase/list_shops">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/djoser/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.240964">
@@ -1166,13 +1155,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/views.py">
+    <entry file="file://$PROJECT_DIR$/propagateDatabase/list_shops">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.518518">
-          <caret line="113" column="45" selection-start-line="113" selection-start-column="45" selection-end-line="113" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1186,9 +1173,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/propagateDatabase/propagateShops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.027075812">
-          <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
+        <state vertical-scroll-proportion="-0.5555556">
+          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40433213">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
