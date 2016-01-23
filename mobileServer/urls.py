@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'getshopinventory/$', views.get_shopInventory),
     url(r'debug/addshop/', views.add_shop),
     url(r'debug/addproduct/', views.add_product),
+    url(r'debug/inventory/', views.create_inventory),
     url(r'^$', views.index),
 ]
 

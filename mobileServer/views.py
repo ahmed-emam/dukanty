@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from mobileServer.models import *
+from users.models import  *
 from mobileServer.serializer import *
 from django.http import HttpResponse
 from rest_framework.parsers import JSONParser
@@ -16,6 +17,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 import json
+from django.core.exceptions import *
 
 # Create your views here.
 def index(request):
@@ -148,6 +150,42 @@ def add_product(request):
         print("Didnt add "+product_name)
         return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+@csrf_exempt
+def create_inventory(request):
+    shop_name = request.POST.get('shop_name')
+    try:
+        shop = MobileserverShop.objects.get(name=shop_name)
+    except ObjectDoesNotExist:
+        return JSONResponse({'error': 'shop wasnt found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    owner = UsersCustomUser.objects.get(pk=1)
+
+    product_name = request.POST.get('product_name')
+    try:
+        product = MobileserverProduct.objects.get(name=product_name)
+    except ObjectDoesNotExist:
+        return JSONResponse({'error': 'product wasnt found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    price = request.POST.get('price')
+    stock = request.POST.get('stock')
+
+    try:
+        inventory_entry = MobileserverShopproductinventory.objects.get_or_create(shop=shop, product=product, owner=owner)
+        inventory_entry.price = price
+        inventory_entry.stock = stock
+        inventory_entry.save()
+    except MultipleObjectsReturned:
+        return JSONResponse({'error': 'Found multiple entries'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
+
+    # if inventory_entry is None:
+    #     inventory_entry = MobileserverShopproductinventory.objects.create\
+    #         (price=price, stock=stock, product=product, owner=owner, shop=shop)
+    #     inventory_entry.save()
+    #     return JSONResponse(json.dumps(inventory_entry), status=status.HTTP_200_OK)
+    # else:
 
 # def getshops(request):
 #     return
