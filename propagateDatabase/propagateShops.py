@@ -11,7 +11,7 @@ def main():
             row = row.strip().split()
             # print(row)
             payload = {'name': row[0], 'rating': row[1], 'lat': row[2], 'lon': row[3]}
-            request = requests.post(url, params=payload)
+            request = requests.post(url, data=payload)
             print("Requested: "+request.url)
             print(request.status_code)
 

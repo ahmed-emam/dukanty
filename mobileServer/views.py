@@ -117,7 +117,16 @@ def add_shop(request):
     shop_lon = request.POST.get('lon')
     # shop = json.loads(request.body)
     print(shop_name)
-    return Response(status=status.HTTP_200_OK)
+    shop = MobileserverShop.objects.create\
+        (name=shop_name, rating=shop_rating, lat=shop_lat, lon=shop_lon)
+    shop.save()
+    if shop.id:
+        print("Added shop id "+str(shop.id))
+        return JSONResponse({'added': shop_name}, status=status.HTTP_200_OK)
+    else:
+        print("Didnt add "+shop_name)
+        return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
 # def getshops(request):
 #     return
