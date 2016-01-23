@@ -128,6 +128,27 @@ def add_shop(request):
         return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+@csrf_exempt
+def add_product(request):
+    print(request)
+    # print(request.body)
+    product_name = request.POST.get('name')
+    product_company = request.POST.get('company')
+    product_category = request.POST.get('category')
+    product_img = request.POST.get('img')
+    # shop = json.loads(request.body)
+    print(product_name)
+    product = MobileserverProduct.objects.create\
+        (name=product_name, company=product_company, category=product_category, img=product_img)
+    product.save()
+    if product.id:
+        print("Added shop id "+str(product.id))
+        return JSONResponse({'added': product_name}, status=status.HTTP_200_OK)
+    else:
+        print("Didnt add "+product_name)
+        return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
 # def getshops(request):
 #     return
 

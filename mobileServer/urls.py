@@ -11,7 +11,8 @@ urlpatterns = [
     url(r'getcarts/$', views.carts_list),
     url(r'getbaskets/$', views.get_userbaskets),
     url(r'getshopinventory/$', views.get_shopInventory),
-    url(r'addshop/', views.add_shop),
+    url(r'debug/addshop/', views.add_shop),
+    url(r'debug/addproduct/', views.add_product),
     url(r'^$', views.index),
 ]
 
