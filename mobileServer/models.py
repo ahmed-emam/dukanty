@@ -109,8 +109,8 @@ class MobileserverShopproductinventory(models.Model):
     stock = models.BooleanField(default=False)
 
     product = models.ForeignKey(MobileserverProduct, models.DO_NOTHING)
-    owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING, unique=True)
-    shop = models.ForeignKey(MobileserverShop, models.DO_NOTHING, unique=True)
+    owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
+    shop = models.ForeignKey(MobileserverShop, models.DO_NOTHING)
 
     class Meta:
         db_table = 'mobileServer_shopproductinventory'
