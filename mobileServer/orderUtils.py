@@ -121,7 +121,7 @@ def get_orders_by_useremail(request):
         print(serialize_order.data)
         print(order.mobileserverorderproduct_set)
         serialize_order_products = OrderProductSerializer(order.mobileserverorderproduct_set, many=True)
-        print(serialize_order)
+        print(serialize_order.data)
         response.extend({'order': serialize_order.data, 'products': serialize_order_products.data})
 
     print(response)

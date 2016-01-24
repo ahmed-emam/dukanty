@@ -30,12 +30,14 @@ class ProductSerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = MobileserverOrder
+        #fields = ('id', 'product', 'shop', 'created_at', 'updated_at', 'status', 'totalprice')
         # fields = ('id', 'product', 'shop', 'stock', 'price')
 
 
 class OrderProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = MobileserverOrderProduct
+
         # fields = ('id', 'product', 'shop', 'stock', 'price')
 
 
