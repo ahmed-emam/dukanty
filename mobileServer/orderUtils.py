@@ -116,8 +116,10 @@ def get_orders_by_useremail(request):
     orders = MobileserverOrder.objects.filter(owner=owner)
     response = []
     for order in orders:
+        print(order)
         serialize_order = OrderSerializer(order)
-        print(serialize_order)
+        print(serialize_order.data)
+        print(order.mobileserverorderproduct_set)
         serialize_order_products = OrderProductSerializer(order.mobileserverorderproduct_set, many=True)
         print(serialize_order)
         response.extend({'order': serialize_order.data, 'products': serialize_order_products.data})
