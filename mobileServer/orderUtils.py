@@ -117,8 +117,10 @@ def get_orders_by_useremail(request):
     response = []
     for order in orders:
         serialize_order = OrderSerializer(order)
-        seriliaze_order_products = OrderProductSerializer(order.mobileserverorderproduct_set, many=True)
-        response.extend({'order':serialize_order.data, 'products': seriliaze_order_products.data})
+        print(serialize_order)
+        serialize_order_products = OrderProductSerializer(order.mobileserverorderproduct_set, many=True)
+        print(serialize_order)
+        response.extend({'order': serialize_order.data, 'products': serialize_order_products.data})
 
     print(response)
     return JSONResponse(response, status=status.HTTP_200_OK)

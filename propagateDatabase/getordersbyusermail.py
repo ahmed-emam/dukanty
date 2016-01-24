@@ -9,7 +9,7 @@ def main():
      # print (listOfProducts)
         for row in listOfProducts:
             row = row.strip().split()
-            print("User: "+row)
+            print("User: "+row[0])
             payload = {'email': row[0]}
             request = requests.post(url, data=payload)
             print("Requested: "+request.url)
