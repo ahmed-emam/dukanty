@@ -11,10 +11,16 @@ urlpatterns = [
     url(r'getcarts/$', views.carts_list),
     url(r'getbaskets/$', views.get_userbaskets),
     url(r'getshopinventory/$', views.get_shopInventory),
+
+    # DEBUGGING routes
     url(r'debug/addshop/', views.add_shop),
     url(r'debug/addproduct/', views.add_product),
     url(r'debug/inventory/', views.create_inventory),
     url(r'debug/createorder/', orderUtils.create_order),
+    url(r'debug/getordersbyemail/', orderUtils.get_orders_by_useremail),
+    # DEBUGGING routes
+
+
     url(r'^$', views.index),
 ]
 
