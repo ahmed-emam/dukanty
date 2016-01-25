@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.renderers import JSONRenderer
-
+import json
 from mobileServer.serializer import *
 
 
@@ -122,8 +122,9 @@ def get_orders_by_useremail(request):
         print(order.mobileserverorderproduct_set.all())
         serialize_order_products = OrderProductSerializer(order.mobileserverorderproduct_set.all(), many=True)
         print(serialize_order_products.data)
-        response.extend({'order': serialize_order.data, 'products': serialize_order_products.data})
-
+        response.extend([{'order': serialize_order.data, 'products': serialize_order_products.data}])
+    print(response)
+    response = json.dumps(response , separators=(',' , ':'))
     print(response)
     return JSONResponse(response, status=status.HTTP_200_OK)
 # def delete_order(request):
