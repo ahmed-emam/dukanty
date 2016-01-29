@@ -123,7 +123,7 @@ def add_shop(request):
     # shop = json.loads(request.body)
     print(shop_name)
     try:
-        shop = MobileserverShop.objects.get_or_create\
+        shop, created = MobileserverShop.objects.get_or_create\
             (name=shop_name, rating=shop_rating, lat=shop_lat, lon=shop_lon)
         shop.save()
         serializedData = ShopSerializer(shop)
