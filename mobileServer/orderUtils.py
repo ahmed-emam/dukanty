@@ -32,7 +32,16 @@ TODO:
 '''
 #TODO: Write this in a cleaner way
 #TODO: Remove csrf_exempt
+'''
+Function that will create/update order
 
+POST request
+shop_name:  <Related shop name>
+email:   <user's email, the user making the order>
+product_name: <Product to be added to the order>
+product_price:  <Price of product in the shop, this will be multiplied by the quantity>
+product_quantity:  <Ordered quantity of the product>
+'''
 # @api_view(['POST'])
 @csrf_exempt
 def create_order(request):
@@ -104,6 +113,14 @@ def create_order(request):
         return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
         # print("Order doesn't exist")
 
+'''
+Function will get all the orders linked to the user with the email given as a POST request parameter
+
+POST request
+
+email:  <User's email>
+
+'''
 @csrf_exempt
 def get_orders_by_useremail(request):
     username = request.POST.get('email')

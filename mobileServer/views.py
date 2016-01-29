@@ -81,6 +81,8 @@ def get_userbaskets(request):
     serializer = BasketSerializer(baskets, many=True)
     return JSONResponse(serializer.data)
 
+
+# TODO: Rewrite code for get_shopInventory function using exceptions
 @api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
@@ -108,8 +110,8 @@ def get_shopInventory(request):
 
 
 #else:
-        #TODO: Return an error
 
+# TODO: Remove csrf_exempt
 @csrf_exempt
 def add_shop(request):
     print(request)
@@ -120,15 +122,21 @@ def add_shop(request):
     shop_lon = request.POST.get('lon')
     # shop = json.loads(request.body)
     print(shop_name)
-    shop = MobileserverShop.objects.create\
-        (name=shop_name, rating=shop_rating, lat=shop_lat, lon=shop_lon)
-    shop.save()
-    if shop.id:
-        print("Added shop id "+str(shop.id))
-        return JSONResponse({'added': shop_name}, status=status.HTTP_200_OK)
-    else:
-        print("Didnt add "+shop_name)
-        return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    try:
+        shop = MobileserverShop.objects.get_or_create\
+            (name=shop_name, rating=shop_rating, lat=shop_lat, lon=shop_lon)
+        shop.save()
+        serializedData = ShopSerializer(shop)
+        return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
+    except MultipleObjectsReturned:
+        return JSONResponse({'error': 'Found multiple entries'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    # if shop.id:
+    #     print("Added shop id "+str(shop.id))
+    #     return JSONResponse({'added': shop_name}, status=status.HTTP_200_OK)
+    # else:
+    #     print("Didnt add "+shop_name)
+    #     return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @csrf_exempt
@@ -151,9 +159,21 @@ def add_product(request):
         print("Didnt add "+product_name)
         return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-
+# TODO: Remember in the request, you can change shop_name with shop_id and product_name with product_id
 '''
+
 Function that will create/update inventory of a shop
+Inventory is a list of products
+List is linked to a shop, owner of the shop(he is the only one who can edit the list)
+For each product in the list we have a price customized by the shop, and the option of whether its in stock or not
+
+POST request
+shop_name:  <Related shop name>
+product_name:   <Product to be added to inventory>
+owner_name: <Owner of the shop>
+price:  <Price of product in the shop>
+stock:  <In Stock/Out of Stock>
+
 '''
 #TODO: Remove csrf_exempt
 @csrf_exempt

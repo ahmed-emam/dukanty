@@ -9,7 +9,7 @@ def main():
         # print (listOfShops)
         for row in listOfShops:
             row = row.strip().split()
-            # print(row)
+            print(row)
             payload = {'name': row[0], 'rating': row[1], 'lat': row[2], 'lon': row[3]}
             request = requests.post(url, data=payload)
             print("Requested: "+request.url)
