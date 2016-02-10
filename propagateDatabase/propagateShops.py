@@ -14,6 +14,7 @@ def main():
             request = requests.post(url, data=payload)
             print("Requested: "+request.url)
             print(request.status_code)
+            print(request.content)
 
 
 main()

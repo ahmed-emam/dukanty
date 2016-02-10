@@ -82,32 +82,6 @@ def get_userbaskets(request):
     return JSONResponse(serializer.data)
 
 
-# TODO: Rewrite code for get_shopInventory function using exceptions
-@api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
-@permission_classes((IsAuthenticated,))
-def get_shopInventory(request):
-    shop_id = request['shop_id']
-    # Get the shop using shop ID
-    shop = MobileserverShop.objects.get(pk=shop_id)
-    # if the shop exists
-    if shop:
-        # Get all inventory entries that are linked to that shop
-        inventory = MobileserverShopproductinventory.objects.filter(shop=shop)
-        # Response sent back to the user
-        response = []
-        # loop over all the inventory entries found
-        for inventoryEntry in inventory:
-            related_product = inventoryEntry.product
-            productSerialized = ProductSerializer(related_product)
-            response.extend([{
-                "product": productSerialized,
-                "price": inventoryEntry.price,
-                "stock": inventoryEntry.stock
-            }])
-
-        return JSONResponse(response)
-
 
 #else:
 
@@ -160,61 +134,6 @@ def add_product(request):
         return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 # TODO: Remember in the request, you can change shop_name with shop_id and product_name with product_id
-'''
-
-Function that will create/update inventory of a shop
-Inventory is a list of products
-List is linked to a shop, owner of the shop(he is the only one who can edit the list)
-For each product in the list we have a price customized by the shop, and the option of whether its in stock or not
-
-POST request
-shop_name:  <Related shop name>
-product_name:   <Product to be added to inventory>
-owner_name: <Owner of the shop>
-price:  <Price of product in the shop>
-stock:  <In Stock/Out of Stock>
-
-'''
-#TODO: Remove csrf_exempt
-@csrf_exempt
-def create_inventory(request):
-    print(request)
-
-    shop_name = request.POST.get('shop_name')
-    try:
-        shop = MobileserverShop.objects.get(name=shop_name)
-    except ObjectDoesNotExist:
-        return JSONResponse({'error': 'shop wasnt found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-    owner = UsersCustomUser.objects.get(pk=1)
-
-    product_name = request.POST.get('product_name')
-    try:
-        product = MobileserverProduct.objects.get(name=product_name)
-    except ObjectDoesNotExist:
-        return JSONResponse({'error': 'product wasnt found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-    price = request.POST.get('price')
-    stock = request.POST.get('stock')
-    if stock=="False":
-        stock = False
-    else:
-        stock = True
-
-    print(price)
-    print(stock)
-    try:
-        inventory_entry, created = MobileserverShopproductinventory.objects.get_or_create(shop=shop, product=product, owner=owner)
-        print(inventory_entry)
-        inventory_entry.price = float(price)
-        inventory_entry.stock = stock
-        inventory_entry.save()
-        serializedData = ShopProductInventory(inventory_entry)
-        return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
-    except MultipleObjectsReturned:
-        return JSONResponse({'error': 'Found multiple entries'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-
 
 
     # if inventory_entry is None:
