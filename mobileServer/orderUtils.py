@@ -75,31 +75,36 @@ def create_order(request):
     #   Check if the order already exists
     try:
         order = MobileserverOrder.objects.get(owner=owner, shop=shop, status=0)
-        productsList = order.mobileserverorderproduct_set.all()
 
-        #TODO: This has to impact the order linked by foreign key 'order'
-        #   if the order contains a list of product
-        if productsList.count() > 0:
-            #  if the added-product already exists in the order, just update it
-            try:
-                productAddedToOrder = productsList.get(product=product)
-                productAddedToOrder.quantity = quantity
-                productAddedToOrder.price = price
+        # order has not been checkout
+        if order.status < 1:
+            productsList = order.mobileserverorderproduct_set.all()
 
-            #  if the added-product already doesnt exist in the order, add it to the order
-            except ObjectDoesNotExist:
+            #TODO: This has to impact the order linked by foreign key 'order'
+            #   if the order contains a list of product
+            if productsList.count() > 0:
+                #  if the added-product already exists in the order, just update it
+                try:
+                    productAddedToOrder = productsList.get(product=product)
+                    productAddedToOrder.quantity = quantity
+                    productAddedToOrder.price = price
+
+                #  if the added-product already doesnt exist in the order, add it to the order
+                except ObjectDoesNotExist:
+                    productAddedToOrder = MobileserverOrderProduct.objects.create\
+                    (order=order, product=product, quantity=int(quantity), price=float(price))
+            #   if order doesn't contain any products
+            # add the product to the order
+            else:
                 productAddedToOrder = MobileserverOrderProduct.objects.create\
-                (order=order, product=product, quantity=int(quantity), price=float(price))
-        #   if order doesn't contain any products
-        # add the product to the order
+                    (order=order, product=product, quantity=int(quantity), price=float(price))
+
+            productAddedToOrder.save()
+
+            serializedData = OrderProductSerializer(productAddedToOrder)
+            return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
         else:
-            productAddedToOrder = MobileserverOrderProduct.objects.create\
-                (order=order, product=product, quantity=int(quantity), price=float(price))
-
-        productAddedToOrder.save()
-
-        serializedData = OrderProductSerializer(productAddedToOrder)
-        return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
+            print("Changing order failed for\n"+order.__str__())
     # if the order doesn't exist
     # create it and add the product to the order
     except ObjectDoesNotExist:

@@ -50,10 +50,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'rest_auth.registration',
     'djoser',
+    'push_notifications',
 ]
-
-
-
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -108,6 +106,12 @@ DATABASES = {
         
     }
 }
+
+
+PUSH_NOTIFICATIONS_SETTINGS = {
+        "GCM_API_KEY": "AIzaSyCNgjznC5rxrXk_fPHl7gjSF__ITYNzoSs",
+}
+
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

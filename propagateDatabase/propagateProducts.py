@@ -10,7 +10,17 @@ def main():
         for row in listOfProducts:
             row = row.strip().split()
             # print(row)
-            payload = {'name': row[0], 'company': row[1], 'category': row[2], 'img': row[3]}
+            category = 0
+            if row[1] == 'Beverages':
+                category = 1
+            elif row[1] == 'Bakery':
+                category = 2
+            elif row[1] == 'Dairy':
+                category = 3
+            elif row[1] == 'Produce':
+                category = 4
+
+            payload = {'name': row[0], 'company': row[1], 'category': category, 'img': row[3]}
             request = requests.post(url, data=payload)
             print("Requested: "+request.url)
             print(request.status_code)

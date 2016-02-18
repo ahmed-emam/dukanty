@@ -54,6 +54,10 @@ class MobileserverOrder(models.Model):
     class Meta:
         db_table = 'mobileServer_order'
 
+    def __str__(self):
+        return self.id.__str__()+"\tOwner:"+self.owner.__str__()+\
+               "\tFrom:"+self.shop.__str__()+"\tStatus:"+self.status.__str__()
+
 
 class MobileserverOrderProduct(models.Model):
     order = models.ForeignKey(MobileserverOrder, models.DO_NOTHING)
@@ -64,7 +68,13 @@ class MobileserverOrderProduct(models.Model):
     class Meta:
         db_table = 'mobileServer_order_product'
 
-
+'''
+Category:
+0 ->
+1 ->
+2 ->
+3 ->
+'''
 class MobileserverProduct(models.Model):
     name = models.CharField(max_length=30)
     company = models.CharField(max_length=30)

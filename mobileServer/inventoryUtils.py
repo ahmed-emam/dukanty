@@ -26,7 +26,7 @@ class JSONResponse(HttpResponse):
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def get_shopInventory(request):
-    shop_id = request['shop_id']
+    shop_id = request.GET.get['shop_id']
     # Get the shop using shop ID
     try:
         shop = MobileserverShop.objects.get(pk=shop_id)
@@ -54,7 +54,6 @@ def get_shopInventory(request):
 
 
 '''
-
 Function that will create/update inventory of a shop
 Inventory is a list of products
 List is linked to a shop, owner of the shop(he is the only one who can edit the list)

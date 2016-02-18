@@ -1,7 +1,7 @@
 __author__ = 'ahmedemam'
 from django.conf.urls import patterns, url, include
 from django.conf import settings
-from . import views, orderUtils, inventoryUtils
+from . import views, orderUtils, inventoryUtils, pushNotifications
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
@@ -20,6 +20,7 @@ urlpatterns = [
     url(r'debug/getordersbyemail/', orderUtils.get_orders_by_useremail),
     # DEBUGGING routes
 
+    url(r'registerAndroidDevice/$', pushNotifications.registerAndroidDevice),
 
     url(r'^$', views.index),
 ]
