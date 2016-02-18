@@ -44,7 +44,7 @@ def get_shopInventory(request):
         related_product = inventoryEntry.product
         productSerialized = ProductSerializer(related_product)
         response.extend([{
-            "product": productSerialized,
+            "product": productSerialized.data,
             "price": inventoryEntry.price,
             "stock": inventoryEntry.stock
         }])

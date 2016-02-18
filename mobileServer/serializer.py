@@ -18,7 +18,7 @@ class ShopSerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = MobileserverProduct
-        fields = ('id', 'name', 'company',  'category')
+     #   fields = ('id', 'name', 'company',  'category')
 
 
 # class ShopInventorySerializer(serializers.ModelSerializer):
