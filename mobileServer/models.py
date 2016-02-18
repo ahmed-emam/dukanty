@@ -80,6 +80,7 @@ class MobileserverProduct(models.Model):
     company = models.CharField(max_length=30)
     category = models.IntegerField()
     img = models.TextField()
+    tags = TaggableManager()
 
     def __str__(self):
         return self.name+" by "+self.company
