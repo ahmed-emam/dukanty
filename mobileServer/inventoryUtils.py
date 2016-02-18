@@ -27,6 +27,7 @@ class JSONResponse(HttpResponse):
 @permission_classes((IsAuthenticated,))
 def get_shopInventory(request):
     shop_id = request.GET.get('shop_id')
+    print(shop_id)
     # Get the shop using shop ID
     try:
         shop = MobileserverShop.objects.get(pk=shop_id)
