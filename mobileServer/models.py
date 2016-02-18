@@ -78,7 +78,7 @@ Category:
 class MobileserverProduct(models.Model):
     name = models.CharField(max_length=30)
     company = models.CharField(max_length=30)
-    category = models.IntegerField()
+    category = models.IntegerField(max_value=None, min_value=None)
     img = models.TextField()
     tags = TaggableManager()
 
