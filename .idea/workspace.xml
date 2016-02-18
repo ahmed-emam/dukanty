@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df97b03-fea7-4e19-95a9-c66cafaeb114" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobileServer/error.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobileServer/pushNotifications.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dukanty/settings.py" afterPath="$PROJECT_DIR$/dukanty/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/inventoryUtils.py" afterPath="$PROJECT_DIR$/mobileServer/inventoryUtils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/models.py" afterPath="$PROJECT_DIR$/mobileServer/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/orderUtils.py" afterPath="$PROJECT_DIR$/mobileServer/orderUtils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/urls.py" afterPath="$PROJECT_DIR$/mobileServer/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out.html" afterPath="$PROJECT_DIR$/out.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/propagateDatabase/inventory" afterPath="$PROJECT_DIR$/propagateDatabase/inventory" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/propagateDatabase/list_products" afterPath="$PROJECT_DIR$/propagateDatabase/list_products" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/propagateDatabase/propagateProducts.py" afterPath="$PROJECT_DIR$/propagateDatabase/propagateProducts.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
     </list>
     <ignored path="dukanty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,8 +44,8 @@
       <file leaf-file-name="inventoryUtils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mobileServer/inventoryUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7969019">
-              <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.40963855">
+              <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -1099,14 +1088,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mobileServer/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1125,10 +1106,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mobileServer/inventoryUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7969019">
-          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.40963855">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
