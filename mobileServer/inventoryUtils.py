@@ -26,7 +26,8 @@ class JSONResponse(HttpResponse):
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def get_shopInventory(request):
-    print(request)
+    print(request.data)
+    print(request.query_params)
     shop_id = request.GET.get('shop_id')
     print(shop_id)
     # Get the shop using shop ID
