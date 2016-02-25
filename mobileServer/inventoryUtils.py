@@ -26,9 +26,14 @@ class JSONResponse(HttpResponse):
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def get_shopInventory(request):
+    print("******REQUEST*******")
     print(request.data)
     print(request.query_params)
+    print(request.user)
+    print("*********************")
+
     shop_id = request.GET.get('shop_id')
+
     print(shop_id)
     # Get the shop using shop ID
     try:
@@ -73,8 +78,12 @@ stock:  <In Stock/Out of Stock>
 #TODO: Remove csrf_exempt
 @csrf_exempt
 def create_inventory(request):
-    print(request)
+    print("******REQUEST*******")
+    print(request.data)
+    print(request.query_params)
     print(request.user)
+    print("*********************")
+
     shop_name = request.POST.get('shop_name')
     try:
         shop = MobileserverShop.objects.get(name=shop_name)

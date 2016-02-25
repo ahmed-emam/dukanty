@@ -22,7 +22,7 @@ class MobileserverCart(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     checked_out = models.BooleanField()
-    owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
+    owner = models.ForeignKey('users.UsersCustomuser')
 
     class Meta:
         db_table = 'mobileServer_cart'
@@ -30,7 +30,7 @@ class MobileserverCart(models.Model):
 
 class MobileserverCartitem(models.Model):
     quantity = models.PositiveSmallIntegerField()
-    cart = models.ForeignKey(MobileserverCart, models.DO_NOTHING)
+    cart = models.ForeignKey(MobileserverCart)
     product = models.ForeignKey('MobileserverShopproductinventory', models.DO_NOTHING)
 
     class Meta:
@@ -45,8 +45,8 @@ status:
 '''
 class MobileserverOrder(models.Model):
     totalprice = models.FloatField(db_column='totalPrice', default=0.0)  # Field name made lowercase.
-    owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
-    shop = models.ForeignKey('MobileserverShop', models.DO_NOTHING, unique=True)
+    owner = models.ForeignKey('users.UsersCustomuser')
+    shop = models.ForeignKey('MobileserverShop', models.DO_NOTHING)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.PositiveSmallIntegerField(default=0)
@@ -60,7 +60,7 @@ class MobileserverOrder(models.Model):
 
 
 class MobileserverOrderProduct(models.Model):
-    order = models.ForeignKey(MobileserverOrder, models.DO_NOTHING)
+    order = models.ForeignKey(MobileserverOrder)
     product = models.ForeignKey('MobileserverProduct', models.DO_NOTHING)
     quantity = models.PositiveSmallIntegerField(default=0)
     price = models.FloatField(default=0.0)
@@ -89,6 +89,16 @@ class MobileserverProduct(models.Model):
         db_table = 'mobileServer_product'
 
 
+class address(models.Model):
+    lat = models.FloatField()
+    lon = models.FloatField()
+    street = models.CharField(max_length=90)
+    building = models.CharField(max_length=90)
+    floor = models.CharField(max_length=30, null=True)
+    apartment = models.CharField(max_length=30, null=True)
+    mobile = models.IntegerField()
+    owner = models.ForeignKey('users.UsersCustomuser')
+    order = models.ForeignKey(MobileserverOrder, models.DO_NOTHING)
 
 
 class MobileserverShop(models.Model):
@@ -130,9 +140,9 @@ class MobileserverShopproductinventory(models.Model):
     price = models.FloatField(default=0.0)
     stock = models.BooleanField(default=True)
 
-    product = models.ForeignKey(MobileserverProduct, models.DO_NOTHING)
-    owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
-    shop = models.ForeignKey(MobileserverShop, models.DO_NOTHING)
+    product = models.ForeignKey(MobileserverProduct)
+    owner = models.ForeignKey('users.UsersCustomuser')
+    shop = models.ForeignKey(MobileserverShop)
 
     class Meta:
         db_table = 'mobileServer_shopproductinventory'
