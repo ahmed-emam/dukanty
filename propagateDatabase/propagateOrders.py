@@ -1,5 +1,6 @@
 import requests
-url = 'http://104.236.115.239:8001/debug/createorder/'
+port = 80
+url = 'http://104.236.115.239:'+str(port)+'/debug/createorder/'
 
 
 def main():

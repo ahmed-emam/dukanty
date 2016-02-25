@@ -1,5 +1,6 @@
 import requests
-url = 'http://104.236.115.239:8001/auth/register/'
+port = 80
+url = 'http://104.236.115.239:'+str(port)+'/auth/register/'
 
 
 def main():

@@ -7,6 +7,12 @@ import json
 from mobileServer.serializer import *
 
 
+#Order Status
+not_ordered = 0
+order_issued = 1
+order_on_delivery = 2
+order_delivered = 3
+
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -45,10 +51,15 @@ product_quantity:  <Ordered quantity of the product>
 # @api_view(['POST'])
 @csrf_exempt
 def create_order(request):
-    print(request)
+    print("******REQUEST*******")
+    print(request.data)
+    print(request.query_params)
+    print(request.user)
+    print("*********************")
+
 
     #   Data from the POST requests
-    shop_name = request.POST.get('shop_name')
+    shop_id = request.POST.get('shop_id')
     username = request.POST.get('email')
     product_name = request.POST.get('product_name')
     quantity = request.POST.get('product_quantity')
@@ -56,7 +67,7 @@ def create_order(request):
 
     #   Check if the shop related to the order exists in my Database
     try:
-        shop = MobileserverShop.objects.get(name=shop_name)
+        shop = MobileserverShop.objects.get(pk=shop_id)
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'shop wasnt found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -149,5 +160,47 @@ def get_orders_by_useremail(request):
     response = json.dumps(response , separators=(',' , ':'))
     print(response)
     return JSONResponse(response, status=status.HTTP_200_OK)
+
+
+def change_order_status(order,status):
+    print("change status of order "+order+" from "+str(order.status)+" -> "+str(status))
+    order.status = status
+    order.save()
+
+
+def checkout_order(request):
+    print("******REQUEST*******")
+    print(request.data)
+    print(request.query_params)
+    print(request.user)
+    print("*********************")
+
+    order_id = request.POST.get('order_id')
+
+    try:
+        order = MobileserverOrder.objects.get(pk=order_id)
+    except ObjectDoesNotExist:
+        return JSONResponse({'error': 'order doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    change_order_status(order, order_issued)
+    return JSONResponse({'success': 'order has been changed'}, status=status.HTTP_200_OK)
+
+
+def deliver_order(request):
+    print("******REQUEST*******")
+    print(request.data)
+    print(request.query_params)
+    print(request.user)
+    print("*********************")
+
+    order_id = request.POST.get('order_id')
+
+    try:
+        order = MobileserverOrder.objects.get(pk=order_id)
+    except ObjectDoesNotExist:
+        return JSONResponse({'error': 'order doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    change_order_status(order, order_on_delivery)
+    return JSONResponse({'success': 'order has been changed'}, status=status.HTTP_200_OK)
 # def delete_order(request):
 
