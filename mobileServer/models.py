@@ -60,8 +60,8 @@ class MobileserverOrder(models.Model):
  
  
 class MobileserverOrderProduct(models.Model):
-    order = models.ForeignKey(MobileserverOrder)
-    product = models.ForeignKey('MobileserverProduct', models.DO_NOTHING)
+    order = models.ForeignKey(MobileserverOrder, models.CASCADE)
+    product = models.ForeignKey('MobileserverProduct', models.CASCADE)
     quantity = models.PositiveSmallIntegerField(default=0)
     price = models.FloatField(default=0.0)
  
