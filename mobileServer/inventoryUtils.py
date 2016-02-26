@@ -80,7 +80,7 @@ stock:  <In Stock/Out of Stock>
 def create_inventory(request):
     print("******REQUEST*******")
     print(request.body)
-    print(request.query_params)
+  #  print(request.query_params)
     print(request.user)
     print("*********************")
 
