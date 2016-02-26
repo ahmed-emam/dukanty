@@ -46,7 +46,7 @@ status:
 class MobileserverOrder(models.Model):
     totalprice = models.FloatField(db_column='totalPrice', default=0.0)  # Field name made lowercase.
     owner = models.ForeignKey('users.UsersCustomuser', on_delete=models.CASCADE)
-    shop = models.ForeignKey('MobileserverShop', models.DO_NOTHING)
+    shop = models.ForeignKey('MobileserverShop', models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.PositiveSmallIntegerField(default=0)
@@ -97,8 +97,8 @@ class address(models.Model):
     floor = models.CharField(max_length=30, null=True)
     apartment = models.CharField(max_length=30, null=True)
     mobile = models.IntegerField()
-    owner = models.ForeignKey('users.UsersCustomuser')
-    order = models.ForeignKey(MobileserverOrder, models.DO_NOTHING)
+    owner = models.ForeignKey('users.UsersCustomuser', models.CASCADE)
+    order = models.ForeignKey(MobileserverOrder, models.SET_NULL, null=True)
  
 class MobileserverShop(models.Model):
     name = models.CharField(max_length=30)
@@ -106,7 +106,7 @@ class MobileserverShop(models.Model):
     lat = models.FloatField()
     lon = models.FloatField()
     delivery_distance = models.FloatField(default=5.0)
- 
+
     def __str__(self):
         return self.name
  
@@ -149,13 +149,8 @@ class MobileserverShopproductinventory(models.Model):
  
     def __str__(self):
         return self.product.name+" "+self.shop.name+" "+str(self.price)+" "+str(self.stock)
- 
- 
- 
- 
- 
- 
- 
+
+
 '''
  
 # Create your models here.

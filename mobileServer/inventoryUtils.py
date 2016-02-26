@@ -27,8 +27,7 @@ class JSONResponse(HttpResponse):
 @permission_classes((IsAuthenticated,))
 def get_shopInventory(request):
     print("******REQUEST*******")
-    print(request.data)
-    print(request.query_params)
+    print(request.body)
     print(request.user)
     print("*********************")
 

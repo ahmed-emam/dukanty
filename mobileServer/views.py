@@ -88,17 +88,22 @@ def get_userbaskets(request):
 # TODO: Remove csrf_exempt
 @csrf_exempt
 def add_shop(request):
-    print(request)
+    print("******REQUEST*******")
+    print(request.body)
+    print(request.user)
+    print("*********************")
+    #print(request)
     # print(request.body)
     shop_name = request.POST.get('name')
     shop_rating = request.POST.get('rating')
     shop_lat = request.POST.get('lat')
     shop_lon = request.POST.get('lon')
+    distance = request.POST.get('distance')
     # shop = json.loads(request.body)
     print(shop_name)
     try:
         shop, created = MobileserverShop.objects.get_or_create\
-            (name=shop_name, rating=shop_rating, lat=shop_lat, lon=shop_lon)
+            (name=shop_name, rating=shop_rating, lat=shop_lat, lon=shop_lon, delivery_distance=distance)
         shop.save()
         serializedData = ShopSerializer(shop)
         return JSONResponse(serializedData.data, status=status.HTTP_200_OK)

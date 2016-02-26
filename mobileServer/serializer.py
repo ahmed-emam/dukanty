@@ -12,7 +12,7 @@ User = get_user_model()
 class ShopSerializer(serializers.ModelSerializer):
     class Meta:
         model = MobileserverShop
-        fields = ('id', 'name', 'rating', 'lat', 'lon')
+     #   fields = ('id', 'name', 'rating', 'lat', 'lon', )
 
 
 class ProductSerializer(serializers.ModelSerializer):

@@ -52,8 +52,8 @@ product_quantity:  <Ordered quantity of the product>
 @csrf_exempt
 def create_order(request):
     print("******REQUEST*******")
-    print(request.data)
-    print(request.query_params)
+    print(request.body)
+   # print(request.query_params)
     print(request.user)
     print("*********************")
 
@@ -171,7 +171,7 @@ def change_order_status(order,status):
 def checkout_order(request):
     print("******REQUEST*******")
     print(request.body)
-    print(request.query_params)
+  #  print(request.query_params)
     print(request.user)
     print("*********************")
 
@@ -189,7 +189,7 @@ def checkout_order(request):
 def deliver_order(request):
     print("******REQUEST*******")
     print(request.body)
-    print(request.query_params)
+   # print(request.query_params)
     print(request.user)
     print("*********************")
 
