@@ -105,6 +105,7 @@ class MobileserverShop(models.Model):
     rating = models.DecimalField(max_digits=10, decimal_places=5)  # max_digits and decimal_places have been guessed, as this database handles decimal fields as float
     lat = models.FloatField()
     lon = models.FloatField()
+    delivery_distance = models.FloatField(default=5.0)
  
     def __str__(self):
         return self.name

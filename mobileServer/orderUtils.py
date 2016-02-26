@@ -170,7 +170,7 @@ def change_order_status(order,status):
 
 def checkout_order(request):
     print("******REQUEST*******")
-    print(request.data)
+    print(request.body)
     print(request.query_params)
     print(request.user)
     print("*********************")
@@ -188,7 +188,7 @@ def checkout_order(request):
 
 def deliver_order(request):
     print("******REQUEST*******")
-    print(request.data)
+    print(request.body)
     print(request.query_params)
     print(request.user)
     print("*********************")

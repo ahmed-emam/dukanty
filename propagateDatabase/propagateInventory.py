@@ -1,5 +1,6 @@
 import requests
-url = 'http://104.236.115.239:8001/debug/inventory/'
+port = 80
+url = 'http://104.236.115.239:'+str(port)+'/debug/inventory/'
 
 
 def main():
@@ -14,6 +15,6 @@ def main():
             request = requests.post(url, data=payload)
             print("Requested: "+request.url)
             print(request.status_code)
-            print(request.json())
+            print(request)
 
 main()

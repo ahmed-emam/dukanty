@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df97b03-fea7-4e19-95a9-c66cafaeb114" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/inventoryUtils.py" afterPath="$PROJECT_DIR$/mobileServer/inventoryUtils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/models.py" afterPath="$PROJECT_DIR$/mobileServer/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/orderUtils.py" afterPath="$PROJECT_DIR$/mobileServer/orderUtils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/propagateDatabase/list_shops" afterPath="$PROJECT_DIR$/propagateDatabase/list_shops" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/propagateDatabase/propagateInventory.py" afterPath="$PROJECT_DIR$/propagateDatabase/propagateInventory.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/propagateDatabase/propagateProducts.py" afterPath="$PROJECT_DIR$/propagateDatabase/propagateProducts.py" />
     </list>
     <ignored path="dukanty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,24 +46,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="inventoryUtils.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="inventoryUtils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mobileServer/inventoryUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.28091872">
+              <caret line="69" column="12" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="12" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -66,20 +62,60 @@
         <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+              <caret line="174" column="23" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobileServer/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65547705">
-              <caret line="62" column="60" selection-start-line="62" selection-start-column="60" selection-end-line="62" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="107" column="53" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_shops" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/propagateDatabase/list_shops">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="propagateProducts.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/propagateDatabase/propagateProducts.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="propagateInventory.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/propagateDatabase/propagateInventory.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inventory" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/propagateDatabase/inventory">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -146,14 +182,12 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/propagateDatabase/list_users" />
         <option value="$PROJECT_DIR$/propagateDatabase/propagateUsers.py" />
-        <option value="$PROJECT_DIR$/propagateDatabase/propagateInventory.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/inventory.txt" />
         <option value="$PROJECT_DIR$/propagateDatabase/propagateOrders.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/orders" />
         <option value="$PROJECT_DIR$/mobileServer/admin.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/users_mail" />
         <option value="$PROJECT_DIR$/propagateDatabase/getordersbyusermail.py" />
-        <option value="$PROJECT_DIR$/propagateDatabase/list_shops" />
         <option value="$PROJECT_DIR$/propagateDatabase/propagateShops.py" />
         <option value="$PROJECT_DIR$/mobileServer/views.py" />
         <option value="$PROJECT_DIR$/README" />
@@ -162,12 +196,14 @@
         <option value="$PROJECT_DIR$/mobileServer/urls.py" />
         <option value="$PROJECT_DIR$/mobileServer/pushNotifications.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/list_products" />
-        <option value="$PROJECT_DIR$/propagateDatabase/propagateProducts.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/inventory" />
         <option value="$PROJECT_DIR$/mobileServer/serializer.py" />
+        <option value="$PROJECT_DIR$/mobileServer/models.py" />
+        <option value="$PROJECT_DIR$/propagateDatabase/list_shops" />
+        <option value="$PROJECT_DIR$/propagateDatabase/propagateProducts.py" />
+        <option value="$PROJECT_DIR$/propagateDatabase/propagateInventory.py" />
         <option value="$PROJECT_DIR$/mobileServer/inventoryUtils.py" />
         <option value="$PROJECT_DIR$/mobileServer/orderUtils.py" />
-        <option value="$PROJECT_DIR$/mobileServer/models.py" />
       </list>
     </option>
   </component>
@@ -318,6 +354,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dukanty" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dukanty" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dukanty" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propagateDatabase" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -676,7 +726,7 @@
     <frame x="0" y="23" width="1280" height="686" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2552504" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25928918" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32838285" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32838285" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1104,27 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/propagateDatabase/propagateInventory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46471602">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/propagateDatabase/propagateProducts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61962134">
-          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/propagateDatabase/list_shops">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/propagateDatabase/list_products">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8261618">
@@ -1136,13 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/propagateDatabase/inventory">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1164,7 +1186,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1217,38 +1238,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/inventoryUtils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mobileServer/pushNotifications.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6747405">
           <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65547705">
-          <caret line="62" column="60" selection-start-line="62" selection-start-column="60" selection-end-line="62" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1275,6 +1268,66 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/propagateDatabase/inventory">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/propagateDatabase/propagateProducts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/propagateDatabase/list_shops">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="107" column="53" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/propagateDatabase/propagateInventory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="174" column="23" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/inventoryUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28091872">
+          <caret line="69" column="12" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

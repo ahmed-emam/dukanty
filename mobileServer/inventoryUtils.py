@@ -79,7 +79,7 @@ stock:  <In Stock/Out of Stock>
 @csrf_exempt
 def create_inventory(request):
     print("******REQUEST*******")
-    print(request.data)
+    print(request.body)
     print(request.query_params)
     print(request.user)
     print("*********************")
