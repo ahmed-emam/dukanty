@@ -119,7 +119,12 @@ class MobileserverShop(models.Model):
  
     def __unicode__(self):
         return self.name
- 
+
+
+class Image(models.Model):
+    product = models.ForeignKey(MobileserverProduct, unique=True)
+    image = models.ImageField(upload_to='products/')
+    mimeType = models.CharField(max_length=20)
 #
 #
 # class MobileserverShopinventory(models.Model):
