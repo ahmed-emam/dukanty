@@ -27,8 +27,7 @@ class JSONResponse(HttpResponse):
 @permission_classes((IsAuthenticated,))
 def get_shopInventory(request):
     print("******REQUEST*******")
-    print(request.data)
-    print(request.query_params)
+    print(request.body)
     print(request.user)
     print("*********************")
 
@@ -79,8 +78,8 @@ stock:  <In Stock/Out of Stock>
 @csrf_exempt
 def create_inventory(request):
     print("******REQUEST*******")
-    print(request.data)
-    print(request.query_params)
+    print(request.body)
+  #  print(request.query_params)
     print(request.user)
     print("*********************")
 
