@@ -126,14 +126,9 @@ def create_order(request):
                 (order=order, product=product, quantity=int(quantity), price=float(price))
         productAddedToOrder.save()
 
-        returned = add_address(request)
+        returned = add_address(request, order)
         print (returned)
-        if returned.status == status.HTTP_200_OK:
-            print (returned.data)
-            address = AddressSerializer(data=returned.data)
-            print(address)
-            address.order = order
-            address.save()
+
         order.save()
         print("Created "+str(order.id))
         serializedData = OrderSerializer(order)

@@ -17,7 +17,7 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 
-def add_address(request):
+def add_address(request, order=None):
     print("******REQUEST*******")
     print(request.body)
     print(request.user)
@@ -53,8 +53,8 @@ def add_address(request):
     else:
         apartment = None
     address = Address(lat=lat, lon=lon, street=street, building=building,
-                      floor=floor, apartment=apartment, owner=user)
+                      floor=floor, apartment=apartment, owner=user, order=order)
     address.save()
-    print(address)
+
     serializedData = AddressSerializer(address)
     return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
