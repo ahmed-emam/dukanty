@@ -5,7 +5,7 @@ from rest_framework import status
 from rest_framework.renderers import JSONRenderer
 import json
 from mobileServer.serializer import *
-
+from mobileServer.user_utils import add_address
 
 #Order Status
 not_ordered = 0
@@ -64,7 +64,8 @@ def create_order(request):
     product_name = request.POST.get('product_name')
     quantity = request.POST.get('product_quantity')
     price = request.POST.get('product_price')
-
+    mobile = request.POST.get('mobile')
+    name = request.POST.get('name')
     #   Check if the shop related to the order exists in my Database
     try:
         shop = MobileserverShop.objects.get(pk=shop_id)
@@ -119,10 +120,19 @@ def create_order(request):
     # if the order doesn't exist
     # create it and add the product to the order
     except ObjectDoesNotExist:
-        order = MobileserverOrder.objects.create(owner=owner, shop=shop)
+        order = MobileserverOrder.objects.create(owner=owner, shop=shop, name=name, mobile=mobile)
         productAddedToOrder = MobileserverOrderProduct.objects.create\
                 (order=order, product=product, quantity=int(quantity), price=float(price))
         productAddedToOrder.save()
+
+        returned = add_address(request)
+        print (returned)
+        if returned.status == status.HTTP_200_OK:
+            print (returned.data)
+            address = AddressSerializer(data=returned.data)
+            print(address)
+            address.order = order
+            address.save()
         order.save()
         print("Created "+str(order.id))
         serializedData = OrderSerializer(order)
@@ -170,8 +180,8 @@ def change_order_status(order,status):
 
 def checkout_order(request):
     print("******REQUEST*******")
-    print(request.data)
-    print(request.query_params)
+    print(request.body)
+  #  print(request.query_params)
     print(request.user)
     print("*********************")
 
@@ -188,8 +198,8 @@ def checkout_order(request):
 
 def deliver_order(request):
     print("******REQUEST*******")
-    print(request.data)
-    print(request.query_params)
+    print(request.body)
+  #  print(request.query_params)
     print(request.user)
     print("*********************")
 

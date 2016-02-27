@@ -45,8 +45,10 @@ status:
 '''
 class MobileserverOrder(models.Model):
     totalprice = models.FloatField(db_column='totalPrice', default=0.0)  # Field name made lowercase.
+    name = models.CharField(max_length=30)
+    mobile = models.IntegerField()
     owner = models.ForeignKey('users.UsersCustomuser', on_delete=models.CASCADE)
-    shop = models.ForeignKey('MobileserverShop', models.DO_NOTHING)
+    shop = models.ForeignKey('MobileserverShop', models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.PositiveSmallIntegerField(default=0)
@@ -60,8 +62,8 @@ class MobileserverOrder(models.Model):
 
 
 class MobileserverOrderProduct(models.Model):
-    order = models.ForeignKey(MobileserverOrder)
-    product = models.ForeignKey('MobileserverProduct', models.DO_NOTHING)
+    order = models.ForeignKey(MobileserverOrder, models.CASCADE)
+    product = models.ForeignKey('MobileserverProduct', models.CASCADE)
     quantity = models.PositiveSmallIntegerField(default=0)
     price = models.FloatField(default=0.0)
 
@@ -89,22 +91,25 @@ class MobileserverProduct(models.Model):
         db_table = 'mobileServer_product'
 
 
-class address(models.Model):
+class Address(models.Model):
     lat = models.FloatField()
     lon = models.FloatField()
     street = models.CharField(max_length=90)
     building = models.CharField(max_length=90)
     floor = models.CharField(max_length=30, null=True)
     apartment = models.CharField(max_length=30, null=True)
-    mobile = models.IntegerField()
-    owner = models.ForeignKey('users.UsersCustomuser')
-    order = models.ForeignKey(MobileserverOrder, models.DO_NOTHING)
+    owner = models.ForeignKey('users.UsersCustomuser', models.CASCADE)
+    order = models.ForeignKey(MobileserverOrder, models.SET_NULL, null=True)
 
+    class Meta:
+        db_table = 'Address'
+        
 class MobileserverShop(models.Model):
     name = models.CharField(max_length=30)
     rating = models.DecimalField(max_digits=10, decimal_places=5)  # max_digits and decimal_places have been guessed, as this database handles decimal fields as float
     lat = models.FloatField()
     lon = models.FloatField()
+    delivery_distance = models.FloatField(default=5.0)
 
     def __str__(self):
         return self.name
@@ -148,11 +153,6 @@ class MobileserverShopproductinventory(models.Model):
 
     def __str__(self):
         return self.product.name+" "+self.shop.name+" "+str(self.price)+" "+str(self.stock)
-
-
-
-
-
 
 
 '''
@@ -291,4 +291,3 @@ class Basket(models.Model):
         return (self.name,) + self.cart.natural_key()
 
 '''
-
