@@ -55,5 +55,6 @@ def add_address(request):
     address = Address(lat=lat, lon=lon, street=street, building=building,
                       floor=floor, apartment=apartment, owner=user)
     address.save()
+    print(address)
     serializedData = AddressSerializer(address)
     return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
