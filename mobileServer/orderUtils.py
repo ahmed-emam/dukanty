@@ -7,6 +7,7 @@ import json
 from mobileServer.serializer import *
 from mobileServer.user_utils import add_address
 
+
 #Order Status
 not_ordered = 0
 order_issued = 1
@@ -52,8 +53,8 @@ product_quantity:  <Ordered quantity of the product>
 @csrf_exempt
 def create_order(request):
     print("******REQUEST*******")
-    print(request.data)
-    print(request.query_params)
+    print(request.body)
+   # print(request.query_params)
     print(request.user)
     print("*********************")
 
@@ -199,7 +200,7 @@ def checkout_order(request):
 def deliver_order(request):
     print("******REQUEST*******")
     print(request.body)
-  #  print(request.query_params)
+
     print(request.user)
     print("*********************")
 

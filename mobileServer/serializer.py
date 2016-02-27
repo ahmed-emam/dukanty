@@ -12,8 +12,6 @@ User = get_user_model()
 class ShopSerializer(serializers.ModelSerializer):
     class Meta:
         model = MobileserverShop
-        #fields = ('id', 'name', 'rating', 'lat', 'lon')
-
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
@@ -31,7 +29,7 @@ class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = MobileserverOrder
         fields = ('id', 'owner', 'shop', 'created_at', 'updated_at', 'status', 'totalprice',
-                  'mobileserverorderproduct_list')
+                  'mobileserverorderproduct_list', 'address_list')
         #fields = ('id', 'product', 'shop', 'created_at', 'updated_at', 'status', 'totalprice')
         # fields = ('id', 'product', 'shop', 'stock', 'price')
 

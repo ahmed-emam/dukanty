@@ -25,9 +25,11 @@ def add_address(request):
     user = request.user
     if user.is_anonymous():
         try:
-            user_id = request.POST.get('user_id')
+
+            user_id = request.POST.get('email')
             try:
-                user = UsersCustomUser.objects.get(pk=user_id)
+                user = UsersCustomUser.objects.get(email=user_id)
+
             except ObjectDoesNotExist:
                 return JSONResponse({'error': 'user does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         except KeyError:
