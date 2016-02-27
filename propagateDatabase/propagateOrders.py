@@ -8,6 +8,7 @@ def main():
     with open("orders") as file:
         listOfProducts = file.readlines()[1:]
         # print (listOfProducts)
+
         for row in listOfProducts:
 
             row = row.strip().split()
@@ -16,7 +17,7 @@ def main():
                 lon, street, building = row[0], row[1], row[2], row[3], row[4], row[5].replace(",", " "), row[6], row[7],\
                 row[8], row[9], row[10]
 
-                payload = {'shop_name': row[0], 'email': row[1], 'product_name': row[2], 'product_quantity': row[3],
+                payload = {'shop_id': row[0], 'email': row[1], 'product_name': row[2], 'product_quantity': row[3],
                            'product_price': row[4], 'name': name, 'mobile': mobile, 'lat': lat, 'lon': lon,
                            'street': street, 'building': building}
 
@@ -25,7 +26,7 @@ def main():
                 lon, street, building, floor, apartment = row[0], row[1], row[2], row[3], row[4], row[5].replace(",", " ")\
                 , row[6], row[7], row[8], row[9], row[10], row[11], row[12]
 
-                payload = {'shop_name': row[0], 'email': row[1], 'product_name': row[2], 'product_quantity': row[3],
+                payload = {'shop_id': row[0], 'email': row[1], 'product_name': row[2], 'product_quantity': row[3],
                            'product_price': row[4], 'name': name, 'mobile': mobile, 'lat': lat, 'lon': lon,
                            'street': street, 'building': building, 'floor': floor, 'apartment': apartment}
 
