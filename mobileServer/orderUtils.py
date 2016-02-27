@@ -13,6 +13,12 @@ order_issued = 1
 order_on_delivery = 2
 order_delivered = 3
 
+#Order Status
+not_ordered = 0
+order_issued = 1
+order_on_delivery = 2
+order_delivered = 3
+
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -52,8 +58,8 @@ product_quantity:  <Ordered quantity of the product>
 @csrf_exempt
 def create_order(request):
     print("******REQUEST*******")
-    print(request.data)
-    print(request.query_params)
+    print(request.body)
+   # print(request.query_params)
     print(request.user)
     print("*********************")
 
@@ -199,7 +205,6 @@ def checkout_order(request):
 def deliver_order(request):
     print("******REQUEST*******")
     print(request.body)
-  #  print(request.query_params)
     print(request.user)
     print("*********************")
 
