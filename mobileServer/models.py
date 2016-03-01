@@ -35,7 +35,25 @@ class MobileserverCartitem(models.Model):
  
     class Meta:
         db_table = 'mobileServer_cartitem'
- 
+
+ADDRESS_TYPES = [
+  (1, _("Villa")),
+  (2, _("Building")),
+]
+
+class Address(models.Model):
+    type = models.IntegerField(choices=ADDRESS_TYPES)
+    lat = models.FloatField()
+    lon = models.FloatField()
+    street = models.CharField(max_length=90)
+    building = models.CharField(max_length=90)
+    floor = models.CharField(max_length=30, null=True)
+    apartment = models.CharField(max_length=30, null=True)
+    owner = models.ForeignKey('users.UsersCustomuser', models.CASCADE)
+
+    class Meta:
+        db_table = 'Address'
+
 '''
 status:
 0 -> not ordered
@@ -92,23 +110,7 @@ class MobileserverProduct(models.Model):
         db_table = 'mobileServer_product'
 
 
-ADDRESS_TYPES = [
-  (1, _("Villa")),
-  (2, _("Building")),
-]
 
-class Address(models.Model):
-    type = models.IntegerField(choices=ADDRESS_TYPES)
-    lat = models.FloatField()
-    lon = models.FloatField()
-    street = models.CharField(max_length=90)
-    building = models.CharField(max_length=90)
-    floor = models.CharField(max_length=30, null=True)
-    apartment = models.CharField(max_length=30, null=True)
-    owner = models.ForeignKey('users.UsersCustomuser', models.CASCADE)
-
-    class Meta:
-        db_table = 'Address'
         
 class MobileserverShop(models.Model):
     name = models.CharField(max_length=30)
