@@ -41,7 +41,7 @@ def add_address(request, order=None):
         lon = request.POST.get('lon')
         street = request.POST.get('street')
         building = request.POST.get('building')
-
+        type = request.POST.get('type')
     except KeyError:
         return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -53,9 +53,14 @@ def add_address(request, order=None):
         apartment = request.POST.get('apartment')
     else:
         apartment = None
-    address = Address(lat=lat, lon=lon, street=street, building=building,
-                      floor=floor, apartment=apartment, owner=user, order=order)
+    address = Address(type=int(type), lat=lat, lon=lon, street=street, building=building,
+                      floor=floor, apartment=apartment, owner=user)
+
     address.save()
+
+    if order is not None:
+        order.address = address
+        order.save()
 
     serializedData = AddressSerializer(address)
     return JSONResponse(serializedData.data, status=status.HTTP_200_OK)

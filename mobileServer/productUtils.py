@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework import generics, permissions, status, response, views
 from rest_framework.response import Response
-
+from django.core.exceptions import *
 from rest_framework import permissions
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
@@ -51,8 +51,8 @@ def products_list(request):
 
 @csrf_exempt
 def add_product(request):
-    print(request)
-    # print(request.body)
+    #print(request)
+    print(request.body)
     product_name = request.POST.get('name')
     product_company = request.POST.get('company')
     product_category = request.POST.get('category')
@@ -75,7 +75,10 @@ def add_image(request, product_id=None):
         product_id = request.POST.get('product_id')
 
     image_file = request.FILES['file']
-    product = MobileserverProduct.objects.get(pk=product_id)
+    try:
+        product = MobileserverProduct.objects.get(pk=product_id)
+    except ObjectDoesNotExist:
+        return JSONResponse({'error': 'user doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     image = Image(product=product, image=image_file,
                   mimeType=image_file.content_type)
     image.save()
