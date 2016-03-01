@@ -28,7 +28,8 @@ def add_address(request, order=None):
 
             user_id = request.POST.get('user_id')
             try:
-                user = UsersCustomUser.objects.get(pd=user_id)
+                user = UsersCustomUser.objects.get(pk=user_id)
+
 
             except ObjectDoesNotExist:
                 return JSONResponse({'error': 'user does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

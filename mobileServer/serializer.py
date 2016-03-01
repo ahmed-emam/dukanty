@@ -30,6 +30,7 @@ class OrderSerializer(serializers.ModelSerializer):
         model = MobileserverOrder
         fields = ('id', 'owner', 'shop', 'created_at', 'updated_at', 'status', 'totalprice',
                   'mobileserverorderproduct_set', 'address')
+
         #fields = ('id', 'product', 'shop', 'created_at', 'updated_at', 'status', 'totalprice')
         # fields = ('id', 'product', 'shop', 'stock', 'price')
 
