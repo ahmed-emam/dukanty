@@ -46,21 +46,6 @@ def shops_list(request):
         serializer = ShopSerializer(shops, many=True)
         return JSONResponse(serializer.data)
 
-@api_view(['GET'])
-@authentication_classes((TokenAuthentication,))
-@permission_classes((IsAuthenticated,))
-def products_list(request):
-    if request.method == 'GET':
-        products = MobileserverProduct.objects.all()
-        serializer = ProductSerializer(products, many=True)
-        return JSONResponse(serializer.data)
-    # elif request.method == 'POST':
-    #     data = JSONParser().parse(request)
-    #     serializer = SnippetSerializer(data=data)
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return JSONResponse(serializer.data, status=201)
-    #     return JSONResponse(serializer.errors, status=400)
 
 @api_view(['GET'])
 @permission_classes((permissions.AllowAny,))
@@ -118,25 +103,6 @@ def add_shop(request):
     #     return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-@csrf_exempt
-def add_product(request):
-    print(request)
-    # print(request.body)
-    product_name = request.POST.get('name')
-    product_company = request.POST.get('company')
-    product_category = request.POST.get('category')
-    product_img = request.POST.get('img')
-    # shop = json.loads(request.body)
-    print(product_name)
-    product = MobileserverProduct.objects.create\
-        (name=product_name, company=product_company, category=product_category, img=product_img)
-    product.save()
-    if product.id:
-        print("Added shop id "+str(product.id))
-        return JSONResponse({'added': product_name}, status=status.HTTP_200_OK)
-    else:
-        print("Didnt add "+product_name)
-        return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 # TODO: Remember in the request, you can change shop_name with shop_id and product_name with product_id
 

@@ -52,7 +52,8 @@ class MobileserverOrder(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.PositiveSmallIntegerField(default=0)
- 
+    address = models.ForeignKey(Address, models.SET_NULL, null=True)
+
     class Meta:
         db_table = 'mobileServer_order'
  
@@ -60,7 +61,7 @@ class MobileserverOrder(models.Model):
         return self.id.__str__()+"\tOwner:"+self.owner.__str__()+\
                "\tFrom:"+self.shop.__str__()+"\tStatus:"+self.status.__str__()
  
- 
+
 class MobileserverOrderProduct(models.Model):
     order = models.ForeignKey(MobileserverOrder, models.CASCADE)
     product = models.ForeignKey('MobileserverProduct', models.CASCADE)
@@ -91,7 +92,13 @@ class MobileserverProduct(models.Model):
         db_table = 'mobileServer_product'
 
 
+ADDRESS_TYPES = [
+  (1, _("Villa")),
+  (2, _("Building")),
+]
+
 class Address(models.Model):
+    type = models.IntegerField(choices=ADDRESS_TYPES)
     lat = models.FloatField()
     lon = models.FloatField()
     street = models.CharField(max_length=90)
@@ -99,8 +106,10 @@ class Address(models.Model):
     floor = models.CharField(max_length=30, null=True)
     apartment = models.CharField(max_length=30, null=True)
     owner = models.ForeignKey('users.UsersCustomuser', models.CASCADE)
-    order = models.ForeignKey(MobileserverOrder, models.SET_NULL, null=True)
 
+    class Meta:
+        db_table = 'Address'
+        
 class MobileserverShop(models.Model):
     name = models.CharField(max_length=30)
     rating = models.DecimalField(max_digits=10, decimal_places=5)  # max_digits and decimal_places have been guessed, as this database handles decimal fields as float
@@ -116,7 +125,12 @@ class MobileserverShop(models.Model):
  
     def __unicode__(self):
         return self.name
- 
+
+
+class Image(models.Model):
+    product = models.ForeignKey(MobileserverProduct, unique=True)
+    image = models.ImageField(upload_to='products/')
+    mimeType = models.CharField(max_length=20)
 #
 #
 # class MobileserverShopinventory(models.Model):
@@ -286,9 +300,5 @@ class Basket(models.Model):
  
     def natural_key(self):
         return (self.name,) + self.cart.natural_key()
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> c8451b129c31bcf883113abdf1d9020c1db8a137
 '''

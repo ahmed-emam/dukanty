@@ -17,7 +17,7 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 
-def add_address(request):
+def add_address(request, order=None):
     print("******REQUEST*******")
     print(request.body)
     print(request.user)
@@ -25,9 +25,11 @@ def add_address(request):
     user = request.user
     if user.is_anonymous():
         try:
-            user_id = request.POST.get('email')
+
+            user_id = request.POST.get('user_id')
             try:
-                user = UsersCustomUser.objects.get(email=user_id)
+                user = UsersCustomUser.objects.get(pd=user_id)
+
             except ObjectDoesNotExist:
                 return JSONResponse({'error': 'user does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         except KeyError:
@@ -51,7 +53,8 @@ def add_address(request):
     else:
         apartment = None
     address = Address(lat=lat, lon=lon, street=street, building=building,
-                      floor=floor, apartment=apartment, owner=user)
+                      floor=floor, apartment=apartment, owner=user, order=order)
     address.save()
+
     serializedData = AddressSerializer(address)
     return JSONResponse(serializedData.data, status=status.HTTP_200_OK)

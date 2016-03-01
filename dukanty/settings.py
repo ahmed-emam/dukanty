@@ -190,6 +190,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads/')
 
 # Parse database configuration from $DATABASE_URL
 # import dj_database_url

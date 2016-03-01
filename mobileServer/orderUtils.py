@@ -7,11 +7,6 @@ import json
 from mobileServer.serializer import *
 from mobileServer.user_utils import add_address
 
-#Order Status
-not_ordered = 0
-order_issued = 1
-order_on_delivery = 2
-order_delivered = 3
 
 #Order Status
 not_ordered = 0
@@ -66,7 +61,7 @@ def create_order(request):
 
     #   Data from the POST requests
     shop_id = request.POST.get('shop_id')
-    username = request.POST.get('email')
+    username = request.POST.get('user_id')
     product_name = request.POST.get('product_name')
     quantity = request.POST.get('product_quantity')
     price = request.POST.get('product_price')
@@ -80,7 +75,7 @@ def create_order(request):
 
     #   Check if the customer related to the order exists in my Database
     try:
-        owner = UsersCustomUser.objects.get(email=username)
+        owner = UsersCustomUser.objects.get(pk=username)
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'user doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -131,14 +126,9 @@ def create_order(request):
                 (order=order, product=product, quantity=int(quantity), price=float(price))
         productAddedToOrder.save()
 
-        returned = add_address(request)
+        returned = add_address(request, order)
         print (returned)
-        if returned.status == status.HTTP_200_OK:
-            print (returned.data)
-            address = AddressSerializer(data=returned.data)
-            print(address)
-            address.order = order
-            address.save()
+
         order.save()
         print("Created "+str(order.id))
         serializedData = OrderSerializer(order)
@@ -205,6 +195,7 @@ def checkout_order(request):
 def deliver_order(request):
     print("******REQUEST*******")
     print(request.body)
+
     print(request.user)
     print("*********************")
 

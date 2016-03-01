@@ -26,6 +26,7 @@ admin.site.register(MobileserverBasket)
 admin.site.register(MobileserverShopproductinventory)
 admin.site.register(MobileserverOrder)
 admin.site.register(MobileserverOrderProduct)
-
+admin.site.register(Address)
+admin.site.register(Image)
 # admin.site.register(MobileserverShopinventoryProduct)
 #admin.site.unregister(Group)
