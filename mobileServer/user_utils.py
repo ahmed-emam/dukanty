@@ -64,3 +64,26 @@ def add_address(request, order=None):
 
     serializedData = AddressSerializer(address)
     return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
+
+def get_address_by_user_id(request):
+    print("******REQUEST*******")
+    print(request.body)
+    print(request.user)
+    print("*********************")
+    user = request.user
+    if user.is_anonymous():
+        try:
+
+            user_id = request.POST.get('user_id')
+            try:
+                user = UsersCustomUser.objects.get(pk=user_id)
+
+
+            except ObjectDoesNotExist:
+                return JSONResponse({'error': 'user does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        except KeyError:
+            return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    address_list = user.address_set.all()
+    serializer = AddressSerializer(address_list, many=True)
+    return JSONResponse(serializer.data)

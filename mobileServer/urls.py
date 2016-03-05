@@ -1,7 +1,7 @@
 __author__ = 'ahmedemam'
 from django.conf.urls import patterns, url, include
 from django.conf import settings
-from . import views, orderUtils, inventoryUtils, pushNotifications, productUtils
+from . import views, orderUtils, inventoryUtils, pushNotifications, productUtils, user_utils
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
@@ -13,12 +13,17 @@ urlpatterns = [
     url(r'getshopinventory/$', inventoryUtils.get_shopInventory),
     url(r'addimage/$', productUtils.add_image),
     url(r'getimage/(?P<image_id>\d+)/$', productUtils.getImage),
+    url(r'getAddresses/',user_utils.get_address_by_user_id),
+    url(r'addAddress/', user_utils.add_address),
     # DEBUGGING routes
     url(r'debug/addshop/', views.add_shop),
     url(r'debug/addproduct/', productUtils.add_product),
     url(r'debug/inventory/', inventoryUtils.create_inventory),
     url(r'debug/createorder/', orderUtils.create_order),
     url(r'debug/getordersbyemail/', orderUtils.get_orders_by_useremail),
+    url(r'checkout/', orderUtils.checkout_order),
+
+    
     # DEBUGGING routes
 
     url(r'registerAndroidDevice/$', pushNotifications.registerAndroidDevice),
