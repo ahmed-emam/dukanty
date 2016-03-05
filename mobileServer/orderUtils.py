@@ -68,15 +68,17 @@ def create_order(request):
     price = request.POST.get('product_price')
     mobile = request.POST.get('mobile')
     name = request.POST.get('name')
+
+    print(shop_id+" "+username+" "+mobile)
     #   Check if the shop related to the order exists in my Database
     try:
-        shop = MobileserverShop.objects.get(pk=shop_id)
+        shop = MobileserverShop.objects.get(pk=int(shop_id))
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'shop wasnt found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     #   Check if the customer related to the order exists in my Database
     try:
-        owner = UsersCustomUser.objects.get(pk=username)
+        owner = UsersCustomUser.objects.get(pk=int(username))
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'user doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
