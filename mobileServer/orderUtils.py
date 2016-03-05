@@ -54,6 +54,7 @@ product_quantity:  <Ordered quantity of the product>
 def create_order(request):
     print("******REQUEST*******")
     print(request.META)
+    print(request.POST)
    # print(request.query_params)
     print(request.user)
     print("*********************")
