@@ -53,7 +53,7 @@ product_quantity:  <Ordered quantity of the product>
 @csrf_exempt
 def create_order(request):
     print("******REQUEST*******")
-    print(request.body)
+    print(request.META)
    # print(request.query_params)
     print(request.user)
     print("*********************")
