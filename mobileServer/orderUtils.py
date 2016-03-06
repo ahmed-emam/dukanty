@@ -147,6 +147,7 @@ def create_order(request):
     order.save()
     print("Created "+str(order.id))
     serializedData = OrderSerializer(order)
+    print serializedData.data
     return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
         # print("Order doesn't exist")
 
