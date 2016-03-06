@@ -73,9 +73,9 @@ def create_order(request):
     print(shop_id+" "+username+" "+product_list)
     for product in product_list:
         print product
-        product = json.loads(product)
-        print
-        print product
+        # product = json.loads(product)
+        # print
+        # print product
     #   Check if the shop related to the order exists in my Database
     try:
         shop = MobileserverShop.objects.get(pk=int(shop_id))
