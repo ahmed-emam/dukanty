@@ -70,7 +70,7 @@ def create_order(request):
     mobile = request.POST.get('mobile')
     name = request.POST.get('name')
 
-    print(shop_id+" "+username+" "+mobile)
+    print(shop_id+" "+username)
     #   Check if the shop related to the order exists in my Database
     try:
         shop = MobileserverShop.objects.get(pk=int(shop_id))
