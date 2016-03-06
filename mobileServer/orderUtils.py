@@ -63,17 +63,23 @@ def create_order(request):
 
     #   Data from the POST requests
 
-    try:
-        shop_id = request.POST.get('shop_id')
-        username = request.POST.get('user_id')
-        product_list = request.POST.get('product_list')
-        #quantity = request.POST.get('product_quantity')
-        #price = request.POST.get('product_price')
-        address_id = request.POST.get('address_id')
-        mobile = request.POST.get('mobile')
-        name = request.POST.get('name')
-    except KeyError:
+    if 'shop_id' not in request.POST and 'user_id' not in request.POST and 'product_list' not in request.POST:
         return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    if 'address_id' not in request.POST:
+        #add address
+        print "Address does not exist"
+    else:
+        address_id = request.POST.get('address_id')
+
+    shop_id = request.POST.get('shop_id')
+    username = request.POST.get('user_id')
+    product_list = request.POST.get('product_list')
+    #quantity = request.POST.get('product_quantity')
+    #price = request.POST.get('product_price')
+
+    mobile = request.POST.get('mobile')
+    name = request.POST.get('name')
 
     print(shop_id+" "+username+" "+product_list)
 
