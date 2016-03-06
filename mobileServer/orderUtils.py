@@ -71,6 +71,11 @@ def create_order(request):
     name = request.POST.get('name')
 
     print(shop_id+" "+username+" "+product_list)
+    for product in product_list:
+        print product
+        product = json.loads(product)
+        print
+        print product
     #   Check if the shop related to the order exists in my Database
     try:
         shop = MobileserverShop.objects.get(pk=int(shop_id))
@@ -126,6 +131,9 @@ def create_order(request):
     # create it and add the product to the order
     except ObjectDoesNotExist:
         order = MobileserverOrder.objects.create(owner=owner, shop=shop, name=name, mobile=mobile)
+
+
+
         productAddedToOrder = MobileserverOrderProduct.objects.create\
                 (order=order, product=product, quantity=int(quantity), price=float(price))
         productAddedToOrder.save()
