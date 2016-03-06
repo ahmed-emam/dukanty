@@ -5,6 +5,5 @@ staticfiles
 venv
 db.sqlite3
 mobileServer/migrations/*
-dukanty/settings.py*
 users/migrations/*
 .idea

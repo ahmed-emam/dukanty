@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df97b03-fea7-4e19-95a9-c66cafaeb114" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/orderUtils.py" afterPath="$PROJECT_DIR$/mobileServer/orderUtils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dukanty/settings.py" afterPath="$PROJECT_DIR$/dukanty/settings.py" />
     </list>
     <ignored path="dukanty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,11 +72,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="orderUtils.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="orderUtils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.050373133">
+            <state vertical-scroll-proportion="0.0">
               <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dukanty/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.46268657">
+              <caret line="130" column="57" selection-start-line="130" selection-start-column="57" selection-end-line="130" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -160,7 +170,6 @@
         <option value="$PROJECT_DIR$/propagateDatabase/list_shops" />
         <option value="$PROJECT_DIR$/propagateDatabase/propagateOrders.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/orders" />
-        <option value="$PROJECT_DIR$/dukanty/settings.py" />
         <option value="$PROJECT_DIR$/mobileServer/views.py" />
         <option value="$PROJECT_DIR$/mobileServer/admin.py" />
         <option value="$PROJECT_DIR$/mobileServer/serializer.py" />
@@ -169,6 +178,7 @@
         <option value="$PROJECT_DIR$/mobileServer/user_utils.py" />
         <option value="$PROJECT_DIR$/mobileServer/urls.py" />
         <option value="$PROJECT_DIR$/mobileServer/orderUtils.py" />
+        <option value="$PROJECT_DIR$/dukanty/settings.py" />
       </list>
     </option>
   </component>
@@ -1091,13 +1101,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dukanty/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83208954">
-          <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/propagateDatabase/propagateOrders.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21828358">
@@ -1175,8 +1178,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.050373133">
+        <state vertical-scroll-proportion="0.0">
           <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dukanty/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46268657">
+          <caret line="130" column="57" selection-start-line="130" selection-start-column="57" selection-end-line="130" selection-end-column="57" />
           <folding />
         </state>
       </provider>
