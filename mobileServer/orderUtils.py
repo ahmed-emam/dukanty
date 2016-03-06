@@ -67,8 +67,8 @@ def create_order(request):
     product_list = request.POST.get('product_list')
     #quantity = request.POST.get('product_quantity')
     #price = request.POST.get('product_price')
-    mobile = request.POST.get('mobile')
-    name = request.POST.get('name')
+    #mobile = request.POST.get('mobile')
+    #name = request.POST.get('name')
 
     print(shop_id+" "+username+" "+product_list)
 
