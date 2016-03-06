@@ -1,8 +1,9 @@
 from django.core.exceptions import *
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework import status
+from rest_framework import status, request
 from rest_framework.renderers import JSONRenderer
+from rest_framework.decorators import api_view
 import json
 from mobileServer.serializer import *
 from mobileServer.user_utils import add_address
@@ -49,11 +50,12 @@ product_name: <Product to be added to the order>
 product_price:  <Price of product in the shop, this will be multiplied by the quantity>
 product_quantity:  <Ordered quantity of the product>
 '''
-# @api_view(['POST'])
+@api_view(['POST'])
 @csrf_exempt
 def create_order(request):
     print("******REQUEST*******")
     print(request.META)
+    print()
     print(request.POST)
    # print(request.query_params)
     print(request.user)
