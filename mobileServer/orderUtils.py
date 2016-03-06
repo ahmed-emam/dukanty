@@ -75,7 +75,8 @@ def create_order(request):
     product_list = json.loads(product_list)
     for product in product_list:
         # print
-        print product
+        print product['product_price']+" "+ product['product_name']+ product['product_quantity']
+        #print product
     #   Check if the shop related to the order exists in my Database
     try:
         shop = MobileserverShop.objects.get(pk=int(shop_id))
@@ -90,7 +91,7 @@ def create_order(request):
 
     #   Check if the added product exists in my Database
     try:
-        product = MobileserverProduct.objects.get(name=product_name)
+        product = MobileserverProduct.objects.get(name=username)
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'product doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
