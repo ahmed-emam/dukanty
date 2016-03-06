@@ -1,7 +1,7 @@
 from django.core.exceptions import *
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework import status, request
+from rest_framework import status
 from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view
 import json
