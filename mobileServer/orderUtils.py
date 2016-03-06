@@ -75,7 +75,7 @@ def create_order(request):
     product_list = json.loads(product_list)
     for product in product_list:
         # print
-        print product['product_price']+" "+ product['product_name']+" "+product['product_quantity']
+        print str(product['product_price'])+" "+product['product_name']+" "+str(product['product_quantity'])
         #print product
     #   Check if the shop related to the order exists in my Database
     try:
