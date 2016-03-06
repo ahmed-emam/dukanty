@@ -62,13 +62,18 @@ def create_order(request):
 
 
     #   Data from the POST requests
-    shop_id = request.POST.get('shop_id')
-    username = request.POST.get('user_id')
-    product_list = request.POST.get('product_list')
-    #quantity = request.POST.get('product_quantity')
-    #price = request.POST.get('product_price')
-    mobile = request.POST.get('mobile')
-    name = request.POST.get('name')
+
+    try:
+        shop_id = request.POST.get('shop_id')
+        username = request.POST.get('user_id')
+        product_list = request.POST.get('product_list')
+        #quantity = request.POST.get('product_quantity')
+        #price = request.POST.get('product_price')
+        address_id = request.POST.get('address_id')
+        mobile = request.POST.get('mobile')
+        name = request.POST.get('name')
+    except KeyError:
+        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     print(shop_id+" "+username+" "+product_list)
 
@@ -144,7 +149,9 @@ def create_order(request):
 
     #returned = add_address(request, order)
     #print (returned)
+    change_order_status(order, order_issued)
     order.save()
+
     print("Created "+str(order.id))
     serializedData = OrderSerializer(order)
     print serializedData.data
