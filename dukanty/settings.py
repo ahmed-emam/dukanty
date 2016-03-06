@@ -128,7 +128,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ),
      'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.<corresponding_renderer>',
+        'rest_framework.renderers.JSONRenderer',
     )
 
 }
