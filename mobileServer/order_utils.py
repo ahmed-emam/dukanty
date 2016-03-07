@@ -63,7 +63,8 @@ def create_order(request):
 
     #   Data from the POST requests
 
-    if 'shop_id' not in request.POST and 'user_id' not in request.POST and 'product_list' not in request.POST:
+    if 'shop_id' not in request.POST and 'user_id' not in request.POST and 'product_list' not in request.POST\
+            and 'mobile' not in request.POST and 'name' not in request.POST:
         return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     if 'address_id' not in request.POST:

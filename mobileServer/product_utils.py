@@ -78,7 +78,7 @@ def add_image(request, product_id=None):
     try:
         product = MobileserverProduct.objects.get(pk=product_id)
     except ObjectDoesNotExist:
-        return JSONResponse({'error': 'user doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': 'product doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     image = Image(product=product, image=image_file,
                   mimeType=image_file.content_type)
     image.save()
