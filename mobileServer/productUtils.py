@@ -87,5 +87,5 @@ def add_image(request, product_id=None):
     return JSONResponse({'Success': "Adding image for "+product_id}, status=status.HTTP_200_OK)
 
 def getImage(request, image_id):
-    i = Image.objects.get(id=image_id)
+    i = Image.objects.get(product=image_id)
     return HttpResponse(i.image.read(), content_type=i.mimeType)
