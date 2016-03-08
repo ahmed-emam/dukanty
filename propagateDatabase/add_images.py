@@ -1,24 +1,27 @@
 import requests
-import os
+import os, sys
+#import Image
 port = 80
 url = 'http://104.236.115.239:'+str(port)+'/addimage/'
 
 
 def main():
     print("Building Image archive")
-    for f in os.listdir('files'):
-        files = {'file': open(f)}
-        response = requests.post(url, files=files)
-        print response.status_code
-    # with open("inventory") as file:
-    #     listOfProducts = file.readlines()
-    #     # print (listOfProducts)
-    #     for row in listOfProducts:
-    #         row = row.strip().split()
-    #         # print(row)
-    #         payload = {'shop_name': row[0], 'product_name': row[1], 'price': row[2], 'stock': row[3]}
-    #         request = requests.post(url, data=payload)
-    #         print("Requested: "+request.url)
+    # for f in os.listdir('files'):
+    #
+    #     print response.status_code
+    with open("list_images") as file:
+        listOfProducts = file.readlines()
+        # print (listOfProducts)
+        for row in listOfProducts:
+            row = row.strip().split()
+            # print(row)
+            payload = {'product_id': row[0]}
+            #files = {'file': Image.open('files/'+row[1]+'.jpg')}
+            files = {'file': open('files/'+row[1]+'.jpg', 'rb')}
+            #response = requests.post(url, )
+            response = requests.post(url, data=payload, files=files)
+            print("Requested: "+response.url)
     #         print(request.status_code)
     #         print(request)
 
