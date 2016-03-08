@@ -69,7 +69,7 @@ def add_product(request):
         print("Didnt add "+product_name)
         return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-
+@csrf_exempt
 def add_image(request, product_id=None):
     if product_id is None:
         product_id = request.POST.get('product_id')

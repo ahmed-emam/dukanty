@@ -1,7 +1,7 @@
 import requests
 import os, sys
 #import Image
-port = 80
+port = 8001
 url = 'http://104.236.115.239:'+str(port)+'/addimage/'
 
 
