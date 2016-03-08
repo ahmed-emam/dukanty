@@ -75,7 +75,7 @@ def add_image(request, product_id=None):
         product_id = request.POST.get('product_id')
 
     image_file = request.FILES['file']
-    print "Adding image for "+product_id
+    print "Adding image "+image_file.name+" for "+product_id
     try:
         product = MobileserverProduct.objects.get(pk=product_id)
     except ObjectDoesNotExist:
@@ -84,6 +84,7 @@ def add_image(request, product_id=None):
                   mimeType=image_file.content_type)
     image.save()
     print "Added "+image.product.name
+    return JSONResponse({'Success': "Adding image for "+product_id}, status=status.HTTP_200_OK)
 
 def getImage(request, image_id):
     i = Image.objects.get(id=image_id)

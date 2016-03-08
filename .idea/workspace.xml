@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5df97b03-fea7-4e19-95a9-c66cafaeb114" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/productUtils.py" afterPath="$PROJECT_DIR$/mobileServer/productUtils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/propagateDatabase/add_images.py" afterPath="$PROJECT_DIR$/propagateDatabase/add_images.py" />
     </list>
     <ignored path="dukanty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,8 +87,8 @@
       <file leaf-file-name="productUtils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mobileServer/productUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35992578">
-              <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.52690166">
+              <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -1171,8 +1170,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mobileServer/productUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35992578">
-          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.52690166">
+          <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
           <folding />
         </state>
       </provider>
