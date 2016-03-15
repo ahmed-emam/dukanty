@@ -17,7 +17,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 import os, tempfile, zipfile
-from django.core.servers.basehttp import FileWrapper
+#from django.core.servers.basehttp import FileWrapper
 
 
 import json
