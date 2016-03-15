@@ -90,6 +90,11 @@ class MobileserverOrderProduct(models.Model):
         db_table = 'mobileServer_order_product'
  
 '''
+Model representation of a product
+
+
+TODO: Add
+
 Category:
 0 ->
 1 ->
@@ -97,8 +102,8 @@ Category:
 3 ->
 '''
 class MobileserverProduct(models.Model):
-    name = models.CharField(max_length=30)
-    company = models.CharField(max_length=30)
+    name = models.CharField(max_length=90)
+    company = models.CharField(max_length=90)
     category = models.PositiveSmallIntegerField()
     img = models.TextField()
     tags = TaggableManager()
@@ -108,8 +113,6 @@ class MobileserverProduct(models.Model):
  
     class Meta:
         db_table = 'mobileServer_product'
-
-
 
         
 class MobileserverShop(models.Model):
@@ -130,8 +133,14 @@ class MobileserverShop(models.Model):
 
 
 class Image(models.Model):
-    product = models.ForeignKey(MobileserverProduct, unique=True)
+    product = models.ForeignKey(MobileserverProduct, unique=True, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='products/')
+    mimeType = models.CharField(max_length=20)
+
+
+class ShopImage(models.Model):
+    shop = models.ForeignKey(MobileserverShop, unique=True, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='shops/')
     mimeType = models.CharField(max_length=20)
 #
 #

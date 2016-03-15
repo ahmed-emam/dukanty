@@ -11,9 +11,15 @@ def main():
     # for f in os.listdir('files'):
     #
     #     print response.status_code
+    list=os.system("ls files")
+
+
     with open("list_images","w") as file:
+        index=0
         for i in range(start, end+1):
-            file.write("%d\t%s\n" % (i, "pepsi"))
+            print list[index]
+            file.write("%d\t%s\n" % (i, list[i%int(start)]))
+            index=index+1
 
         # listOfProducts = file.readlines()
         # # print (listOfProducts)

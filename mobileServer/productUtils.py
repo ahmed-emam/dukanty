@@ -16,6 +16,10 @@ from rest_framework.authentication import SessionAuthentication, TokenAuthentica
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
+import os, tempfile, zipfile
+from django.core.servers.basehttp import FileWrapper
+
+
 import json
 
 from django.core.exceptions import *
@@ -89,3 +93,7 @@ def add_image(request, product_id=None):
 def getImage(request, image_id):
     i = Image.objects.get(product=image_id)
     return HttpResponse(i.image.read(), content_type=i.mimeType)
+'''
+def getImages(request):
+    if  'products' not in request.POST:
+'''

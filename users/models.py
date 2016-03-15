@@ -45,7 +45,7 @@ class UsersCustomUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(_('active'), default=False)
     phone_number = models.CharField(_('Phone Number'), max_length=8)
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
-
+    is_supplier = models.BooleanField(_('supplier'), default=False)
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'email'
