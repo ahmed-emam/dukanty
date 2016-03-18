@@ -113,7 +113,8 @@ def getImages(request):
             # print image.image.url
 
     with ZipFile('image.zip', 'r') as myzip:
-        return HttpResponse(myzip, content_type='application/zip')
+        print(myzip.printdir())
+        return HttpResponse(myzip.read(), content_type='application/zip')
     # return JSONResponse({}, status=status.HTTP_200_OK)
 
 
