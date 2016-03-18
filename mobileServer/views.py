@@ -13,7 +13,7 @@ from rest_framework.response import Response
 from rest_framework import permissions
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 import json
@@ -34,9 +34,9 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
-#@api_view(['GET'])
-#@authentication_classes((TokenAuthentication,))
-#@permission_classes((IsAuthenticated,))
+@api_view(['GET'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
 def shops_list(request):
     """
     List all code snippets, or create a new snippet.
@@ -58,7 +58,7 @@ def carts_list(request):
 
 @api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
-@permission_classes((IsAuthenticated,))
+@permission_classes((AllowAny,))
 def get_userbaskets(request):
     user = request.user
     print(user)
