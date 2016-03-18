@@ -11,8 +11,12 @@ def main():
     # for f in os.listdir('files'):
     #
     #     print response.status_code
-    payload = {'product_list': range(start, end)}
+    listp = list(range(start, end))
+    print(listp)
+    payload = {'product_list': listp}
+    print(payload)
     response = requests.post(url, data=payload)
+
     print(response)
     # with open("list_images","w") as file:
     #     for i in range(start, end+1):

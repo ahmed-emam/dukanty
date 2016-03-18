@@ -101,8 +101,9 @@ def getImages(request):
         return JSONResponse({'error': 'parameters are not complete'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     product_list = request.POST.get('product_list')
+    print product_list
     product_list = json.loads(product_list)
-
+    print product_list
 #s    zipfile = zipfile.ZipFile("images")
     for product_id in product_list:
         image = Image.objects.get(product=int(product_id))
