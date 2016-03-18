@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df97b03-fea7-4e19-95a9-c66cafaeb114" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/views.py" afterPath="$PROJECT_DIR$/mobileServer/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/productUtils.py" afterPath="$PROJECT_DIR$/mobileServer/productUtils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/urls.py" afterPath="$PROJECT_DIR$/mobileServer/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/propagateDatabase/get_images.py" afterPath="$PROJECT_DIR$/propagateDatabase/get_images.py" />
     </list>
     <ignored path="dukanty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,33 +45,39 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobileServer/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.3333333">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="21" />
+            <state vertical-scroll-proportion="-7.2222223">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mobileServer/views.py">
+      <file leaf-file-name="get_images.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/propagateDatabase/get_images.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2762431">
-              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.38674033">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="productUtils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mobileServer/productUtils.py">
+      <file leaf-file-name="add_images.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/propagateDatabase/add_images.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.888889">
-              <caret line="97" column="37" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-10.555555">
+              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orderUtils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="77" column="3" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,16 +87,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-8.444445">
               <caret line="120" column="34" selection-start-line="120" selection-start-column="34" selection-end-line="120" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="orderUtils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.444445">
-              <caret line="87" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,10 +134,8 @@
         <option value="$PROJECT_DIR$/mobileServer/admin.py" />
         <option value="$PROJECT_DIR$/mobileServer/serializer.py" />
         <option value="$PROJECT_DIR$/mobileServer/user_utils.py" />
-        <option value="$PROJECT_DIR$/mobileServer/urls.py" />
         <option value="$PROJECT_DIR$/mobileServer/product_utils.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/list_images.txt" />
-        <option value="$PROJECT_DIR$/propagateDatabase/get_images.py" />
         <option value="$PROJECT_DIR$/mobileServer/orderUtils.py" />
         <option value="$PROJECT_DIR$/mobileServer/inventoryUtils.py" />
         <option value="$PROJECT_DIR$/users/models.py" />
@@ -151,9 +146,11 @@
         <option value="$PROJECT_DIR$/propagateDatabase/create_images_list.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/add_images.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/propagateInventory.py" />
-        <option value="$PROJECT_DIR$/mobileServer/productUtils.py" />
         <option value="$PROJECT_DIR$/dukanty/settings.py" />
         <option value="$PROJECT_DIR$/mobileServer/views.py" />
+        <option value="$PROJECT_DIR$/mobileServer/urls.py" />
+        <option value="$PROJECT_DIR$/mobileServer/productUtils.py" />
+        <option value="$PROJECT_DIR$/propagateDatabase/get_images.py" />
       </list>
     </option>
   </component>
@@ -969,13 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/propagateDatabase/get_images.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19480519">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mobileServer/user_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.98895025">
@@ -1022,24 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.2222223">
           <caret line="13" column="104" selection-start-line="13" selection-start-column="104" selection-end-line="13" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.94699645">
-          <caret line="105" column="44" selection-start-line="105" selection-start-column="44" selection-end-line="105" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/propagateDatabase/add_images.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55658627">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1099,29 +1071,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
+    <entry file="file://$PROJECT_DIR$/mobileServer/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.444445">
-          <caret line="87" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.13812155">
+          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3333333">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/productUtils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.888889">
-          <caret line="97" column="37" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1133,13 +1087,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.2222223">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/productUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55801105">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mobileServer/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2762431">
+        <state vertical-scroll-proportion="1.0497237">
           <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="77" column="3" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/propagateDatabase/add_images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.555555">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/propagateDatabase/get_images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38674033">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

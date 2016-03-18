@@ -13,6 +13,8 @@ urlpatterns = [
     url(r'getshopinventory/$', inventoryUtils.get_shopInventory),
     url(r'addimage/$', productUtils.add_image),
     url(r'getimage/(?P<image_id>\d+)/$', productUtils.getImage),
+    url(r'getimages/$', productUtils.getImages),
+
     url(r'getAddresses/',user_utils.get_address_by_user_id),
     url(r'addAddress/', user_utils.add_address),
     # DEBUGGING routes
