@@ -109,7 +109,7 @@ def getImages(request):
         for product_id in product_list:
             image = Image.objects.get(product=int(product_id))
             print image.image.file
-            print image.image.filename
+            print image.image.name
             myzip.write(str(image.image.file))
             # print image.image.url
         myzip.close()
