@@ -100,7 +100,7 @@ def getImages(request):
     if 'product_list' not in request.POST:
         return JSONResponse({'error': 'parameters are not complete'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    product_list = request.POST.get('product_list')
+    product_list = request.POST.getlist('product_list')
     print product_list
     #product_list = json.loads(product_list)
     print product_list
