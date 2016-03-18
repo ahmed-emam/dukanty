@@ -17,7 +17,13 @@ def main():
     print(payload)
     response = requests.post(url, data=payload)
 
+
+
     print(response.text)
+    fp = open("downloadedFiles/zippedFile.zip", "wb")
+    fp.write(response.content) #r.text is the binary data for the PNG returned by that php script
+    fp.close()
+
     # with open("list_images","w") as file:
     #     for i in range(start, end+1):
     #
