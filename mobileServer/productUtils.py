@@ -93,7 +93,12 @@ def add_image(request, product_id=None):
 def getImage(request, image_id):
     i = Image.objects.get(product=image_id)
     return HttpResponse(i.image.read(), content_type=i.mimeType)
-'''
+
 def getImages(request):
-    if  'products' not in request.POST:
-'''
+    if 'products' not in request.POST:
+        return JSONResponse({'error': 'parameters are not complete'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    product_list = json.loads(product_list)
+
+
+
+
