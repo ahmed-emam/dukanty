@@ -105,12 +105,14 @@ def getImages(request):
     print product_list
     #product_list = json.loads(product_list)
     print product_list
-    with ZipFile('image.zip', 'rw') as myzip:
+    with ZipFile('image.zip', 'w') as myzip:
         for product_id in product_list:
             image = Image.objects.get(product=int(product_id))
             print image.image.file
             myzip.write(image.image.file)
             # print image.image.url
+            
+    with ZipFile('image.zip', 'r') as myzip:
         return HttpResponse(myzip, content_type='application/zip')
     # return JSONResponse({}, status=status.HTTP_200_OK)
 
