@@ -17,7 +17,7 @@ def main():
     print(payload)
     response = requests.post(url, data=payload)
 
-    print(response)
+    print(response.text)
     # with open("list_images","w") as file:
     #     for i in range(start, end+1):
     #

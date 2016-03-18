@@ -102,7 +102,7 @@ def getImages(request):
 
     product_list = request.POST.get('product_list')
     print product_list
-    product_list = json.loads(product_list)
+    #product_list = json.loads(product_list)
     print product_list
 #s    zipfile = zipfile.ZipFile("images")
     for product_id in product_list:
