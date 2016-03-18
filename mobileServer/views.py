@@ -34,7 +34,7 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
-@api_view(['GET'])
+#@api_view(['GET'])
 #@authentication_classes((TokenAuthentication,))
 #@permission_classes((IsAuthenticated,))
 def shops_list(request):
