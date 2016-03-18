@@ -103,7 +103,7 @@ def getImages(request):
     product_list = request.POST.get('product_list')
     product_list = json.loads(product_list)
 
-    zipfile = zipfile.ZipFile("images")
+#s    zipfile = zipfile.ZipFile("images")
     for product_id in product_list:
         image = Image.objects.get(product=int(product_id))
         print image.file
