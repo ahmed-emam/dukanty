@@ -94,6 +94,8 @@ def getImage(request, image_id):
     i = Image.objects.get(product=image_id)
     return HttpResponse(i.image.read(), content_type=i.mimeType)
 
+
+@csrf_exempt
 def getImages(request):
     if 'product_list' not in request.POST:
         return JSONResponse({'error': 'parameters are not complete'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
