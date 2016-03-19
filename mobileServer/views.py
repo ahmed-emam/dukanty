@@ -41,7 +41,7 @@ def shops_list(request):
     """
     List all code snippets, or create a new snippet.
     """
-    print(request.user)
+    print(request.user.id)
     if request.method == 'GET':
         shops = MobileserverShop.objects.all()
         serializer = ShopSerializer(shops, many=True)
