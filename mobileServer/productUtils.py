@@ -60,11 +60,11 @@ def add_product(request):
     product_name = request.POST.get('name')
     product_company = request.POST.get('company')
     product_category = request.POST.get('category')
-    product_img = request.POST.get('img')
+    # product_img = request.POST.get('img')
     # shop = json.loads(request.body)
     print(product_name)
     product = MobileserverProduct.objects.create\
-        (name=product_name, company=product_company, category=product_category, img=product_img)
+        (name=product_name, company=product_company, category=product_category)
     product.save()
     if product.id:
         print("Added shop id "+str(product.id))

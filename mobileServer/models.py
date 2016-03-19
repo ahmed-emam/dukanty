@@ -85,7 +85,7 @@ class MobileserverOrderProduct(models.Model):
     product = models.ForeignKey('MobileserverProduct', models.CASCADE)
     quantity = models.PositiveSmallIntegerField(default=0)
     price = models.FloatField(default=0.0)
- 
+
     class Meta:
         db_table = 'mobileServer_order_product'
  
@@ -105,9 +105,10 @@ class MobileserverProduct(models.Model):
     name = models.CharField(max_length=90)
     company = models.CharField(max_length=90)
     category = models.PositiveSmallIntegerField()
-    img = models.TextField()
     tags = TaggableManager()
- 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.name+" by "+self.company
  
@@ -168,7 +169,8 @@ class MobileserverShopproductinventory(models.Model):
     product = models.ForeignKey(MobileserverProduct, on_delete=models.CASCADE)
     owner = models.ForeignKey('users.UsersCustomuser', on_delete=models.CASCADE)
     shop = models.ForeignKey(MobileserverShop, on_delete=models.CASCADE)
-
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = 'mobileServer_shopproductinventory'
