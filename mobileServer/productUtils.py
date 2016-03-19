@@ -113,7 +113,7 @@ def getImages(request):
 
 
     # The zip compressor
-    zf = zipfile.ZipFile(s, "w")
+    zf = ZipFile(s, "w")
 
     for product_id in product_list:
         image = Image.objects.get(product=int(product_id))
