@@ -104,17 +104,47 @@ def getImages(request):
     product_list = request.POST.getlist('product_list')
     print product_list
     #product_list = json.loads(product_list)
-    print product_list
-    with ZipFile('image.zip', 'w') as myzip:
-        for product_id in product_list:
-            image = Image.objects.get(product=int(product_id))
-            print image.image.file
-            print image.image.name
-            myzip.write(str(image.image.file))
-            # print image.image.url
-        myzip.close()
-        print(myzip.printdir())
-        return HttpResponse(myzip, content_type='application/zip')
+
+    zip_subdir = "somefiles"
+    zip_filename = "%s.zip" % zip_subdir
+
+    # Open StringIO to grab in-memory ZIP contents
+    s = StringIO.StringIO()
+
+    for product_id in product_list:
+        fdir, fname = os.path.split(fpath)
+        print fdir+" "+fname
+        zip_path = os.path.join(zip_subdir, fname)
+        print zip_path
+    # The zip compressor
+    # zf = zipfile.ZipFile(s, "w")
+    #
+    # for fpath in filenames:
+    #     # Calculate path for file in zip
+    #     fdir, fname = os.path.split(fpath)
+    #     zip_path = os.path.join(zip_subdir, fname)
+    #
+    #     # Add file, at correct path
+    #     zf.write(fpath, zip_path)
+    #
+    # # Must close zip for all contents to be written
+    # zf.close()
+    #
+    # # Grab ZIP file from in-memory, make response with correct MIME-type
+    # return HttpResponse(s.getvalue(), content_type="application/x-zip-compressed")
+
+
+    # print product_list
+    # with ZipFile('image.zip', 'w') as myzip:
+    #     for product_id in product_list:
+    #         image = Image.objects.get(product=int(product_id))
+    #         print image.image.file
+    #         print image.image.name
+    #         myzip.write(str(image.image.file))
+    #         # print image.image.url
+    #     myzip.close()
+    #     print(myzip.printdir())
+    #     return HttpResponse(myzip, content_type='application/zip')
     # return JSONResponse({}, status=status.HTTP_200_OK)
 
 
