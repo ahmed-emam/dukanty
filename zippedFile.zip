@@ -124,7 +124,7 @@
 <body>
 <div id="summary">
   <h1>NameError at /getimages/</h1>
-  <pre class="exception_value">global name &#39;StringIO&#39; is not defined</pre>
+  <pre class="exception_value">global name &#39;fpath&#39; is not defined</pre>
   <table class="meta">
 
     <tr>
@@ -149,13 +149,13 @@
 
     <tr>
       <th>Exception Value:</th>
-      <td><pre>global name &#39;StringIO&#39; is not defined</pre></td>
+      <td><pre>global name &#39;fpath&#39; is not defined</pre></td>
     </tr>
 
 
     <tr>
       <th>Exception Location:</th>
-      <td>/home/dukanty/mobileServer/productUtils.py in getImages, line 112</td>
+      <td>/home/dukanty/mobileServer/productUtils.py in getImages, line 115</td>
     </tr>
 
     <tr>
@@ -179,7 +179,7 @@
     </tr>
     <tr>
       <th>Server time:</th>
-      <td>Sat, 19 Mar 2016 07:26:53 +0000</td>
+      <td>Sat, 19 Mar 2016 07:32:45 +0000</td>
     </tr>
   </table>
 </div>
@@ -200,43 +200,43 @@
           <code>/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py</code> in <code>get_response</code>
 
           
-            <div class="context" id="c139974125173720">
+            <div class="context" id="c140038989892712">
               
-                <ol start="142" class="pre-context" id="pre139974125173720">
+                <ol start="142" class="pre-context" id="pre140038989892712">
                 
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre>                        break</pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre>                        break</pre></li>
                 
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre></pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre>            if response is None:</pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre>            if response is None:</pre></li>
                 
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre>                wrapped_callback = self.make_view_atomic(callback)</pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre>                wrapped_callback = self.make_view_atomic(callback)</pre></li>
                 
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre>                try:</pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre>                try:</pre></li>
                 
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre>                    response = wrapped_callback(request, *callback_args, **callback_kwargs)</pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre>                    response = wrapped_callback(request, *callback_args, **callback_kwargs)</pre></li>
                 
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre>                except Exception as e:</pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre>                except Exception as e:</pre></li>
                 
                 </ol>
               
               <ol start="149" class="context-line">
-                <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre>
+                <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre>
                     response = self.process_exception_by_middleware(e, request)</pre> <span>...</span></li></ol>
               
-                <ol start='150' class="post-context" id="post139974125173720">
+                <ol start='150' class="post-context" id="post140038989892712">
                   
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre></pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre>            # Complain if the view returned None (a common error).</pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre>            # Complain if the view returned None (a common error).</pre></li>
                   
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre>            if response is None:</pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre>            if response is None:</pre></li>
                   
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre>                if isinstance(callback, types.FunctionType):    # FBV</pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre>                if isinstance(callback, types.FunctionType):    # FBV</pre></li>
                   
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre>                    view_name = callback.__name__</pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre>                    view_name = callback.__name__</pre></li>
                   
-                  <li onclick="toggle('pre139974125173720', 'post139974125173720')"><pre>                else:                                           # CBV</pre></li>
+                  <li onclick="toggle('pre140038989892712', 'post140038989892712')"><pre>                else:                                           # CBV</pre></li>
                   
               </ol>
               
@@ -246,10 +246,10 @@
           
             <div class="commands">
                 
-                    <a href="#" onclick="return varToggle(this, '139974125173720')"><span>&#x25b6;</span> Local vars</a>
+                    <a href="#" onclick="return varToggle(this, '140038989892712')"><span>&#x25b6;</span> Local vars</a>
                 
             </div>
-            <table class="vars" id="v139974125173720">
+            <table class="vars" id="v140038989892712">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -260,7 +260,7 @@
                 
                   <tr>
                     <td>e</td>
-                    <td class="code"><pre>NameError(&quot;global name &#39;StringIO&#39; is not defined&quot;,)</pre></td>
+                    <td class="code"><pre>NameError(&quot;global name &#39;fpath&#39; is not defined&quot;,)</pre></td>
                   </tr>
                 
                   <tr>
@@ -280,12 +280,12 @@
                 
                   <tr>
                     <td>middleware_method</td>
-                    <td class="code"><pre>&lt;bound method CsrfViewMiddleware.process_view of &lt;django.middleware.csrf.CsrfViewMiddleware object at 0x7f4e44037d10&gt;&gt;</pre></td>
+                    <td class="code"><pre>&lt;bound method CsrfViewMiddleware.process_view of &lt;django.middleware.csrf.CsrfViewMiddleware object at 0x7f5d5e408d50&gt;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f4e4426e450&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f5d5ec6f6d0&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -295,12 +295,12 @@
                 
                   <tr>
                     <td>callback</td>
-                    <td class="code"><pre>&lt;function getImages at 0x7f4e444f0b90&gt;</pre></td>
+                    <td class="code"><pre>&lt;function getImages at 0x7f5d5eef1b90&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>wrapped_callback</td>
-                    <td class="code"><pre>&lt;function getImages at 0x7f4e444f0b90&gt;</pre></td>
+                    <td class="code"><pre>&lt;function getImages at 0x7f5d5eef1b90&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -333,43 +333,43 @@
           <code>/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py</code> in <code>get_response</code>
 
           
-            <div class="context" id="c139974125173576">
+            <div class="context" id="c140038989892568">
               
-                <ol start="140" class="pre-context" id="pre139974125173576">
+                <ol start="140" class="pre-context" id="pre140038989892568">
                 
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre>                    response = middleware_method(request, callback, callback_args, callback_kwargs)</pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre>                    response = middleware_method(request, callback, callback_args, callback_kwargs)</pre></li>
                 
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre>                    if response:</pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre>                    if response:</pre></li>
                 
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre>                        break</pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre>                        break</pre></li>
                 
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre></pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre>            if response is None:</pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre>            if response is None:</pre></li>
                 
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre>                wrapped_callback = self.make_view_atomic(callback)</pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre>                wrapped_callback = self.make_view_atomic(callback)</pre></li>
                 
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre>                try:</pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre>                try:</pre></li>
                 
                 </ol>
               
               <ol start="147" class="context-line">
-                <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre>
+                <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre>
                     response = wrapped_callback(request, *callback_args, **callback_kwargs)</pre> <span>...</span></li></ol>
               
-                <ol start='148' class="post-context" id="post139974125173576">
+                <ol start='148' class="post-context" id="post140038989892568">
                   
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre>                except Exception as e:</pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre>                except Exception as e:</pre></li>
                   
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre>                    response = self.process_exception_by_middleware(e, request)</pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre>                    response = self.process_exception_by_middleware(e, request)</pre></li>
                   
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre></pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre>            # Complain if the view returned None (a common error).</pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre>            # Complain if the view returned None (a common error).</pre></li>
                   
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre>            if response is None:</pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre>            if response is None:</pre></li>
                   
-                  <li onclick="toggle('pre139974125173576', 'post139974125173576')"><pre>                if isinstance(callback, types.FunctionType):    # FBV</pre></li>
+                  <li onclick="toggle('pre140038989892568', 'post140038989892568')"><pre>                if isinstance(callback, types.FunctionType):    # FBV</pre></li>
                   
               </ol>
               
@@ -379,10 +379,10 @@
           
             <div class="commands">
                 
-                    <a href="#" onclick="return varToggle(this, '139974125173576')"><span>&#x25b6;</span> Local vars</a>
+                    <a href="#" onclick="return varToggle(this, '140038989892568')"><span>&#x25b6;</span> Local vars</a>
                 
             </div>
-            <table class="vars" id="v139974125173576">
+            <table class="vars" id="v140038989892568">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -393,7 +393,7 @@
                 
                   <tr>
                     <td>e</td>
-                    <td class="code"><pre>NameError(&quot;global name &#39;StringIO&#39; is not defined&quot;,)</pre></td>
+                    <td class="code"><pre>NameError(&quot;global name &#39;fpath&#39; is not defined&quot;,)</pre></td>
                   </tr>
                 
                   <tr>
@@ -413,12 +413,12 @@
                 
                   <tr>
                     <td>middleware_method</td>
-                    <td class="code"><pre>&lt;bound method CsrfViewMiddleware.process_view of &lt;django.middleware.csrf.CsrfViewMiddleware object at 0x7f4e44037d10&gt;&gt;</pre></td>
+                    <td class="code"><pre>&lt;bound method CsrfViewMiddleware.process_view of &lt;django.middleware.csrf.CsrfViewMiddleware object at 0x7f5d5e408d50&gt;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f4e4426e450&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f5d5ec6f6d0&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -428,12 +428,12 @@
                 
                   <tr>
                     <td>callback</td>
-                    <td class="code"><pre>&lt;function getImages at 0x7f4e444f0b90&gt;</pre></td>
+                    <td class="code"><pre>&lt;function getImages at 0x7f5d5eef1b90&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>wrapped_callback</td>
-                    <td class="code"><pre>&lt;function getImages at 0x7f4e444f0b90&gt;</pre></td>
+                    <td class="code"><pre>&lt;function getImages at 0x7f5d5eef1b90&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -466,35 +466,35 @@
           <code>/usr/local/lib/python2.7/dist-packages/django/views/decorators/csrf.py</code> in <code>wrapped_view</code>
 
           
-            <div class="context" id="c139974125173504">
+            <div class="context" id="c140038989892496">
               
-                <ol start="51" class="pre-context" id="pre139974125173504">
+                <ol start="51" class="pre-context" id="pre140038989892496">
                 
-                  <li onclick="toggle('pre139974125173504', 'post139974125173504')"><pre>    &quot;&quot;&quot;</pre></li>
+                  <li onclick="toggle('pre140038989892496', 'post140038989892496')"><pre>    &quot;&quot;&quot;</pre></li>
                 
-                  <li onclick="toggle('pre139974125173504', 'post139974125173504')"><pre>    Marks a view function as being exempt from the CSRF view protection.</pre></li>
+                  <li onclick="toggle('pre140038989892496', 'post140038989892496')"><pre>    Marks a view function as being exempt from the CSRF view protection.</pre></li>
                 
-                  <li onclick="toggle('pre139974125173504', 'post139974125173504')"><pre>    &quot;&quot;&quot;</pre></li>
+                  <li onclick="toggle('pre140038989892496', 'post140038989892496')"><pre>    &quot;&quot;&quot;</pre></li>
                 
-                  <li onclick="toggle('pre139974125173504', 'post139974125173504')"><pre>    # We could just do view_func.csrf_exempt = True, but decorators</pre></li>
+                  <li onclick="toggle('pre140038989892496', 'post140038989892496')"><pre>    # We could just do view_func.csrf_exempt = True, but decorators</pre></li>
                 
-                  <li onclick="toggle('pre139974125173504', 'post139974125173504')"><pre>    # are nicer if they don&#39;t have side-effects, so we return a new</pre></li>
+                  <li onclick="toggle('pre140038989892496', 'post140038989892496')"><pre>    # are nicer if they don&#39;t have side-effects, so we return a new</pre></li>
                 
-                  <li onclick="toggle('pre139974125173504', 'post139974125173504')"><pre>    # function.</pre></li>
+                  <li onclick="toggle('pre140038989892496', 'post140038989892496')"><pre>    # function.</pre></li>
                 
-                  <li onclick="toggle('pre139974125173504', 'post139974125173504')"><pre>    def wrapped_view(*args, **kwargs):</pre></li>
+                  <li onclick="toggle('pre140038989892496', 'post140038989892496')"><pre>    def wrapped_view(*args, **kwargs):</pre></li>
                 
                 </ol>
               
               <ol start="58" class="context-line">
-                <li onclick="toggle('pre139974125173504', 'post139974125173504')"><pre>
+                <li onclick="toggle('pre140038989892496', 'post140038989892496')"><pre>
         return view_func(*args, **kwargs)</pre> <span>...</span></li></ol>
               
-                <ol start='59' class="post-context" id="post139974125173504">
+                <ol start='59' class="post-context" id="post140038989892496">
                   
-                  <li onclick="toggle('pre139974125173504', 'post139974125173504')"><pre>    wrapped_view.csrf_exempt = True</pre></li>
+                  <li onclick="toggle('pre140038989892496', 'post140038989892496')"><pre>    wrapped_view.csrf_exempt = True</pre></li>
                   
-                  <li onclick="toggle('pre139974125173504', 'post139974125173504')"><pre>    return wraps(view_func, assigned=available_attrs(view_func))(wrapped_view)</pre></li>
+                  <li onclick="toggle('pre140038989892496', 'post140038989892496')"><pre>    return wraps(view_func, assigned=available_attrs(view_func))(wrapped_view)</pre></li>
                   
               </ol>
               
@@ -504,10 +504,10 @@
           
             <div class="commands">
                 
-                    <a href="#" onclick="return varToggle(this, '139974125173504')"><span>&#x25b6;</span> Local vars</a>
+                    <a href="#" onclick="return varToggle(this, '140038989892496')"><span>&#x25b6;</span> Local vars</a>
                 
             </div>
-            <table class="vars" id="v139974125173504">
+            <table class="vars" id="v140038989892496">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -523,7 +523,7 @@
                 
                   <tr>
                     <td>view_func</td>
-                    <td class="code"><pre>&lt;function getImages at 0x7f4e444f0b18&gt;</pre></td>
+                    <td class="code"><pre>&lt;function getImages at 0x7f5d5eef1b18&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -541,43 +541,43 @@
           <code>/home/dukanty/mobileServer/productUtils.py</code> in <code>getImages</code>
 
           
-            <div class="context" id="c139974125173432">
+            <div class="context" id="c140038989892424">
               
-                <ol start="105" class="pre-context" id="pre139974125173432">
+                <ol start="108" class="pre-context" id="pre140038989892424">
                 
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre>    print product_list</pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre>    zip_subdir = &quot;somefiles&quot;</pre></li>
                 
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre>    #product_list = json.loads(product_list)</pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre>    zip_filename = &quot;%s.zip&quot; % zip_subdir</pre></li>
                 
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre></pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre>    zip_subdir = &quot;somefiles&quot;</pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre>    # Open StringIO to grab in-memory ZIP contents</pre></li>
                 
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre>    zip_filename = &quot;%s.zip&quot; % zip_subdir</pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre>    s = StringIO.StringIO()</pre></li>
                 
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre></pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre>    # Open StringIO to grab in-memory ZIP contents</pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre>    for product_id in product_list:</pre></li>
                 
                 </ol>
               
-              <ol start="112" class="context-line">
-                <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre>
-    s = StringIO.StringIO()</pre> <span>...</span></li></ol>
+              <ol start="115" class="context-line">
+                <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre>
+        fdir, fname = os.path.split(fpath)</pre> <span>...</span></li></ol>
               
-                <ol start='113' class="post-context" id="post139974125173432">
+                <ol start='116' class="post-context" id="post140038989892424">
                   
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre></pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre>        print fdir+&quot; &quot;+fname</pre></li>
                   
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre>    for product_id in product_list:</pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre>        zip_path = os.path.join(zip_subdir, fname)</pre></li>
                   
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre>        fdir, fname = os.path.split(fpath)</pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre>        print zip_path</pre></li>
                   
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre>        print fdir+&quot; &quot;+fname</pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre>    # The zip compressor</pre></li>
                   
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre>        zip_path = os.path.join(zip_subdir, fname)</pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre>    # zf = zipfile.ZipFile(s, &quot;w&quot;)</pre></li>
                   
-                  <li onclick="toggle('pre139974125173432', 'post139974125173432')"><pre>        print zip_path</pre></li>
+                  <li onclick="toggle('pre140038989892424', 'post140038989892424')"><pre>    #</pre></li>
                   
               </ol>
               
@@ -587,10 +587,10 @@
           
             <div class="commands">
                 
-                    <a href="#" onclick="return varToggle(this, '139974125173432')"><span>&#x25b6;</span> Local vars</a>
+                    <a href="#" onclick="return varToggle(this, '140038989892424')"><span>&#x25b6;</span> Local vars</a>
                 
             </div>
-            <table class="vars" id="v139974125173432">
+            <table class="vars" id="v140038989892424">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -600,13 +600,23 @@
               <tbody>
                 
                   <tr>
+                    <td>product_id</td>
+                    <td class="code"><pre>u&#39;1&#39;</pre></td>
+                  </tr>
+                
+                  <tr>
                     <td>zip_subdir</td>
                     <td class="code"><pre>&#39;somefiles&#39;</pre></td>
                   </tr>
                 
                   <tr>
-                    <td>zip_filename</td>
-                    <td class="code"><pre>&#39;somefiles.zip&#39;</pre></td>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest: POST &#39;/getimages/&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>s</td>
+                    <td class="code"><pre>&lt;StringIO.StringIO instance at 0x7f5d5e3f4ab8&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -653,8 +663,8 @@
                   </tr>
                 
                   <tr>
-                    <td>request</td>
-                    <td class="code"><pre>&lt;WSGIRequest: POST &#39;/getimages/&#39;&gt;</pre></td>
+                    <td>zip_filename</td>
+                    <td class="code"><pre>&#39;somefiles.zip&#39;</pre></td>
                   </tr>
                 
               </tbody>
@@ -726,10 +736,10 @@ File "/usr/local/lib/python2.7/dist-packages/django/views/decorators/csrf.py" in
   58.         return view_func(*args, **kwargs)
 
 File "/home/dukanty/mobileServer/productUtils.py" in getImages
-  112.     s = StringIO.StringIO()
+  115.         fdir, fname = os.path.split(fpath)
 
 Exception Type: NameError at /getimages/
-Exception Value: global name &#39;StringIO&#39; is not defined
+Exception Value: global name &#39;fpath&#39; is not defined
 </textarea>
   <br><br>
   <input type="submit" value="Share this traceback on a public Web site">
@@ -880,7 +890,7 @@ Exception Value: global name &#39;StringIO&#39; is not defined
       
         <tr>
           <td>wsgi.errors</td>
-          <td class="code"><pre>&lt;open file &#39;&lt;stderr&gt;&#39;, mode &#39;w&#39; at 0x7f4e4dc6b1e0&gt;</pre></td>
+          <td class="code"><pre>&lt;open file &#39;&lt;stderr&gt;&#39;, mode &#39;w&#39; at 0x7f5d6c6941e0&gt;</pre></td>
         </tr>
       
         <tr>
@@ -975,7 +985,7 @@ Exception Value: global name &#39;StringIO&#39; is not defined
       
         <tr>
           <td>wsgi.input</td>
-          <td class="code"><pre>&lt;socket._fileobject object at 0x7f4e4402a450&gt;</pre></td>
+          <td class="code"><pre>&lt;socket._fileobject object at 0x7f5d5e3f9450&gt;</pre></td>
         </tr>
       
         <tr>

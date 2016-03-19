@@ -112,7 +112,9 @@ def getImages(request):
     s = StringIO.StringIO()
 
     for product_id in product_list:
-        fdir, fname = os.path.split(fpath)
+        image = Image.objects.get(product=int(product_id))
+        print image.image.file
+        fdir, fname = os.path.split(image.image.file)
         print fdir+" "+fname
         zip_path = os.path.join(zip_subdir, fname)
         print zip_path
