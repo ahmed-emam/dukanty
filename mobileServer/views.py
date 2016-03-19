@@ -10,7 +10,7 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework import generics, permissions, status, response, views
 from rest_framework.response import Response
 
-from rest_framework import permissions
+from rest_framework import permissions, request
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -41,6 +41,7 @@ def shops_list(request):
     """
     List all code snippets, or create a new snippet.
     """
+    print(request.user)
     if request.method == 'GET':
         shops = MobileserverShop.objects.all()
         serializer = ShopSerializer(shops, many=True)

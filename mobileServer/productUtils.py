@@ -18,7 +18,6 @@ from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 import os, tempfile, StringIO
 from zipfile import ZipFile
-#from django.core.servers.basehttp import FileWrapper
 
 
 import json

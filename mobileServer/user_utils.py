@@ -23,13 +23,17 @@ def add_address(request, order=None):
     print(request.user)
     print("*********************")
     user = request.user
+
+    if 'user_id' not in request.POST:
+        return JSONResponse({'error': 'parameters are not complete'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
     if user.is_anonymous():
         try:
 
             user_id = request.POST.get('user_id')
             try:
                 user = UsersCustomUser.objects.get(pk=user_id)
-
 
             except ObjectDoesNotExist:
                 return JSONResponse({'error': 'user does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
