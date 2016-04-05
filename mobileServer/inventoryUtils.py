@@ -48,11 +48,14 @@ def get_shopInventory(request):
     # loop over all the inventory entries found
     for inventoryEntry in inventory:
         related_product = inventoryEntry.product
+        imageObject = Image.objects.get(product=related_product.id)
         productSerialized = ProductSerializer(related_product)
         response.extend([{
             "product": productSerialized.data,
             "price": inventoryEntry.price,
-            "stock": inventoryEntry.stock
+            "stock": inventoryEntry.stock,
+            "image_width": imageObject.image.width,
+            "image_height": imageObject.image.height,
         }])
 
     return JSONResponse(response)
@@ -91,15 +94,15 @@ def create_inventory(request):
 
     owner = UsersCustomUser.objects.get(pk=1)
 
-    product_name = request.POST.get('product_name')
+    product_id = request.POST.get('product_id')
     try:
-        product = MobileserverProduct.objects.get(name=product_name)
+        product = MobileserverProduct.objects.get(id=product_id)
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'product wasnt found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     price = request.POST.get('price')
     stock = request.POST.get('stock')
-    if stock == "False":
+    if stock == "0":
         stock = False
     else:
         stock = True
