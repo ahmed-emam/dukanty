@@ -37,7 +37,7 @@ class MobileserverCartitem(models.Model):
         db_table = 'mobileServer_cartitem'
 
 ADDRESS_TYPES = [
-  (1, _("Villa")),
+  (1, _("House")),
   (2, _("Building")),
 ]
 
@@ -45,10 +45,13 @@ class Address(models.Model):
     type = models.IntegerField(choices=ADDRESS_TYPES)
     lat = models.FloatField()
     lon = models.FloatField()
+    name = models.CharField(max_length=30)
     street = models.CharField(max_length=90)
     building = models.CharField(max_length=90)
     floor = models.CharField(max_length=30, null=True)
     apartment = models.CharField(max_length=30, null=True)
+    extra_directions = models.TextField(null=True)
+
     owner = models.ForeignKey('users.UsersCustomuser', models.CASCADE)
 
     class Meta:
