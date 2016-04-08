@@ -119,5 +119,3 @@ def create_inventory(request):
         return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
     except MultipleObjectsReturned:
         return JSONResponse({'error': 'Found multiple entries'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-
