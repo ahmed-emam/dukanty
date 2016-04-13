@@ -46,6 +46,7 @@ class Address(models.Model):
     lat = models.FloatField()
     lon = models.FloatField()
     name = models.CharField(max_length=30)
+
     street = models.CharField(max_length=90)
     building = models.CharField(max_length=90)
     floor = models.CharField(max_length=30, null=True)
