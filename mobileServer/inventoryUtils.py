@@ -23,8 +23,8 @@ class JSONResponse(HttpResponse):
 
 
 @api_view(['GET'])
-#@authentication_classes((TokenAuthentication,))
-#@permission_classes((IsAuthenticated,))
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
 def get_shopInventory(request):
     print("******REQUEST*******")
     print(request.body)

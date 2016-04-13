@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5df97b03-fea7-4e19-95a9-c66cafaeb114" name="Default" comment="" />
+    <list default="true" id="5df97b03-fea7-4e19-95a9-c66cafaeb114" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/41.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/44.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/46.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/47.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zippedFile.zip" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/inventoryUtils.py" afterPath="$PROJECT_DIR$/mobileServer/inventoryUtils.py" />
+    </list>
     <ignored path="dukanty.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -38,24 +88,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobileServer/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
+            <state relative-caret-position="420">
               <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inventoryUtils.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="inventoryUtils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mobileServer/inventoryUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1782">
-              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state relative-caret-position="336">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orderUtils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1617">
+              <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="productUtils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mobileServer/productUtils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="819">
+              <caret line="63" column="1" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mobileServer/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,21 +197,22 @@
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/mobileServer/views.py" />
         <option value="$PROJECT_DIR$/mobileServer/productUtils.py" />
-        <option value="$PROJECT_DIR$/mobileServer/inventoryUtils.py" />
         <option value="$PROJECT_DIR$/mobileServer/models.py" />
+        <option value="$PROJECT_DIR$/mobileServer/inventoryUtils.py" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="-4" />
-    <option name="width" value="1535" />
-    <option name="height" value="1204" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -161,6 +242,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -223,7 +305,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -237,7 +318,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="/opt/local/bin/node" />
   </component>
@@ -532,10 +613,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1535" height="1204" extended-state="6" />
-    <editor active="false" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16807817" sideWeight="0.47738692" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16765499" sideWeight="0.47738692" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32838285" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2253635" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1030,13 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="77" column="3" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/propagateDatabase/get_images.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1072,13 +1146,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mobileServer/serializer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
@@ -1086,28 +1153,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1617">
+          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mobileServer/productUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
+        <state relative-caret-position="819">
           <caret line="63" column="1" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mobileServer/inventoryUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1782">
-          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+        <state relative-caret-position="336">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
