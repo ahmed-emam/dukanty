@@ -17,6 +17,7 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 
+@csrf_exempt
 def add_address(request, order=None):
     print("******REQUEST*******")
     print(request.body)
@@ -43,6 +44,7 @@ def add_address(request, order=None):
     try:
         lat = request.POST.get('lat')
         lon = request.POST.get('lon')
+        name = request.POST.get('name')
         street = request.POST.get('street')
         building = request.POST.get('building')
         type = request.POST.get('type')
@@ -57,8 +59,12 @@ def add_address(request, order=None):
         apartment = request.POST.get('apartment')
     else:
         apartment = None
-    address = Address(type=int(type), lat=lat, lon=lon, street=street, building=building,
-                      floor=floor, apartment=apartment, owner=user)
+    if "extra_directions" in request.POST:
+        extra_directions = request.POST.get('extra_directions')
+    else:
+        extra_directions = None   
+    address = Address(type=int(type), lat=lat, lon=lon, name=name, street=street, building=building,
+                      floor=floor, apartment=apartment, extra_directions=extra_directions, owner=user)
 
     address.save()
 
