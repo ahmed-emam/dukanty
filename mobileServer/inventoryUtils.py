@@ -67,6 +67,7 @@ def get_shopInventory(request):
 '''
 Function that will create/update inventory of a shop
 Inventory is a list of products
+
 List is linked to a shop, owner of the shop(he is the only one who can edit the list)
 For each product in the list we have a price customized by the shop, and the option of whether its in stock or not
 
@@ -87,7 +88,7 @@ def create_inventory(request):
     print(request.user)
     print("*********************")
 
-    shop_name = request.POST.get('shop_name')
+    #shop_name = request.POST.get('shop_name')
     shop_id = request.POST.get('shop_id')
     try:
         #shop = MobileserverShop.objects.get(name=shop_name)

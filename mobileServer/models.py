@@ -138,7 +138,7 @@ class MobileserverShop(models.Model):
 
 
 class Image(models.Model):
-    product = models.ForeignKey(MobileserverProduct, unique=True, on_delete=models.CASCADE)
+    product = models.ForeignKey(MobileserverProduct, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='products/')
     mimeType = models.CharField(max_length=20)
 

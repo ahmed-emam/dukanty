@@ -17,6 +17,8 @@ urlpatterns = [
 
     url(r'getAddresses/',user_utils.get_address_by_user_id),
     url(r'addAddress/', user_utils.add_address),
+    url(r'editAddress/', user_utils.edit_address),
+    url(r'delAddress/', user_utils.del_address),
     # DEBUGGING routes
     url(r'debug/addshop/', views.add_shop),
     url(r'debug/addproduct/', productUtils.add_product),
