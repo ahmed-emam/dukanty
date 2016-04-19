@@ -50,15 +50,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/8.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/9.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/zippedFile.zip" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mobileServer/templates/images/background.jpg" afterPath="$PROJECT_DIR$/mobileServer/templates/static/images/background.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mobileServer/templates/images/shadow-down.png" afterPath="$PROJECT_DIR$/mobileServer/templates/static/images/shadow-down.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mobileServer/templates/images/shadow-up.png" afterPath="$PROJECT_DIR$/mobileServer/templates/static/images/shadow-up.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mobileServer/templates/images/transy.png" afterPath="$PROJECT_DIR$/mobileServer/templates/static/images/transy.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mobileServer/templates/tools/jquery.min.js" afterPath="$PROJECT_DIR$/mobileServer/templates/static/tools/jquery.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mobileServer/templates/tools/style.css" afterPath="$PROJECT_DIR$/mobileServer/templates/static/tools/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dukanty.iml" afterPath="$PROJECT_DIR$/.idea/dukanty.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dukanty/settings.py" afterPath="$PROJECT_DIR$/dukanty/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/templates/index.html" afterPath="$PROJECT_DIR$/mobileServer/templates/index.html" />
     </list>
     <ignored path="dukanty.iws" />
@@ -111,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/mobileServer/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+              <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -120,8 +112,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dukanty/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+            <state relative-caret-position="546">
+              <caret line="192" column="37" selection-start-line="192" selection-start-column="37" selection-end-line="192" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -186,7 +178,6 @@
         <option value="$PROJECT_DIR$/propagateDatabase/create_images_list.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/add_images.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/propagateInventory.py" />
-        <option value="$PROJECT_DIR$/dukanty/settings.py" />
         <option value="$PROJECT_DIR$/propagateDatabase/get_images.py" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/mobileServer/views.py" />
@@ -196,6 +187,7 @@
         <option value="$PROJECT_DIR$/mobileServer/user_utils.py" />
         <option value="$PROJECT_DIR$/mobileServer/urls.py" />
         <option value="$PROJECT_DIR$/dukanty/urls.py" />
+        <option value="$PROJECT_DIR$/dukanty/settings.py" />
         <option value="$PROJECT_DIR$/mobileServer/templates/index.html" />
       </list>
     </option>
@@ -691,7 +683,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1535" height="1204" extended-state="6" />
+    <frame x="65" y="-4" width="1535" height="1204" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13633311" sideWeight="0.47738692" order="0" side_tool="false" content_ui="combo" />
@@ -1226,8 +1218,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dukanty/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+        <state relative-caret-position="546">
+          <caret line="192" column="37" selection-start-line="192" selection-start-column="37" selection-end-line="192" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1243,7 +1235,7 @@
     <entry file="file://$PROJECT_DIR$/mobileServer/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
           <folding />
         </state>
       </provider>
