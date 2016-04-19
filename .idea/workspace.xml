@@ -50,7 +50,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/8.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/downloadedFiles/9.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/zippedFile.zip" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dukanty/urls.py" afterPath="$PROJECT_DIR$/dukanty/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/templates/index.html" afterPath="$PROJECT_DIR$/mobileServer/templates/index.html" />
     </list>
     <ignored path="dukanty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mobileServer/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -118,7 +118,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dukanty/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -186,8 +186,8 @@
         <option value="$PROJECT_DIR$/mobileServer/models.py" />
         <option value="$PROJECT_DIR$/mobileServer/user_utils.py" />
         <option value="$PROJECT_DIR$/mobileServer/urls.py" />
-        <option value="$PROJECT_DIR$/mobileServer/templates/index.html" />
         <option value="$PROJECT_DIR$/dukanty/urls.py" />
+        <option value="$PROJECT_DIR$/mobileServer/templates/index.html" />
       </list>
     </option>
   </component>
@@ -591,7 +591,7 @@
     <frame x="832" y="24" width="767" height="1176" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32177532" sideWeight="0.47738692" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2773925" sideWeight="0.47738692" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32838285" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2253635" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1130,14 +1130,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dukanty/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-778">
@@ -1150,6 +1142,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding />
         </state>
       </provider>
