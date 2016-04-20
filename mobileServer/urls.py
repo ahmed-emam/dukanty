@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'addimage/$', productUtils.add_image),
     url(r'getimage/(?P<image_id>\d+)/$', productUtils.getImage),
     url(r'getimages/$', productUtils.getImages),
-
+    url(r'getUserDetails/$', user_utils.get_user_details),
     url(r'getAddresses/',user_utils.get_address_by_user_id),
     url(r'addAddress/', user_utils.add_address),
     url(r'editAddress/', user_utils.edit_address),

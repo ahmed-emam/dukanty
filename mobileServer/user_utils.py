@@ -6,6 +6,10 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.renderers import JSONRenderer
 from django.core.exceptions import *
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.authentication import SessionAuthentication, TokenAuthentication
+from rest_framework.permissions import IsAuthenticated, AllowAny
+
 
 class JSONResponse(HttpResponse):
     """
@@ -26,7 +30,6 @@ def add_address(request, order=None):
 
     if 'user_email' not in request.POST:
         return JSONResponse({'error': 'parameters are not complete'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
 
     if user.is_anonymous():
         try:
@@ -111,6 +114,7 @@ def edit_address(request):
     address.save()
     return JSONResponse({}, status=status.HTTP_200_OK)
 
+
 def del_address(request):
     if 'address_id' not in request.POST:
         return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -132,12 +136,9 @@ def get_address_by_user_id(request):
     user = request.user
     if user.is_anonymous():
         try:
-
             user_id = request.POST.get('user_id')
             try:
                 user = UsersCustomUser.objects.get(pk=user_id)
-
-
             except ObjectDoesNotExist:
                 return JSONResponse({'error': 'user does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         except KeyError:
@@ -160,3 +161,13 @@ def get_address_by_user_mail(request):
         address_list = user.address_set.all()
         serializer = AddressSerializer(address_list, many=True)
         return JSONResponse(serializer.data)
+
+@csrf_exempt
+@api_view(['GET'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
+def get_user_details(request):
+    print("******REQUEST*******")
+    print(request.body)
+    print(request.user)
+    print("*********************")

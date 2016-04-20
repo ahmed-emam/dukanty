@@ -10,10 +10,10 @@ from mobileServer.user_utils import add_address
 
 
 #Order Status
-not_ordered = 0
-order_issued = 1
-order_on_delivery = 2
-order_delivered = 3
+NOT_ORDERED = 0
+ORDER_ISSUED = 1
+ORDER_ON_DELIVERY = 2
+ORDER_DELIVERED = 3
 
 class JSONResponse(HttpResponse):
     """
@@ -156,7 +156,7 @@ def create_order(request):
 
     #returned = add_address(request, order)
     #print (returned)
-    change_order_status(order, order_issued)
+    change_order_status(order, ORDER_ISSUED)
     order.save()
 
     print("Created "+str(order.id))
@@ -175,7 +175,7 @@ email:  <User's email>
 '''
 @csrf_exempt
 def get_orders_by_useremail(request):
-    username = request.POST.get('email')
+    username = request.POST.get('user_email')
 #   Check if the customer related to the order exists in my Database
     try:
         owner = UsersCustomUser.objects.get(email=username)
@@ -198,7 +198,7 @@ def get_orders_by_useremail(request):
     return JSONResponse(response, status=status.HTTP_200_OK)
 
 
-def change_order_status(order,status):
+def change_order_status(order, status):
     print("change status of order "+order+" from "+str(order.status)+" -> "+str(status))
     order.status = status
     order.save()
@@ -218,7 +218,7 @@ def checkout_order(request):
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'order doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    change_order_status(order, order_issued)
+    change_order_status(order, ORDER_ISSUED)
     return JSONResponse({'success': 'order has been changed'}, status=status.HTTP_200_OK)
 
 
@@ -236,7 +236,7 @@ def deliver_order(request):
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'order doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    change_order_status(order, order_on_delivery)
+    change_order_status(order, ORDER_ON_DELIVERY)
     return JSONResponse({'success': 'order has been changed'}, status=status.HTTP_200_OK)
 # def delete_order(request):
 
