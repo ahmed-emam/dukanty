@@ -47,6 +47,8 @@ class Address(models.Model):
     lon = models.FloatField()
     name = models.CharField(max_length=30)
 
+    phone_number = models.CharField(_('Phone Number'), max_length=8)
+
     street = models.CharField(max_length=90)
     building = models.CharField(max_length=90)
     floor = models.CharField(max_length=30, null=True)

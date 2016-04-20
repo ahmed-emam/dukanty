@@ -24,16 +24,16 @@ def add_address(request, order=None):
     print("*********************")
     user = request.user
 
-    if 'user_id' not in request.POST:
+    if 'user_email' not in request.POST:
         return JSONResponse({'error': 'parameters are not complete'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
     if user.is_anonymous():
         try:
 
-            user_id = request.POST.get('user_id')
+            user_email = request.POST.get('user_email')
             try:
-                user = UsersCustomUser.objects.get(pk=user_id)
+                user = UsersCustomUser.objects.get(email=user_email)
 
             except ObjectDoesNotExist:
                 return JSONResponse({'error': 'user does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -47,6 +47,7 @@ def add_address(request, order=None):
         street = request.POST.get('street')
         building = request.POST.get('building')
         type = request.POST.get('type')
+        phone_number = request.POST.get('phone_number')
     except KeyError:
         return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -65,8 +66,8 @@ def add_address(request, order=None):
     else:
         extra_directions = None
 
-    address = Address(type=int(type), lat=lat, lon=lon, name=name, street=street, building=building,
-                      floor=floor, apartment=apartment, extra_directions=extra_directions, owner=user)
+    address = Address(type=int(type), lat=lat, lon=lon, name=name, street=street, building=building, floor=floor,
+                      phone_number=phone_number, apartment=apartment, extra_directions=extra_directions, owner=user)
     address.save()
 
     if order is not None:
@@ -99,6 +100,12 @@ def edit_address(request):
         address.floor = request.POST.get('floor')
     if "apartment" in request.POST:
         address.apartment = request.POST.get('apartment')
+    if "building" in request.POST:
+        address.building = request.POST.get('building')
+    if "type" in request.POST:
+        address.type = request.POST.get('type')
+    if "phone_number" in request.POST:
+        address.phone_number = request.POST.get('phone_number')
     if "extra_directions" in request.POST:
         address.extra_directions = request.POST.get('extra_directions')
     address.save()
@@ -139,3 +146,17 @@ def get_address_by_user_id(request):
     address_list = user.address_set.all()
     serializer = AddressSerializer(address_list, many=True)
     return JSONResponse(serializer.data)
+
+def get_address_by_user_mail(request):
+    if "user_email" not in request.POST:
+        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    else:
+        user_email = request.POST.get('user_email')
+        try:
+            user = UsersCustomUser.objects.get(email=user_email)
+        except ObjectDoesNotExist:
+            return JSONResponse({'error': 'user does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        address_list = user.address_set.all()
+        serializer = AddressSerializer(address_list, many=True)
+        return JSONResponse(serializer.data)
