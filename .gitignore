@@ -8,3 +8,5 @@ mobileServer/migrations/*
 dukanty/settings.py*
 users/migrations/*
 .idea
+push_code_digital_ocean.sh
+
