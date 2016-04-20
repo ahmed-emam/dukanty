@@ -148,6 +148,7 @@ def get_address_by_user_id(request):
     serializer = AddressSerializer(address_list, many=True)
     return JSONResponse(serializer.data)
 
+
 def get_address_by_user_mail(request):
     if "user_email" not in request.POST:
         return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -162,6 +163,7 @@ def get_address_by_user_mail(request):
         serializer = AddressSerializer(address_list, many=True)
         return JSONResponse(serializer.data)
 
+
 @csrf_exempt
 @api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
@@ -173,7 +175,6 @@ def get_user_details(request):
     print("*********************")
     user = request.user
     if user is not None and not user.is_anonymous():
-
         jsonResponse = {'id': user.id, 'email': user.email, 'first_name': user.first_name, 'last_name': user.last_name,
                         'phone_number': user.phone_number}
         return JSONResponse(jsonResponse, status=status.HTTP_200_OK)

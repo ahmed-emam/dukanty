@@ -128,6 +128,7 @@ class MobileserverShop(models.Model):
     lat = models.FloatField()
     lon = models.FloatField()
     delivery_distance = models.FloatField(default=5.0)
+    owner = models.ForeignKey('users.UsersCustomuser', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -173,7 +174,6 @@ class MobileserverShopproductinventory(models.Model):
     price = models.FloatField(default=0.0)
     stock = models.BooleanField(default=True)
     product = models.ForeignKey(MobileserverProduct, on_delete=models.CASCADE)
-    owner = models.ForeignKey('users.UsersCustomuser', on_delete=models.CASCADE)
     shop = models.ForeignKey(MobileserverShop, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

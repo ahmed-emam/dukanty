@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'debug/addproduct/', productUtils.add_product),
     url(r'debug/inventory/', inventoryUtils.create_inventory),
     url(r'debug/createorder/', orderUtils.create_order),
-    url(r'debug/getordersbyemail/', orderUtils.get_orders_by_useremail),
+    url(r'getordersbyemail/', orderUtils.get_orders_by_useremail),
     url(r'checkout/', orderUtils.checkout_order),
 
     

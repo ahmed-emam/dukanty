@@ -60,7 +60,6 @@ def create_order(request):
     print(request.user)
     print("*********************")
 
-
     #   Data from the POST requests
 
     if 'shop_id' not in request.POST or 'user_id' not in request.POST or 'product_list' not in request.POST\
@@ -76,9 +75,6 @@ def create_order(request):
     shop_id = request.POST.get('shop_id')
     username = request.POST.get('user_id')
     product_list = request.POST.get('product_list')
-    #quantity = request.POST.get('product_quantity')
-    #price = request.POST.get('product_price')
-
     mobile = request.POST.get('mobile')
     name = request.POST.get('name')
 
@@ -140,15 +136,14 @@ def create_order(request):
     order = MobileserverOrder.objects.create(owner=owner, shop=shop, name=name, mobile=mobile)
 
     for product in product_list:
-    # print
         product_name = product['product_name']
         product_price = product['product_price']
         product_quantity = product['product_quantity']
-       # print str(product['product_price'])+" "++" "+str()
         try:
             product = MobileserverProduct.objects.get(name=product_name)
         except ObjectDoesNotExist:
-            return JSONResponse({'error': 'product doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            order.delete()
+            return JSONResponse({'error': str(product_name)+' doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         productAddedToOrder = MobileserverOrderProduct.objects.create\
                 (order=order, product=product, quantity=int(product_quantity), price=float(product_price))
@@ -159,7 +154,7 @@ def create_order(request):
     change_order_status(order, ORDER_ISSUED)
     order.save()
 
-    print("Created "+str(order.id))
+    print("Created order id:"+str(order.id))
     serializedData = OrderSerializer(order)
     print serializedData.data
     return JSONResponse(serializedData.data, status=status.HTTP_200_OK)

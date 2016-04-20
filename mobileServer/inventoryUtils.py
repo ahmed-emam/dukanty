@@ -62,8 +62,6 @@ def get_shopInventory(request):
     return JSONResponse(response)
 
 
-
-
 '''
 Function that will create/update inventory of a shop
 Inventory is a list of products
@@ -94,7 +92,7 @@ def create_inventory(request):
         #shop = MobileserverShop.objects.get(name=shop_name)
 	shop = MobileserverShop.objects.get(id=shop_id)
     except ObjectDoesNotExist:
-        return JSONResponse({'error': 'shop wasnt found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': 'shop was not found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     owner = UsersCustomUser.objects.get(pk=1)
 
@@ -102,7 +100,7 @@ def create_inventory(request):
     try:
         product = MobileserverProduct.objects.get(id=product_id)
     except ObjectDoesNotExist:
-        return JSONResponse({'error': 'product wasnt found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': 'product was not found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     price = request.POST.get('price')
     stock = request.POST.get('stock')
@@ -114,7 +112,7 @@ def create_inventory(request):
     print(price)
     print(stock)
     try:
-        inventory_entry, created = MobileserverShopproductinventory.objects.get_or_create(shop=shop, product=product, owner=owner)
+        inventory_entry, created = MobileserverShopproductinventory.objects.get_or_create(shop=shop, product=product)
         print(inventory_entry)
         inventory_entry.price = float(price)
         inventory_entry.stock = stock
