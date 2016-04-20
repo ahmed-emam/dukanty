@@ -171,3 +171,9 @@ def get_user_details(request):
     print(request.body)
     print(request.user)
     print("*********************")
+    user = request.user
+    if user is not None and not user.is_anonymous():
+
+        jsonResponse = {'id': user.id, 'email': user.email, 'first_name': user.first_name, 'last_name': user.last_name,
+                        'phone_number': user.phone_number}
+        return JSONResponse(jsonResponse, status=status.HTTP_200_OK)
