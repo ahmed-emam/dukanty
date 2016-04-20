@@ -177,3 +177,5 @@ def get_user_details(request):
         jsonResponse = {'id': user.id, 'email': user.email, 'first_name': user.first_name, 'last_name': user.last_name,
                         'phone_number': user.phone_number}
         return JSONResponse(jsonResponse, status=status.HTTP_200_OK)
+    else:
+        return JSONResponse({'error': 'user not authorized'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
