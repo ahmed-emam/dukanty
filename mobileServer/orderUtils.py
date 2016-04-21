@@ -136,14 +136,14 @@ def create_order(request):
     order = MobileserverOrder.objects.create(owner=owner, shop=shop, name=name, mobile=mobile)
 
     for product in product_list:
-        product_name = product['product_name']
+        product_id = product['product_id']
         product_price = product['product_price']
         product_quantity = product['product_quantity']
         try:
-            product = MobileserverProduct.objects.get(name=product_name)
+            product = MobileserverProduct.objects.get(pk=product_id)
         except ObjectDoesNotExist:
             order.delete()
-            return JSONResponse({'error': str(product_name)+' doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return JSONResponse({'error': "Product: "+str(product_id)+' doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         productAddedToOrder = MobileserverOrderProduct.objects.create\
                 (order=order, product=product, quantity=int(product_quantity), price=float(product_price))
@@ -188,13 +188,13 @@ def get_orders_by_useremail(request):
         print(serialize_order_products.data)
         response.extend([{'order': serialize_order.data, 'products': serialize_order_products.data}])
     print(response)
-    response = json.dumps(response , separators=(',' , ':'))
+    response = json.dumps(response, separators=(',' , ':'))
     print(response)
     return JSONResponse(response, status=status.HTTP_200_OK)
 
 
 def change_order_status(order, status):
-    print("change status of order "+order+" from "+str(order.status)+" -> "+str(status))
+    print("change status of order "+str(order.id)+" from "+str(order.status)+" -> "+str(status))
     order.status = status
     order.save()
 

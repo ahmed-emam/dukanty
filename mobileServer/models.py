@@ -70,7 +70,7 @@ status:
 class MobileserverOrder(models.Model):
     totalprice = models.FloatField(db_column='totalPrice', default=0.0)  # Field name made lowercase.
     name = models.CharField(max_length=30)
-    mobile = models.IntegerField()
+    phone_number = models.CharField(_('Phone Number'), max_length=8)
     owner = models.ForeignKey('users.UsersCustomuser', on_delete=models.CASCADE)
     shop = models.ForeignKey('MobileserverShop', models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)

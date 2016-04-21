@@ -90,7 +90,7 @@ def create_inventory(request):
     shop_id = request.POST.get('shop_id')
     try:
         #shop = MobileserverShop.objects.get(name=shop_name)
-	shop = MobileserverShop.objects.get(id=shop_id)
+    	shop = MobileserverShop.objects.get(id=shop_id)
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'shop was not found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
