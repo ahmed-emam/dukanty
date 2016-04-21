@@ -115,6 +115,9 @@ def edit_address(request):
     return JSONResponse({}, status=status.HTTP_200_OK)
 
 
+@csrf_exempt
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
 def del_address(request):
     if 'address_id' not in request.POST:
         return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -128,6 +131,9 @@ def del_address(request):
             return JSONResponse({'error': 'address does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+@csrf_exempt
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
 def get_address_by_user_id(request):
     print("******REQUEST*******")
     print(request.body)
@@ -148,7 +154,9 @@ def get_address_by_user_id(request):
     serializer = AddressSerializer(address_list, many=True)
     return JSONResponse(serializer.data)
 
-
+@csrf_exempt
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
 def get_address_by_user_mail(request):
     if "user_email" not in request.POST:
         return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -165,7 +173,6 @@ def get_address_by_user_mail(request):
 
 
 @csrf_exempt
-@api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((AllowAny,))
 def get_user_details(request):

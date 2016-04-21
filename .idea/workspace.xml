@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df97b03-fea7-4e19-95a9-c66cafaeb114" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/inventoryUtils.py" afterPath="$PROJECT_DIR$/mobileServer/inventoryUtils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/models.py" afterPath="$PROJECT_DIR$/mobileServer/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/orderUtils.py" afterPath="$PROJECT_DIR$/mobileServer/orderUtils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/urls.py" afterPath="$PROJECT_DIR$/mobileServer/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobileServer/user_utils.py" afterPath="$PROJECT_DIR$/mobileServer/user_utils.py" />
     </list>
     <ignored path="dukanty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="user_utils.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="user_utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mobileServer/user_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            <state relative-caret-position="2076">
+              <caret line="119" column="32" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -79,17 +75,17 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobileServer/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="70" column="39" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
+            <state relative-caret-position="478">
+              <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="orderUtils.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="orderUtils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
+            <state relative-caret-position="3948">
               <caret line="196" column="48" selection-start-line="196" selection-start-column="48" selection-end-line="196" selection-end-column="48" />
               <folding />
             </state>
@@ -99,8 +95,8 @@
       <file leaf-file-name="inventoryUtils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobileServer/inventoryUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="73" column="50" selection-start-line="73" selection-start-column="50" selection-end-line="73" selection-end-column="50" />
+            <state relative-caret-position="774">
+              <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -164,11 +160,11 @@
         <option value="$PROJECT_DIR$/dukanty/settings.py" />
         <option value="$PROJECT_DIR$/mobileServer/templates/static/tools/style.css" />
         <option value="$PROJECT_DIR$/mobileServer/templates/index.html" />
-        <option value="$PROJECT_DIR$/mobileServer/user_utils.py" />
         <option value="$PROJECT_DIR$/mobileServer/urls.py" />
         <option value="$PROJECT_DIR$/mobileServer/inventoryUtils.py" />
         <option value="$PROJECT_DIR$/mobileServer/models.py" />
         <option value="$PROJECT_DIR$/mobileServer/orderUtils.py" />
+        <option value="$PROJECT_DIR$/mobileServer/user_utils.py" />
       </list>
     </option>
   </component>
@@ -952,6 +948,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,6 +1026,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1047,16 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/user_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="903">
@@ -1065,29 +1053,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3948">
+          <caret line="196" column="48" selection-start-line="196" selection-start-column="48" selection-end-line="196" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobileServer/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mobileServer/inventoryUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="73" column="50" selection-start-line="73" selection-start-column="50" selection-end-line="73" selection-end-column="50" />
+        <state relative-caret-position="774">
+          <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/models.py">
+    <entry file="file://$PROJECT_DIR$/mobileServer/user_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="70" column="39" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobileServer/orderUtils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="196" column="48" selection-start-line="196" selection-start-column="48" selection-end-line="196" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="2076">
+          <caret line="119" column="32" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
