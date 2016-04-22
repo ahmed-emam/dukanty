@@ -173,6 +173,7 @@ def get_address_by_user_mail(request):
 
 
 @csrf_exempt
+@api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def get_user_details(request):
