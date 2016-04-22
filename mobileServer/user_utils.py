@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate
 from mobileServer.serializer import *
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework import status
+from rest_framework import status, request
 from rest_framework.renderers import JSONRenderer
 from django.core.exceptions import *
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
@@ -174,7 +174,7 @@ def get_address_by_user_mail(request):
 
 @csrf_exempt
 @authentication_classes((TokenAuthentication,))
-@permission_classes((AllowAny,))
+@permission_classes((IsAuthenticated,))
 def get_user_details(request):
     print("******REQUEST*******")
     print(request.body)
