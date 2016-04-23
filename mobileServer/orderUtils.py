@@ -133,7 +133,7 @@ def create_order(request):
     # # if the order doesn't exist
     # # create it and add the product to the order
     # except ObjectDoesNotExist:
-    order = MobileserverOrder.objects.create(owner=owner, shop=shop, name=name, mobile=mobile)
+    order = MobileserverOrder.objects.create(owner=owner, shop=shop, name=name, phone_number=mobile)
 
     for product in product_list:
         product_id = product['product_id']
@@ -178,7 +178,7 @@ def get_orders_by_useremail(request):
 
     if 'user_email' not in request.POST:
         return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
+
     username = request.POST.get('user_email')
 
 #   Check if the customer related to the order exists in my Database
