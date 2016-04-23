@@ -178,7 +178,7 @@ def get_orders_by_useremail(request):
 
     username = request.POST.get('user_email')
 #   Check if the customer related to the order exists in my Database
-
+    print(username)
     try:
         owner = UsersCustomUser.objects.get(email=username)
     except ObjectDoesNotExist:
