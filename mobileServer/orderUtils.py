@@ -176,7 +176,11 @@ def get_orders_by_useremail(request):
     print(request.user)
     print("*********************")
 
+    if 'user_email' not in request.POST:
+        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
     username = request.POST.get('user_email')
+
 #   Check if the customer related to the order exists in my Database
     print(username)
     try:
