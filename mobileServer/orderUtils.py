@@ -170,8 +170,15 @@ email:  <User's email>
 '''
 @csrf_exempt
 def get_orders_by_useremail(request):
+    print("******REQUEST*******")
+    print(request.POST)
+    # print(request.query_params)
+    print(request.user)
+    print("*********************")
+
     username = request.POST.get('user_email')
 #   Check if the customer related to the order exists in my Database
+
     try:
         owner = UsersCustomUser.objects.get(email=username)
     except ObjectDoesNotExist:
