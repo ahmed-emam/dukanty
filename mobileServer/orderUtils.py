@@ -171,7 +171,7 @@ email:  <User's email>
 @csrf_exempt
 def get_orders_by_useremail(request):
     print("******REQUEST*******")
-    print(request.POST)
+    print(request.body)
     # print(request.query_params)
     print(request.user)
     print("*********************")
