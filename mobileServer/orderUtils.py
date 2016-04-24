@@ -245,6 +245,9 @@ def deliver_order(request):
     print(request.user)
     print("*********************")
 
+    if 'order_id' not in request.POST:
+        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     order_id = request.POST.get('order_id')
 
     try:
@@ -256,3 +259,22 @@ def deliver_order(request):
     return JSONResponse({'success': 'order has been changed'}, status=status.HTTP_200_OK)
 # def delete_order(request):
 
+
+def delete_order(request):
+    print("******REQUEST*******")
+    print(request.body)
+
+    print(request.user)
+    print("*********************")
+
+    if 'order_id' not in request.POST:
+        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    order_id = request.POST.get('order_id')
+
+    try:
+        order = MobileserverOrder.objects.get(pk=order_id)
+        order.delete()
+        return JSONResponse({'success': 'order '+int(order_id)+' got deleted'}, status=status.HTTP_200_OK)
+    except ObjectDoesNotExist:
+        return JSONResponse({'success': 'order '+int(order_id)+' does not exist'}, status=status.HTTP_200_OK)

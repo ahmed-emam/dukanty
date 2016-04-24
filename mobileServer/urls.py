@@ -20,17 +20,18 @@ urlpatterns = [
     url(r'editAddress/', user_utils.edit_address),
     url(r'delAddress/', user_utils.del_address),
 
+    # Order related routes
+    url(r'createorder/', orderUtils.create_order),
+    url(r'getordersbyemail/', orderUtils.get_orders_by_useremail),
+    url(r'deleteOrder/', orderUtils.delete_order),
+    url(r'checkout/', orderUtils.checkout_order),
+
     # DEBUGGING routes
     url(r'debug/addshop/', views.add_shop),
     url(r'debug/addproduct/', productUtils.add_product),
     url(r'debug/inventory/', inventoryUtils.create_inventory),
-    url(r'debug/createorder/', orderUtils.create_order),
-    url(r'getordersbyemail/', orderUtils.get_orders_by_useremail),
-    url(r'checkout/', orderUtils.checkout_order),
 
-    
     # DEBUGGING routes
-
     url(r'registerAndroidDevice/$', pushNotifications.registerAndroidDevice),
 
     url(r'^$', views.index),
