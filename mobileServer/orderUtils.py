@@ -199,7 +199,7 @@ def get_orders_by_useremail(request):
         print(serialize_order_products.data)
         response.extend([{'order': serialize_order.data, 'products': serialize_order_products.data}])
 
-    response = json.dumps(response, separators=(',' , ':'))
+    #response = json.dumps(response, separators=(',' , ':'))
 
     return JSONResponse(response, status=status.HTTP_200_OK)
 
