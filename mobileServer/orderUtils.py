@@ -77,7 +77,7 @@ def create_order(request):
     product_list = request.POST.get('product_list')
     mobile = request.POST.get('mobile')
     name = request.POST.get('name')
-
+    total_price = request.POST.get('total_price')
     print(shop_id+" "+username+" "+product_list)
 
     product_list = json.loads(product_list)
@@ -133,7 +133,14 @@ def create_order(request):
     # # if the order doesn't exist
     # # create it and add the product to the order
     # except ObjectDoesNotExist:
-    order = MobileserverOrder.objects.create(owner=owner, shop=shop, name=name, phone_number=mobile)
+    try:
+        address = Address.objects.get(pk=address_id)
+    except ObjectDoesNotExist:
+        return JSONResponse({'error': "Address: " + str(address_id) + ' doesnt exist'},
+                            status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    order = MobileserverOrder.objects.create(owner=owner, shop=shop, name=name, phone_number=mobile, address=address,
+                                             totalprice=total_price)
 
     for product in product_list:
         product_id = product['product_id']
@@ -151,6 +158,9 @@ def create_order(request):
 
     #returned = add_address(request, order)
     #print (returned)
+
+
+
     change_order_status(order, ORDER_ISSUED)
     order.save()
 
