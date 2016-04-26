@@ -214,6 +214,25 @@ def get_orders_by_useremail(request):
     return JSONResponse(response, status=status.HTTP_200_OK)
 
 
+def change_order_status_request(request):
+    print("******REQUEST*******")
+    print(request.body)
+    #  print(request.query_params)
+    print(request.user)
+    print("*********************")
+    if 'order_id' not in request.POST and 'order_status' not in request.POST:
+        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    order_id = request.POST.get('order_id')
+    order_status = request.POST.get('order_status')
+    try:
+        order = MobileserverOrder.objects.get(pk=order_id)
+    except ObjectDoesNotExist:
+        return JSONResponse({'error': 'order doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    change_order_status(order, int(order_status))
+    return JSONResponse({'success': 'order has been changed'}, status=status.HTTP_200_OK)
+
+
 def change_order_status(order, status):
     print("change status of order "+str(order.id)+" from "+str(order.status)+" -> "+str(status))
     order.status = status
