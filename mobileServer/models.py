@@ -66,6 +66,7 @@ status:
 1 -> order issued
 2 -> order on delivery
 3 -> order delivered
+4 -> order cancelled
 '''
 class MobileserverOrder(models.Model):
     totalprice = models.FloatField(db_column='totalPrice', default=0.0)  # Field name made lowercase.

@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'getordersbyemail/', orderUtils.get_orders_by_useremail),
     url(r'deleteOrder/', orderUtils.delete_order),
     url(r'checkout/', orderUtils.checkout_order),
+    url(r'change_status/', orderUtils.change_order_status_request),
 
     # DEBUGGING routes
     url(r'debug/addshop/', views.add_shop),
