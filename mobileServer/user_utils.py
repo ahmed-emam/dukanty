@@ -51,6 +51,7 @@ def add_address(request, order=None):
         building = request.POST.get('building')
         type = request.POST.get('type')
         phone_number = request.POST.get('phone_number')
+        zone = request.POST.get('zone')
     except KeyError:
         return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -69,7 +70,8 @@ def add_address(request, order=None):
     else:
         extra_directions = None
 
-    address = Address(type=int(type), lat=lat, lon=lon, name=name, street=street, building=building, floor=floor,
+    address = Address(type=int(type), lat=lat, lon=lon, name=name, street=street, building=building,
+                      floor=floor, zone=zone,
                       phone_number=phone_number, apartment=apartment, extra_directions=extra_directions, owner=user)
     address.save()
 
@@ -79,6 +81,7 @@ def add_address(request, order=None):
 
     serializedData = AddressSerializer(address)
     return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
+
 
 @csrf_exempt
 def edit_address(request):
@@ -111,6 +114,8 @@ def edit_address(request):
         address.phone_number = request.POST.get('phone_number')
     if "extra_directions" in request.POST:
         address.extra_directions = request.POST.get('extra_directions')
+    if "zone" in request.POST:
+        address.zone = request.POST.get('zone')
     address.save()
     return JSONResponse({}, status=status.HTTP_200_OK)
 

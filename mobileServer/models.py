@@ -41,6 +41,7 @@ ADDRESS_TYPES = [
   (2, _("Building")),
 ]
 
+
 class Address(models.Model):
     type = models.IntegerField(choices=ADDRESS_TYPES)
     lat = models.FloatField()
@@ -49,6 +50,7 @@ class Address(models.Model):
 
     phone_number = models.CharField(_('Phone Number'), max_length=8)
 
+    zone = models.CharField(max_length=30)
     street = models.CharField(max_length=90)
     building = models.CharField(max_length=90)
     floor = models.CharField(max_length=30, null=True)
