@@ -35,7 +35,7 @@ urlpatterns = [
     url(r'debug/inventory/', inventoryUtils.create_inventory),
 
     # DEBUGGING routes
-    url(r'registerAndroidDevice/$', pushNotifications.registerAndroidDevice),
+    url(r'registerAndroidDevice/$', pushNotifications.register_android_device),
 
     url(r'^$', views.index),
 ]
