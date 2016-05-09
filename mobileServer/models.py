@@ -2,7 +2,8 @@ from django.db import models
 from taggit.managers import TaggableManager
 from users.models import UsersCustomUser
 from django.utils.translation import ugettext_lazy as _
- 
+import uuid
+
 # User = get_user_model()
 #
  
@@ -71,6 +72,7 @@ status:
 4 -> order cancelled
 '''
 class MobileserverOrder(models.Model):
+    order_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     totalprice = models.FloatField(db_column='totalPrice', default=0.0)  # Field name made lowercase.
     name = models.CharField(max_length=30)
     phone_number = models.CharField(_('Phone Number'), max_length=8)

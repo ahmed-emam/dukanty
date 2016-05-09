@@ -112,6 +112,7 @@ DATABASES = {
 
 PUSH_NOTIFICATIONS_SETTINGS = {
         "GCM_API_KEY": "AIzaSyCNgjznC5rxrXk_fPHl7gjSF__ITYNzoSs",
+        "APNS_CERTIFICATE": os.path.join(BASE_DIR, "aps_development.cer"),
 }
 
 

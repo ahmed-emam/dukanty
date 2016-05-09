@@ -20,14 +20,14 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 
-def registerAndroidDevice(request):
+def register_android_device(request):
     registrationID = request.POST.get['registrationID']
     device = GCMDevice(user=request.user, registration_id=registrationID)
     device.save()
-    sendMessageToDevice(request.user, "You have been registered")
+    send_message_to_device(request.user, "You have been registered")
 
 
-def sendMessageToDevice(user, message):
+def send_message_to_device(user, message):
     try:
         device = GCMDevice.objects.get(user=user)
         device.send_message(message)
