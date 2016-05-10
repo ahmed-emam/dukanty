@@ -36,7 +36,7 @@ urlpatterns = [
 
     # DEBUGGING routes
     url(r'registerAndroidDevice/$', pushNotifications.register_android_device),
-
+    url(r'registerAppleDevice/$', pushNotifications.register_apple_device),
     url(r'^$', views.index),
 ]
 

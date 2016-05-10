@@ -24,12 +24,28 @@ def register_android_device(request):
     registrationID = request.POST.get['registrationID']
     device = GCMDevice(user=request.user, registration_id=registrationID)
     device.save()
-    send_message_to_device(request.user, "You have been registered")
+    send_message_to_android_device(request.user, "You have been registered")
 
 
-def send_message_to_device(user, message):
+def register_apple_device(request):
+    registrationID = request.POST.get['registrationID']
+    device = APNSDevice(user=request.user, registration_id=registrationID)
+    device.save()
+    send_message_to_apple_device(request.user, "You have been registered")
+
+
+def send_message_to_android_device(user, message):
     try:
         device = GCMDevice.objects.get(user=user)
+        device.send_message(message)
+
+    except ObjectDoesNotExist:
+        return JSONResponse({'error' : 'Device is not registered'},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+def send_message_to_apple_device(user, message):
+    try:
+        device = APNSDevice.objects.get(user=user)
         device.send_message(message)
 
     except ObjectDoesNotExist:
