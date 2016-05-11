@@ -115,7 +115,7 @@ Category:
 8 -> Spices
 '''
 class MobileserverProduct(models.Model):
-    id = models.BigIntegerField(unique=True)
+    id = models.BigIntegerField(primary_key=True, unique=True)
     name = models.CharField(max_length=90)
     company = models.CharField(max_length=90)
     category = models.PositiveSmallIntegerField()

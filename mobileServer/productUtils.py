@@ -82,7 +82,7 @@ def add_image(request, product_id=None):
     image_file = request.FILES['file']
     print "Adding image "+image_file.name+" for "+product_id
     try:
-        product = MobileserverProduct.objects.get(id=product_id)
+        product = MobileserverProduct.objects.get(pk=product_id)
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'product doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     image = Image(product=product, image=image_file,
