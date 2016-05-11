@@ -88,6 +88,7 @@ def add_shop(request):
     # shop = json.loads(request.body)
     user = UsersCustomUser.objects.get(pk=1)
     print(shop_name)
+    print(user)
     try:
         shop, created = MobileserverShop.objects.get_or_create\
             (name=shop_name, rating=shop_rating, lat=shop_lat, lon=shop_lon, delivery_distance=distance, owner=user)
