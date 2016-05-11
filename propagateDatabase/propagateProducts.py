@@ -5,7 +5,7 @@ url = 'http://104.236.115.239:'+str(port)+'/debug/addproduct/'
 home = expanduser("~")
 
 products_list = dict()
-categories = ['', 'Beverages', 'Bakery', 'Dairy', 'Produce', 'canned foods', 'chocolate', 'Health & Beauty', 'spices']
+categories = ['canned foods', 'chocolate', 'Health & Beauty', 'spices']
 
 def import_from_dropbox():
     root_path = home+'/Dropbox/Dukanty/'
@@ -27,6 +27,10 @@ def import_from_dropbox():
                 category_id = categories.index(row[3])
                 payload = {'barcode': row[0], 'name': row[1], 'company': row[1].split(' ')[0], 'category': category_id}
                 print payload
+                request = requests.post(url, data=payload)
+                print("Requested: " + request.url)
+                print(request.status_code)
+                print(request.json())
                 #print row
 
 
