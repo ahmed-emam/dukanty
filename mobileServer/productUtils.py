@@ -57,6 +57,7 @@ def products_list(request):
 def add_product(request):
     #print(request)
     print(request.body)
+    product_id = request.POST.get('barcode')
     product_name = request.POST.get('name')
     product_company = request.POST.get('company')
     product_category = request.POST.get('category')
@@ -64,10 +65,10 @@ def add_product(request):
     # shop = json.loads(request.body)
     print(product_name)
     product = MobileserverProduct.objects.create\
-        (name=product_name, company=product_company, category=product_category)
+        (id=product_id, name=product_name, company=product_company, category=product_category)
     product.save()
     if product.id:
-        print("Added shop id "+str(product.id))
+        print("Added product id "+str(product.id))
         return JSONResponse({'added': product_name}, status=status.HTTP_200_OK)
     else:
         print("Didnt add "+product_name)
@@ -81,7 +82,7 @@ def add_image(request, product_id=None):
     image_file = request.FILES['file']
     print "Adding image "+image_file.name+" for "+product_id
     try:
-        product = MobileserverProduct.objects.get(pk=product_id)
+        product = MobileserverProduct.objects.get(id=product_id)
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'product doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     image = Image(product=product, image=image_file,

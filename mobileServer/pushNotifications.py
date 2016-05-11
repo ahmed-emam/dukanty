@@ -40,7 +40,7 @@ def send_message_to_android_device(user, message):
         device.send_message(message)
 
     except ObjectDoesNotExist:
-        return JSONResponse({'error' : 'Device is not registered'},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error' : 'Device is not registered'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 def send_message_to_apple_device(user, message):
@@ -49,4 +49,4 @@ def send_message_to_apple_device(user, message):
         device.send_message(message)
 
     except ObjectDoesNotExist:
-        return JSONResponse({'error' : 'Device is not registered'},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error' : 'Device is not registered'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

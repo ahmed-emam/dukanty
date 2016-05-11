@@ -105,12 +105,17 @@ Model representation of a product
 TODO: Add
 
 Category:
-0 ->
-1 ->
-2 ->
-3 ->
+1 -> Beverages
+2 -> Bakery
+3 -> Dairy
+4 -> Produce
+5 -> canned food
+6 -> chocolate
+7 -> Health & Beauty
+8 -> Spices
 '''
 class MobileserverProduct(models.Model):
+    id = models.BigIntegerField(unique=True)
     name = models.CharField(max_length=90)
     company = models.CharField(max_length=90)
     category = models.PositiveSmallIntegerField()
