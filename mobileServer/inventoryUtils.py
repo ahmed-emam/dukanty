@@ -23,7 +23,7 @@ class JSONResponse(HttpResponse):
 
 """
 @api {GET} getshopinventory/:shop_id Get Shop Inventory
-@apiVersion 1.0
+@apiVersion 1.0.0
 @apiName GetShopInventory
 @apiGroup Shop
 @apiParam {Number} shop_id Shop unique ID.
