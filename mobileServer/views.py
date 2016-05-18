@@ -25,6 +25,11 @@ def index(request):
     page = render(request, "index.html", {})
     return page
 
+# Render api
+def api(request):
+    page = render(request, "doc/index.html", {})
+    return page
+
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
