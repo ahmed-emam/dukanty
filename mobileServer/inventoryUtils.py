@@ -21,8 +21,7 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 
-
-'''
+"""
 @api {GET} getshopinventory/:shop_id Get Shop Inventory
 @apiVersion 1.0
 @apiName GetShopInventory
@@ -35,7 +34,7 @@ class JSONResponse(HttpResponse):
 @apiSuccess {Number} image_height Product's image height
 
 @apiError error {String} The <code>id</code> of the Shop was not found
-'''
+"""
 @api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((AllowAny,))
