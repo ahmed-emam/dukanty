@@ -35,7 +35,15 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 
+"""
+@api {GET} getproducts/ Get All products
+@apiVersion 1.0.0
+@apiName ListProducts
+@apiGroup Products
 
+@apiSuccess {Object[]} products_list All products
+
+"""
 @api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
