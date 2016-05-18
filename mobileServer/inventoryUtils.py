@@ -22,7 +22,20 @@ class JSONResponse(HttpResponse):
 
 
 
+'''
+@api {GET} getshopinventory/:shop_id Get Shop Inventory
+@apiVersion 1.0
+@apiName GetShopInventory
+@apiGroup Shop
+@apiParam {Number} shop_id Shop unique ID.
+@apiSuccess {Object} product Product serialized data
+@apiSuccess {Number} price Product's price
+@apiSuccess {Boolean} Stock Product in Stock/out of stock
+@apiSuccess {Number} image_width Product's image width
+@apiSuccess {Number} image_height Product's image height
 
+@apiError error {String} The <code>id</code> of the Shop was not found
+'''
 @api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((AllowAny,))

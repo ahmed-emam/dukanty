@@ -105,7 +105,10 @@ DATABASES = {
         'USER': 'dukantyadmin',
         'PASSWORD': 'douh0115373730',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': 'mydatabase',
+
     }
 }
 

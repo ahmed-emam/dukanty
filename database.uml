@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>4e6c5f78-9a02-46ab-8730-8cd9375f04d7</OriginalElement>
+  <nodes>
+    <node x="2480.5102901484474" y="896.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_image</node>
+    <node x="2227.8294534412953" y="514.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_product</node>
+    <node x="2691.7602901484474" y="526.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:account_emailaddress</node>
+    <node x="480.0" y="1343.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:sqlite_sequence</node>
+    <node x="3544.2602901484474" y="872.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:socialaccount_socialtoken</node>
+    <node x="3175.7602901484474" y="502.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:push_notifications_gcmdevice</node>
+    <node x="305.38529014844744" y="908.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser_user_permissions</node>
+    <node x="2069.746120107962" y="1158.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_cartitem</node>
+    <node x="2911.7602901484474" y="502.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:push_notifications_apnsdevice</node>
+    <node x="35.0" y="538.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:taggit_taggeditem</node>
+    <node x="2174.2602901484474" y="860.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_shopproductinventory</node>
+    <node x="225.0" y="1343.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:django_session</node>
+    <node x="3436.7602901484474" y="502.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:socialaccount_socialaccount</node>
+    <node x="3936.7602901484474" y="550.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:django_site</node>
+    <node x="1881.7884615384614" y="896.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_shopimage</node>
+    <node x="1006.8852901484474" y="908.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser_groups</node>
+    <node x="1705.4617914979758" y="1146.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_order_product</node>
+    <node x="3819.7602901484474" y="908.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:socialaccount_socialapp_sites</node>
+    <node x="766.8852901484474" y="562.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:auth_group</node>
+    <node x="1896.5867914979758" y="502.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_shop</node>
+    <node x="3696.7602901484474" y="514.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:socialaccount_socialapp</node>
+    <node x="350.13529014844744" y="538.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:auth_permission</node>
+    <node x="700.2117914979758" y="1158.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_basket</node>
+    <node x="0.0" y="108.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:taggit_tag</node>
+    <node x="1526.1352901484474" y="0.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser</node>
+    <node x="2680.7602901484474" y="884.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:account_emailconfirmation</node>
+    <node x="2467.8294534412953" y="550.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:authtoken_token</node>
+    <node x="350.13529014844744" y="108.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:django_content_type</node>
+    <node x="1500.8852901484474" y="824.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_order</node>
+    <node x="0.0" y="1343.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:django_migrations</node>
+    <node x="650.3852901484474" y="908.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:auth_group_permissions</node>
+    <node x="1280.8852901484474" y="884.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_cart</node>
+    <node x="1485.2884615384614" y="430.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:Address</node>
+    <node x="926.8852901484474" y="490.0">4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:django_admin_log</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:push_notifications_apnsdevice" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="0.0" y="-100.0" />
+      <point x="3033.7602901484474" y="380.0" />
+      <point x="1800.7506747638322" y="380.0" />
+      <point x="104.61538461538476" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_cart" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="0.0" y="-76.0" />
+      <point x="1380.8852901484474" y="390.0" />
+      <point x="1643.827597840755" y="390.0" />
+      <point x="-52.30769230769238" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:authtoken_token" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="0.0" y="-52.0" />
+      <point x="2544.3294534412953" y="400.0" />
+      <point x="1748.4429824561398" y="400.0" />
+      <point x="52.30769230769238" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:Address" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="0.0" y="-172.0" />
+      <point x="1665.2884615384614" y="410.0" />
+      <point x="1696.1352901484474" y="410.0" />
+      <point x="0.0" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:django_admin_log" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:django_content_type">
+      <point x="-65.0" y="-112.0" />
+      <point x="991.8852901484474" y="340.0" />
+      <point x="500.13529014844744" y="340.0" />
+      <point x="60.0" y="52.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser_groups" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:auth_group">
+      <point x="-63.5" y="-52.0" />
+      <point x="1070.3852901484474" y="804.0" />
+      <point x="871.8852901484474" y="804.0" />
+      <point x="35.0" y="40.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser_user_permissions" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:auth_permission">
+      <point x="-81.25" y="-52.0" />
+      <point x="386.63529014844744" y="804.0" />
+      <point x="395.13529014844744" y="804.0" />
+      <point x="-45.0" y="64.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:socialaccount_socialaccount" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="0.0" y="-100.0" />
+      <point x="3556.7602901484474" y="360.0" />
+      <point x="1853.0583670715243" y="360.0" />
+      <point x="156.9230769230769" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_shopimage" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_shop">
+      <point x="0.0" y="-64.0" />
+      <point x="1985.2884615384614" y="804.0" />
+      <point x="2016.5867914979758" y="804.0" />
+      <point x="0.0" y="100.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:socialaccount_socialapp_sites" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:socialaccount_socialapp">
+      <point x="-59.75" y="-52.0" />
+      <point x="3879.5102901484474" y="804.0" />
+      <point x="3861.7602901484474" y="804.0" />
+      <point x="55.0" y="88.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:django_admin_log" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="65.0" y="-112.0" />
+      <point x="1121.8852901484474" y="370.0" />
+      <point x="1591.519905533063" y="370.0" />
+      <point x="-104.61538461538453" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:account_emailaddress" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="0.0" y="-76.0" />
+      <point x="2791.7602901484474" y="390.0" />
+      <point x="1774.596828609986" y="390.0" />
+      <point x="78.46153846153857" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_shop" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="0.0" y="-100.0" />
+      <point x="2016.5867914979758" y="410.0" />
+      <point x="1722.2891363022936" y="410.0" />
+      <point x="26.15384615384619" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_cartitem" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_cart">
+      <point x="-47.5" y="-64.0" />
+      <point x="2117.246120107962" y="1116.0" />
+      <point x="1430.8852901484474" y="1116.0" />
+      <point x="50.0" y="76.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_order" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="-100.0" y="-136.0" />
+      <point x="1550.8852901484474" y="804.0" />
+      <point x="1440.5384615384614" y="804.0" />
+      <point x="1440.5384615384614" y="400.0" />
+      <point x="1669.9814439946012" y="400.0" />
+      <point x="-26.15384615384619" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser_groups" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="63.5" y="-52.0" />
+      <point x="1197.3852901484474" y="380.0" />
+      <point x="1617.6737516869089" y="380.0" />
+      <point x="-78.46153846153857" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:taggit_taggeditem" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:taggit_tag">
+      <point x="-45.0" y="-64.0" />
+      <point x="0.0" y="52.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser_user_permissions" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="81.25" y="-52.0" />
+      <point x="549.1352901484474" y="804.0" />
+      <point x="540.6352901484474" y="804.0" />
+      <point x="540.6352901484474" y="360.0" />
+      <point x="1565.3660593792167" y="360.0" />
+      <point x="-130.76923076923072" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_image" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_product">
+      <point x="0.0" y="-64.0" />
+      <point x="2570.5102901484474" y="804.0" />
+      <point x="2411.1627867746283" y="804.0" />
+      <point x="73.33333333333348" y="88.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_basket" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_cart">
+      <point x="45.0" y="-64.0" />
+      <point x="835.2117914979758" y="1126.0" />
+      <point x="1330.8852901484474" y="1126.0" />
+      <point x="-50.0" y="76.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_order" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:Address">
+      <point x="0.0" y="-136.0" />
+      <point x="1650.8852901484474" y="804.0" />
+      <point x="1665.2884615384614" y="804.0" />
+      <point x="0.0" y="172.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:socialaccount_socialapp_sites" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:django_site">
+      <point x="59.75" y="-52.0" />
+      <point x="3999.0102901484474" y="804.0" />
+      <point x="4016.7602901484474" y="804.0" />
+      <point x="0.0" y="52.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:auth_permission" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:django_content_type">
+      <point x="0.0" y="-64.0" />
+      <point x="0.0" y="52.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:auth_group_permissions" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:auth_permission">
+      <point x="-50.5" y="-52.0" />
+      <point x="700.8852901484474" y="794.0" />
+      <point x="485.13529014844744" y="794.0" />
+      <point x="45.0" y="64.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_order_product" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_product">
+      <point x="58.25" y="-76.0" />
+      <point x="1880.2117914979758" y="1126.0" />
+      <point x="2130.1352901484474" y="1126.0" />
+      <point x="2130.1352901484474" y="804.0" />
+      <point x="2264.4961201079614" y="804.0" />
+      <point x="-73.33333333333348" y="88.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:auth_group_permissions" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:auth_group">
+      <point x="50.5" y="-52.0" />
+      <point x="-35.0" y="40.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:push_notifications_gcmdevice" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="0.0" y="-100.0" />
+      <point x="3296.2602901484474" y="370.0" />
+      <point x="1826.9045209176782" y="370.0" />
+      <point x="130.76923076923072" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:taggit_taggeditem" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:django_content_type">
+      <point x="45.0" y="-64.0" />
+      <point x="170.0" y="340.0" />
+      <point x="380.13529014844744" y="340.0" />
+      <point x="-60.0" y="52.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_basket" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:users_userscustomuser">
+      <point x="-45.0" y="-64.0" />
+      <point x="745.2117914979758" y="1126.0" />
+      <point x="294.88529014844744" y="1126.0" />
+      <point x="294.88529014844744" y="350.0" />
+      <point x="1539.2122132253705" y="350.0" />
+      <point x="-156.9230769230769" y="160.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_cartitem" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_shopproductinventory">
+      <point x="47.5" y="-64.0" />
+      <point x="2212.246120107962" y="1126.0" />
+      <point x="2317.2602901484474" y="1126.0" />
+      <point x="0.0" y="100.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_order_product" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_order">
+      <point x="-58.25" y="-76.0" />
+      <point x="1763.7117914979758" y="1126.0" />
+      <point x="1650.8852901484474" y="1126.0" />
+      <point x="0.0" y="136.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_shopproductinventory" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_shop">
+      <point x="-71.5" y="-100.0" />
+      <point x="2245.7602901484474" y="794.0" />
+      <point x="2096.586791497976" y="794.0" />
+      <point x="80.0" y="100.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:socialaccount_socialtoken" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:socialaccount_socialaccount">
+      <point x="-55.0" y="-88.0" />
+      <point x="3599.2602901484474" y="804.0" />
+      <point x="3556.7602901484474" y="804.0" />
+      <point x="0.0" y="100.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_order" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_shop">
+      <point x="100.0" y="-136.0" />
+      <point x="1750.8852901484474" y="804.0" />
+      <point x="1936.5867914979758" y="804.0" />
+      <point x="-80.0" y="100.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:account_emailconfirmation" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:account_emailaddress">
+      <point x="0.0" y="-76.0" />
+      <point x="0.0" y="76.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_shopproductinventory" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:mobileServer_product">
+      <point x="71.5" y="-100.0" />
+      <point x="2388.7602901484474" y="804.0" />
+      <point x="2337.8294534412953" y="804.0" />
+      <point x="0.0" y="88.0" />
+    </edge>
+    <edge source="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:socialaccount_socialtoken" target="4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:socialaccount_socialapp">
+      <point x="55.0" y="-88.0" />
+      <point x="3709.2602901484474" y="804.0" />
+      <point x="3751.7602901484474" y="804.0" />
+      <point x="-55.0" y="88.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6405392275929074" x="2048.5" y="815.8384450784594" />
+  <SelectedNodes>
+    <node>4e6c5f78-9a02-46ab-8730-8cd9375f04d7.TABLE:django_admin_log</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+

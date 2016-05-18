@@ -11,7 +11,7 @@ url = 'http://104.236.115.239:'+str(port)+'/addimage/'
 home = expanduser("~")
 
 products_list = dict()
-categories = ['', 'Beverages', 'Bakery', 'Dairy', 'Produce', 'canned foods', 'chocolate', 'Health & Beauty', 'spices']
+categories = ['canned foods', 'chocolate', 'Health & Beauty', 'spices']
 
 def import_from_dropbox():
     root_path = home+'/Dropbox/Dukanty/'
@@ -30,7 +30,7 @@ def import_from_dropbox():
                     response = requests.post(url, data=payload, files=files)
                     print("Requested: " + response.url)
                     print(response.status_code)
-
+                    print(response)
     # with open(root_path+"/focus_data/products_list.csv") as list:
     #     listOfProducts = list.readlines()
     #     for row in listOfProducts:
@@ -84,4 +84,6 @@ def main():
     #         print(request.status_code)
     #         print(request)
     '''
+
+
 import_from_dropbox()
