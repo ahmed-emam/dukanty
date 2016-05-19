@@ -11,6 +11,8 @@ from rest_framework.authentication import SessionAuthentication, TokenAuthentica
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
 
+
+
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -20,7 +22,33 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
-@csrf_exempt
+
+"""
+@api {post} add_address/ Add address for user
+@apiVersion 1.0.0
+@apiName AddAddress
+@apiGroup User
+
+@apiParam {String} user_email User's email
+@apiParam {Number} lat Latitude of added address
+@apiParam {Number} lon Longitude of added address
+@apiParam {String} name Given title for added address
+@apiParam {String} street street number/name
+@apiParam {String} building building number/name
+@apiParam {Number} type House==1/Building==2
+@apiParam {String} phone_number Phone number to call on
+@apiParam {String} zone Address's Zone id/name
+@apiParam {String} [floor] Floor Number for addresses of type=building
+@apiParam {String} [apartment] Apartment number for addresses of type=building
+@apiParam {String} [extra_directions] Additional info
+
+
+@apiSuccess {Object} address serialized data of newly added address
+
+@apiUse UserNotFoundError
+@apiUse ReqParamMiss
+"""
+@api_view(['POST'])
 def add_address(request, order=None):
     print("******REQUEST*******")
     print(request.body)
@@ -29,7 +57,7 @@ def add_address(request, order=None):
     user = request.user
 
     if 'user_email' not in request.POST:
-        return JSONResponse({'error': 'parameters are not complete'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     if user.is_anonymous():
         try:
@@ -41,7 +69,7 @@ def add_address(request, order=None):
             except ObjectDoesNotExist:
                 return JSONResponse({'error': 'user does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         except KeyError:
-            return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     try:
         lat = request.POST.get('lat')
@@ -53,7 +81,7 @@ def add_address(request, order=None):
         phone_number = request.POST.get('phone_number')
         zone = request.POST.get('zone')
     except KeyError:
-        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     if "floor" in request.POST:
         floor = request.POST.get('floor')
@@ -83,16 +111,40 @@ def add_address(request, order=None):
     return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
 
 
-@csrf_exempt
+"""
+@api {post} editAddress/ edit address for user
+@apiVersion 1.0.0
+@apiName EditAddress
+@apiGroup User
+
+@apiParam {Number} address_id Address unique id
+@apiParam {Number} [lat] Latitude of added address
+@apiParam {Number} [lon] Longitude of added address
+@apiParam {String} [name] Given title for added address
+@apiParam {String} [street] street number/name
+@apiParam {String} [building] building number/name
+@apiParam {Number} [type] House==1/Building==2
+@apiParam {String} [phone_number] Phone number to call on
+@apiParam {String} [zone] Address's Zone id/name
+@apiParam {String} [floor] Floor Number for addresses of type=building
+@apiParam {String} [apartment] Apartment number for addresses of type=building
+@apiParam {String} [extra_directions] Additional info
+
+@apiSuccess {Object} null
+
+@apiUse AddressNotFoundError
+@apiUse ReqParamMiss
+"""
+@api_view(['POST'])
 def edit_address(request):
     if 'address_id' not in request.POST:
-        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     else:
         address_id = request.POST.get('address_id')
         try:
             address = Address.objects.get(pk=address_id)
         except ObjectDoesNotExist:
-            return JSONResponse({'error': 'address does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return JSONResponse({'error': address_id+' does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     if "lat" in request.POST:
         address.lat = float(request.POST.get('lat'))
@@ -120,12 +172,27 @@ def edit_address(request):
     return JSONResponse({}, status=status.HTTP_200_OK)
 
 
-@csrf_exempt
+"""
+@api {post} delAddress/ delete address for user
+@apiVersion 1.0.0
+@apiName DelAddress
+@apiGroup User
+
+@apiParam {Number} address_id Address unique id
+
+@apiSuccess {Object} null
+
+@apiUse AddressNotFoundError
+@apiUse ReqParamMiss
+
+
+"""
+@api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((AllowAny,))
 def del_address(request):
     if 'address_id' not in request.POST:
-        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     else:
         address_id = request.POST.get('address_id')
         try:
@@ -133,7 +200,7 @@ def del_address(request):
             address.delete()
             return JSONResponse({}, status=status.HTTP_200_OK)
         except ObjectDoesNotExist:
-            return JSONResponse({'error': 'address does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return JSONResponse({'error': address_id+' does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @api_view(['POST'])
@@ -156,7 +223,7 @@ def get_address_by_user_id(request):
             except ObjectDoesNotExist:
                 return JSONResponse({'error': 'user does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         except KeyError:
-            return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     address_list = user.address_set.all()
     serializer = AddressSerializer(address_list, many=True)
@@ -167,7 +234,7 @@ def get_address_by_user_id(request):
 @permission_classes((AllowAny,))
 def get_address_by_user_mail(request):
     if "user_email" not in request.POST:
-        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     else:
         user_email = request.POST.get('user_email')
         try:

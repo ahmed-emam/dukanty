@@ -25,6 +25,56 @@ def index(request):
     page = render(request, "index.html", {})
     return page
 
+
+"""
+@apiDefine ShopNotFoundError
+@apiError (NotFound) {String} ShopNotFoundError <code>shop_id</code> does not exist
+@apiErrorExample {json} Error-Response:
+     HTTP/1.1 500 INTERNAL SERVER ERROR
+      {
+        "error": "12 does not exist"
+      }
+"""
+"""
+@apiDefine ProductNotFoundError
+@apiError (NotFound) {String} ProductNotFoundError <code>product_id</code> does not exist
+@apiErrorExample {json} Error-Response:
+     HTTP/1.1 500 INTERNAL SERVER ERROR
+      {
+        "error": "12 does not exist"
+      }
+"""
+"""
+@apiDefine UserNotFoundError
+@apiError (NotFound) {String} UserNotFoundError user does not exist
+@apiErrorExample {json} Error-Response:
+     HTTP/1.1 500 INTERNAL SERVER ERROR
+      {
+        "error": "user does not exist"
+      }
+"""
+"""
+@apiDefine ReqParamMiss
+@apiError (Incomplete) {String} RequestParamsMissing Request Missing Parameters
+@apiErrorExample {json} Error-Response:
+     HTTP/1.1 500 INTERNAL SERVER ERROR
+      {
+        "error": "Request Missing Parameters"
+      }
+
+"""
+"""
+@apiDefine AddressNotFoundError
+@apiError (NotFound) {String} AddressNotFoundError <code>address_id</code> does not exist
+@apiErrorExample {json} Error-Response:
+     HTTP/1.1 500 INTERNAL SERVER ERROR
+      {
+        "error": "10 Missing Parameters"
+      }
+"""
+
+
+
 # Render api
 def api(request):
     template = get_template('doc/index.html')
@@ -41,6 +91,18 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
+
+
+"""
+@api {get} getshops/ Get list of all shops in the system
+@apiVersion 1.0.0
+@apiName GetShops
+@apiGroup Shop
+
+
+@apiSuccess {Object[]} Shops List of all Shops
+
+"""
 @api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((AllowAny,))

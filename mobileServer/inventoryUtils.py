@@ -33,7 +33,7 @@ class JSONResponse(HttpResponse):
 @apiSuccess {Number} image_width Product's image width
 @apiSuccess {Number} image_height Product's image height
 
-@apiError error {String} The <code>id</code> of the Shop was not found
+@apiUse ShopNotFoundError
 """
 @api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
@@ -89,7 +89,25 @@ price:  <Price of product in the shop>
 stock:  <In Stock/Out of Stock>
 
 '''
+"""
+
+@api {post} debug/inventory/ create/update Shop Inventory
+@apiVersion 1.0.0
+@apiName CreateShopInventory
+@apiGroup Shop
+@apiParam {Number} shop_id Shop unique ID.
+@apiParam {Number} product_id Product to be created/updated unique ID.
+@apiParam {Number} price Product's price
+@apiParam {Number} stock    Product in stock/out of stock (1 == True)/(0 == False)
+
+@apiSuccess {Object} product created/updated product serialized data
+
+@apiUse ShopNotFoundError
+@apiUse ProductNotFoundError
+"""
 #TODO: Remove csrf_exempt
+#TODO: Accept list of products
+
 @csrf_exempt
 def create_inventory(request):
     print("******REQUEST*******")
@@ -104,7 +122,7 @@ def create_inventory(request):
         #shop = MobileserverShop.objects.get(name=shop_name)
     	shop = MobileserverShop.objects.get(id=shop_id)
     except ObjectDoesNotExist:
-        return JSONResponse({'error': 'shop was not found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': shop_id+' does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     owner = UsersCustomUser.objects.get(pk=1)
 
@@ -112,7 +130,7 @@ def create_inventory(request):
     try:
         product = MobileserverProduct.objects.get(id=product_id)
     except ObjectDoesNotExist:
-        return JSONResponse({'error': 'product was not found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': product_id+' was not found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     price = request.POST.get('price')
     stock = request.POST.get('stock')
