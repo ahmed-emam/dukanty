@@ -261,8 +261,26 @@ def get_address_by_user_mail(request):
         return JSONResponse(serializer.data)
 
 
-@csrf_exempt
-@api_view(['GET'])
+"""
+@api {get, post} getAddresses/ Get User details
+
+@apiVersion 1.0.0
+@apiName GetUser
+@apiGroup User
+
+
+@apiSuccess {String} id User unique id
+@apiSuccess {String} email User's email
+@apiSuccess {String} first_name User's first name
+@apiSuccess {String} last_name User's last name
+@apiSuccess {String} phone_number User's phone number
+
+
+@apiUse NotAuthorized
+@apiUse IsAuthenticated
+
+"""
+@api_view(['GET', 'POST'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
 def get_user_details(request):

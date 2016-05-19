@@ -1,5 +1,228 @@
 [
   {
+    "type": "post",
+    "url": "addimage/",
+    "title": "Upload an image for a product",
+    "version": "1.0.0",
+    "name": "AddImage",
+    "group": "Products",
+    "description": "<p>Use it to a link an image with a product, the uploaded image will be link to the product specified by product_id</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "product_id",
+            "description": "<p>Product's commercial unique barcode</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "File",
+            "optional": false,
+            "field": "file",
+            "description": "<p>The image uploaded as a file</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Success",
+            "description": "<p>Added image for <code>product_id</code></p>"
+          }
+        ]
+      }
+    },
+    "filename": "mobileServer/productUtils.py",
+    "groupTitle": "Products",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/addimage/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "NotFound": [
+          {
+            "group": "NotFound",
+            "type": "String",
+            "optional": false,
+            "field": "ProductNotFoundError",
+            "description": "<p><code>product_id</code> does not exist</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"12 does not exist\"\n }",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "debug/addproduct/",
+    "title": "Add product to list of products",
+    "version": "1.0.0",
+    "name": "AddProducts",
+    "group": "Products",
+    "description": "<p>Add a product to our universal database of products, each product has a unique id which is it's commercial barcode</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "barcode",
+            "description": "<p>Product's commercial unique barcode</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Product's name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "company",
+            "description": "<p>Product's manufacturer name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": "<p>Products' category</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "added",
+            "description": "<p>product name</p>"
+          }
+        ]
+      }
+    },
+    "filename": "mobileServer/productUtils.py",
+    "groupTitle": "Products",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/debug/addproduct/"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "getimage/:product_id",
+    "title": "Get image by ID",
+    "version": "1.0.0",
+    "name": "GetImage",
+    "group": "Products",
+    "description": "<p>Get image linked to product with 'product_id'</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "File",
+            "optional": false,
+            "field": "Image",
+            "description": "<p>The image as a file</p>"
+          }
+        ]
+      }
+    },
+    "filename": "mobileServer/productUtils.py",
+    "groupTitle": "Products",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/getimage/:product_id"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "getimages/",
+    "title": "Get images from list of IDs",
+    "version": "1.0.0",
+    "name": "GetImages",
+    "group": "Products",
+    "description": "<p>Get bulk of images at once from list of product IDs as a compressed archive</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String[]",
+            "optional": false,
+            "field": "product_list",
+            "description": "<p>list of product IDs</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "File",
+            "optional": false,
+            "field": "Image",
+            "description": "<p>list of images in a compressed archive</p>"
+          }
+        ]
+      }
+    },
+    "filename": "mobileServer/productUtils.py",
+    "groupTitle": "Products",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/getimages/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "Incomplete": [
+          {
+            "group": "Incomplete",
+            "type": "String",
+            "optional": false,
+            "field": "RequestParamsMissing",
+            "description": "<p>Request Missing Parameters</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"Request Missing Parameters\"\n }",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
     "type": "GET",
     "url": "getproducts/",
     "title": "Get All products",
@@ -454,7 +677,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"10 Missing Parameters\"\n }",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"10 does not exist\"\n }",
           "type": "json"
         },
         {
@@ -606,7 +829,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"10 Missing Parameters\"\n }",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"10 does not exist\"\n }",
           "type": "json"
         },
         {
@@ -687,6 +910,94 @@
         {
           "title": "Error-Response:",
           "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"Request Missing Parameters\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "header": {
+      "fields": {
+        "Authorization": [
+          {
+            "group": "Authorization",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token authentication</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get, post",
+    "url": "getAddresses/",
+    "title": "Get User details",
+    "version": "1.0.0",
+    "name": "GetUser",
+    "group": "User",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>User unique id</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>User's email</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "first_name",
+            "description": "<p>User's first name</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "last_name",
+            "description": "<p>User's last name</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "phone_number",
+            "description": "<p>User's phone number</p>"
+          }
+        ]
+      }
+    },
+    "filename": "mobileServer/user_utils.py",
+    "groupTitle": "User",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/getAddresses/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "": [
+          {
+            "group": "NotAuthorized",
+            "type": "String",
+            "optional": false,
+            "field": "NotAuthorized",
+            "description": "<p>user not authorized</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"user not authorized\"\n }",
           "type": "json"
         }
       ]

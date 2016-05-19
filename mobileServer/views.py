@@ -69,22 +69,24 @@ def index(request):
 @apiErrorExample {json} Error-Response:
      HTTP/1.1 500 INTERNAL SERVER ERROR
       {
-        "error": "10 Missing Parameters"
+        "error": "10 does not exist"
       }
 """
 """
 @apiDefine IsAuthenticated
 @apiHeader (Authorization) Authorization Token authentication
+
+"""
+"""
+@apiDefine NotAuthorized
+@apiError (NotAuthorized) {String} NotAuthorized user not authorized
+@apiErrorExample {json} Error-Response:
+     HTTP/1.1 500 INTERNAL SERVER ERROR
+      {
+        "error": "user not authorized"
+      }
 """
 
-
-
-
-# Render api
-def api(request):
-    template = get_template('doc/index.html')
-   # page = render(request, "doc/index.html")
-    return HttpResponse(template)
 
 
 class JSONResponse(HttpResponse):

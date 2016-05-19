@@ -60,8 +60,25 @@ def products_list(request):
     #         return JSONResponse(serializer.data, status=201)
     #     return JSONResponse(serializer.errors, status=400)
 
+"""
+@api {post} debug/addproduct/ Add product to list of products
+@apiVersion 1.0.0
+@apiName AddProducts
+@apiGroup Products
 
-@csrf_exempt
+@apiDescription Add a product to our universal database of products, each product has a unique id which is it's
+commercial barcode
+
+@apiParam {String} barcode Product's commercial unique barcode
+@apiParam {String} name Product's name
+@apiParam {String} company Product's manufacturer name
+@apiParam {String} category Products' category
+
+
+@apiSuccess {String} added product name
+
+"""
+@api_view(['POST'])
 def add_product(request):
     #print(request)
     print(request.body)
@@ -82,7 +99,24 @@ def add_product(request):
         print("Didnt add "+product_name)
         return JSONResponse({'error': 'couldnt add'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-@csrf_exempt
+"""
+@api {post} addimage/ Upload an image for a product
+@apiVersion 1.0.0
+@apiName AddImage
+@apiGroup Products
+
+@apiDescription Use it to a link an image with a product, the uploaded image will be link to the product specified by
+product_id
+
+@apiParam {String} product_id Product's commercial unique barcode
+@apiParam {File} file   The image uploaded as a file
+
+
+@apiSuccess {String} Success Added image for <code>product_id</code>
+
+@apiUse ProductNotFoundError
+"""
+@api_view(['POST'])
 def add_image(request, product_id=None):
     if product_id is None:
         product_id = request.POST.get('product_id')
@@ -92,19 +126,44 @@ def add_image(request, product_id=None):
     try:
         product = MobileserverProduct.objects.get(pk=product_id)
     except ObjectDoesNotExist:
-        return JSONResponse({'error': 'product doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': product_id+' doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     image = Image(product=product, image=image_file,
                   mimeType=image_file.content_type)
     image.save()
     print "Added "+image.product.name
-    return JSONResponse({'Success': "Adding image for "+product_id}, status=status.HTTP_200_OK)
+    return JSONResponse({'Success': "Added image for "+product_id}, status=status.HTTP_200_OK)
 
+"""
+@api {get} getimage/:product_id Get image by ID
+@apiVersion 1.0.0
+@apiName GetImage
+@apiGroup Products
+
+@apiDescription Get image linked to product with 'product_id'
+
+
+@apiSuccess {File} Image    The image as a file
+
+"""
 def getImage(request, image_id):
     i = Image.objects.get(product=image_id)
     return HttpResponse(i.image.read(), content_type=i.mimeType)
 
+"""
+@api {post} getimages/  Get images from list of IDs
+@apiVersion 1.0.0
+@apiName GetImages
+@apiGroup Products
 
-@csrf_exempt
+@apiDescription Get bulk of images at once from list of product IDs as a compressed archive
+
+@apiParam {String[]} product_list   list of product IDs
+
+@apiSuccess {File} Image    list of images in a compressed archive
+
+@apiUse ReqParamMiss
+"""
+@api_view(['POST'])
 def getImages(request):
     if 'product_list' not in request.POST:
         return JSONResponse({'error': 'parameters are not complete'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
