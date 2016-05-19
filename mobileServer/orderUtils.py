@@ -51,8 +51,41 @@ product_name: <Product to be added to the order>
 product_price:  <Price of product in the shop, this will be multiplied by the quantity>
 product_quantity:  <Ordered quantity of the product>
 '''
-#@api_view(['POST'])
-@csrf_exempt
+
+
+"""
+@api {post} createorder/    Create Order
+@apiVersion 1.0.0
+@apiName CreateOrder
+@apiGroup Orders
+
+@apiDescription Make an order for user. The order will have list of products chosen for the specified shop.
+TODO: notify the shop of order made
+
+@apiParam (Products list) {String[]} product_list List of products ordered
+@apiParam (Products list) {String} product_id Product unique barcode id
+@apiParam (Products list) {String} product_price Shop specified price for the product
+@apiParam (Products list) {String} product_quantity Quantity ordered by user
+@apiParam {String} user_id  User's unique id
+@apiParam {String} shop_id  Shop's unique id
+@apiParam {String} mobile  Phone number to call on
+@apiParam {String} name  User's preferred name
+@apiParam {String} [address_id]  User's delivery address
+@apiParam {String} total_price  The sum value of products in order
+
+
+
+@apiSuccess {String} Success Added image for <code>product_id</code>
+
+@apiUse ProductNotFoundError
+@apiUse ReqParamMiss
+@apiUse ShopNotFoundError
+@apiUse UserNotFoundError
+@apiUse AddressNotFoundError
+
+"""
+@api_view(['POST'])
+#@csrf_exempt
 def create_order(request):
     print("******REQUEST*******")
     print(request.META)
@@ -179,7 +212,24 @@ POST request
 email:  <User's email>
 
 '''
+"""
+@api {post} getordersbyemail/    Get user's order
+@apiVersion 1.0.0
+@apiName GetOrders
+@apiGroup Orders
+
+@apiDescription Get all orders made by user
+
+@apiParam {String} user_email  User's email (username)
+
+@apiSuccess {String} Success Added image for <code>product_id</code>
+
+@apiUse ReqParamMiss
+@apiUse UserNotFoundError
+
+"""
 @csrf_exempt
+@api_view(['POST'])
 def get_orders_by_useremail(request):
     print("******REQUEST*******")
     print(request.body)
@@ -215,6 +265,25 @@ def get_orders_by_useremail(request):
     return JSONResponse(response, status=status.HTTP_200_OK)
 
 
+"""
+@api {post} change_status/    Change order status (This shouldn't be public)
+@apiVersion 1.0.0
+@apiName UpdateOrder
+@apiGroup Orders
+
+@apiDescription Change status of order (Issued/On Delivery/Delivered/Canceled)
+
+@apiParam {String} order_id ID of order you want to change
+@apiParam {String} order_status  Order status
+
+
+@apiSuccess {String} success order has been changed
+
+@apiUse ReqParamMiss
+@apiUse OrderNotFoundError
+
+"""
+@api_view(['POST'])
 def change_order_status_request(request):
     print("******REQUEST*******")
     print(request.body)
@@ -279,7 +348,23 @@ def deliver_order(request):
     return JSONResponse({'success': 'order has been changed'}, status=status.HTTP_200_OK)
 # def delete_order(request):
 
+"""
+@api {post} deleteOrder/    Delete order
+@apiVersion 1.0.0
+@apiName DelOrder
+@apiGroup Orders
 
+@apiDescription Delete order
+
+@apiParam {String} order_id ID of order you want to change
+
+
+@apiSuccess {String} success order <code>order_id</code> got deleted
+
+@apiUse ReqParamMiss
+@apiUse OrderNotFoundError
+
+"""
 def delete_order(request):
     print("******REQUEST*******")
     print(request.body)

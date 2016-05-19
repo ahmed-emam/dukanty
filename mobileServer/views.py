@@ -86,8 +86,15 @@ def index(request):
         "error": "user not authorized"
       }
 """
-
-
+"""
+@apiDefine OrderNotFoundError
+@apiError (NotFound) {String} OrderNotFoundError <code>order_id</code> doest not exist
+@apiErrorExample {json} Error-Response:
+     HTTP/1.1 500 INTERNAL SERVER ERROR
+      {
+        "error": "15 does not exist"
+      }
+"""
 
 class JSONResponse(HttpResponse):
     """

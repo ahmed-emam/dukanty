@@ -1,6 +1,418 @@
 define({ "api": [
   {
     "type": "post",
+    "url": "createorder/",
+    "title": "Create Order",
+    "version": "1.0.0",
+    "name": "CreateOrder",
+    "group": "Orders",
+    "description": "<p>Make an order for user. The order will have list of products chosen for the specified shop. TODO: notify the shop of order made</p>",
+    "parameter": {
+      "fields": {
+        "Products list": [
+          {
+            "group": "Products list",
+            "type": "String[]",
+            "optional": false,
+            "field": "product_list",
+            "description": "<p>List of products ordered</p>"
+          },
+          {
+            "group": "Products list",
+            "type": "String",
+            "optional": false,
+            "field": "product_id",
+            "description": "<p>Product unique barcode id</p>"
+          },
+          {
+            "group": "Products list",
+            "type": "String",
+            "optional": false,
+            "field": "product_price",
+            "description": "<p>Shop specified price for the product</p>"
+          },
+          {
+            "group": "Products list",
+            "type": "String",
+            "optional": false,
+            "field": "product_quantity",
+            "description": "<p>Quantity ordered by user</p>"
+          }
+        ],
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>User's unique id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "shop_id",
+            "description": "<p>Shop's unique id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "mobile",
+            "description": "<p>Phone number to call on</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>User's preferred name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "address_id",
+            "description": "<p>User's delivery address</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "total_price",
+            "description": "<p>The sum value of products in order</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Success",
+            "description": "<p>Added image for <code>product_id</code></p>"
+          }
+        ]
+      }
+    },
+    "filename": "mobileServer/orderUtils.py",
+    "groupTitle": "Orders",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/createorder/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "NotFound": [
+          {
+            "group": "NotFound",
+            "type": "String",
+            "optional": false,
+            "field": "ProductNotFoundError",
+            "description": "<p><code>product_id</code> does not exist</p>"
+          },
+          {
+            "group": "NotFound",
+            "type": "String",
+            "optional": false,
+            "field": "ShopNotFoundError",
+            "description": "<p><code>shop_id</code> does not exist</p>"
+          },
+          {
+            "group": "NotFound",
+            "type": "String",
+            "optional": false,
+            "field": "UserNotFoundError",
+            "description": "<p>user does not exist</p>"
+          },
+          {
+            "group": "NotFound",
+            "type": "String",
+            "optional": false,
+            "field": "AddressNotFoundError",
+            "description": "<p><code>address_id</code> does not exist</p>"
+          }
+        ],
+        "Incomplete": [
+          {
+            "group": "Incomplete",
+            "type": "String",
+            "optional": false,
+            "field": "RequestParamsMissing",
+            "description": "<p>Request Missing Parameters</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"12 does not exist\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"Request Missing Parameters\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"12 does not exist\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"user does not exist\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"10 does not exist\"\n }",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "deleteOrder/",
+    "title": "Delete order",
+    "version": "1.0.0",
+    "name": "DelOrder",
+    "group": "Orders",
+    "description": "<p>Delete order</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "order_id",
+            "description": "<p>ID of order you want to change</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "success",
+            "description": "<p>order <code>order_id</code> got deleted</p>"
+          }
+        ]
+      }
+    },
+    "filename": "mobileServer/orderUtils.py",
+    "groupTitle": "Orders",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/deleteOrder/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "Incomplete": [
+          {
+            "group": "Incomplete",
+            "type": "String",
+            "optional": false,
+            "field": "RequestParamsMissing",
+            "description": "<p>Request Missing Parameters</p>"
+          }
+        ],
+        "NotFound": [
+          {
+            "group": "NotFound",
+            "type": "String",
+            "optional": false,
+            "field": "OrderNotFoundError",
+            "description": "<p><code>order_id</code> doest not exist</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"Request Missing Parameters\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"15 does not exist\"\n }",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "getordersbyemail/",
+    "title": "Get user's order",
+    "version": "1.0.0",
+    "name": "GetOrders",
+    "group": "Orders",
+    "description": "<p>Get all orders made by user</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "user_email",
+            "description": "<p>User's email (username)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Success",
+            "description": "<p>Added image for <code>product_id</code></p>"
+          }
+        ]
+      }
+    },
+    "filename": "mobileServer/orderUtils.py",
+    "groupTitle": "Orders",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/getordersbyemail/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "Incomplete": [
+          {
+            "group": "Incomplete",
+            "type": "String",
+            "optional": false,
+            "field": "RequestParamsMissing",
+            "description": "<p>Request Missing Parameters</p>"
+          }
+        ],
+        "NotFound": [
+          {
+            "group": "NotFound",
+            "type": "String",
+            "optional": false,
+            "field": "UserNotFoundError",
+            "description": "<p>user does not exist</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"Request Missing Parameters\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"user does not exist\"\n }",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "change_status/",
+    "title": "Change order status (This shouldn't be public)",
+    "version": "1.0.0",
+    "name": "UpdateOrder",
+    "group": "Orders",
+    "description": "<p>Change status of order (Issued/On Delivery/Delivered/Canceled)</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "order_id",
+            "description": "<p>ID of order you want to change</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "order_status",
+            "description": "<p>Order status</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "success",
+            "description": "<p>order has been changed</p>"
+          }
+        ]
+      }
+    },
+    "filename": "mobileServer/orderUtils.py",
+    "groupTitle": "Orders",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/change_status/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "Incomplete": [
+          {
+            "group": "Incomplete",
+            "type": "String",
+            "optional": false,
+            "field": "RequestParamsMissing",
+            "description": "<p>Request Missing Parameters</p>"
+          }
+        ],
+        "NotFound": [
+          {
+            "group": "NotFound",
+            "type": "String",
+            "optional": false,
+            "field": "OrderNotFoundError",
+            "description": "<p><code>order_id</code> doest not exist</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"Request Missing Parameters\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"15 does not exist\"\n }",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
     "url": "addimage/",
     "title": "Upload an image for a product",
     "version": "1.0.0",
