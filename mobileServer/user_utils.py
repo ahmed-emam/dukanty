@@ -136,10 +136,13 @@ def del_address(request):
             return JSONResponse({'error': 'address does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-@csrf_exempt
+@api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
-@permission_classes((AllowAny,))
+@permission_classes((IsAuthenticated,))
 def get_address_by_user_id(request):
+    """
+    Get List of addresses saved by the user
+    """
     print("******REQUEST*******")
     print(request.body)
     print(request.user)

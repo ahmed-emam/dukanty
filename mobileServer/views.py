@@ -17,9 +17,9 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 import json
-
+from django.http import HttpResponseRedirect
 from django.core.exceptions import *
-
+from django.template.loader import get_template
 # Create your views here.
 def index(request):
     page = render(request, "index.html", {})
@@ -27,8 +27,10 @@ def index(request):
 
 # Render api
 def api(request):
-    page = render(request, "doc/index.html")
-    return page
+    template = get_template('doc/index.html')
+   # page = render(request, "doc/index.html")
+    return HttpResponse(template)
+
 
 class JSONResponse(HttpResponse):
     """
