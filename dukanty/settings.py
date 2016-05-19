@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'djoser',
     'push_notifications',
-    'rest_framework_docs',
 ]
 
 MIDDLEWARE_CLASSES = [
