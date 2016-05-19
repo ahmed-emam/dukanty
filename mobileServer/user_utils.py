@@ -202,7 +202,21 @@ def del_address(request):
         except ObjectDoesNotExist:
             return JSONResponse({'error': address_id+' does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+"""
+@api {post} getAddresses/ Get List of Addresses for user
+@apiVersion 1.0.0
+@apiName GetAddress
+@apiGroup User
 
+@apiParam {Number} user_id User unique id
+
+@apiSuccess {Object} Serialized data of address
+
+@apiUse UserNotFoundError
+@apiUse ReqParamMiss
+@apiUse IsAuthenticated
+
+"""
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
@@ -221,7 +235,7 @@ def get_address_by_user_id(request):
             try:
                 user = UsersCustomUser.objects.get(pk=user_id)
             except ObjectDoesNotExist:
-                return JSONResponse({'error': 'user does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                return JSONResponse({'error': user_id+' does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         except KeyError:
             return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 

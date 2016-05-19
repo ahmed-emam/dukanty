@@ -72,6 +72,11 @@ def index(request):
         "error": "10 Missing Parameters"
       }
 """
+"""
+@apiDefine IsAuthenticated
+@apiHeader (Authorization) Authorization Token authentication
+"""
+
 
 
 

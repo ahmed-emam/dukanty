@@ -23,7 +23,7 @@
     "groupTitle": "Products",
     "sampleRequest": [
       {
-        "url": "https://dukanty.com/getproducts/"
+        "url": "http://dukanty.com/getproducts/"
       }
     ]
   },
@@ -85,7 +85,7 @@
     "groupTitle": "Shop",
     "sampleRequest": [
       {
-        "url": "https://dukanty.com/debug/inventory/"
+        "url": "http://dukanty.com/debug/inventory/"
       }
     ],
     "error": {
@@ -186,7 +186,7 @@
     "groupTitle": "Shop",
     "sampleRequest": [
       {
-        "url": "https://dukanty.com/getshopinventory/:shop_id"
+        "url": "http://dukanty.com/getshopinventory/:shop_id"
       }
     ],
     "error": {
@@ -234,7 +234,7 @@
     "groupTitle": "Shop",
     "sampleRequest": [
       {
-        "url": "https://dukanty.com/getshops/"
+        "url": "http://dukanty.com/getshops/"
       }
     ]
   },
@@ -352,7 +352,7 @@
     "groupTitle": "User",
     "sampleRequest": [
       {
-        "url": "https://dukanty.com/add_address/"
+        "url": "http://dukanty.com/add_address/"
       }
     ],
     "error": {
@@ -427,7 +427,7 @@
     "groupTitle": "User",
     "sampleRequest": [
       {
-        "url": "https://dukanty.com/delAddress/"
+        "url": "http://dukanty.com/delAddress/"
       }
     ],
     "error": {
@@ -579,7 +579,7 @@
     "groupTitle": "User",
     "sampleRequest": [
       {
-        "url": "https://dukanty.com/editAddress/"
+        "url": "http://dukanty.com/editAddress/"
       }
     ],
     "error": {
@@ -615,6 +615,93 @@
           "type": "json"
         }
       ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "getAddresses/",
+    "title": "Get List of Addresses for user",
+    "version": "1.0.0",
+    "name": "GetAddress",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>User unique id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Serialized",
+            "description": "<p>data of address</p>"
+          }
+        ]
+      }
+    },
+    "filename": "mobileServer/user_utils.py",
+    "groupTitle": "User",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/getAddresses/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "NotFound": [
+          {
+            "group": "NotFound",
+            "type": "String",
+            "optional": false,
+            "field": "UserNotFoundError",
+            "description": "<p>user does not exist</p>"
+          }
+        ],
+        "Incomplete": [
+          {
+            "group": "Incomplete",
+            "type": "String",
+            "optional": false,
+            "field": "RequestParamsMissing",
+            "description": "<p>Request Missing Parameters</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"user does not exist\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"Request Missing Parameters\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "header": {
+      "fields": {
+        "Authorization": [
+          {
+            "group": "Authorization",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token authentication</p>"
+          }
+        ]
+      }
     }
   }
 ]

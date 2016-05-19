@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "description": "Dukanty api documentation restful",
   "title": "Dukanty RESTful API",
-  "url" : "https://dukanty.com/",
-  "sampleUrl": "https://dukanty.com/"
+  "url" : "http://dukanty.com/",
+  "sampleUrl": "http://dukanty.com/"
 }
