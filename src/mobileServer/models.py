@@ -181,7 +181,7 @@ class ShopImage(models.Model):
 class MobileserverShopproductinventory(models.Model):
     price = models.FloatField(default=0.0)
     # what options should it take
-    stock = models.IntegerField()
+    stock = models.PositiveIntegerField(default=0)
     product = models.ForeignKey(MobileserverProduct, on_delete=models.CASCADE)
     shop = models.ForeignKey(MobileserverShop, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
