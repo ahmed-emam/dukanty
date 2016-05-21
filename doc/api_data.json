@@ -98,7 +98,7 @@
         ]
       }
     },
-    "filename": "mobileServer/orderUtils.py",
+    "filename": "src/mobileServer/orderUtils.py",
     "groupTitle": "Orders",
     "sampleRequest": [
       {
@@ -210,7 +210,7 @@
         ]
       }
     },
-    "filename": "mobileServer/orderUtils.py",
+    "filename": "src/mobileServer/orderUtils.py",
     "groupTitle": "Orders",
     "sampleRequest": [
       {
@@ -286,7 +286,7 @@
         ]
       }
     },
-    "filename": "mobileServer/orderUtils.py",
+    "filename": "src/mobileServer/orderUtils.py",
     "groupTitle": "Orders",
     "sampleRequest": [
       {
@@ -369,7 +369,7 @@
         ]
       }
     },
-    "filename": "mobileServer/orderUtils.py",
+    "filename": "src/mobileServer/orderUtils.py",
     "groupTitle": "Orders",
     "sampleRequest": [
       {
@@ -452,7 +452,7 @@
         ]
       }
     },
-    "filename": "mobileServer/productUtils.py",
+    "filename": "src/mobileServer/productUtils.py",
     "groupTitle": "Products",
     "sampleRequest": [
       {
@@ -535,7 +535,7 @@
         ]
       }
     },
-    "filename": "mobileServer/productUtils.py",
+    "filename": "src/mobileServer/productUtils.py",
     "groupTitle": "Products",
     "sampleRequest": [
       {
@@ -564,7 +564,7 @@
         ]
       }
     },
-    "filename": "mobileServer/productUtils.py",
+    "filename": "src/mobileServer/productUtils.py",
     "groupTitle": "Products",
     "sampleRequest": [
       {
@@ -606,7 +606,7 @@
         ]
       }
     },
-    "filename": "mobileServer/productUtils.py",
+    "filename": "src/mobileServer/productUtils.py",
     "groupTitle": "Products",
     "sampleRequest": [
       {
@@ -654,7 +654,7 @@
         ]
       }
     },
-    "filename": "mobileServer/productUtils.py",
+    "filename": "src/mobileServer/productUtils.py",
     "groupTitle": "Products",
     "sampleRequest": [
       {
@@ -716,7 +716,7 @@
         ]
       }
     },
-    "filename": "mobileServer/inventoryUtils.py",
+    "filename": "src/mobileServer/inventoryUtils.py",
     "groupTitle": "Shop",
     "sampleRequest": [
       {
@@ -758,7 +758,7 @@
   },
   {
     "type": "GET",
-    "url": "getshopinventory/:shop_id",
+    "url": "/inventory/getshop/:shop_id",
     "title": "Get Shop Inventory",
     "version": "1.0.0",
     "name": "GetShopInventory",
@@ -817,11 +817,11 @@
         ]
       }
     },
-    "filename": "mobileServer/inventoryUtils.py",
+    "filename": "src/mobileServer/inventoryUtils.py",
     "groupTitle": "Shop",
     "sampleRequest": [
       {
-        "url": "http://dukanty.com/getshopinventory/:shop_id"
+        "url": "http://dukanty.com//inventory/getshop/:shop_id"
       }
     ],
     "error": {
@@ -865,13 +865,165 @@
         ]
       }
     },
-    "filename": "mobileServer/views.py",
+    "filename": "src/mobileServer/views.py",
     "groupTitle": "Shop",
     "sampleRequest": [
       {
         "url": "http://dukanty.com/getshops/"
       }
     ]
+  },
+  {
+    "type": "POST",
+    "url": "/inventory/check_in",
+    "title": "Check in products",
+    "version": "1.0.0",
+    "name": "check_in",
+    "group": "Shop_The_ones_below_are_incorrect__will_come_back_to_them_in_a_moment",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "product",
+            "description": "<p>Product serialized data</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Product's price</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "Stock",
+            "description": "<p>Product in Stock/out of stock</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "image_width",
+            "description": "<p>Product's image width</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "image_height",
+            "description": "<p>Product's image height</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/mobileServer/inventoryUtils.py",
+    "groupTitle": "Shop_The_ones_below_are_incorrect__will_come_back_to_them_in_a_moment",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com//inventory/check_in"
+      }
+    ],
+    "error": {
+      "fields": {
+        "NotFound": [
+          {
+            "group": "NotFound",
+            "type": "String",
+            "optional": false,
+            "field": "ShopNotFoundError",
+            "description": "<p><code>shop_id</code> does not exist</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"12 does not exist\"\n }",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/inventory/check_out",
+    "title": "Check out products",
+    "version": "1.0.0",
+    "name": "check_out",
+    "group": "Shop_The_ones_below_are_incorrect__will_come_back_to_them_in_a_moment",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "product",
+            "description": "<p>Product serialized data</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Product's price</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "Stock",
+            "description": "<p>Product in Stock/out of stock</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "image_width",
+            "description": "<p>Product's image width</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "image_height",
+            "description": "<p>Product's image height</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/mobileServer/inventoryUtils.py",
+    "groupTitle": "Shop_The_ones_below_are_incorrect__will_come_back_to_them_in_a_moment",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com//inventory/check_out"
+      }
+    ],
+    "error": {
+      "fields": {
+        "NotFound": [
+          {
+            "group": "NotFound",
+            "type": "String",
+            "optional": false,
+            "field": "ShopNotFoundError",
+            "description": "<p><code>shop_id</code> does not exist</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"12 does not exist\"\n }",
+          "type": "json"
+        }
+      ]
+    }
   },
   {
     "type": "post",
@@ -983,7 +1135,7 @@
         ]
       }
     },
-    "filename": "mobileServer/user_utils.py",
+    "filename": "src/mobileServer/user_utils.py",
     "groupTitle": "User",
     "sampleRequest": [
       {
@@ -1058,7 +1210,7 @@
         ]
       }
     },
-    "filename": "mobileServer/user_utils.py",
+    "filename": "src/mobileServer/user_utils.py",
     "groupTitle": "User",
     "sampleRequest": [
       {
@@ -1210,7 +1362,7 @@
         ]
       }
     },
-    "filename": "mobileServer/user_utils.py",
+    "filename": "src/mobileServer/user_utils.py",
     "groupTitle": "User",
     "sampleRequest": [
       {
@@ -1285,7 +1437,7 @@
         ]
       }
     },
-    "filename": "mobileServer/user_utils.py",
+    "filename": "src/mobileServer/user_utils.py",
     "groupTitle": "User",
     "sampleRequest": [
       {
@@ -1387,7 +1539,7 @@
         ]
       }
     },
-    "filename": "mobileServer/user_utils.py",
+    "filename": "src/mobileServer/user_utils.py",
     "groupTitle": "User",
     "sampleRequest": [
       {
