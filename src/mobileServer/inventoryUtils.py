@@ -6,9 +6,10 @@ from rest_framework import status
 from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
-from rest_framework.permissions import IsAuthenticated, AllowAny
-
-from mobileServer.serializer import *
+from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
+from serializer import *
+from models import *
+from error import *
 
 class JSONResponse(HttpResponse):
     """
@@ -18,7 +19,6 @@ class JSONResponse(HttpResponse):
         content = JSONRenderer().render(data)
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
-
 
 
 '''
@@ -37,7 +37,6 @@ stock:  <In Stock/Out of Stock>
 
 '''
 """
-
 @api {post} debug/inventory/ create/update Shop Inventory
 @apiVersion 1.0.0
 @apiName CreateShopInventory
@@ -45,7 +44,7 @@ stock:  <In Stock/Out of Stock>
 @apiParam {Number} shop_id Shop unique ID.
 @apiParam {Number} product_id Product to be created/updated unique ID.
 @apiParam {Number} price Product's price
-@apiParam {Number} stock    Product in stock/out of stock (1 == True)/(0 == False)
+@apiParam {Number} stock    Product stock level
 
 @apiSuccess {Object} product created/updated product serialized data
 
@@ -68,7 +67,7 @@ def create_inventory(request):
         #shop = MobileserverShop.objects.get(name=shop_name)
     	shop = MobileserverShop.objects.get(id=shop_id)
     except ObjectDoesNotExist:
-        return JSONResponse({'error': shop_id+' does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': ShopNotFound}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     owner = UsersCustomUser.objects.get(pk=1)
 
@@ -76,7 +75,7 @@ def create_inventory(request):
     try:
         product = MobileserverProduct.objects.get(id=product_id)
     except ObjectDoesNotExist:
-        return JSONResponse({'error': product_id+' was not found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': ProductNotFound}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     price = request.POST.get('price')
     stock = request.POST.get('stock')
@@ -110,9 +109,11 @@ def create_inventory(request):
 
 @apiUse ShopNotFoundError
 """
+
+
 @api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
-@permission_classes((AllowAny,))
+@permission_classes((IsAuthenticated,))
 def get_shopInventory(request, shop_id):
     print("******REQUEST*******")
     print(request.body)
@@ -128,7 +129,7 @@ def get_shopInventory(request, shop_id):
         shop = MobileserverShop.objects.get(pk=shop_id)
 
     except ObjectDoesNotExist:
-        return JSONResponse({'Error': 'shop with id '+shop_id+' does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'Error': ShopNotFound}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     # Get all inventory entries that are linked to that shop
     inventory = MobileserverShopproductinventory.objects.filter(shop=shop)
@@ -166,9 +167,10 @@ The ones below are incorrect, will come back to them in a moment
 @apiUse ShopNotFoundError
 """
 
+
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
-@permission_classes((AllowAny,))
+@permission_classes((IsAuthenticated,))
 def check_in(request):
     user = request.user
     # check user is authenticated
@@ -179,7 +181,7 @@ def check_in(request):
         shop_id = request.data['shop_id']
         products_list = request.data['products_list']
     except KeyError:
-        return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
     # got the parameters, lets check them in
     # assumes that shop and all products already exist
@@ -218,7 +220,7 @@ The ones below are incorrect, will come back to them in a moment
 """
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
-@permission_classes((AllowAny,))
+@permission_classes((IsAuthenticated,))
 def check_out(request):
     user = request.user
     # check user is authenticated

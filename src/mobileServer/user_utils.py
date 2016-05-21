@@ -9,7 +9,7 @@ from django.core.exceptions import *
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, AllowAny
-
+from error import *
 
 
 
@@ -57,7 +57,7 @@ def add_address(request, order=None):
     user = request.user
 
     if 'user_email' not in request.POST:
-        return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     if user.is_anonymous():
         try:
@@ -69,7 +69,7 @@ def add_address(request, order=None):
             except ObjectDoesNotExist:
                 return JSONResponse({'error': 'user does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         except KeyError:
-            return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     try:
         lat = request.POST.get('lat')
@@ -81,7 +81,7 @@ def add_address(request, order=None):
         phone_number = request.POST.get('phone_number')
         zone = request.POST.get('zone')
     except KeyError:
-        return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     if "floor" in request.POST:
         floor = request.POST.get('floor')
@@ -138,7 +138,7 @@ def add_address(request, order=None):
 @api_view(['POST'])
 def edit_address(request):
     if 'address_id' not in request.POST:
-        return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     else:
         address_id = request.POST.get('address_id')
         try:
@@ -192,7 +192,7 @@ def edit_address(request):
 @permission_classes((AllowAny,))
 def del_address(request):
     if 'address_id' not in request.POST:
-        return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     else:
         address_id = request.POST.get('address_id')
         try:
@@ -237,18 +237,19 @@ def get_address_by_user_id(request):
             except ObjectDoesNotExist:
                 return JSONResponse({'error': user_id+' does not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         except KeyError:
-            return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     address_list = user.address_set.all()
     serializer = AddressSerializer(address_list, many=True)
     return JSONResponse(serializer.data)
 
 @csrf_exempt
+@api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((AllowAny,))
 def get_address_by_user_mail(request):
     if "user_email" not in request.POST:
-        return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     else:
         user_email = request.POST.get('user_email')
         try:

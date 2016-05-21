@@ -13,7 +13,7 @@ from rest_framework.response import Response
 from rest_framework import permissions, request
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 import json
@@ -132,7 +132,7 @@ def shops_list(request):
 
 
 @api_view(['GET'])
-@permission_classes((permissions.AllowAny,))
+@permission_classes((AllowAny,))
 def carts_list(request):
     carts = MobileserverCart.objects.all()
     serializer = CartSerializer(carts, many=True)
@@ -155,7 +155,10 @@ def get_userbaskets(request):
 #else:
 
 # TODO: Remove csrf_exempt
-@csrf_exempt
+
+@api_view(['POST'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((IsAdminUser,))
 def add_shop(request):
     print("******REQUEST*******")
     print(request.body)
