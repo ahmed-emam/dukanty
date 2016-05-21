@@ -10,11 +10,15 @@ urlpatterns = [
     url(r'getproducts/$', productUtils.products_list),
     url(r'getcarts/$', views.carts_list),
     url(r'getbaskets/$', views.get_userbaskets),
-    url(r'getshopinventory/$', inventoryUtils.get_shopInventory),
     url(r'addimage/$', productUtils.add_image),
     url(r'getimage/(?P<image_id>\d+)/$', productUtils.getImage),
     url(r'getimages/$', productUtils.getImages),
     url(r'getUserDetails/$', user_utils.get_user_details),
+
+    # Inventory routes
+    url(r'inventory/get_shop/(?P<shop_id>\d+)/$', inventoryUtils.get_shopInventory),
+    url(r'inventory/check_in/', inventoryUtils.check_in),
+    url(r'inventory/check_out/', inventoryUtils.check_out),
 
     # Address related routes
     url(r'getAddresses/',user_utils.get_address_by_user_id),
