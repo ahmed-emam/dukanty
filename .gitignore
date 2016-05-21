@@ -1,8 +1,8 @@
 #Custom
 db.sqlite3
-mobileServer/migrations/*
-dukanty/settings.py*
-users/migrations/*
+src/mobileServer/migrations/*
+src/dukanty/settings.py*
+src/users/migrations/*
 .idea
 push_code_digital_ocean.sh
 

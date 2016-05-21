@@ -3,7 +3,9 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.renderers import JSONRenderer
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.authentication import SessionAuthentication, TokenAuthentication
+from rest_framework.permissions import IsAuthenticated, AllowAny
 import json
 from mobileServer.serializer import *
 from mobileServer.user_utils import add_address
@@ -85,6 +87,8 @@ TODO: notify the shop of order made
 
 """
 @api_view(['POST'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
 #@csrf_exempt
 def create_order(request):
     print("******REQUEST*******")
@@ -230,6 +234,8 @@ email:  <User's email>
 """
 @csrf_exempt
 @api_view(['POST'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
 def get_orders_by_useremail(request):
     print("******REQUEST*******")
     print(request.body)
@@ -284,6 +290,8 @@ def get_orders_by_useremail(request):
 
 """
 @api_view(['POST'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
 def change_order_status_request(request):
     print("******REQUEST*******")
     print(request.body)

@@ -1,6 +1,6 @@
 import requests
-port = 80
-url = 'http://104.236.115.239:'+str(port)+'/auth/register/'
+port = 8000
+url = 'http://localhost:'+str(port)+'/auth/register/'
 
 
 def main():

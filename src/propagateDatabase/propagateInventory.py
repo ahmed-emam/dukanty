@@ -1,7 +1,8 @@
 import requests, os
 from os.path import expanduser
-port = 80
-url = 'http://104.236.115.239:'+str(port)+'/debug/inventory/'
+port = 8000
+hostname = 'localhost'
+url = 'http://'+hostname+':'+str(port)+'/debug/inventory/'
 
 
 home = expanduser("~")
@@ -29,7 +30,7 @@ def import_from_dropbox():
                 # category_id = categories.index(row[3])
                 # payload = {'barcode': row[0], 'name': row[1], 'company': row[1].split(' ')[0]}
 
-                payload = {'shop_id': 13, 'product_id': row[0], 'price': row[2], 'stock': 1}
+                payload = {'shop_id': 12, 'product_id': row[0], 'price': row[2], 'stock': 1}
                 print payload
                 request = requests.post(url, data=payload)
                 print("Requested: " + request.url)

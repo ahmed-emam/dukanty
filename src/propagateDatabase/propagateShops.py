@@ -1,6 +1,6 @@
 import requests
-port = 80
-url = 'http://104.236.115.239:'+str(port)+'/debug/addshop/'
+port = 8000
+url = 'http://localhost:'+str(port)+'/debug/addshop/'
 
 
 def main():

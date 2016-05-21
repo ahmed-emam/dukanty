@@ -13,7 +13,7 @@ from django.core.exceptions import *
 from rest_framework import permissions
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 import os, tempfile, StringIO
@@ -79,6 +79,8 @@ commercial barcode
 
 """
 @api_view(['POST'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
 def add_product(request):
     #print(request)
     print(request.body)
@@ -117,6 +119,8 @@ product_id
 @apiUse ProductNotFoundError
 """
 @api_view(['POST'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
 def add_image(request, product_id=None):
     if product_id is None:
         product_id = request.POST.get('product_id')
@@ -164,6 +168,8 @@ def getImage(request, image_id):
 @apiUse ReqParamMiss
 """
 @api_view(['POST'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
 def getImages(request):
     if 'product_list' not in request.POST:
         return JSONResponse({'error': 'parameters are not complete'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -21,20 +21,6 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 
-"""
-@api {GET} getshopinventory/:shop_id Get Shop Inventory
-@apiVersion 1.0.0
-@apiName GetShopInventory
-@apiGroup Shop
-@apiParam {Number} shop_id Shop unique ID.
-@apiSuccess {Object} product Product serialized data
-@apiSuccess {Number} price Product's price
-@apiSuccess {Boolean} Stock Product in Stock/out of stock
-@apiSuccess {Number} image_width Product's image width
-@apiSuccess {Number} image_height Product's image height
-
-@apiUse ShopNotFoundError
-"""
 @api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((AllowAny,))
@@ -72,6 +58,20 @@ def get_shopInventory(request):
         }])
 
     return JSONResponse(response)
+"""
+@api {GET} getshopinventory/:shop_id Get Shop Inventory
+@apiVersion 1.0.0
+@apiName GetShopInventory
+@apiGroup Shop
+@apiParam {Number} shop_id Shop unique ID.
+@apiSuccess {Object} product Product serialized data
+@apiSuccess {Number} price Product's price
+@apiSuccess {Boolean} Stock Product in Stock/out of stock
+@apiSuccess {Number} image_width Product's image width
+@apiSuccess {Number} image_height Product's image height
+
+@apiUse ShopNotFoundError
+"""
 
 
 '''

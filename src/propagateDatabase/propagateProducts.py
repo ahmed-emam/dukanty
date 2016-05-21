@@ -1,11 +1,12 @@
 import requests, os
 from os.path import expanduser
-port = 80
-url = 'http://104.236.115.239:'+str(port)+'/debug/addproduct/'
+port = 8000
+hostname = 'localhost'
+url = 'http://'+hostname+':'+str(port)+'/debug/addproduct/'
 home = expanduser("~")
 
 products_list = dict()
-categories = ['canned foods', 'chocolate', 'Health & Beauty', 'spices']
+categories = ['canned foods', 'chocolate', 'Health & Beauty', 'Spices']
 
 def import_from_dropbox():
     root_path = home+'/Dropbox/Dukanty/'
