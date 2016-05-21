@@ -193,13 +193,12 @@ def check_in(request):
         except ObjectDoesNotExist:
             return JSONResponse({'error': 'Either shop or product do not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
-        print "Current stock", inventory_product.stock
         inventory_product.stock += product['quantity']
         # timestamp will be updated on save
         inventory_product.save()
 
     # need to change the type of the response
-    return JSONResponse({'success'})
+    return JSONResponse({'success'}, status=status.HTTP_200_OK)
 
 
 """
@@ -243,9 +242,12 @@ def check_out(request):
         except ObjectDoesNotExist:
             return JSONResponse({'error': 'Either shop or product do not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
+        if(product['quantity'] > inventory_product.stock):
+            return JSONResponse({'error': 'insufficient stock for '+str(product['id'])}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
         inventory_product.stock -= product['quantity']
-        # timestamp will be updated on save
+
         inventory_product.save()
 
     # need to change the type of the response
-    return JSONResponse({'success'})
+    return JSONResponse({'success'}, status=status.HTTP_200_OK)
