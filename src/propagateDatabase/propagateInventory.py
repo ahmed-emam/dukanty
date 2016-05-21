@@ -30,7 +30,7 @@ def import_from_dropbox():
                 # category_id = categories.index(row[3])
                 # payload = {'barcode': row[0], 'name': row[1], 'company': row[1].split(' ')[0]}
 
-                payload = {'shop_id': 12, 'product_id': row[0], 'price': row[2], 'stock': 1}
+                payload = {'shop_id': 12, 'product_id': row[0], 'price': row[2], 'stock': 2}
                 print payload
                 request = requests.post(url, data=payload)
                 print("Requested: " + request.url)

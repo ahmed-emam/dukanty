@@ -80,10 +80,7 @@ def create_inventory(request):
 
     price = request.POST.get('price')
     stock = request.POST.get('stock')
-    if stock == "0":
-        stock = False
-    else:
-        stock = True
+
 
     print(price)
     print(stock)
@@ -91,7 +88,7 @@ def create_inventory(request):
         inventory_entry, created = MobileserverShopproductinventory.objects.get_or_create(shop=shop, product=product)
         print(inventory_entry)
         inventory_entry.price = float(price)
-        inventory_entry.stock = stock
+        inventory_entry.stock = int(stock)
         inventory_entry.save()
         serializedData = ShopProductInventory(inventory_entry)
         return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
