@@ -231,7 +231,7 @@ def check_out(request):
         shop_id = request.data['shop_id']
         products_list = request.data['products_list']
     except KeyError:
-        return JSONResponse({'error': 'Request Missing Parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
     # got the parameters, lets check them in
     # assumes that shop and all products already exist

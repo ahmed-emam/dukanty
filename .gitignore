@@ -8,7 +8,6 @@ push_code_digital_ocean.sh
 
 # Python 
 *.pyc
-*.html
 staticfiles
 .env
 venv
