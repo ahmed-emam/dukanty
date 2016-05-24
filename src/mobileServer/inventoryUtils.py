@@ -96,7 +96,7 @@ def create_inventory(request):
 
 
 """
-@api {GET} /inventory/getshop/:shop_id Get Shop Inventory
+@api {GET} inventory/get_shop/:shop_id Get Shop Inventory
 @apiVersion 1.0.0
 @apiName GetShopInventory
 @apiGroup Shop

@@ -698,7 +698,7 @@
             "type": "Number",
             "optional": false,
             "field": "stock",
-            "description": "<p>Product in stock/out of stock (1 == True)/(0 == False)</p>"
+            "description": "<p>Product stock level</p>"
           }
         ]
       }
@@ -758,7 +758,7 @@
   },
   {
     "type": "GET",
-    "url": "/inventory/getshop/:shop_id",
+    "url": "inventory/get_shop/:shop_id",
     "title": "Get Shop Inventory",
     "version": "1.0.0",
     "name": "GetShopInventory",
@@ -821,7 +821,7 @@
     "groupTitle": "Shop",
     "sampleRequest": [
       {
-        "url": "http://dukanty.com//inventory/getshop/:shop_id"
+        "url": "http://dukanty.com/inventory/get_shop/:shop_id"
       }
     ],
     "error": {
