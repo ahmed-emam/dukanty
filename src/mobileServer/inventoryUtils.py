@@ -182,7 +182,7 @@ def check_in(request):
     try:
         shop_id = request.data['shop_id']
         products_list = request.POST.get['products_list']
-        products_list = json.loads(products_list)
+        # products_list = json.loads(products_list)
     except KeyError:
         return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
