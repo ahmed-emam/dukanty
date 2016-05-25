@@ -216,6 +216,8 @@ def del_address(request):
 @apiUse ReqParamMiss
 @apiUse IsAuthenticated
 
+
+@apiPermission AuthenticatedUser
 """
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
@@ -263,7 +265,7 @@ def get_address_by_user_mail(request):
 
 
 """
-@api {get, post} getAddresses/ Get User details
+@api {get, post} getUserDetails/ Get User details
 
 @apiVersion 1.0.0
 @apiName GetUser
@@ -280,6 +282,7 @@ def get_address_by_user_mail(request):
 @apiUse NotAuthorized
 @apiUse IsAuthenticated
 
+@apiPermission AuthenticatedUser
 """
 @api_view(['GET', 'POST'])
 @authentication_classes((TokenAuthentication,))

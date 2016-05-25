@@ -76,7 +76,7 @@ commercial barcode
 
 
 @apiSuccess {String} added product name
-
+@apiPermission admin
 """
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))

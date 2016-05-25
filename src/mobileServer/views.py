@@ -96,6 +96,20 @@ def index(request):
       }
 """
 
+"""
+@api {post} auth/login/ Login
+@apiVersion 1.0.0
+@apiName Login
+@apiGroup User
+
+@apiPermission none
+
+@apiParam {String} email User's email
+@apiParam {String} password User's password
+
+@apiSuccess {String} Authentication token
+"""
+
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -113,6 +127,7 @@ class JSONResponse(HttpResponse):
 @apiName GetShops
 @apiGroup Shop
 
+@apiPermission none
 
 @apiSuccess {Object[]} Shops List of all Shops
 

@@ -1,7 +1,7 @@
 import requests, os
 from os.path import expanduser
-port = 8000
-hostname = 'localhost'
+port = 80
+hostname = 'dukanty.com'
 url = 'http://'+hostname+':'+str(port)+'/debug/inventory/'
 
 

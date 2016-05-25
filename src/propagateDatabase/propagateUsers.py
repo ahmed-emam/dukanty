@@ -1,6 +1,7 @@
 import requests
-port = 8000
-url = 'http://localhost:'+str(port)+'/auth/register/'
+port = 80
+hostname = 'dukanty.com'
+url = 'http://'+hostname+':'+str(port)+'/auth/register/'
 
 
 def main():
