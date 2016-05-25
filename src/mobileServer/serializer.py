@@ -48,19 +48,19 @@ class AddressSerializer(serializers.ModelSerializer):
 class ShopProductInventory(serializers.ModelSerializer):
     class Meta:
         model = MobileserverShopproductinventory
-
-class CartItemSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = MobileserverCartitem
-
-class CartSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = MobileserverCart
-        fields = ('id', 'checked_out', 'owner', 'cartitem_set',)
-
-class BasketSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = MobileserverBasket
+#
+# class CartItemSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = MobileserverCartitem
+#
+# class CartSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = MobileserverCart
+#         fields = ('id', 'checked_out', 'owner', 'cartitem_set',)
+#
+# class BasketSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = MobileserverBasket
 
 
 

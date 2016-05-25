@@ -1,12 +1,23 @@
 from __future__ import unicode_literals
 
 #User related error
-User_Not_Registered = 101
+MissingParameter = 100
+ParameterTypeInvalid = 101
 
 #Shop related error
-Shop_Not_Found = 201
+ShopNotFound = 200
+ShopLatLongExist = 201
+InvalidLatLong = 202
+DeliverDistanceInvalid = 203
+RatingInvalid = 204
+StockInvalid = 205
+InventoryNotFound = 206
+ShopExists = 207
 
 #Product related error
+ProductNotFound = 300
+ProductImageNotUploaded = 301
+ProductExists = 302
 
 #Order Related error
 

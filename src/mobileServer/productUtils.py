@@ -13,12 +13,12 @@ from django.core.exceptions import *
 from rest_framework import permissions
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 import os, tempfile, StringIO
 from zipfile import ZipFile
-
+from error import *
 
 import json
 
@@ -76,11 +76,11 @@ commercial barcode
 
 
 @apiSuccess {String} added product name
-
+@apiPermission admin
 """
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
-@permission_classes((AllowAny,))
+@permission_classes((IsAdminUser,))
 def add_product(request):
     #print(request)
     print(request.body)
@@ -120,7 +120,7 @@ product_id
 """
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
-@permission_classes((AllowAny,))
+@permission_classes((IsAdminUser,))
 def add_image(request, product_id=None):
     if product_id is None:
         product_id = request.POST.get('product_id')
@@ -130,7 +130,7 @@ def add_image(request, product_id=None):
     try:
         product = MobileserverProduct.objects.get(pk=product_id)
     except ObjectDoesNotExist:
-        return JSONResponse({'error': product_id+' doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': ProductNotFound}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     image = Image(product=product, image=image_file,
                   mimeType=image_file.content_type)
     image.save()
@@ -172,7 +172,7 @@ def getImage(request, image_id):
 @permission_classes((AllowAny,))
 def getImages(request):
     if 'product_list' not in request.POST:
-        return JSONResponse({'error': 'parameters are not complete'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     product_list = request.POST.getlist('product_list')
     print product_list

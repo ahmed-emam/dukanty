@@ -1,7 +1,7 @@
 import requests, os
 from os.path import expanduser
-port = 8000
-hostname = 'localhost'
+port = 80
+hostname = 'dukanty.com'
 url = 'http://'+hostname+':'+str(port)+'/debug/addproduct/'
 home = expanduser("~")
 
@@ -27,8 +27,9 @@ def import_from_dropbox():
                 row.append(products_list[str(row[0])])
                 category_id = categories.index(row[3])
                 payload = {'barcode': row[0], 'name': row[1], 'company': row[1].split(' ')[0], 'category': category_id}
+                headers = {'Authorization': 'Token 1445ff16e94bc86d037a4f9ad86fd89735be4a05'}
                 print payload
-                request = requests.post(url, data=payload)
+                request = requests.post(url, data=payload, headers=headers)
                 print("Requested: " + request.url)
                 print(request.status_code)
                 print(request.json())

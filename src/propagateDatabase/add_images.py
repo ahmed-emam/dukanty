@@ -3,8 +3,8 @@ import os, sys, os
 from os.path import expanduser
 import json
 #import Image
-port = 8000
-hostname = 'localhost'
+port = 80
+hostname = 'dukanty.com'
 url = 'http://'+hostname+':'+str(port)+'/addimage/'
 
 
@@ -28,7 +28,8 @@ def import_from_dropbox():
                     #products_list[filename.split(".")[0]] = subdirname
                     payload = {'product_id': filename.split(".")[0]}
                     files = {'file': open(os.path.join(subdirpath, filename), 'rb')}
-                    response = requests.post(url, data=payload, files=files)
+                    headers = {'Authorization': 'Token 1445ff16e94bc86d037a4f9ad86fd89735be4a05'}
+                    response = requests.post(url, data=payload, files=files, headers=headers)
                     print("Requested: " + response.url)
                     print(response.status_code)
                     print(response)
