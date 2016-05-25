@@ -181,7 +181,7 @@ def check_in(request):
     # tying/catching does not always work because you will get none
     try:
         shop_id = request.data['shop_id']
-        products_list = request.data['products_list']
+        products_list = request.POST.get['products_list']
         products_list = json.loads(products_list)
     except KeyError:
         return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -193,7 +193,7 @@ def check_in(request):
         # product = {'id': 50, 'quantity': 10}
         # line below might not work, needs to be tested
         try:
-
+            print product['id']
             shop_db = MobileserverShop.objects.get(pk=shop_id)
             product_db = MobileserverProduct.objects.get(id=product['id'])
             inventory_product = MobileserverShopproductinventory.objects.get(shop=shop_db, product=product_db)
