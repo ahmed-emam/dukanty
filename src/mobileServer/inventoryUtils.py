@@ -11,6 +11,7 @@ from serializer import *
 from models import *
 from error import *
 
+
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -70,6 +71,7 @@ def create_inventory(request):
         return JSONResponse({'error': ShopNotFound}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     owner = UsersCustomUser.objects.get(pk=1)
+
 
     product_id = request.POST.get('product_id')
     try:

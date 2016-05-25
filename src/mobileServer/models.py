@@ -10,32 +10,32 @@ import uuid
  
  
  
-class MobileserverBasket(models.Model):
-    name = models.CharField(max_length=30)
-    owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
-    cart = models.ForeignKey('MobileserverCart', models.DO_NOTHING, blank=True, null=True)
- 
-    class Meta:
-        db_table = 'mobileServer_basket'
- 
- 
-class MobileserverCart(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    checked_out = models.BooleanField()
-    owner = models.ForeignKey('users.UsersCustomuser')
-
-    class Meta:
-        db_table = 'mobileServer_cart'
- 
- 
-class MobileserverCartitem(models.Model):
-    quantity = models.PositiveSmallIntegerField()
-    cart = models.ForeignKey(MobileserverCart, on_delete=models.CASCADE)
-    product = models.ForeignKey('MobileserverShopproductinventory', models.DO_NOTHING)
- 
-    class Meta:
-        db_table = 'mobileServer_cartitem'
+# class MobileserverBasket(models.Model):
+#     name = models.CharField(max_length=30)
+#     owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING)
+#     cart = models.ForeignKey('MobileserverCart', models.DO_NOTHING, blank=True, null=True)
+#
+#     class Meta:
+#         db_table = 'mobileServer_basket'
+#
+#
+# class MobileserverCart(models.Model):
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)
+#     checked_out = models.BooleanField()
+#     owner = models.ForeignKey('users.UsersCustomuser')
+#
+#     class Meta:
+#         db_table = 'mobileServer_cart'
+#
+#
+# class MobileserverCartitem(models.Model):
+#     quantity = models.PositiveSmallIntegerField()
+#     cart = models.ForeignKey(MobileserverCart, on_delete=models.CASCADE)
+#     product = models.ForeignKey('MobileserverShopproductinventory', models.DO_NOTHING)
+#
+#     class Meta:
+#         db_table = 'mobileServer_cartitem'
 
 
 ADDRESS_TYPES = [

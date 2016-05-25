@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 import json
 from mobileServer.serializer import *
 from mobileServer.user_utils import add_address
-
+from error import *
 
 #Order Status
 NOT_ORDERED = 0
@@ -75,8 +75,6 @@ TODO: notify the shop of order made
 @apiParam {String} [address_id]  User's delivery address
 @apiParam {String} total_price  The sum value of products in order
 
-
-
 @apiSuccess {String} Success Added image for <code>product_id</code>
 
 @apiUse ProductNotFoundError
@@ -102,11 +100,12 @@ def create_order(request):
 
     if 'shop_id' not in request.POST or 'user_id' not in request.POST or 'product_list' not in request.POST\
             or 'mobile' not in request.POST or 'name' not in request.POST:
-        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     if 'address_id' not in request.POST:
         #add address
         print "Address does not exist"
+        address_id = None
     else:
         address_id = request.POST.get('address_id')
 
@@ -125,7 +124,7 @@ def create_order(request):
     try:
         shop = MobileserverShop.objects.get(pk=int(shop_id))
     except ObjectDoesNotExist:
-        return JSONResponse({'error': 'shop wasnt found'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': ShopNotFound}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     #   Check if the customer related to the order exists in my Database
     try:
@@ -171,11 +170,15 @@ def create_order(request):
     # # if the order doesn't exist
     # # create it and add the product to the order
     # except ObjectDoesNotExist:
-    try:
-        address = Address.objects.get(pk=address_id)
-    except ObjectDoesNotExist:
-        return JSONResponse({'error': "Address: " + str(address_id) + ' doesnt exist'},
-                            status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    if address_id is None:
+        address = None
+    else:
+        try:
+            address = Address.objects.get(pk=address_id)
+        except ObjectDoesNotExist:
+            return JSONResponse({'error': "Address: " + str(address_id) + ' doesnt exist'},
+                                status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     order = MobileserverOrder.objects.create(owner=owner, shop=shop, name=name, phone_number=mobile, address=address,
                                              totalprice=total_price)
@@ -188,7 +191,7 @@ def create_order(request):
             product = MobileserverProduct.objects.get(pk=product_id)
         except ObjectDoesNotExist:
             order.delete()
-            return JSONResponse({'error': "Product: "+str(product_id)+' doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return JSONResponse({'error': ProductNotFound}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         productAddedToOrder = MobileserverOrderProduct.objects.create\
                 (order=order, product=product, quantity=int(product_quantity), price=float(product_price))
@@ -244,7 +247,7 @@ def get_orders_by_useremail(request):
     print("*********************")
 
     if 'user_email' not in request.POST:
-        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     username = request.POST.get('user_email')
 
@@ -299,7 +302,7 @@ def change_order_status_request(request):
     print(request.user)
     print("*********************")
     if 'order_id' not in request.POST and 'order_status' not in request.POST:
-        return JSONResponse({'error': 'request is missing parameters'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     order_id = request.POST.get('order_id')
     order_status = request.POST.get('order_status')
     try:
