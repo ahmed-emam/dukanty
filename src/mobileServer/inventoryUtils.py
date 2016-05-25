@@ -192,7 +192,7 @@ def check_in(request):
         # line below might not work, needs to be tested
         try:
             shop_db = MobileserverShop.objects.get(pk=shop_id)
-            product_db = MobileserverProduct.objects.get(pk=int(product['id']))
+            product_db = MobileserverProduct.objects.get(pk=product['id'])
             inventory_product = MobileserverShopproductinventory.objects.get(shop=shop_db, product=product_db)
         except ObjectDoesNotExist:
             return JSONResponse({'error': 'Either shop or product do not exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
