@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
 from serializer import *
 from models import *
 from error import *
-
+import json
 
 class JSONResponse(HttpResponse):
     """
@@ -182,15 +182,18 @@ def check_in(request):
     try:
         shop_id = request.data['shop_id']
         products_list = request.data['products_list']
+        products_list = json.loads(products_list)
     except KeyError:
         return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
+
+
     # got the parameters, lets check them in
     # assumes that shop and all products already exist
     for product in products_list:
         # product = {'id': 50, 'quantity': 10}
         # line below might not work, needs to be tested
         try:
+
             shop_db = MobileserverShop.objects.get(pk=shop_id)
             product_db = MobileserverProduct.objects.get(id=product['id'])
             inventory_product = MobileserverShopproductinventory.objects.get(shop=shop_db, product=product_db)
