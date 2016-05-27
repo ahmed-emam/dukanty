@@ -25,7 +25,8 @@ SECRET_KEY = '-h2)rb1#d3n1#kz9c(uty4)4_5_ea58u0eub_4%el(xc&0fgfr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# allowed hosts for django to serve
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -120,6 +121,7 @@ PUSH_NOTIFICATIONS_SETTINGS = {
 
 
 REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'mobileServer.exception_handler.custom_exception_handler',
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [

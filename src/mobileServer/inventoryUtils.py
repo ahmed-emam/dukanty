@@ -11,7 +11,7 @@ from serializer import *
 from models import *
 from error import *
 import json
-
+from query_wrapper import *
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -155,18 +155,13 @@ def get_shopInventory(request, shop_id):
 
 
 """
-@api {POST} /inventory/check_in Check in products 
+@api {POST} /inventory/check_in/ Check in products 
 @apiVersion 1.0.0
 @apiName check_in
 @apiGroup Shop
-The ones below are incorrect, will come back to them in a moment
-@apiSuccess {Object} product Product serialized data
-@apiSuccess {Number} price Product's price
-@apiSuccess {Boolean} Stock Product in Stock/out of stock
-@apiSuccess {Number} image_width Product's image width
-@apiSuccess {Number} image_height Product's image height
+@apiParam {Object} shop_id shop_id and prodocut_list
+@apiSuccess {Object} success
 
-@apiUse ShopNotFoundError
 """
 
 
