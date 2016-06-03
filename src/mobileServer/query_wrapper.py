@@ -34,8 +34,7 @@ def query_MobileserverProduct(**kwards):
 	try:
 		query = MobileserverProduct.objects.get(**kwards)
 	except Exception:
-		raise ProductNotFound	
-
+		raise ProductNotFound
 	return query
 
 def query_MobileserverShopproductinventory(**kwards):

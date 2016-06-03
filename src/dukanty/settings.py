@@ -121,7 +121,7 @@ PUSH_NOTIFICATIONS_SETTINGS = {
 
 
 REST_FRAMEWORK = {
-    'EXCEPTION_HANDLER': 'mobileServer.exception_handler.custom_exception_handler',
+    'EXCEPTION_HANDLER': 'dukanty.src.mobileServer.exception_handler.custom_exception_handler',
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
@@ -132,9 +132,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ),
-     'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
 
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
     )
 
 }

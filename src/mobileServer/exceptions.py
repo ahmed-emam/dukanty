@@ -6,7 +6,6 @@ class GenericException(APIException):
     status_code = 500
     default_detail = 'Generic Exception'
 
-
 # User related exceptions
 
 class MissingParameter(APIException):

@@ -535,6 +535,11 @@ define({ "api": [
         ]
       }
     },
+    "permission": [
+      {
+        "name": "admin"
+      }
+    ],
     "filename": "src/mobileServer/productUtils.py",
     "groupTitle": "Products",
     "sampleRequest": [
@@ -852,6 +857,11 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetShops",
     "group": "Shop",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
     "success": {
       "fields": {
         "Success 200": [
@@ -1437,6 +1447,11 @@ define({ "api": [
         ]
       }
     },
+    "permission": [
+      {
+        "name": "AuthenticatedUser"
+      }
+    ],
     "filename": "src/mobileServer/user_utils.py",
     "groupTitle": "User",
     "sampleRequest": [
@@ -1493,7 +1508,7 @@ define({ "api": [
   },
   {
     "type": "get, post",
-    "url": "getAddresses/",
+    "url": "getUserDetails/",
     "title": "Get User details",
     "version": "1.0.0",
     "name": "GetUser",
@@ -1539,11 +1554,16 @@ define({ "api": [
         ]
       }
     },
+    "permission": [
+      {
+        "name": "AuthenticatedUser"
+      }
+    ],
     "filename": "src/mobileServer/user_utils.py",
     "groupTitle": "User",
     "sampleRequest": [
       {
-        "url": "http://dukanty.com/getAddresses/"
+        "url": "http://dukanty.com/getUserDetails/"
       }
     ],
     "error": {
@@ -1578,5 +1598,58 @@ define({ "api": [
         ]
       }
     }
+  },
+  {
+    "type": "post",
+    "url": "auth/login/",
+    "title": "Login",
+    "version": "1.0.0",
+    "name": "Login",
+    "group": "User",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>User's email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>User's password</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Authentication",
+            "description": "<p>token</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/mobileServer/views.py",
+    "groupTitle": "User",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/auth/login/"
+      }
+    ]
   }
 ] });

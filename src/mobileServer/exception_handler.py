@@ -11,5 +11,4 @@ def custom_exception_handler(exc):
         response.data['status_code'] = response.status_code
         response.data['error'] = response.data['detail']
         del response.data['detail']
-
     return response
