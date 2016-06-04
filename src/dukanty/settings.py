@@ -104,7 +104,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dukanty',
         'USER': 'dukantyadmin',
-        'PASSWORD': 'douh0115373730',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432',
         # 'ENGINE': 'django.db.backends.sqlite3',
@@ -121,7 +121,7 @@ PUSH_NOTIFICATIONS_SETTINGS = {
 
 
 REST_FRAMEWORK = {
-    'EXCEPTION_HANDLER': 'mobileServer.exception_handler.custom_exception_handler',
+    #'EXCEPTION_HANDLER': 'dukanty.src.mobileServer.exception_handler.custom_exception_handler',
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
@@ -132,9 +132,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ),
-     'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
 
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
     )
 
 }
@@ -144,7 +144,7 @@ DJOSER = {
     'SITE_NAME': 'Dukanty',
     'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': '#/activate/{uid}/{token}',
-    'SEND_ACTIVATION_EMAIL': False,
+    'SEND_ACTIVATION_EMAIL': True,
 }
 
 # Password validation
@@ -176,8 +176,23 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+# if DEBUG:
+#     EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+#
+# EMAIL_HOST = 'ASPMX.L.GOOGLE.COM'
+# EMAIL_PORT = 25
+# EMAIL_HOST_USER = 'aemam@dukanty.com'
+# EMAIL_HOST_PASSWORD = ''
+# DEFAULT_FROM_EMAIL = 'test@dukanty.com'
+
+
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='aemam@dukanty.com'
+EMAIL_HOST_PASSWORD='password'
+EMAIL_USE_TLS=True
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/

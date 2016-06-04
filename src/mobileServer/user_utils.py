@@ -49,6 +49,7 @@ class JSONResponse(HttpResponse):
 @apiUse ReqParamMiss
 """
 @api_view(['POST'])
+@permission_classes((AllowAny,))
 def add_address(request, order=None):
     print("******REQUEST*******")
     print(request.body)
