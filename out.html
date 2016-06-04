@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="robots" content="NONE,NOARCHIVE">
-  <title>IntegrityError at /debug/createorder/</title>
+  <title>ImportError at /auth/register/</title>
   <style type="text/css">
     html * { padding:0; margin:0; }
     body * { padding:10px 20px; }
@@ -123,10 +123,8 @@
 </head>
 <body>
 <div id="summary">
-  <h1>IntegrityError at /debug/createorder/</h1>
-  <pre class="exception_value">null value in column &quot;mobile&quot; violates not-null constraint
-DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 19:07:55.233994+00, 0, 4, 11, null, null, null).
-</pre>
+  <h1>ImportError at /auth/register/</h1>
+  <pre class="exception_value">Could not import &#39;dukanty.src.mobileServer.exception_handler.custom_exception_handler&#39; for API setting &#39;EXCEPTION_HANDLER&#39;. ImportError: No module named src.mobileServer.exception_handler.</pre>
   <table class="meta">
 
     <tr>
@@ -135,7 +133,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
     </tr>
     <tr>
       <th>Request URL:</th>
-      <td>http://104.236.115.239:8001/debug/createorder/</td>
+      <td>http://dukanty.com/auth/register/</td>
     </tr>
 
     <tr>
@@ -145,21 +143,19 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
 
     <tr>
       <th>Exception Type:</th>
-      <td>IntegrityError</td>
+      <td>ImportError</td>
     </tr>
 
 
     <tr>
       <th>Exception Value:</th>
-      <td><pre>null value in column &quot;mobile&quot; violates not-null constraint
-DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 19:07:55.233994+00, 0, 4, 11, null, null, null).
-</pre></td>
+      <td><pre>Could not import &#39;dukanty.src.mobileServer.exception_handler.custom_exception_handler&#39; for API setting &#39;EXCEPTION_HANDLER&#39;. ImportError: No module named src.mobileServer.exception_handler.</pre></td>
     </tr>
 
 
     <tr>
       <th>Exception Location:</th>
-      <td>/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py in execute, line 64</td>
+      <td>/usr/local/lib/python2.7/dist-packages/rest_framework/settings.py in import_from_string, line 164</td>
     </tr>
 
     <tr>
@@ -172,7 +168,9 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
     </tr>
     <tr>
       <th>Python Path:</th>
-      <td><pre>[&#39;/home/dukanty&#39;,
+      <td><pre>[&#39;/home/dukanty/src&#39;,
+ &#39;/home/dukanty/src/dukanty&#39;,
+ &#39;/usr/local/bin&#39;,
  &#39;/usr/lib/python2.7&#39;,
  &#39;/usr/lib/python2.7/plat-x86_64-linux-gnu&#39;,
  &#39;/usr/lib/python2.7/lib-tk&#39;,
@@ -183,7 +181,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
     </tr>
     <tr>
       <th>Server time:</th>
-      <td>Sun, 6 Mar 2016 19:07:55 +0000</td>
+      <td>Sat, 4 Jun 2016 11:11:37 +0000</td>
     </tr>
   </table>
 </div>
@@ -204,43 +202,43 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
           <code>/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py</code> in <code>get_response</code>
 
           
-            <div class="context" id="c139962385619568">
+            <div class="context" id="c140069067331128">
               
-                <ol start="142" class="pre-context" id="pre139962385619568">
+                <ol start="142" class="pre-context" id="pre140069067331128">
                 
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre>                        break</pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre>                        break</pre></li>
                 
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre></pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre>            if response is None:</pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre>            if response is None:</pre></li>
                 
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre>                wrapped_callback = self.make_view_atomic(callback)</pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre>                wrapped_callback = self.make_view_atomic(callback)</pre></li>
                 
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre>                try:</pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre>                try:</pre></li>
                 
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre>                    response = wrapped_callback(request, *callback_args, **callback_kwargs)</pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre>                    response = wrapped_callback(request, *callback_args, **callback_kwargs)</pre></li>
                 
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre>                except Exception as e:</pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre>                except Exception as e:</pre></li>
                 
                 </ol>
               
               <ol start="149" class="context-line">
-                <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre>
+                <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre>
                     response = self.process_exception_by_middleware(e, request)</pre> <span>...</span></li></ol>
               
-                <ol start='150' class="post-context" id="post139962385619568">
+                <ol start='150' class="post-context" id="post140069067331128">
                   
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre></pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre>            # Complain if the view returned None (a common error).</pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre>            # Complain if the view returned None (a common error).</pre></li>
                   
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre>            if response is None:</pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre>            if response is None:</pre></li>
                   
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre>                if isinstance(callback, types.FunctionType):    # FBV</pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre>                if isinstance(callback, types.FunctionType):    # FBV</pre></li>
                   
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre>                    view_name = callback.__name__</pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre>                    view_name = callback.__name__</pre></li>
                   
-                  <li onclick="toggle('pre139962385619568', 'post139962385619568')"><pre>                else:                                           # CBV</pre></li>
+                  <li onclick="toggle('pre140069067331128', 'post140069067331128')"><pre>                else:                                           # CBV</pre></li>
                   
               </ol>
               
@@ -250,10 +248,10 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
           
             <div class="commands">
                 
-                    <a href="#" onclick="return varToggle(this, '139962385619568')"><span>&#x25b6;</span> Local vars</a>
+                    <a href="#" onclick="return varToggle(this, '140069067331128')"><span>&#x25b6;</span> Local vars</a>
                 
             </div>
-            <table class="vars" id="v139962385619568">
+            <table class="vars" id="v140069067331128">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -264,7 +262,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
                 
                   <tr>
                     <td>e</td>
-                    <td class="code"><pre>IntegrityError(&#39;null value in column &quot;mobile&quot; violates not-null constraint\nDETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 19:07:55.233994+00, 0, 4, 11, null, null, null).\n&#39;,)</pre></td>
+                    <td class="code"><pre>ImportError(u&quot;Could not import &#39;dukanty.src.mobileServer.exception_handler.custom_exception_handler&#39; for API setting &#39;EXCEPTION_HANDLER&#39;. ImportError: No module named src.mobileServer.exception_handler.&quot;,)</pre></td>
                   </tr>
                 
                   <tr>
@@ -274,7 +272,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
                 
                   <tr>
                     <td>resolver_match</td>
-                    <td class="code"><pre>ResolverMatch(func=mobileServer.orderUtils.create_order, args=(), kwargs={}, url_name=None, app_names=[], namespaces=[])</pre></td>
+                    <td class="code"><pre>ResolverMatch(func=djoser.views.RegistrationView, args=(), kwargs={}, url_name=register, app_names=[], namespaces=[])</pre></td>
                   </tr>
                 
                   <tr>
@@ -284,27 +282,27 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
                 
                   <tr>
                     <td>middleware_method</td>
-                    <td class="code"><pre>&lt;bound method CsrfViewMiddleware.process_view of &lt;django.middleware.csrf.CsrfViewMiddleware object at 0x7f4b83bc0210&gt;&gt;</pre></td>
+                    <td class="code"><pre>&lt;bound method CsrfViewMiddleware.process_view of &lt;django.middleware.csrf.CsrfViewMiddleware object at 0x7f645fd49350&gt;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f4b8845d1d0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f6464843f10&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>request</td>
-                    <td class="code"><pre>&lt;WSGIRequest: POST &#39;/debug/createorder/&#39;&gt;</pre></td>
+                    <td class="code"><pre>&lt;WSGIRequest: POST &#39;/auth/register/&#39;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>callback</td>
-                    <td class="code"><pre>&lt;function create_order at 0x7f4b886e09b0&gt;</pre></td>
+                    <td class="code"><pre>&lt;function RegistrationView at 0x7f645f13fd70&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>wrapped_callback</td>
-                    <td class="code"><pre>&lt;function create_order at 0x7f4b886e09b0&gt;</pre></td>
+                    <td class="code"><pre>&lt;function RegistrationView at 0x7f645f13fd70&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -337,43 +335,43 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
           <code>/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py</code> in <code>get_response</code>
 
           
-            <div class="context" id="c139962385619496">
+            <div class="context" id="c140069067299512">
               
-                <ol start="140" class="pre-context" id="pre139962385619496">
+                <ol start="140" class="pre-context" id="pre140069067299512">
                 
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre>                    response = middleware_method(request, callback, callback_args, callback_kwargs)</pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre>                    response = middleware_method(request, callback, callback_args, callback_kwargs)</pre></li>
                 
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre>                    if response:</pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre>                    if response:</pre></li>
                 
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre>                        break</pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre>                        break</pre></li>
                 
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre></pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre>            if response is None:</pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre>            if response is None:</pre></li>
                 
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre>                wrapped_callback = self.make_view_atomic(callback)</pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre>                wrapped_callback = self.make_view_atomic(callback)</pre></li>
                 
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre>                try:</pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre>                try:</pre></li>
                 
                 </ol>
               
               <ol start="147" class="context-line">
-                <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre>
+                <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre>
                     response = wrapped_callback(request, *callback_args, **callback_kwargs)</pre> <span>...</span></li></ol>
               
-                <ol start='148' class="post-context" id="post139962385619496">
+                <ol start='148' class="post-context" id="post140069067299512">
                   
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre>                except Exception as e:</pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre>                except Exception as e:</pre></li>
                   
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre>                    response = self.process_exception_by_middleware(e, request)</pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre>                    response = self.process_exception_by_middleware(e, request)</pre></li>
                   
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre></pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre>            # Complain if the view returned None (a common error).</pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre>            # Complain if the view returned None (a common error).</pre></li>
                   
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre>            if response is None:</pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre>            if response is None:</pre></li>
                   
-                  <li onclick="toggle('pre139962385619496', 'post139962385619496')"><pre>                if isinstance(callback, types.FunctionType):    # FBV</pre></li>
+                  <li onclick="toggle('pre140069067299512', 'post140069067299512')"><pre>                if isinstance(callback, types.FunctionType):    # FBV</pre></li>
                   
               </ol>
               
@@ -383,10 +381,10 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
           
             <div class="commands">
                 
-                    <a href="#" onclick="return varToggle(this, '139962385619496')"><span>&#x25b6;</span> Local vars</a>
+                    <a href="#" onclick="return varToggle(this, '140069067299512')"><span>&#x25b6;</span> Local vars</a>
                 
             </div>
-            <table class="vars" id="v139962385619496">
+            <table class="vars" id="v140069067299512">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -397,7 +395,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
                 
                   <tr>
                     <td>e</td>
-                    <td class="code"><pre>IntegrityError(&#39;null value in column &quot;mobile&quot; violates not-null constraint\nDETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 19:07:55.233994+00, 0, 4, 11, null, null, null).\n&#39;,)</pre></td>
+                    <td class="code"><pre>ImportError(u&quot;Could not import &#39;dukanty.src.mobileServer.exception_handler.custom_exception_handler&#39; for API setting &#39;EXCEPTION_HANDLER&#39;. ImportError: No module named src.mobileServer.exception_handler.&quot;,)</pre></td>
                   </tr>
                 
                   <tr>
@@ -407,7 +405,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
                 
                   <tr>
                     <td>resolver_match</td>
-                    <td class="code"><pre>ResolverMatch(func=mobileServer.orderUtils.create_order, args=(), kwargs={}, url_name=None, app_names=[], namespaces=[])</pre></td>
+                    <td class="code"><pre>ResolverMatch(func=djoser.views.RegistrationView, args=(), kwargs={}, url_name=register, app_names=[], namespaces=[])</pre></td>
                   </tr>
                 
                   <tr>
@@ -417,27 +415,27 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
                 
                   <tr>
                     <td>middleware_method</td>
-                    <td class="code"><pre>&lt;bound method CsrfViewMiddleware.process_view of &lt;django.middleware.csrf.CsrfViewMiddleware object at 0x7f4b83bc0210&gt;&gt;</pre></td>
+                    <td class="code"><pre>&lt;bound method CsrfViewMiddleware.process_view of &lt;django.middleware.csrf.CsrfViewMiddleware object at 0x7f645fd49350&gt;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f4b8845d1d0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f6464843f10&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>request</td>
-                    <td class="code"><pre>&lt;WSGIRequest: POST &#39;/debug/createorder/&#39;&gt;</pre></td>
+                    <td class="code"><pre>&lt;WSGIRequest: POST &#39;/auth/register/&#39;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>callback</td>
-                    <td class="code"><pre>&lt;function create_order at 0x7f4b886e09b0&gt;</pre></td>
+                    <td class="code"><pre>&lt;function RegistrationView at 0x7f645f13fd70&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>wrapped_callback</td>
-                    <td class="code"><pre>&lt;function create_order at 0x7f4b886e09b0&gt;</pre></td>
+                    <td class="code"><pre>&lt;function RegistrationView at 0x7f645f13fd70&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -470,35 +468,35 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
           <code>/usr/local/lib/python2.7/dist-packages/django/views/decorators/csrf.py</code> in <code>wrapped_view</code>
 
           
-            <div class="context" id="c139962385647016">
+            <div class="context" id="c140069067299224">
               
-                <ol start="51" class="pre-context" id="pre139962385647016">
+                <ol start="51" class="pre-context" id="pre140069067299224">
                 
-                  <li onclick="toggle('pre139962385647016', 'post139962385647016')"><pre>    &quot;&quot;&quot;</pre></li>
+                  <li onclick="toggle('pre140069067299224', 'post140069067299224')"><pre>    &quot;&quot;&quot;</pre></li>
                 
-                  <li onclick="toggle('pre139962385647016', 'post139962385647016')"><pre>    Marks a view function as being exempt from the CSRF view protection.</pre></li>
+                  <li onclick="toggle('pre140069067299224', 'post140069067299224')"><pre>    Marks a view function as being exempt from the CSRF view protection.</pre></li>
                 
-                  <li onclick="toggle('pre139962385647016', 'post139962385647016')"><pre>    &quot;&quot;&quot;</pre></li>
+                  <li onclick="toggle('pre140069067299224', 'post140069067299224')"><pre>    &quot;&quot;&quot;</pre></li>
                 
-                  <li onclick="toggle('pre139962385647016', 'post139962385647016')"><pre>    # We could just do view_func.csrf_exempt = True, but decorators</pre></li>
+                  <li onclick="toggle('pre140069067299224', 'post140069067299224')"><pre>    # We could just do view_func.csrf_exempt = True, but decorators</pre></li>
                 
-                  <li onclick="toggle('pre139962385647016', 'post139962385647016')"><pre>    # are nicer if they don&#39;t have side-effects, so we return a new</pre></li>
+                  <li onclick="toggle('pre140069067299224', 'post140069067299224')"><pre>    # are nicer if they don&#39;t have side-effects, so we return a new</pre></li>
                 
-                  <li onclick="toggle('pre139962385647016', 'post139962385647016')"><pre>    # function.</pre></li>
+                  <li onclick="toggle('pre140069067299224', 'post140069067299224')"><pre>    # function.</pre></li>
                 
-                  <li onclick="toggle('pre139962385647016', 'post139962385647016')"><pre>    def wrapped_view(*args, **kwargs):</pre></li>
+                  <li onclick="toggle('pre140069067299224', 'post140069067299224')"><pre>    def wrapped_view(*args, **kwargs):</pre></li>
                 
                 </ol>
               
               <ol start="58" class="context-line">
-                <li onclick="toggle('pre139962385647016', 'post139962385647016')"><pre>
+                <li onclick="toggle('pre140069067299224', 'post140069067299224')"><pre>
         return view_func(*args, **kwargs)</pre> <span>...</span></li></ol>
               
-                <ol start='59' class="post-context" id="post139962385647016">
+                <ol start='59' class="post-context" id="post140069067299224">
                   
-                  <li onclick="toggle('pre139962385647016', 'post139962385647016')"><pre>    wrapped_view.csrf_exempt = True</pre></li>
+                  <li onclick="toggle('pre140069067299224', 'post140069067299224')"><pre>    wrapped_view.csrf_exempt = True</pre></li>
                   
-                  <li onclick="toggle('pre139962385647016', 'post139962385647016')"><pre>    return wraps(view_func, assigned=available_attrs(view_func))(wrapped_view)</pre></li>
+                  <li onclick="toggle('pre140069067299224', 'post140069067299224')"><pre>    return wraps(view_func, assigned=available_attrs(view_func))(wrapped_view)</pre></li>
                   
               </ol>
               
@@ -508,10 +506,10 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
           
             <div class="commands">
                 
-                    <a href="#" onclick="return varToggle(this, '139962385647016')"><span>&#x25b6;</span> Local vars</a>
+                    <a href="#" onclick="return varToggle(this, '140069067299224')"><span>&#x25b6;</span> Local vars</a>
                 
             </div>
-            <table class="vars" id="v139962385647016">
+            <table class="vars" id="v140069067299224">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -522,12 +520,208 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
                 
                   <tr>
                     <td>args</td>
-                    <td class="code"><pre>(&lt;WSGIRequest: POST &#39;/debug/createorder/&#39;&gt;,)</pre></td>
+                    <td class="code"><pre>(&lt;WSGIRequest: POST &#39;/auth/register/&#39;&gt;,)</pre></td>
                   </tr>
                 
                   <tr>
                     <td>view_func</td>
-                    <td class="code"><pre>&lt;function create_order at 0x7f4b886e08c0&gt;</pre></td>
+                    <td class="code"><pre>&lt;function RegistrationView at 0x7f645f13fcf8&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>kwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          <code>/usr/local/lib/python2.7/dist-packages/django/views/generic/base.py</code> in <code>view</code>
+
+          
+            <div class="context" id="c140069066998344">
+              
+                <ol start="61" class="pre-context" id="pre140069066998344">
+                
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre>        def view(request, *args, **kwargs):</pre></li>
+                
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre>            self = cls(**initkwargs)</pre></li>
+                
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre>            if hasattr(self, &#39;get&#39;) and not hasattr(self, &#39;head&#39;):</pre></li>
+                
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre>                self.head = self.get</pre></li>
+                
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre>            self.request = request</pre></li>
+                
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre>            self.args = args</pre></li>
+                
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre>            self.kwargs = kwargs</pre></li>
+                
+                </ol>
+              
+              <ol start="68" class="context-line">
+                <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre>
+            return self.dispatch(request, *args, **kwargs)</pre> <span>...</span></li></ol>
+              
+                <ol start='69' class="post-context" id="post140069066998344">
+                  
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre>        view.view_class = cls</pre></li>
+                  
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre>        view.view_initkwargs = initkwargs</pre></li>
+                  
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre>        # take name and docstring from class</pre></li>
+                  
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre>        update_wrapper(view, cls, updated=())</pre></li>
+                  
+                  <li onclick="toggle('pre140069066998344', 'post140069066998344')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '140069066998344')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v140069066998344">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>initkwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;djoser.views.RegistrationView object at 0x7f645fd64190&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest: POST &#39;/auth/register/&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>kwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>cls</td>
+                    <td class="code"><pre>&lt;class &#39;djoser.views.RegistrationView&#39;&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame user">
+          <code>/usr/local/lib/python2.7/dist-packages/rest_framework/views.py</code> in <code>dispatch</code>
+
+          
+            <div class="context" id="c140069066975856">
+              
+                <ol start="459" class="pre-context" id="pre140069066975856">
+                
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre>                                  self.http_method_not_allowed)</pre></li>
+                
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre>            else:</pre></li>
+                
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre>                handler = self.http_method_not_allowed</pre></li>
+                
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre>            response = handler(request, *args, **kwargs)</pre></li>
+                
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre>        except Exception as exc:</pre></li>
+                
+                </ol>
+              
+              <ol start="466" class="context-line">
+                <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre>
+            response = self.handle_exception(exc)</pre> <span>...</span></li></ol>
+              
+                <ol start='467' class="post-context" id="post140069066975856">
+                  
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre>        self.response = self.finalize_response(request, response, *args, **kwargs)</pre></li>
+                  
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre>        return self.response</pre></li>
+                  
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre>    def options(self, request, *args, **kwargs):</pre></li>
+                  
+                  <li onclick="toggle('pre140069066975856', 'post140069066975856')"><pre>        &quot;&quot;&quot;</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '140069066975856')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v140069066975856">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>exc</td>
+                    <td class="code"><pre>ValidationError()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;djoser.views.RegistrationView object at 0x7f645fd64190&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;rest_framework.request.Request object at 0x7f645eff1d10&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>handler</td>
+                    <td class="code"><pre>&lt;bound method RegistrationView.post of &lt;djoser.views.RegistrationView object at 0x7f645fd64190&gt;&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -542,46 +736,46 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
       
         
         <li class="frame user">
-          <code>/home/dukanty/mobileServer/orderUtils.py</code> in <code>create_order</code>
+          <code>/usr/local/lib/python2.7/dist-packages/rest_framework/views.py</code> in <code>handle_exception</code>
 
           
-            <div class="context" id="c139962385648312">
+            <div class="context" id="c140069067001800">
               
-                <ol start="132" class="pre-context" id="pre139962385648312">
+                <ol start="421" class="pre-context" id="pre140069067001800">
                 
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>    #         serializedData = OrderProductSerializer(productAddedToOrder)</pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre>            auth_header = self.get_authenticate_header(self.request)</pre></li>
                 
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>    #         return JSONResponse(serializedData.data, status=status.HTTP_200_OK)</pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>    #     else:</pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre>            if auth_header:</pre></li>
                 
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>    #         print(&quot;Changing order failed for\n&quot;+order.__str__())</pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre>                exc.auth_header = auth_header</pre></li>
                 
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>    # # if the order doesn&#39;t exist</pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre>            else:</pre></li>
                 
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>    # # create it and add the product to the order</pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre>                exc.status_code = status.HTTP_403_FORBIDDEN</pre></li>
                 
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>    # except ObjectDoesNotExist:</pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre></pre></li>
                 
                 </ol>
               
-              <ol start="139" class="context-line">
-                <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>
-    order = MobileserverOrder.objects.create(owner=owner, shop=shop, name=name, mobile=mobile)</pre> <span>...</span></li></ol>
+              <ol start="428" class="context-line">
+                <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre>
+        exception_handler = self.settings.EXCEPTION_HANDLER</pre> <span>...</span></li></ol>
               
-                <ol start='140' class="post-context" id="post139962385648312">
+                <ol start='429' class="post-context" id="post140069067001800">
                   
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre></pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>    for product in product_list:</pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre>        context = self.get_exception_handler_context()</pre></li>
                   
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>    # print</pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre>        response = exception_handler(exc, context)</pre></li>
                   
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>        product_name = product[&#39;product_name&#39;]</pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>        product_price = product[&#39;product_price&#39;]</pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre>        if response is None:</pre></li>
                   
-                  <li onclick="toggle('pre139962385648312', 'post139962385648312')"><pre>        product_quantity = product[&#39;product_quantity&#39;]</pre></li>
+                  <li onclick="toggle('pre140069067001800', 'post140069067001800')"><pre>            raise</pre></li>
                   
               </ol>
               
@@ -591,118 +785,10 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
           
             <div class="commands">
                 
-                    <a href="#" onclick="return varToggle(this, '139962385648312')"><span>&#x25b6;</span> Local vars</a>
+                    <a href="#" onclick="return varToggle(this, '140069067001800')"><span>&#x25b6;</span> Local vars</a>
                 
             </div>
-            <table class="vars" id="v139962385648312">
-              <thead>
-                <tr>
-                  <th>Variable</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                  <tr>
-                    <td>shop</td>
-                    <td class="code"><pre>&lt;MobileserverShop: shopter&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>username</td>
-                    <td class="code"><pre>u&#39;4&#39;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>name</td>
-                    <td class="code"><pre>None</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>mobile</td>
-                    <td class="code"><pre>None</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>request</td>
-                    <td class="code"><pre>&lt;WSGIRequest: POST &#39;/debug/createorder/&#39;&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>shop_id</td>
-                    <td class="code"><pre>u&#39;11&#39;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>product_list</td>
-                    <td class="code"><pre>[]</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>owner</td>
-                    <td class="code"><pre>&lt;UsersCustomUser: shop@shop.com&gt;</pre></td>
-                  </tr>
-                
-              </tbody>
-            </table>
-          
-        </li>
-      
-        
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py</code> in <code>manager_method</code>
-
-          
-            <div class="context" id="c139962385741512">
-              
-                <ol start="115" class="pre-context" id="pre139962385741512">
-                
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre>    def check(self, **kwargs):</pre></li>
-                
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre>        return []</pre></li>
-                
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre></pre></li>
-                
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre>    @classmethod</pre></li>
-                
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre>    def _get_queryset_methods(cls, queryset_class):</pre></li>
-                
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre>        def create_method(name, method):</pre></li>
-                
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre>            def manager_method(self, *args, **kwargs):</pre></li>
-                
-                </ol>
-              
-              <ol start="122" class="context-line">
-                <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre>
-                return getattr(self.get_queryset(), name)(*args, **kwargs)</pre> <span>...</span></li></ol>
-              
-                <ol start='123' class="post-context" id="post139962385741512">
-                  
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre>            manager_method.__name__ = method.__name__</pre></li>
-                  
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre>            manager_method.__doc__ = method.__doc__</pre></li>
-                  
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre>            return manager_method</pre></li>
-                  
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre></pre></li>
-                  
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre>        new_methods = {}</pre></li>
-                  
-                  <li onclick="toggle('pre139962385741512', 'post139962385741512')"><pre>        # Refs http://bugs.python.org/issue1785.</pre></li>
-                  
-              </ol>
-              
-            </div>
-          
-
-          
-            <div class="commands">
-                
-                    <a href="#" onclick="return varToggle(this, '139962385741512')"><span>&#x25b6;</span> Local vars</a>
-                
-            </div>
-            <table class="vars" id="v139962385741512">
+            <table class="vars" id="v140069067001800">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -713,25 +799,12 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.db.models.manager.Manager object at 0x7f4b8a76ffd0&gt;</pre></td>
+                    <td class="code"><pre>&lt;djoser.views.RegistrationView object at 0x7f645fd64190&gt;</pre></td>
                   </tr>
                 
                   <tr>
-                    <td>args</td>
-                    <td class="code"><pre>()</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>name</td>
-                    <td class="code"><pre>&#39;create&#39;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>kwargs</td>
-                    <td class="code"><pre>{&#39;mobile&#39;: None,
- &#39;name&#39;: None,
- &#39;owner&#39;: &lt;UsersCustomUser: shop@shop.com&gt;,
- &#39;shop&#39;: &lt;MobileserverShop: shopter&gt;}</pre></td>
+                    <td>exc</td>
+                    <td class="code"><pre>ValidationError()</pre></td>
                   </tr>
                 
               </tbody>
@@ -740,47 +813,47 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
         </li>
       
         
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/models/query.py</code> in <code>create</code>
+        <li class="frame user">
+          <code>/usr/local/lib/python2.7/dist-packages/rest_framework/settings.py</code> in <code>__getattr__</code>
 
           
-            <div class="context" id="c139962385958600">
+            <div class="context" id="c140069067000792">
               
-                <ol start="394" class="pre-context" id="pre139962385958600">
+                <ol start="196" class="pre-context" id="pre140069067000792">
                 
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>    def create(self, **kwargs):</pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre>            val = self.user_settings[attr]</pre></li>
                 
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>        &quot;&quot;&quot;</pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre>        except KeyError:</pre></li>
                 
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>        Creates a new object with the given kwargs, saving it to the database</pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre>            # Fall back to defaults</pre></li>
                 
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>        and returning the created object.</pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre>            val = self.defaults[attr]</pre></li>
                 
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>        &quot;&quot;&quot;</pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>        obj = self.model(**kwargs)</pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre>        # Coerce import strings into classes</pre></li>
                 
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>        self._for_write = True</pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre>        if attr in self.import_strings:</pre></li>
                 
                 </ol>
               
-              <ol start="401" class="context-line">
-                <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>
-        obj.save(force_insert=True, using=self.db)</pre> <span>...</span></li></ol>
+              <ol start="203" class="context-line">
+                <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre>
+            val = perform_import(val, attr)</pre> <span>...</span></li></ol>
               
-                <ol start='402' class="post-context" id="post139962385958600">
+                <ol start='204' class="post-context" id="post140069067000792">
                   
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>        return obj</pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre></pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre>        # Cache the result</pre></li>
                   
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>    def _populate_pk_values(self, objs):</pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre>        setattr(self, attr, val)</pre></li>
                   
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>        for obj in objs:</pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre>        return val</pre></li>
                   
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>            if obj.pk is None:</pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre139962385958600', 'post139962385958600')"><pre>                obj.pk = obj._meta.pk.get_pk_value_on_save(obj)</pre></li>
+                  <li onclick="toggle('pre140069067000792', 'post140069067000792')"><pre></pre></li>
                   
               </ol>
               
@@ -790,10 +863,10 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
           
             <div class="commands">
                 
-                    <a href="#" onclick="return varToggle(this, '139962385958600')"><span>&#x25b6;</span> Local vars</a>
+                    <a href="#" onclick="return varToggle(this, '140069067000792')"><span>&#x25b6;</span> Local vars</a>
                 
             </div>
-            <table class="vars" id="v139962385958600">
+            <table class="vars" id="v140069067000792">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -804,20 +877,17 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>[&lt;MobileserverOrder: 5	Owner:customer@customer.com	From:safwan	Status:0&gt;, &lt;MobileserverOrder: 6	Owner:shop@shop.com	From:shopter	Status:0&gt;, &lt;MobileserverOrder: 7	Owner:shop@shop.com	From:shopter	Status:0&gt;]</pre></td>
+                    <td class="code"><pre>&lt;rest_framework.settings.APISettings object at 0x7f646641add0&gt;</pre></td>
                   </tr>
                 
                   <tr>
-                    <td>obj</td>
-                    <td class="code"><pre>&lt;MobileserverOrder: None	Owner:shop@shop.com	From:shopter	Status:0&gt;</pre></td>
+                    <td>attr</td>
+                    <td class="code"><pre>&#39;EXCEPTION_HANDLER&#39;</pre></td>
                   </tr>
                 
                   <tr>
-                    <td>kwargs</td>
-                    <td class="code"><pre>{&#39;mobile&#39;: None,
- &#39;name&#39;: None,
- &#39;owner&#39;: &lt;UsersCustomUser: shop@shop.com&gt;,
- &#39;shop&#39;: &lt;MobileserverShop: shopter&gt;}</pre></td>
+                    <td>val</td>
+                    <td class="code"><pre>&#39;dukanty.src.mobileServer.exception_handler.custom_exception_handler&#39;</pre></td>
                   </tr>
                 
               </tbody>
@@ -826,47 +896,47 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
         </li>
       
         
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/models/base.py</code> in <code>save</code>
+        <li class="frame user">
+          <code>/usr/local/lib/python2.7/dist-packages/rest_framework/settings.py</code> in <code>perform_import</code>
 
           
-            <div class="context" id="c139962385648600">
+            <div class="context" id="c140069067000648">
               
-                <ol start="693" class="pre-context" id="pre139962385648600">
+                <ol start="139" class="pre-context" id="pre140069067000648">
                 
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre>            ]</pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre>    &quot;&quot;&quot;</pre></li>
                 
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre></pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre>    If the given setting is a string import notation,</pre></li>
                 
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre>            loaded_fields = field_names.difference(deferred_fields)</pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre>    then perform the necessary import or imports.</pre></li>
                 
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre>            if loaded_fields:</pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre>    &quot;&quot;&quot;</pre></li>
                 
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre>                update_fields = frozenset(loaded_fields)</pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre>    if val is None:</pre></li>
                 
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre></pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre>        return None</pre></li>
                 
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre>        self.save_base(using=using, force_insert=force_insert,</pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre>    elif isinstance(val, six.string_types):</pre></li>
                 
                 </ol>
               
-              <ol start="700" class="context-line">
-                <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre>
-                       force_update=force_update, update_fields=update_fields)</pre> <span>...</span></li></ol>
+              <ol start="146" class="context-line">
+                <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre>
+        return import_from_string(val, setting_name)</pre> <span>...</span></li></ol>
               
-                <ol start='701' class="post-context" id="post139962385648600">
+                <ol start='147' class="post-context" id="post140069067000648">
                   
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre>    save.alters_data = True</pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre>    elif isinstance(val, (list, tuple)):</pre></li>
                   
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre></pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre>        return [import_from_string(item, setting_name) for item in val]</pre></li>
                   
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre>    def save_base(self, raw=False, force_insert=False,</pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre>    return val</pre></li>
                   
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre>                  force_update=False, using=None, update_fields=None):</pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre>        &quot;&quot;&quot;</pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre139962385648600', 'post139962385648600')"><pre>        Handles the parts of saving which should be done only once per save,</pre></li>
+                  <li onclick="toggle('pre140069067000648', 'post140069067000648')"><pre>def import_from_string(val, setting_name):</pre></li>
                   
               </ol>
               
@@ -876,10 +946,10 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
           
             <div class="commands">
                 
-                    <a href="#" onclick="return varToggle(this, '139962385648600')"><span>&#x25b6;</span> Local vars</a>
+                    <a href="#" onclick="return varToggle(this, '140069067000648')"><span>&#x25b6;</span> Local vars</a>
                 
             </div>
-            <table class="vars" id="v139962385648600">
+            <table class="vars" id="v140069067000648">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -889,38 +959,13 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
               <tbody>
                 
                   <tr>
-                    <td>update_fields</td>
-                    <td class="code"><pre>None</pre></td>
+                    <td>setting_name</td>
+                    <td class="code"><pre>&#39;EXCEPTION_HANDLER&#39;</pre></td>
                   </tr>
                 
                   <tr>
-                    <td>obj</td>
-                    <td class="code"><pre>&lt;MobileserverShop: shopter&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>force_insert</td>
-                    <td class="code"><pre>True</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>self</td>
-                    <td class="code"><pre>&lt;MobileserverOrder: None	Owner:shop@shop.com	From:shopter	Status:0&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>force_update</td>
-                    <td class="code"><pre>False</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>field</td>
-                    <td class="code"><pre>&lt;django.db.models.fields.related.ForeignKey: address&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>using</td>
-                    <td class="code"><pre>&#39;default&#39;</pre></td>
+                    <td>val</td>
+                    <td class="code"><pre>&#39;dukanty.src.mobileServer.exception_handler.custom_exception_handler&#39;</pre></td>
                   </tr>
                 
               </tbody>
@@ -929,47 +974,47 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
         </li>
       
         
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/models/base.py</code> in <code>save_base</code>
+        <li class="frame user">
+          <code>/usr/local/lib/python2.7/dist-packages/rest_framework/settings.py</code> in <code>import_from_string</code>
 
           
-            <div class="context" id="c139962385647808">
+            <div class="context" id="c140069067000504">
               
-                <ol start="721" class="pre-context" id="pre139962385647808">
+                <ol start="157" class="pre-context" id="pre140069067000504">
                 
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>        meta = cls._meta</pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre>        # Nod to tastypie&#39;s use of importlib.</pre></li>
                 
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>        if not meta.auto_created:</pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre>        parts = val.split(&#39;.&#39;)</pre></li>
                 
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>            signals.pre_save.send(sender=origin, instance=self, raw=raw, using=using,</pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre>        module_path, class_name = &#39;.&#39;.join(parts[:-1]), parts[-1]</pre></li>
                 
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>                                  update_fields=update_fields)</pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre>        module = importlib.import_module(module_path)</pre></li>
                 
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>        with transaction.atomic(using=using, savepoint=False):</pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre>        return getattr(module, class_name)</pre></li>
                 
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>            if not raw:</pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre>    except (ImportError, AttributeError) as e:</pre></li>
                 
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>                self._save_parents(cls, using, update_fields)</pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre>        msg = &quot;Could not import &#39;%s&#39; for API setting &#39;%s&#39;. %s: %s.&quot; % (val, setting_name, e.__class__.__name__, e)</pre></li>
                 
                 </ol>
               
-              <ol start="728" class="context-line">
-                <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>
-            updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)</pre> <span>...</span></li></ol>
+              <ol start="164" class="context-line">
+                <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre>
+        raise ImportError(msg)</pre> <span>...</span></li></ol>
               
-                <ol start='729' class="post-context" id="post139962385647808">
+                <ol start='165' class="post-context" id="post140069067000504">
                   
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>        # Store the database on which the object was saved</pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>        self._state.db = using</pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>        # Once saved, this is no longer a to-be-added instance.</pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre>class APISettings(object):</pre></li>
                   
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>        self._state.adding = False</pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre>    &quot;&quot;&quot;</pre></li>
                   
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre></pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre>    A settings object, that allows API settings to be accessed as properties.</pre></li>
                   
-                  <li onclick="toggle('pre139962385647808', 'post139962385647808')"><pre>        # Signal that the save is complete</pre></li>
+                  <li onclick="toggle('pre140069067000504', 'post140069067000504')"><pre>    For example:</pre></li>
                   
               </ol>
               
@@ -979,10 +1024,10 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
           
             <div class="commands">
                 
-                    <a href="#" onclick="return varToggle(this, '139962385647808')"><span>&#x25b6;</span> Local vars</a>
+                    <a href="#" onclick="return varToggle(this, '140069067000504')"><span>&#x25b6;</span> Local vars</a>
                 
             </div>
-            <table class="vars" id="v139962385647808">
+            <table class="vars" id="v140069067000504">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -992,1015 +1037,42 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
               <tbody>
                 
                   <tr>
-                    <td>origin</td>
-                    <td class="code"><pre>&lt;class &#39;mobileServer.models.MobileserverOrder&#39;&gt;</pre></td>
+                    <td>e</td>
+                    <td class="code"><pre>ImportError(&#39;No module named src.mobileServer.exception_handler&#39;,)</pre></td>
                   </tr>
                 
                   <tr>
-                    <td>update_fields</td>
-                    <td class="code"><pre>None</pre></td>
+                    <td>val</td>
+                    <td class="code"><pre>&#39;dukanty.src.mobileServer.exception_handler.custom_exception_handler&#39;</pre></td>
                   </tr>
                 
                   <tr>
-                    <td>force_insert</td>
-                    <td class="code"><pre>True</pre></td>
+                    <td>class_name</td>
+                    <td class="code"><pre>u&#39;custom_exception_handler&#39;</pre></td>
                   </tr>
                 
                   <tr>
-                    <td>self</td>
-                    <td class="code"><pre>&lt;MobileserverOrder: None	Owner:shop@shop.com	From:shopter	Status:0&gt;</pre></td>
+                    <td>parts</td>
+                    <td class="code"><pre>[u&#39;dukanty&#39;,
+ u&#39;src&#39;,
+ u&#39;mobileServer&#39;,
+ u&#39;exception_handler&#39;,
+ u&#39;custom_exception_handler&#39;]</pre></td>
                   </tr>
                 
                   <tr>
-                    <td>force_update</td>
-                    <td class="code"><pre>False</pre></td>
+                    <td>msg</td>
+                    <td class="code"><pre>u&quot;Could not import &#39;dukanty.src.mobileServer.exception_handler.custom_exception_handler&#39; for API setting &#39;EXCEPTION_HANDLER&#39;. ImportError: No module named src.mobileServer.exception_handler.&quot;</pre></td>
                   </tr>
                 
                   <tr>
-                    <td>raw</td>
-                    <td class="code"><pre>False</pre></td>
+                    <td>module_path</td>
+                    <td class="code"><pre>u&#39;dukanty.src.mobileServer.exception_handler&#39;</pre></td>
                   </tr>
                 
                   <tr>
-                    <td>meta</td>
-                    <td class="code"><pre>&lt;Options for MobileserverOrder&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>using</td>
-                    <td class="code"><pre>&#39;default&#39;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>cls</td>
-                    <td class="code"><pre>&lt;class &#39;mobileServer.models.MobileserverOrder&#39;&gt;</pre></td>
-                  </tr>
-                
-              </tbody>
-            </table>
-          
-        </li>
-      
-        
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/models/base.py</code> in <code>_save_table</code>
-
-          
-            <div class="context" id="c139962299767840">
-              
-                <ol start="805" class="pre-context" id="pre139962299767840">
-                
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre>                self._order = order_value</pre></li>
-                
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre></pre></li>
-                
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre>            fields = meta.local_concrete_fields</pre></li>
-                
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre>            if not pk_set:</pre></li>
-                
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre>                fields = [f for f in fields if not isinstance(f, AutoField)]</pre></li>
-                
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre></pre></li>
-                
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre>            update_pk = bool(meta.has_auto_field and not pk_set)</pre></li>
-                
-                </ol>
-              
-              <ol start="812" class="context-line">
-                <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre>
-            result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)</pre> <span>...</span></li></ol>
-              
-                <ol start='813' class="post-context" id="post139962299767840">
-                  
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre>            if update_pk:</pre></li>
-                  
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre>                setattr(self, meta.pk.attname, result)</pre></li>
-                  
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre>        return updated</pre></li>
-                  
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre></pre></li>
-                  
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre>    def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update):</pre></li>
-                  
-                  <li onclick="toggle('pre139962299767840', 'post139962299767840')"><pre>        &quot;&quot;&quot;</pre></li>
-                  
-              </ol>
-              
-            </div>
-          
-
-          
-            <div class="commands">
-                
-                    <a href="#" onclick="return varToggle(this, '139962299767840')"><span>&#x25b6;</span> Local vars</a>
-                
-            </div>
-            <table class="vars" id="v139962299767840">
-              <thead>
-                <tr>
-                  <th>Variable</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                  <tr>
-                    <td>update_fields</td>
-                    <td class="code"><pre>None</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>non_pks</td>
-                    <td class="code"><pre>[&lt;django.db.models.fields.FloatField: totalprice&gt;,
- &lt;django.db.models.fields.CharField: name&gt;,
- &lt;django.db.models.fields.IntegerField: mobile&gt;,
- &lt;django.db.models.fields.related.ForeignKey: owner&gt;,
- &lt;django.db.models.fields.related.ForeignKey: shop&gt;,
- &lt;django.db.models.fields.DateTimeField: created_at&gt;,
- &lt;django.db.models.fields.DateTimeField: updated_at&gt;,
- &lt;django.db.models.fields.PositiveSmallIntegerField: status&gt;,
- &lt;django.db.models.fields.related.ForeignKey: address&gt;]</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>updated</td>
-                    <td class="code"><pre>False</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>f</td>
-                    <td class="code"><pre>&lt;django.db.models.fields.related.ForeignKey: address&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>fields</td>
-                    <td class="code"><pre>[&lt;django.db.models.fields.FloatField: totalprice&gt;,
- &lt;django.db.models.fields.CharField: name&gt;,
- &lt;django.db.models.fields.IntegerField: mobile&gt;,
- &lt;django.db.models.fields.related.ForeignKey: owner&gt;,
- &lt;django.db.models.fields.related.ForeignKey: shop&gt;,
- &lt;django.db.models.fields.DateTimeField: created_at&gt;,
- &lt;django.db.models.fields.DateTimeField: updated_at&gt;,
- &lt;django.db.models.fields.PositiveSmallIntegerField: status&gt;,
- &lt;django.db.models.fields.related.ForeignKey: address&gt;]</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>self</td>
-                    <td class="code"><pre>&lt;MobileserverOrder: None	Owner:shop@shop.com	From:shopter	Status:0&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>force_update</td>
-                    <td class="code"><pre>False</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>raw</td>
-                    <td class="code"><pre>False</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>meta</td>
-                    <td class="code"><pre>&lt;Options for MobileserverOrder&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>update_pk</td>
-                    <td class="code"><pre>True</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>pk_val</td>
-                    <td class="code"><pre>None</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>pk_set</td>
-                    <td class="code"><pre>False</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>using</td>
-                    <td class="code"><pre>&#39;default&#39;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>force_insert</td>
-                    <td class="code"><pre>True</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>cls</td>
-                    <td class="code"><pre>&lt;class &#39;mobileServer.models.MobileserverOrder&#39;&gt;</pre></td>
-                  </tr>
-                
-              </tbody>
-            </table>
-          
-        </li>
-      
-        
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/models/base.py</code> in <code>_do_insert</code>
-
-          
-            <div class="context" id="c139962299766976">
-              
-                <ol start="844" class="pre-context" id="pre139962299766976">
-                
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre></pre></li>
-                
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre>    def _do_insert(self, manager, using, fields, update_pk, raw):</pre></li>
-                
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre>        &quot;&quot;&quot;</pre></li>
-                
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre>        Do an INSERT. If update_pk is defined then this method should return</pre></li>
-                
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre>        the new pk for the model.</pre></li>
-                
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre>        &quot;&quot;&quot;</pre></li>
-                
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre>        return manager._insert([self], fields=fields, return_id=update_pk,</pre></li>
-                
-                </ol>
-              
-              <ol start="851" class="context-line">
-                <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre>
-                               using=using, raw=raw)</pre> <span>...</span></li></ol>
-              
-                <ol start='852' class="post-context" id="post139962299766976">
-                  
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre></pre></li>
-                  
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre>    def delete(self, using=None, keep_parents=False):</pre></li>
-                  
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre>        using = using or router.db_for_write(self.__class__, instance=self)</pre></li>
-                  
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre>        assert self._get_pk_val() is not None, (</pre></li>
-                  
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre>            &quot;%s object can&#39;t be deleted because its %s attribute is set to None.&quot; %</pre></li>
-                  
-                  <li onclick="toggle('pre139962299766976', 'post139962299766976')"><pre>            (self._meta.object_name, self._meta.pk.attname)</pre></li>
-                  
-              </ol>
-              
-            </div>
-          
-
-          
-            <div class="commands">
-                
-                    <a href="#" onclick="return varToggle(this, '139962299766976')"><span>&#x25b6;</span> Local vars</a>
-                
-            </div>
-            <table class="vars" id="v139962299766976">
-              <thead>
-                <tr>
-                  <th>Variable</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                  <tr>
-                    <td>fields</td>
-                    <td class="code"><pre>[&lt;django.db.models.fields.FloatField: totalprice&gt;,
- &lt;django.db.models.fields.CharField: name&gt;,
- &lt;django.db.models.fields.IntegerField: mobile&gt;,
- &lt;django.db.models.fields.related.ForeignKey: owner&gt;,
- &lt;django.db.models.fields.related.ForeignKey: shop&gt;,
- &lt;django.db.models.fields.DateTimeField: created_at&gt;,
- &lt;django.db.models.fields.DateTimeField: updated_at&gt;,
- &lt;django.db.models.fields.PositiveSmallIntegerField: status&gt;,
- &lt;django.db.models.fields.related.ForeignKey: address&gt;]</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>self</td>
-                    <td class="code"><pre>&lt;MobileserverOrder: None	Owner:shop@shop.com	From:shopter	Status:0&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>raw</td>
-                    <td class="code"><pre>False</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>manager</td>
-                    <td class="code"><pre>&lt;django.db.models.manager.Manager object at 0x7f4b8a76ffd0&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>using</td>
-                    <td class="code"><pre>&#39;default&#39;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>update_pk</td>
-                    <td class="code"><pre>True</pre></td>
-                  </tr>
-                
-              </tbody>
-            </table>
-          
-        </li>
-      
-        
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py</code> in <code>manager_method</code>
-
-          
-            <div class="context" id="c139962299767480">
-              
-                <ol start="115" class="pre-context" id="pre139962299767480">
-                
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre>    def check(self, **kwargs):</pre></li>
-                
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre>        return []</pre></li>
-                
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre></pre></li>
-                
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre>    @classmethod</pre></li>
-                
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre>    def _get_queryset_methods(cls, queryset_class):</pre></li>
-                
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre>        def create_method(name, method):</pre></li>
-                
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre>            def manager_method(self, *args, **kwargs):</pre></li>
-                
-                </ol>
-              
-              <ol start="122" class="context-line">
-                <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre>
-                return getattr(self.get_queryset(), name)(*args, **kwargs)</pre> <span>...</span></li></ol>
-              
-                <ol start='123' class="post-context" id="post139962299767480">
-                  
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre>            manager_method.__name__ = method.__name__</pre></li>
-                  
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre>            manager_method.__doc__ = method.__doc__</pre></li>
-                  
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre>            return manager_method</pre></li>
-                  
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre></pre></li>
-                  
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre>        new_methods = {}</pre></li>
-                  
-                  <li onclick="toggle('pre139962299767480', 'post139962299767480')"><pre>        # Refs http://bugs.python.org/issue1785.</pre></li>
-                  
-              </ol>
-              
-            </div>
-          
-
-          
-            <div class="commands">
-                
-                    <a href="#" onclick="return varToggle(this, '139962299767480')"><span>&#x25b6;</span> Local vars</a>
-                
-            </div>
-            <table class="vars" id="v139962299767480">
-              <thead>
-                <tr>
-                  <th>Variable</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                  <tr>
-                    <td>self</td>
-                    <td class="code"><pre>&lt;django.db.models.manager.Manager object at 0x7f4b8a76ffd0&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>args</td>
-                    <td class="code"><pre>([&lt;MobileserverOrder: None	Owner:shop@shop.com	From:shopter	Status:0&gt;],)</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>name</td>
-                    <td class="code"><pre>&#39;_insert&#39;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>kwargs</td>
-                    <td class="code"><pre>{&#39;fields&#39;: [&lt;django.db.models.fields.FloatField: totalprice&gt;,
-            &lt;django.db.models.fields.CharField: name&gt;,
-            &lt;django.db.models.fields.IntegerField: mobile&gt;,
-            &lt;django.db.models.fields.related.ForeignKey: owner&gt;,
-            &lt;django.db.models.fields.related.ForeignKey: shop&gt;,
-            &lt;django.db.models.fields.DateTimeField: created_at&gt;,
-            &lt;django.db.models.fields.DateTimeField: updated_at&gt;,
-            &lt;django.db.models.fields.PositiveSmallIntegerField: status&gt;,
-            &lt;django.db.models.fields.related.ForeignKey: address&gt;],
- &#39;raw&#39;: False,
- &#39;return_id&#39;: True,
- &#39;using&#39;: &#39;default&#39;}</pre></td>
-                  </tr>
-                
-              </tbody>
-            </table>
-          
-        </li>
-      
-        
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/models/query.py</code> in <code>_insert</code>
-
-          
-            <div class="context" id="c139962299767408">
-              
-                <ol start="1032" class="pre-context" id="pre139962299767408">
-                
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>        the InsertQuery class and is how Model.save() is implemented.</pre></li>
-                
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>        &quot;&quot;&quot;</pre></li>
-                
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>        self._for_write = True</pre></li>
-                
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>        if using is None:</pre></li>
-                
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>            using = self.db</pre></li>
-                
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>        query = sql.InsertQuery(self.model)</pre></li>
-                
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>        query.insert_values(fields, objs, raw=raw)</pre></li>
-                
-                </ol>
-              
-              <ol start="1039" class="context-line">
-                <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>
-        return query.get_compiler(using=using).execute_sql(return_id)</pre> <span>...</span></li></ol>
-              
-                <ol start='1040' class="post-context" id="post139962299767408">
-                  
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>    _insert.alters_data = True</pre></li>
-                  
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>    _insert.queryset_only = False</pre></li>
-                  
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre></pre></li>
-                  
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>    def _batched_insert(self, objs, fields, batch_size):</pre></li>
-                  
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>        &quot;&quot;&quot;</pre></li>
-                  
-                  <li onclick="toggle('pre139962299767408', 'post139962299767408')"><pre>        A little helper method for bulk_insert to insert the bulk one batch</pre></li>
-                  
-              </ol>
-              
-            </div>
-          
-
-          
-            <div class="commands">
-                
-                    <a href="#" onclick="return varToggle(this, '139962299767408')"><span>&#x25b6;</span> Local vars</a>
-                
-            </div>
-            <table class="vars" id="v139962299767408">
-              <thead>
-                <tr>
-                  <th>Variable</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                  <tr>
-                    <td>objs</td>
-                    <td class="code"><pre>[&lt;MobileserverOrder: None	Owner:shop@shop.com	From:shopter	Status:0&gt;]</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>fields</td>
-                    <td class="code"><pre>[&lt;django.db.models.fields.FloatField: totalprice&gt;,
- &lt;django.db.models.fields.CharField: name&gt;,
- &lt;django.db.models.fields.IntegerField: mobile&gt;,
- &lt;django.db.models.fields.related.ForeignKey: owner&gt;,
- &lt;django.db.models.fields.related.ForeignKey: shop&gt;,
- &lt;django.db.models.fields.DateTimeField: created_at&gt;,
- &lt;django.db.models.fields.DateTimeField: updated_at&gt;,
- &lt;django.db.models.fields.PositiveSmallIntegerField: status&gt;,
- &lt;django.db.models.fields.related.ForeignKey: address&gt;]</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>self</td>
-                    <td class="code"><pre>[&lt;MobileserverOrder: 5	Owner:customer@customer.com	From:safwan	Status:0&gt;, &lt;MobileserverOrder: 6	Owner:shop@shop.com	From:shopter	Status:0&gt;, &lt;MobileserverOrder: 7	Owner:shop@shop.com	From:shopter	Status:0&gt;]</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>return_id</td>
-                    <td class="code"><pre>True</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>raw</td>
-                    <td class="code"><pre>False</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>query</td>
-                    <td class="code"><pre>&lt;django.db.models.sql.subqueries.InsertQuery object at 0x7f4b832b8090&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>using</td>
-                    <td class="code"><pre>&#39;default&#39;</pre></td>
-                  </tr>
-                
-              </tbody>
-            </table>
-          
-        </li>
-      
-        
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py</code> in <code>execute_sql</code>
-
-          
-            <div class="context" id="c139962299768632">
-              
-                <ol start="1057" class="pre-context" id="pre139962299768632">
-                
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>            ]</pre></li>
-                
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre></pre></li>
-                
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>    def execute_sql(self, return_id=False):</pre></li>
-                
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>        assert not (return_id and len(self.query.objs) != 1)</pre></li>
-                
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>        self.return_id = return_id</pre></li>
-                
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>        with self.connection.cursor() as cursor:</pre></li>
-                
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>            for sql, params in self.as_sql():</pre></li>
-                
-                </ol>
-              
-              <ol start="1064" class="context-line">
-                <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>
-                cursor.execute(sql, params)</pre> <span>...</span></li></ol>
-              
-                <ol start='1065' class="post-context" id="post139962299768632">
-                  
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>            if not (return_id and cursor):</pre></li>
-                  
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>                return</pre></li>
-                  
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>            if self.connection.features.can_return_id_from_insert:</pre></li>
-                  
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>                return self.connection.ops.fetch_returned_insert_id(cursor)</pre></li>
-                  
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>            return self.connection.ops.last_insert_id(cursor,</pre></li>
-                  
-                  <li onclick="toggle('pre139962299768632', 'post139962299768632')"><pre>                    self.query.get_meta().db_table, self.query.get_meta().pk.column)</pre></li>
-                  
-              </ol>
-              
-            </div>
-          
-
-          
-            <div class="commands">
-                
-                    <a href="#" onclick="return varToggle(this, '139962299768632')"><span>&#x25b6;</span> Local vars</a>
-                
-            </div>
-            <table class="vars" id="v139962299768632">
-              <thead>
-                <tr>
-                  <th>Variable</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                  <tr>
-                    <td>cursor</td>
-                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x7f4b832b81d0&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>self</td>
-                    <td class="code"><pre>&lt;django.db.models.sql.compiler.SQLInsertCompiler object at 0x7f4b832b8250&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>return_id</td>
-                    <td class="code"><pre>True</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>params</td>
-                    <td class="code"><pre>(0.0,
- None,
- None,
- 4,
- 11,
- datetime.datetime(2016, 3, 6, 19, 7, 55, 233913, tzinfo=&lt;UTC&gt;),
- datetime.datetime(2016, 3, 6, 19, 7, 55, 233994, tzinfo=&lt;UTC&gt;),
- 0,
- None)</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>sql</td>
-                    <td class="code"><pre>u&#39;INSERT INTO &quot;mobileServer_order&quot; (&quot;totalPrice&quot;, &quot;name&quot;, &quot;mobile&quot;, &quot;owner_id&quot;, &quot;shop_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;status&quot;, &quot;address_id&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &quot;mobileServer_order&quot;.&quot;id&quot;&#39;</pre></td>
-                  </tr>
-                
-              </tbody>
-            </table>
-          
-        </li>
-      
-        
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py</code> in <code>execute</code>
-
-          
-            <div class="context" id="c139962299784584">
-              
-                <ol start="72" class="pre-context" id="pre139962299784584">
-                
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre>class CursorDebugWrapper(CursorWrapper):</pre></li>
-                
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre></pre></li>
-                
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre>    # XXX callproc isn&#39;t instrumented at this time.</pre></li>
-                
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre></pre></li>
-                
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre>    def execute(self, sql, params=None):</pre></li>
-                
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre>        start = time()</pre></li>
-                
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre>        try:</pre></li>
-                
-                </ol>
-              
-              <ol start="79" class="context-line">
-                <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre>
-            return super(CursorDebugWrapper, self).execute(sql, params)</pre> <span>...</span></li></ol>
-              
-                <ol start='80' class="post-context" id="post139962299784584">
-                  
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre>        finally:</pre></li>
-                  
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre>            stop = time()</pre></li>
-                  
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre>            duration = stop - start</pre></li>
-                  
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre>            sql = self.db.ops.last_executed_query(self.cursor, sql, params)</pre></li>
-                  
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre>            self.db.queries_log.append({</pre></li>
-                  
-                  <li onclick="toggle('pre139962299784584', 'post139962299784584')"><pre>                &#39;sql&#39;: sql,</pre></li>
-                  
-              </ol>
-              
-            </div>
-          
-
-          
-            <div class="commands">
-                
-                    <a href="#" onclick="return varToggle(this, '139962299784584')"><span>&#x25b6;</span> Local vars</a>
-                
-            </div>
-            <table class="vars" id="v139962299784584">
-              <thead>
-                <tr>
-                  <th>Variable</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                  <tr>
-                    <td>self</td>
-                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x7f4b832b81d0&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>stop</td>
-                    <td class="code"><pre>1457291275.236406</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>start</td>
-                    <td class="code"><pre>1457291275.234156</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>params</td>
-                    <td class="code"><pre>(0.0,
- None,
- None,
- 4,
- 11,
- datetime.datetime(2016, 3, 6, 19, 7, 55, 233913, tzinfo=&lt;UTC&gt;),
- datetime.datetime(2016, 3, 6, 19, 7, 55, 233994, tzinfo=&lt;UTC&gt;),
- 0,
- None)</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>sql</td>
-                    <td class="code"><pre>u&#39;INSERT INTO &quot;mobileServer_order&quot; (&quot;totalPrice&quot;, &quot;name&quot;, &quot;mobile&quot;, &quot;owner_id&quot;, &quot;shop_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;status&quot;, &quot;address_id&quot;) VALUES (0.0, NULL, NULL, 4, 11, \&#39;2016-03-06T19:07:55.233913+00:00\&#39;::timestamptz, \&#39;2016-03-06T19:07:55.233994+00:00\&#39;::timestamptz, 0, NULL) RETURNING &quot;mobileServer_order&quot;.&quot;id&quot;&#39;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>duration</td>
-                    <td class="code"><pre>0.002250194549560547</pre></td>
-                  </tr>
-                
-              </tbody>
-            </table>
-          
-        </li>
-      
-        
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py</code> in <code>execute</code>
-
-          
-            <div class="context" id="c139962299784512">
-              
-                <ol start="57" class="pre-context" id="pre139962299784512">
-                
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre></pre></li>
-                
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre>    def execute(self, sql, params=None):</pre></li>
-                
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
-                
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre>        with self.db.wrap_database_errors:</pre></li>
-                
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre>            if params is None:</pre></li>
-                
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre>                return self.cursor.execute(sql)</pre></li>
-                
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre>            else:</pre></li>
-                
-                </ol>
-              
-              <ol start="64" class="context-line">
-                <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre>
-                return self.cursor.execute(sql, params)</pre> <span>...</span></li></ol>
-              
-                <ol start='65' class="post-context" id="post139962299784512">
-                  
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre></pre></li>
-                  
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre>    def executemany(self, sql, param_list):</pre></li>
-                  
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
-                  
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre>        with self.db.wrap_database_errors:</pre></li>
-                  
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre>            return self.cursor.executemany(sql, param_list)</pre></li>
-                  
-                  <li onclick="toggle('pre139962299784512', 'post139962299784512')"><pre></pre></li>
-                  
-              </ol>
-              
-            </div>
-          
-
-          
-            <div class="commands">
-                
-                    <a href="#" onclick="return varToggle(this, '139962299784512')"><span>&#x25b6;</span> Local vars</a>
-                
-            </div>
-            <table class="vars" id="v139962299784512">
-              <thead>
-                <tr>
-                  <th>Variable</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                  <tr>
-                    <td>self</td>
-                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x7f4b832b81d0&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>params</td>
-                    <td class="code"><pre>(0.0,
- None,
- None,
- 4,
- 11,
- datetime.datetime(2016, 3, 6, 19, 7, 55, 233913, tzinfo=&lt;UTC&gt;),
- datetime.datetime(2016, 3, 6, 19, 7, 55, 233994, tzinfo=&lt;UTC&gt;),
- 0,
- None)</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>sql</td>
-                    <td class="code"><pre>u&#39;INSERT INTO &quot;mobileServer_order&quot; (&quot;totalPrice&quot;, &quot;name&quot;, &quot;mobile&quot;, &quot;owner_id&quot;, &quot;shop_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;status&quot;, &quot;address_id&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &quot;mobileServer_order&quot;.&quot;id&quot;&#39;</pre></td>
-                  </tr>
-                
-              </tbody>
-            </table>
-          
-        </li>
-      
-        
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/utils.py</code> in <code>__exit__</code>
-
-          
-            <div class="context" id="c139962385741224">
-              
-                <ol start="88" class="pre-context" id="pre139962385741224">
-                
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>            if issubclass(exc_type, db_exc_type):</pre></li>
-                
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>                dj_exc_value = dj_exc_type(*exc_value.args)</pre></li>
-                
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>                dj_exc_value.__cause__ = exc_value</pre></li>
-                
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>                # Only set the &#39;errors_occurred&#39; flag for errors that may make</pre></li>
-                
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>                # the connection unusable.</pre></li>
-                
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>                if dj_exc_type not in (DataError, IntegrityError):</pre></li>
-                
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>                    self.wrapper.errors_occurred = True</pre></li>
-                
-                </ol>
-              
-              <ol start="95" class="context-line">
-                <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>
-                six.reraise(dj_exc_type, dj_exc_value, traceback)</pre> <span>...</span></li></ol>
-              
-                <ol start='96' class="post-context" id="post139962385741224">
-                  
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre></pre></li>
-                  
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>    def __call__(self, func):</pre></li>
-                  
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>        # Note that we are intentionally not using @wraps here for performance</pre></li>
-                  
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>        # reasons. Refs #21109.</pre></li>
-                  
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>        def inner(*args, **kwargs):</pre></li>
-                  
-                  <li onclick="toggle('pre139962385741224', 'post139962385741224')"><pre>            with self:</pre></li>
-                  
-              </ol>
-              
-            </div>
-          
-
-          
-            <div class="commands">
-                
-                    <a href="#" onclick="return varToggle(this, '139962385741224')"><span>&#x25b6;</span> Local vars</a>
-                
-            </div>
-            <table class="vars" id="v139962385741224">
-              <thead>
-                <tr>
-                  <th>Variable</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                  <tr>
-                    <td>self</td>
-                    <td class="code"><pre>&lt;django.db.utils.DatabaseErrorWrapper object at 0x7f4b832b8110&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>traceback</td>
-                    <td class="code"><pre>&lt;traceback object at 0x7f4b8848b680&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>exc_type</td>
-                    <td class="code"><pre>&lt;class &#39;psycopg2.IntegrityError&#39;&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>dj_exc_type</td>
-                    <td class="code"><pre>&lt;class &#39;django.db.utils.IntegrityError&#39;&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>dj_exc_value</td>
-                    <td class="code"><pre>IntegrityError(&#39;null value in column &quot;mobile&quot; violates not-null constraint\nDETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 19:07:55.233994+00, 0, 4, 11, null, null, null).\n&#39;,)</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>exc_value</td>
-                    <td class="code"><pre>IntegrityError(&#39;null value in column &quot;mobile&quot; violates not-null constraint\nDETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 19:07:55.233994+00, 0, 4, 11, null, null, null).\n&#39;,)</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>db_exc_type</td>
-                    <td class="code"><pre>&lt;class &#39;psycopg2.IntegrityError&#39;&gt;</pre></td>
-                  </tr>
-                
-              </tbody>
-            </table>
-          
-        </li>
-      
-        
-        <li class="frame django">
-          <code>/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py</code> in <code>execute</code>
-
-          
-            <div class="context" id="c139962385741440">
-              
-                <ol start="57" class="pre-context" id="pre139962385741440">
-                
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre></pre></li>
-                
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre>    def execute(self, sql, params=None):</pre></li>
-                
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
-                
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre>        with self.db.wrap_database_errors:</pre></li>
-                
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre>            if params is None:</pre></li>
-                
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre>                return self.cursor.execute(sql)</pre></li>
-                
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre>            else:</pre></li>
-                
-                </ol>
-              
-              <ol start="64" class="context-line">
-                <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre>
-                return self.cursor.execute(sql, params)</pre> <span>...</span></li></ol>
-              
-                <ol start='65' class="post-context" id="post139962385741440">
-                  
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre></pre></li>
-                  
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre>    def executemany(self, sql, param_list):</pre></li>
-                  
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
-                  
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre>        with self.db.wrap_database_errors:</pre></li>
-                  
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre>            return self.cursor.executemany(sql, param_list)</pre></li>
-                  
-                  <li onclick="toggle('pre139962385741440', 'post139962385741440')"><pre></pre></li>
-                  
-              </ol>
-              
-            </div>
-          
-
-          
-            <div class="commands">
-                
-                    <a href="#" onclick="return varToggle(this, '139962385741440')"><span>&#x25b6;</span> Local vars</a>
-                
-            </div>
-            <table class="vars" id="v139962385741440">
-              <thead>
-                <tr>
-                  <th>Variable</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                  <tr>
-                    <td>self</td>
-                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x7f4b832b81d0&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>params</td>
-                    <td class="code"><pre>(0.0,
- None,
- None,
- 4,
- 11,
- datetime.datetime(2016, 3, 6, 19, 7, 55, 233913, tzinfo=&lt;UTC&gt;),
- datetime.datetime(2016, 3, 6, 19, 7, 55, 233994, tzinfo=&lt;UTC&gt;),
- 0,
- None)</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>sql</td>
-                    <td class="code"><pre>u&#39;INSERT INTO &quot;mobileServer_order&quot; (&quot;totalPrice&quot;, &quot;name&quot;, &quot;mobile&quot;, &quot;owner_id&quot;, &quot;shop_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;status&quot;, &quot;address_id&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &quot;mobileServer_order&quot;.&quot;id&quot;&#39;</pre></td>
+                    <td>setting_name</td>
+                    <td class="code"><pre>&#39;EXCEPTION_HANDLER&#39;</pre></td>
                   </tr>
                 
               </tbody>
@@ -2016,7 +1088,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
   <div id="pastebinTraceback" class="pastebin">
     <input type="hidden" name="language" value="PythonConsole">
     <input type="hidden" name="title"
-      value="IntegrityError at /debug/createorder/">
+      value="ImportError at /auth/register/">
     <input type="hidden" name="source" value="Django Dpaste Agent">
     <input type="hidden" name="poster" value="Django">
     <textarea name="content" id="traceback_area" cols="140" rows="25">
@@ -2024,7 +1096,7 @@ Environment:
 
 
 Request Method: POST
-Request URL: http://104.236.115.239:8001/debug/createorder/
+Request URL: http://dukanty.com/auth/register/
 
 Django Version: 1.9
 Python Version: 2.7.6
@@ -2071,52 +1143,26 @@ File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py" in ge
 File "/usr/local/lib/python2.7/dist-packages/django/views/decorators/csrf.py" in wrapped_view
   58.         return view_func(*args, **kwargs)
 
-File "/home/dukanty/mobileServer/orderUtils.py" in create_order
-  139.     order = MobileserverOrder.objects.create(owner=owner, shop=shop, name=name, mobile=mobile)
+File "/usr/local/lib/python2.7/dist-packages/django/views/generic/base.py" in view
+  68.             return self.dispatch(request, *args, **kwargs)
 
-File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py" in manager_method
-  122.                 return getattr(self.get_queryset(), name)(*args, **kwargs)
+File "/usr/local/lib/python2.7/dist-packages/rest_framework/views.py" in dispatch
+  466.             response = self.handle_exception(exc)
 
-File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py" in create
-  401.         obj.save(force_insert=True, using=self.db)
+File "/usr/local/lib/python2.7/dist-packages/rest_framework/views.py" in handle_exception
+  428.         exception_handler = self.settings.EXCEPTION_HANDLER
 
-File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py" in save
-  700.                        force_update=force_update, update_fields=update_fields)
+File "/usr/local/lib/python2.7/dist-packages/rest_framework/settings.py" in __getattr__
+  203.             val = perform_import(val, attr)
 
-File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py" in save_base
-  728.             updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+File "/usr/local/lib/python2.7/dist-packages/rest_framework/settings.py" in perform_import
+  146.         return import_from_string(val, setting_name)
 
-File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py" in _save_table
-  812.             result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+File "/usr/local/lib/python2.7/dist-packages/rest_framework/settings.py" in import_from_string
+  164.         raise ImportError(msg)
 
-File "/usr/local/lib/python2.7/dist-packages/django/db/models/base.py" in _do_insert
-  851.                                using=using, raw=raw)
-
-File "/usr/local/lib/python2.7/dist-packages/django/db/models/manager.py" in manager_method
-  122.                 return getattr(self.get_queryset(), name)(*args, **kwargs)
-
-File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py" in _insert
-  1039.         return query.get_compiler(using=using).execute_sql(return_id)
-
-File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py" in execute_sql
-  1064.                 cursor.execute(sql, params)
-
-File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py" in execute
-  79.             return super(CursorDebugWrapper, self).execute(sql, params)
-
-File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py" in execute
-  64.                 return self.cursor.execute(sql, params)
-
-File "/usr/local/lib/python2.7/dist-packages/django/db/utils.py" in __exit__
-  95.                 six.reraise(dj_exc_type, dj_exc_value, traceback)
-
-File "/usr/local/lib/python2.7/dist-packages/django/db/backends/utils.py" in execute
-  64.                 return self.cursor.execute(sql, params)
-
-Exception Type: IntegrityError at /debug/createorder/
-Exception Value: null value in column &quot;mobile&quot; violates not-null constraint
-DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 19:07:55.233994+00, 0, 4, 11, null, null, null).
-
+Exception Type: ImportError at /auth/register/
+Exception Value: Could not import &#39;dukanty.src.mobileServer.exception_handler.custom_exception_handler&#39; for API setting &#39;EXCEPTION_HANDLER&#39;. ImportError: No module named src.mobileServer.exception_handler.
 </textarea>
   <br><br>
   <input type="submit" value="Share this traceback on a public Web site">
@@ -2137,32 +1183,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
 
   <h3 id="post-info">POST</h3>
   
-    <table class="req">
-      <thead>
-        <tr>
-          <th>Variable</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-          <tr>
-            <td>product_list</td>
-            <td class="code"><pre>u&#39;[]&#39;</pre></td>
-          </tr>
-        
-          <tr>
-            <td>shop_id</td>
-            <td class="code"><pre>u&#39;11&#39;</pre></td>
-          </tr>
-        
-          <tr>
-            <td>user_id</td>
-            <td class="code"><pre>u&#39;4&#39;</pre></td>
-          </tr>
-        
-      </tbody>
-    </table>
+    <p>No POST data</p>
   
   <h3 id="files-info">FILES</h3>
   
@@ -2186,23 +1207,8 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
     <tbody>
       
         <tr>
-          <td>HTTP_AUTHORIZATION</td>
-          <td class="code"><pre>&#39;Token 9a40027f04903e025961493dad1571ac382a5374&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>RUN_MAIN</td>
-          <td class="code"><pre>&#39;true&#39;</pre></td>
-        </tr>
-      
-        <tr>
           <td>SERVER_SOFTWARE</td>
-          <td class="code"><pre>&#39;WSGIServer/0.1 Python/2.7.6&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>LC_CTYPE</td>
-          <td class="code"><pre>&#39;UTF-8&#39;</pre></td>
+          <td class="code"><pre>&#39;gunicorn/19.4.1&#39;</pre></td>
         </tr>
       
         <tr>
@@ -2216,113 +1222,13 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
         </tr>
       
         <tr>
-          <td>SERVER_PROTOCOL</td>
-          <td class="code"><pre>&#39;HTTP/1.1&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>HOME</td>
-          <td class="code"><pre>&#39;/root&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>LANG</td>
-          <td class="code"><pre>&#39;en_US.UTF-8&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>SHELL</td>
-          <td class="code"><pre>&#39;/bin/bash&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>SERVER_PORT</td>
-          <td class="code"><pre>&#39;8001&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>XDG_RUNTIME_DIR</td>
-          <td class="code"><pre>&#39;/run/user/0&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>HTTP_HOST</td>
-          <td class="code"><pre>&#39;104.236.115.239:8001&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>wsgi.version</td>
-          <td class="code"><pre>(1, 0)</pre></td>
-        </tr>
-      
-        <tr>
-          <td>XDG_SESSION_ID</td>
-          <td class="code"><pre>&#39;18&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>HTTP_ACCEPT</td>
-          <td class="code"><pre>&#39;*/*&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>LESSCLOSE</td>
-          <td class="code"><pre>&#39;/usr/bin/lesspipe %s %s&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>wsgi.run_once</td>
-          <td class="code"><pre>False</pre></td>
-        </tr>
-      
-        <tr>
-          <td>SSH_TTY</td>
-          <td class="code"><pre>&#39;/dev/pts/2&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>wsgi.errors</td>
-          <td class="code"><pre>&lt;open file &#39;&lt;stderr&gt;&#39;, mode &#39;w&#39; at 0x7f4b91e651e0&gt;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>wsgi.multiprocess</td>
-          <td class="code"><pre>False</pre></td>
-        </tr>
-      
-        <tr>
-          <td>MAIL</td>
-          <td class="code"><pre>&#39;/var/mail/root&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>SSH_CONNECTION</td>
-          <td class="code"><pre>&#39;37.210.57.35 49532 104.236.115.239 22&#39;</pre></td>
-        </tr>
-      
-        <tr>
           <td>PATH_INFO</td>
-          <td class="code"><pre>u&#39;/debug/createorder/&#39;</pre></td>
+          <td class="code"><pre>u&#39;/auth/register/&#39;</pre></td>
         </tr>
       
         <tr>
-          <td>LESSOPEN</td>
-          <td class="code"><pre>&#39;| /usr/bin/lesspipe %s&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>SSH_CLIENT</td>
-          <td class="code"><pre>&#39;37.210.57.35 49532 22&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>LOGNAME</td>
-          <td class="code"><pre>&#39;root&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>USER</td>
-          <td class="code"><pre>&#39;root&#39;</pre></td>
+          <td>SERVER_PROTOCOL</td>
+          <td class="code"><pre>&#39;HTTP/1.0&#39;</pre></td>
         </tr>
       
         <tr>
@@ -2331,38 +1237,33 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
         </tr>
       
         <tr>
-          <td>PATH</td>
-          <td class="code"><pre>&#39;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>TERM</td>
-          <td class="code"><pre>&#39;xterm-256color&#39;</pre></td>
+          <td>CONTENT_LENGTH</td>
+          <td class="code"><pre>&#39;88&#39;</pre></td>
         </tr>
       
         <tr>
           <td>HTTP_USER_AGENT</td>
-          <td class="code"><pre>&#39;HTTPie/0.9.3&#39;</pre></td>
+          <td class="code"><pre>&#39;HTTPie/0.8.0&#39;</pre></td>
         </tr>
       
         <tr>
           <td>HTTP_CONNECTION</td>
-          <td class="code"><pre>&#39;keep-alive&#39;</pre></td>
+          <td class="code"><pre>&#39;close&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REMOTE_PORT</td>
+          <td class="code"><pre>&#39;41366&#39;</pre></td>
         </tr>
       
         <tr>
           <td>SERVER_NAME</td>
-          <td class="code"><pre>&#39;dukanty&#39;</pre></td>
+          <td class="code"><pre>&#39;127.0.0.1&#39;</pre></td>
         </tr>
       
         <tr>
           <td>REMOTE_ADDR</td>
-          <td class="code"><pre>&#39;37.210.57.35&#39;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>SHLVL</td>
-          <td class="code"><pre>&#39;1&#39;</pre></td>
+          <td class="code"><pre>&#39;127.0.0.1&#39;</pre></td>
         </tr>
       
         <tr>
@@ -2371,13 +1272,18 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
         </tr>
       
         <tr>
-          <td>CONTENT_LENGTH</td>
-          <td class="code"><pre>&#39;40&#39;</pre></td>
+          <td>SERVER_PORT</td>
+          <td class="code"><pre>&#39;9000&#39;</pre></td>
         </tr>
       
         <tr>
           <td>wsgi.input</td>
-          <td class="code"><pre>&lt;socket._fileobject object at 0x7f4b83bc8b50&gt;</pre></td>
+          <td class="code"><pre>&lt;gunicorn.http.body.Body object at 0x7f645fd3d050&gt;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_HOST</td>
+          <td class="code"><pre>&#39;dukanty.com&#39;</pre></td>
         </tr>
       
         <tr>
@@ -2386,43 +1292,48 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
         </tr>
       
         <tr>
-          <td>TZ</td>
-          <td class="code"><pre>&#39;UTC&#39;</pre></td>
+          <td>HTTP_ACCEPT</td>
+          <td class="code"><pre>&#39;application/json&#39;</pre></td>
         </tr>
       
         <tr>
-          <td>_</td>
-          <td class="code"><pre>&#39;/usr/bin/python&#39;</pre></td>
+          <td>wsgi.version</td>
+          <td class="code"><pre>(1, 0)</pre></td>
         </tr>
       
         <tr>
-          <td>LS_COLORS</td>
-          <td class="code"><pre>&#39;rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:&#39;</pre></td>
+          <td>RAW_URI</td>
+          <td class="code"><pre>&#39;/auth/register/&#39;</pre></td>
         </tr>
       
         <tr>
-          <td>GATEWAY_INTERFACE</td>
-          <td class="code"><pre>&#39;CGI/1.1&#39;</pre></td>
+          <td>wsgi.run_once</td>
+          <td class="code"><pre>False</pre></td>
         </tr>
       
         <tr>
-          <td>OLDPWD</td>
-          <td class="code"><pre>&#39;/root&#39;</pre></td>
+          <td>wsgi.errors</td>
+          <td class="code"><pre>&lt;gunicorn.http.wsgi.WSGIErrorsWrapper object at 0x7f645fd3d110&gt;</pre></td>
         </tr>
       
         <tr>
-          <td>PWD</td>
-          <td class="code"><pre>&#39;/home/dukanty&#39;</pre></td>
+          <td>wsgi.multiprocess</td>
+          <td class="code"><pre>True</pre></td>
         </tr>
       
         <tr>
-          <td>DJANGO_SETTINGS_MODULE</td>
-          <td class="code"><pre>&#39;dukanty.settings&#39;</pre></td>
+          <td>gunicorn.socket</td>
+          <td class="code"><pre>&lt;socket at 0x7f645fe55950 fileno=18 sock=127.0.0.1:9000 peer=127.0.0.1:41366&gt;</pre></td>
         </tr>
       
         <tr>
           <td>CONTENT_TYPE</td>
-          <td class="code"><pre>&#39;application/x-www-form-urlencoded; charset=utf-8&#39;</pre></td>
+          <td class="code"><pre>&#39;application/json; charset=utf-8&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_FORWARDED_FOR</td>
+          <td class="code"><pre>&#39;86.36.37.201&#39;</pre></td>
         </tr>
       
         <tr>
@@ -2431,13 +1342,8 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
         </tr>
       
         <tr>
-          <td>REMOTE_HOST</td>
-          <td class="code"><pre>&#39;&#39;</pre></td>
-        </tr>
-      
-        <tr>
           <td>HTTP_ACCEPT_ENCODING</td>
-          <td class="code"><pre>&#39;gzip, deflate&#39;</pre></td>
+          <td class="code"><pre>&#39;gzip, deflate, compress&#39;</pre></td>
         </tr>
       
     </tbody>
@@ -2497,7 +1403,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
       
         <tr>
           <td>BASE_DIR</td>
-          <td class="code"><pre>&#39;/home/dukanty&#39;</pre></td>
+          <td class="code"><pre>&#39;/home/dukanty/src&#39;</pre></td>
         </tr>
       
         <tr>
@@ -2522,7 +1428,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
       
         <tr>
           <td>ALLOWED_HOSTS</td>
-          <td class="code"><pre>[]</pre></td>
+          <td class="code"><pre>[&#39;localhost&#39;]</pre></td>
         </tr>
       
         <tr>
@@ -2571,7 +1477,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
           <td class="code"><pre>{&#39;ACTIVATION_URL&#39;: &#39;#/activate/{uid}/{token}&#39;,
  &#39;DOMAIN&#39;: &#39;dukanty.com&#39;,
  &#39;PASSWORD_RESET_CONFIRM_URL&#39;: u&#39;********************&#39;,
- &#39;SEND_ACTIVATION_EMAIL&#39;: False,
+ &#39;SEND_ACTIVATION_EMAIL&#39;: True,
  &#39;SITE_NAME&#39;: &#39;Dukanty&#39;}</pre></td>
         </tr>
       
@@ -2595,7 +1501,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
              &#39;NAME&#39;: &#39;dukanty&#39;,
              &#39;OPTIONS&#39;: {},
              &#39;PASSWORD&#39;: u&#39;********************&#39;,
-             &#39;PORT&#39;: &#39;&#39;,
+             &#39;PORT&#39;: &#39;5432&#39;,
              &#39;TEST&#39;: {&#39;CHARSET&#39;: None,
                       &#39;COLLATION&#39;: None,
                       &#39;MIRROR&#39;: None,
@@ -2714,7 +1620,8 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
       
         <tr>
           <td>PUSH_NOTIFICATIONS_SETTINGS</td>
-          <td class="code"><pre>{&#39;APNS_ERROR_TIMEOUT&#39;: None,
+          <td class="code"><pre>{&#39;APNS_CERTIFICATE&#39;: &#39;/home/dukanty/src/aps_development.cer&#39;,
+ &#39;APNS_ERROR_TIMEOUT&#39;: None,
  &#39;APNS_FEEDBACK_HOST&#39;: &#39;feedback.sandbox.push.apple.com&#39;,
  &#39;APNS_FEEDBACK_PORT&#39;: 2196,
  &#39;APNS_HOST&#39;: &#39;gateway.sandbox.push.apple.com&#39;,
@@ -2946,7 +1853,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
       
         <tr>
           <td>STATIC_ROOT</td>
-          <td class="code"><pre>&#39;/home/dukanty/static/&#39;</pre></td>
+          <td class="code"><pre>&#39;/home/dukanty/src/static/&#39;</pre></td>
         </tr>
       
         <tr>
@@ -2956,7 +1863,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
       
         <tr>
           <td>STATICFILES_DIRS</td>
-          <td class="code"><pre>[]</pre></td>
+          <td class="code"><pre>(&#39;/home/dukanty/src/mobileServer/templates/static/&#39;,)</pre></td>
         </tr>
       
         <tr>
@@ -3122,7 +2029,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
       
         <tr>
           <td>EMAIL_HOST</td>
-          <td class="code"><pre>&#39;localhost&#39;</pre></td>
+          <td class="code"><pre>&#39;smtp.gmail.com&#39;</pre></td>
         </tr>
       
         <tr>
@@ -3132,7 +2039,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
       
         <tr>
           <td>MEDIA_ROOT</td>
-          <td class="code"><pre>&#39;/home/dukanty/uploads/&#39;</pre></td>
+          <td class="code"><pre>&#39;/home/dukanty/src/uploads/&#39;</pre></td>
         </tr>
       
         <tr>
@@ -3152,16 +2059,16 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
       
         <tr>
           <td>DEFAULT_FROM_EMAIL</td>
-          <td class="code"><pre>&#39;webmaster@localhost&#39;</pre></td>
+          <td class="code"><pre>&#39;test@dukanty.com&#39;</pre></td>
         </tr>
       
         <tr>
           <td>REST_FRAMEWORK</td>
           <td class="code"><pre>{&#39;DEFAULT_AUTHENTICATION_CLASSES&#39;: (&#39;rest_framework.authentication.BasicAuthentication&#39;,
-                                    &#39;rest_framework.authentication.SessionAuthentication&#39;,
                                     &#39;rest_framework.authentication.TokenAuthentication&#39;),
  &#39;DEFAULT_PERMISSION_CLASSES&#39;: [&#39;rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly&#39;],
- &#39;DEFAULT_RENDERER_CLASSES&#39;: (&#39;rest_framework.renderers.JSONRenderer&#39;,)}</pre></td>
+ &#39;DEFAULT_RENDERER_CLASSES&#39;: (&#39;rest_framework.renderers.JSONRenderer&#39;,),
+ &#39;EXCEPTION_HANDLER&#39;: &#39;dukanty.src.mobileServer.exception_handler.custom_exception_handler&#39;}</pre></td>
         </tr>
       
         <tr>
@@ -3247,7 +2154,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
       
         <tr>
           <td>EMAIL_BACKEND</td>
-          <td class="code"><pre>&#39;django.core.mail.backends.dummy.EmailBackend&#39;</pre></td>
+          <td class="code"><pre>&#39;django.core.mail.backends.smtp.EmailBackend&#39;</pre></td>
         </tr>
       
         <tr>
@@ -3313,7 +2220,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
       
         <tr>
           <td>EMAIL_PORT</td>
-          <td class="code"><pre>25</pre></td>
+          <td class="code"><pre>&#39;465&#39;</pre></td>
         </tr>
       
         <tr>
@@ -3384,7 +2291,7 @@ DETAIL:  Failing row contains (9, 0, 2016-03-06 19:07:55.233913+00, 2016-03-06 1
       
         <tr>
           <td>EMAIL_HOST_USER</td>
-          <td class="code"><pre>&#39;&#39;</pre></td>
+          <td class="code"><pre>&#39;aemam@dukanty.com&#39;</pre></td>
         </tr>
       
     </tbody>
