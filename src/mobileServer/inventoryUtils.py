@@ -99,11 +99,11 @@ def create_inventory(request):
 
 
 """
-@api {GET} inventory/get_shop/:shop_id Get Shop Inventory
+@api {GET} inventory/get_shop/:shop_id/ Get Shop Inventory
 @apiVersion 1.0.0
 @apiName GetShopInventory
 @apiGroup Shop
-@apiParam {Number} shop_id Shop unique ID.
+@apiParam {Number} shop_id Shop unique ID
 @apiSuccess {Object} product Product serialized data
 @apiSuccess {Number} price Product's price
 @apiSuccess {Boolean} Stock Product in Stock/out of stock
@@ -160,12 +160,11 @@ def get_shopInventory(request, shop_id):
 @apiVersion 1.0.0
 @apiName check_in
 @apiGroup Shop
+
 @apiParam {Object} shop_id shop_id and prodocut_list
 @apiSuccess {Object} success
 
 """
-
-
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
