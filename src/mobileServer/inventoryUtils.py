@@ -12,6 +12,7 @@ from models import *
 from error import *
 import json
 from query_wrapper import *
+
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
