@@ -177,8 +177,8 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 # if DEBUG:
 #     EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = '465'
+EMAIL_HOST = 'ASPMX.L.GOOGLE.COM'
+EMAIL_PORT = '25'
 EMAIL_HOST_USER = 'aemam@dukanty.com'
 EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = 'test@dukanty.com'
