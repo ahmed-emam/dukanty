@@ -670,7 +670,7 @@
   {
     "type": "post",
     "url": "debug/inventory/",
-    "title": "create/update Shop Inventory",
+    "title": "Create/update shop inventory",
     "version": "1.0.0",
     "name": "CreateShopInventory",
     "group": "Shop",
@@ -763,7 +763,7 @@
   },
   {
     "type": "GET",
-    "url": "inventory/get_shop/:shop_id",
+    "url": "inventory/get_shop/:shop_id/",
     "title": "Get Shop Inventory",
     "version": "1.0.0",
     "name": "GetShopInventory",
@@ -776,7 +776,7 @@
             "type": "Number",
             "optional": false,
             "field": "shop_id",
-            "description": "<p>Shop unique ID.</p>"
+            "description": "<p>Shop unique ID</p>"
           }
         ]
       }
@@ -826,7 +826,7 @@
     "groupTitle": "Shop",
     "sampleRequest": [
       {
-        "url": "http://dukanty.com/inventory/get_shop/:shop_id"
+        "url": "http://dukanty.com/inventory/get_shop/:shop_id/"
       }
     ],
     "error": {
@@ -885,155 +885,139 @@
   },
   {
     "type": "POST",
-    "url": "/inventory/check_in",
+    "url": "inventory/check_in/",
     "title": "Check in products",
     "version": "1.0.0",
     "name": "check_in",
-    "group": "Shop_The_ones_below_are_incorrect__will_come_back_to_them_in_a_moment",
-    "success": {
+    "group": "Shop",
+    "parameter": {
       "fields": {
-        "Success 200": [
+        "Parameter": [
           {
-            "group": "Success 200",
+            "group": "Parameter",
             "type": "Object",
             "optional": false,
-            "field": "product",
-            "description": "<p>Product serialized data</p>"
+            "field": "check_in_object",
+            "description": "<p>Objects containing the products to check in</p>"
           },
           {
-            "group": "Success 200",
+            "group": "Parameter",
             "type": "Number",
             "optional": false,
-            "field": "price",
-            "description": "<p>Product's price</p>"
+            "field": "check_in_object.shop_id",
+            "description": "<p>Shop ID to check in the products</p>"
           },
           {
-            "group": "Success 200",
-            "type": "Boolean",
+            "group": "Parameter",
+            "type": "Object[]",
             "optional": false,
-            "field": "Stock",
-            "description": "<p>Product in Stock/out of stock</p>"
+            "field": "check_in_object.products_list",
+            "description": "<p>List of objects containing the products</p>"
           },
           {
-            "group": "Success 200",
+            "group": "Parameter",
             "type": "Number",
             "optional": false,
-            "field": "image_width",
-            "description": "<p>Product's image width</p>"
+            "field": "check_in_object.products_list.id",
+            "description": "<p>ID of the product</p>"
           },
           {
-            "group": "Success 200",
+            "group": "Parameter",
             "type": "Number",
             "optional": false,
-            "field": "image_height",
-            "description": "<p>Product's image height</p>"
-          }
-        ]
-      }
-    },
-    "filename": "src/mobileServer/inventoryUtils.py",
-    "groupTitle": "Shop_The_ones_below_are_incorrect__will_come_back_to_them_in_a_moment",
-    "sampleRequest": [
-      {
-        "url": "http://dukanty.com//inventory/check_in"
-      }
-    ],
-    "error": {
-      "fields": {
-        "NotFound": [
-          {
-            "group": "NotFound",
-            "type": "String",
-            "optional": false,
-            "field": "ShopNotFoundError",
-            "description": "<p><code>shop_id</code> does not exist</p>"
+            "field": "check_in_object.products_list.quantity",
+            "description": "<p>Quantity of the prodcut to check in</p>"
           }
         ]
       },
       "examples": [
         {
-          "title": "Error-Response:",
-          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"12 does not exist\"\n }",
+          "title": "Request-Example:",
+          "content": "{ \"shop_id\": 12,\n  \"products_list\": [{'id': 50, 'quantity': 10}] }",
           "type": "json"
         }
       ]
-    }
+    },
+    "permission": [
+      {
+        "name": "Any Registered User"
+      }
+    ],
+    "filename": "src/mobileServer/inventoryUtils.py",
+    "groupTitle": "Shop",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/inventory/check_in/"
+      }
+    ]
   },
   {
     "type": "POST",
-    "url": "/inventory/check_out",
+    "url": "inventory/check_out/",
     "title": "Check out products",
     "version": "1.0.0",
     "name": "check_out",
-    "group": "Shop_The_ones_below_are_incorrect__will_come_back_to_them_in_a_moment",
-    "success": {
+    "group": "Shop",
+    "parameter": {
       "fields": {
-        "Success 200": [
+        "Parameter": [
           {
-            "group": "Success 200",
+            "group": "Parameter",
             "type": "Object",
             "optional": false,
-            "field": "product",
-            "description": "<p>Product serialized data</p>"
+            "field": "check_in_object",
+            "description": "<p>Objects containing the products to check out</p>"
           },
           {
-            "group": "Success 200",
+            "group": "Parameter",
             "type": "Number",
             "optional": false,
-            "field": "price",
-            "description": "<p>Product's price</p>"
+            "field": "check_in_object.shop_id",
+            "description": "<p>Shop ID to check out the products</p>"
           },
           {
-            "group": "Success 200",
-            "type": "Boolean",
+            "group": "Parameter",
+            "type": "Object[]",
             "optional": false,
-            "field": "Stock",
-            "description": "<p>Product in Stock/out of stock</p>"
+            "field": "check_in_object.products_list",
+            "description": "<p>List of objects containing the products</p>"
           },
           {
-            "group": "Success 200",
+            "group": "Parameter",
             "type": "Number",
             "optional": false,
-            "field": "image_width",
-            "description": "<p>Product's image width</p>"
+            "field": "check_in_object.products_list.id",
+            "description": "<p>ID of the product</p>"
           },
           {
-            "group": "Success 200",
+            "group": "Parameter",
             "type": "Number",
             "optional": false,
-            "field": "image_height",
-            "description": "<p>Product's image height</p>"
-          }
-        ]
-      }
-    },
-    "filename": "src/mobileServer/inventoryUtils.py",
-    "groupTitle": "Shop_The_ones_below_are_incorrect__will_come_back_to_them_in_a_moment",
-    "sampleRequest": [
-      {
-        "url": "http://dukanty.com//inventory/check_out"
-      }
-    ],
-    "error": {
-      "fields": {
-        "NotFound": [
-          {
-            "group": "NotFound",
-            "type": "String",
-            "optional": false,
-            "field": "ShopNotFoundError",
-            "description": "<p><code>shop_id</code> does not exist</p>"
+            "field": "check_in_object.products_list.quantity",
+            "description": "<p>Quantity of the prodcut to check out</p>"
           }
         ]
       },
       "examples": [
         {
-          "title": "Error-Response:",
-          "content": "HTTP/1.1 500 INTERNAL SERVER ERROR\n {\n   \"error\": \"12 does not exist\"\n }",
+          "title": "Request-Example:",
+          "content": "{ \"shop_id\": 12,\n  \"products_list\": [{'id': 50, 'quantity': 10}] }",
           "type": "json"
         }
       ]
-    }
+    },
+    "permission": [
+      {
+        "name": "Any Registered User"
+      }
+    ],
+    "filename": "src/mobileServer/inventoryUtils.py",
+    "groupTitle": "Shop",
+    "sampleRequest": [
+      {
+        "url": "http://dukanty.com/inventory/check_out/"
+      }
+    ]
   },
   {
     "type": "post",

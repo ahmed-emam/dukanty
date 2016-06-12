@@ -1,8 +1,9 @@
+import uuid
 from django.db import models
 from taggit.managers import TaggableManager
 from users.models import UsersCustomUser
 from django.utils.translation import ugettext_lazy as _
-import uuid
+
 
 # User = get_user_model()
 #
@@ -191,3 +192,11 @@ class MobileserverShopproductinventory(models.Model):
  
     def __str__(self):
         return self.product.name+" "+self.shop.name+" "+str(self.price)+" "+str(self.stock)
+
+
+class Organisation(models.Model):
+    name = models.CharField(max_length=100)
+    address = models.ForeignKey(Address, unique=True, null=True) # same as OneToOneField
+    # to be continued
+
+        

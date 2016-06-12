@@ -167,6 +167,8 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTH_USER_MODEL = 'users.UsersCustomUser'
 SITE_ID = 1
 
+# https://www.digitalocean.com/community/tutorials/how-to-use-google-s-smtp-server
+
 ACCOUNT_USER_EMAIL_FIELD = 'email'
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True

@@ -12,6 +12,9 @@ from mobileServer.models import *
 from mobileServer.error import *
 import json
 from mobileServer.query_wrapper import *
+
+
+
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -22,23 +25,8 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 
-'''
-Function that will create/update inventory of a shop
-Inventory is a list of products
-
-List is linked to a shop, owner of the shop(he is the only one who can edit the list)
-For each product in the list we have a price customized by the shop, and the option of whether its in stock or not
-
-POST request
-shop_name:  <Related shop name>
-product_name:   <Product to be added to inventory>
-owner_name: <Owner of the shop>
-price:  <Price of product in the shop>
-stock:  <In Stock/Out of Stock>
-
-'''
 """
-@api {post} debug/inventory/ create/update Shop Inventory
+@api {post} debug/inventory/ Create/update shop inventory
 @apiVersion 1.0.0
 @apiName CreateShopInventory
 @apiGroup Shop
@@ -98,11 +86,11 @@ def create_inventory(request):
 
 
 """
-@api {GET} inventory/get_shop/:shop_id Get Shop Inventory
+@api {GET} inventory/get_shop/:shop_id/ Get Shop Inventory
 @apiVersion 1.0.0
 @apiName GetShopInventory
 @apiGroup Shop
-@apiParam {Number} shop_id Shop unique ID.
+@apiParam {Number} shop_id Shop unique ID
 @apiSuccess {Object} product Product serialized data
 @apiSuccess {Number} price Product's price
 @apiSuccess {Boolean} Stock Product in Stock/out of stock
@@ -111,8 +99,6 @@ def create_inventory(request):
 
 @apiUse ShopNotFoundError
 """
-
-
 @api_view(['GET'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
@@ -155,16 +141,24 @@ def get_shopInventory(request, shop_id):
 
 
 """
-@api {POST} /inventory/check_in/ Check in products 
+@api {POST} inventory/check_in/ Check in products 
 @apiVersion 1.0.0
 @apiName check_in
 @apiGroup Shop
-@apiParam {Object} shop_id shop_id and prodocut_list
-@apiSuccess {Object} success
+
+@apiParam {Object} check_in_object Objects containing the products to check in
+@apiParam {Number} check_in_object.shop_id Shop ID to check in the products
+@apiParam {Object[]} check_in_object.products_list List of objects containing the products
+@apiParam {Number} check_in_object.products_list.id ID of the product
+@apiParam {Number} check_in_object.products_list.quantity Quantity of the prodcut to check in
+
+@apiParamExample {json} Request-Example:
+                 { "shop_id": 12,
+                   "products_list": [{'id': 50, 'quantity': 10}] }
+
+@apiPermission Any Registered User
 
 """
-
-
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
 @permission_classes((IsAuthenticated,))
@@ -203,18 +197,22 @@ def check_in(request):
 
 
 """
-@api {POST} /inventory/check_out Check out products 
+@api {POST} inventory/check_out/ Check out products 
 @apiVersion 1.0.0
 @apiName check_out
 @apiGroup Shop
-The ones below are incorrect, will come back to them in a moment
-@apiSuccess {Object} product Product serialized data
-@apiSuccess {Number} price Product's price
-@apiSuccess {Boolean} Stock Product in Stock/out of stock
-@apiSuccess {Number} image_width Product's image width
-@apiSuccess {Number} image_height Product's image height
 
-@apiUse ShopNotFoundError
+@apiParam {Object} check_in_object Objects containing the products to check out
+@apiParam {Number} check_in_object.shop_id Shop ID to check out the products
+@apiParam {Object[]} check_in_object.products_list List of objects containing the products
+@apiParam {Number} check_in_object.products_list.id ID of the product
+@apiParam {Number} check_in_object.products_list.quantity Quantity of the prodcut to check out
+
+@apiParamExample {json} Request-Example:
+                 { "shop_id": 12,
+                   "products_list": [{'id': 50, 'quantity': 10}] }
+
+@apiPermission Any Registered User
 """
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
