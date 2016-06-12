@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'deleteOrder/', orderUtils.delete_order),
     url(r'checkout/', orderUtils.checkout_order),
     url(r'change_status/', orderUtils.change_order_status_request),
+    url(r'shop/cancel/', orderUtils.cancel_order_by_shop),
 
     # DEBUGGING routes
     url(r'debug/addshop/', views.add_shop),
