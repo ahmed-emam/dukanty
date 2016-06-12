@@ -5,8 +5,8 @@
 #
 #
 
-from models import *
-from exceptions import *
+from mobileServer.models import *
+from mobileServer.exceptions import *
 
 
 """

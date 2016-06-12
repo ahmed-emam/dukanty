@@ -1,16 +1,13 @@
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
-from mobileServer.serializer import *
+from django.core.exceptions import *
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework import status, request
-from rest_framework.renderers import JSONRenderer
-from django.core.exceptions import *
+from rest_framework import status
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
-from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from error import *
-
+from rest_framework.renderers import JSONRenderer
+from mobileServer.error import *
+from mobileServer.serializer import *
 
 
 class JSONResponse(HttpResponse):
@@ -295,8 +292,57 @@ def get_user_details(request):
     print("*********************")
     user = request.user
     if user is not None and not user.is_anonymous():
+        listofshops = ShopSerializer(user.mobileservershop_set.all(), many=True)
         jsonResponse = {'id': user.id, 'email': user.email, 'first_name': user.first_name, 'last_name': user.last_name,
-                        'phone_number': user.phone_number}
+                        'phone_number': user.phone_number, 'shop_ids': listofshops}
         return JSONResponse(jsonResponse, status=status.HTTP_200_OK)
     else:
         return JSONResponse({'error': 'user not authorized'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+"""
+@api {post} editUserDetails/ Edit User details
+
+@apiVersion 1.0.0
+@apiName GetUser
+@apiGroup User
+
+@apiParam {Number} phone_number User's Phone number
+@apiParam {String} first_name   User's first name
+@apiParam {String} last_name    User's Last name
+
+@apiSuccess {String} success    Details has been changed
+
+@apiUse NotAuthorized
+@apiUse IsAuthenticated
+
+@apiPermission AuthenticatedUser
+"""
+@api_view(['POST'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((IsAuthenticated,))
+def edit_user_details(request):
+    print("******REQUEST*******")
+    print(request.body)
+    print(request.user)
+    print("*********************")
+    user = request.user
+    # if 'phone_number' not in request.POST and 'first_name' not in request.POST and 'last_name' not in request.POST:
+    #     return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    if user is None or user.is_anonymous():
+        return JSONResponse({'error': NotAuthorized}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    if 'phone_number' in request.POST:
+        phone_number = request.POST.get['phone_number']
+        user.phone_number = phone_number
+
+    if 'first_name' in request.POST:
+        first_name = request.POST.get['first_name']
+        user.first_name = first_name
+
+    if 'last_name' in request.POST:
+        last_name = request.POST.get['last_name']
+        user.last_name = last_name
+
+    user.save()
+    return JSONResponse({}, status=status.HTTP_200_OK)

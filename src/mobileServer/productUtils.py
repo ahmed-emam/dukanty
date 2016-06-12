@@ -1,28 +1,17 @@
-from django.shortcuts import render
-from rest_framework import viewsets
-from mobileServer.models import *
-from users.models import  *
-from mobileServer.serializer import *
-from django.http import HttpResponse
-from rest_framework.parsers import JSONParser
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.renderers import JSONRenderer
-from rest_framework import generics, permissions, status, response, views
-from rest_framework.response import Response
-from django.core.exceptions import *
-from rest_framework import permissions
-from rest_framework.decorators import api_view, permission_classes, authentication_classes
-from rest_framework.authentication import SessionAuthentication, TokenAuthentication
-from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
-from rest_framework.views import APIView
-from rest_framework.authtoken.models import Token
-import os, tempfile, StringIO
+import StringIO
+import os
 from zipfile import ZipFile
-from error import *
-
-import json
 
 from django.core.exceptions import *
+from django.http import HttpResponse
+from rest_framework import status
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
+from rest_framework.renderers import JSONRenderer
+
+from mobileServer.error import *
+from mobileServer.serializer import *
 
 
 class JSONResponse(HttpResponse):
@@ -126,7 +115,7 @@ def add_image(request, product_id=None):
         product_id = request.POST.get('product_id')
 
     image_file = request.FILES['file']
-    print "Adding image "+image_file.name+" for "+product_id
+    print("Adding image "+image_file.name+" for "+product_id)
     try:
         product = MobileserverProduct.objects.get(pk=product_id)
     except ObjectDoesNotExist:
@@ -134,7 +123,7 @@ def add_image(request, product_id=None):
     image = Image(product=product, image=image_file,
                   mimeType=image_file.content_type)
     image.save()
-    print "Added "+image.product.name
+    print("Added "+image.product.name)
     return JSONResponse({'Success': "Added image for "+product_id}, status=status.HTTP_200_OK)
 
 """
@@ -175,7 +164,7 @@ def getImages(request):
         return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     product_list = request.POST.getlist('product_list')
-    print product_list
+    print(product_list)
     #product_list = json.loads(product_list)
 
     # zip_subdir = "somefiles"

@@ -7,11 +7,11 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
-from serializer import *
-from models import *
-from error import *
+from mobileServer.serializer import *
+from mobileServer.models import *
+from mobileServer.error import *
 import json
-from query_wrapper import *
+from mobileServer.query_wrapper import *
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.

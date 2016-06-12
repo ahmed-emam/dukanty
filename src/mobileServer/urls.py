@@ -13,7 +13,9 @@ urlpatterns = [
     url(r'addimage/$', productUtils.add_image),
     url(r'getimage/(?P<image_id>\d+)/$', productUtils.getImage),
     url(r'getimages/$', productUtils.getImages),
+
     url(r'getUserDetails/$', user_utils.get_user_details),
+    url(r'editUserDetails/$', user_utils.edit_user_details),
 
     # Inventory routes
     url(r'inventory/get_shop/(?P<shop_id>\d+)/$', inventoryUtils.get_shopInventory),
@@ -41,6 +43,9 @@ urlpatterns = [
     # DEBUGGING routes
     url(r'registerAndroidDevice/$', pushNotifications.register_android_device),
     url(r'registerAppleDevice/$', pushNotifications.register_apple_device),
+
+
+
 
     url(r'^$', views.index),
 ]

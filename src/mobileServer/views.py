@@ -75,7 +75,6 @@ def index(request):
 """
 @apiDefine IsAuthenticated
 @apiHeader (Authorization) Authorization Token authentication
-
 """
 """
 @apiDefine NotAuthorized
