@@ -15,3 +15,4 @@ gunicorn==19.4.1
 Markdown==2.6.5
 oauthlib==1.0.3
 Pillow==3.2.0
+pyfcm==0.0.4

@@ -6,10 +6,10 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, AllowAny
-import json
 from mobileServer.serializer import *
 from mobileServer.user_utils import add_address
 from error import *
+import json
 
 #Order Status
 NOT_ORDERED = 0
