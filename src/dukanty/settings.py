@@ -104,12 +104,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dukanty',
         'USER': 'dukantyadmin',
-        'PASSWORD': '',
+        'PASSWORD': 'douh0115373730',
         'HOST': 'localhost',
         'PORT': '5432',
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': 'mydatabase'
-
     }
 }
 
@@ -186,12 +185,12 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 # DEFAULT_FROM_EMAIL = 'test@dukanty.com'
 
 
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT=587
-EMAIL_HOST_USER='aemam@dukanty.com'
-EMAIL_HOST_PASSWORD='password'
-EMAIL_USE_TLS=True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'aemam@dukanty.com'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_USE_TLS = True
 
 
 # Internationalization

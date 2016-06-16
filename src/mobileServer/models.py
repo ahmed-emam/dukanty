@@ -103,17 +103,16 @@ class MobileserverOrderProduct(models.Model):
 Model representation of a product
 
 
-TODO: Add
-
 Category:
-1 -> Beverages
-2 -> Bakery
-3 -> Dairy
-4 -> Produce
-5 -> canned food
-6 -> chocolate
-7 -> Health & Beauty
-8 -> Spices
+
+1 -> canned food
+2 -> chocolate
+3 -> Health & Beauty
+4 -> Spices
+5 -> Beverages
+6 -> Bakery
+7 -> Dairy
+8 -> Produce
 '''
 class MobileserverProduct(models.Model):
     id = models.BigIntegerField(primary_key=True, unique=True)
@@ -159,8 +158,8 @@ class ShopImage(models.Model):
     shop = models.ForeignKey(MobileserverShop, unique=True, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='shops/')
     mimeType = models.CharField(max_length=20)
-#
-#
+
+
 # class MobileserverShopinventory(models.Model):
 #     stock = models.BooleanField()
 #     owner = models.ForeignKey('users.UsersCustomuser', models.DO_NOTHING, unique=True)
@@ -193,6 +192,7 @@ class MobileserverShopproductinventory(models.Model):
  
     def __str__(self):
         return self.product.name+" "+self.shop.name+" "+str(self.price)+" "+str(self.stock)
+
 
 class Organisation(models.Model):
     name = models.CharField(max_length=100)

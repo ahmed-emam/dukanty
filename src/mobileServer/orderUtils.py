@@ -8,15 +8,20 @@ from rest_framework.authentication import SessionAuthentication, TokenAuthentica
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from mobileServer.serializer import *
 from mobileServer.user_utils import add_address
-from error import *
-import json
+from mobileServer.error import *
+from mobileServer.models import *
+
 
 #Order Status
+
+
 NOT_ORDERED = 0
 ORDER_ISSUED = 1
 ORDER_ON_DELIVERY = 2
 ORDER_DELIVERED = 3
-ORDER_CANCELLED = 4
+ORDER_CANCELLED_BY_SHOP = 4
+ORDER_CANCELLED_BY_CUSTOMER = 5
+
 
 class JSONResponse(HttpResponse):
     """
@@ -86,7 +91,7 @@ TODO: notify the shop of order made
 """
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
-@permission_classes((AllowAny,))
+@permission_classes((IsAuthenticated,))
 #@csrf_exempt
 def create_order(request):
     print("******REQUEST*******")
@@ -104,7 +109,7 @@ def create_order(request):
 
     if 'address_id' not in request.POST:
         #add address
-        print "Address does not exist"
+        print("Address does not exist")
         address_id = None
     else:
         address_id = request.POST.get('address_id')
@@ -128,48 +133,10 @@ def create_order(request):
 
     #   Check if the customer related to the order exists in my Database
     try:
+
         owner = UsersCustomUser.objects.get(pk=int(username))
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'user doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-    #   Check if the added product exists in my Database
-
-    #   Check if the order already exists
-    # try:
-    #     order = MobileserverOrder.objects.get(owner=owner, shop=shop, status=0)
-    #
-    #     # order has not been checkout
-    #     if order.status < 1:
-    #         productsList = order.mobileserverorderproduct_set.all()
-    #
-    #         #TODO: This has to impact the order linked by foreign key 'order'
-    #         #   if the order contains a list of product
-    #         if productsList.count() > 0:
-    #             #  if the added-product already exists in the order, just update it
-    #             try:
-    #                 productAddedToOrder = productsList.get(product=product)
-    #                 productAddedToOrder.quantity = quantity
-    #                 productAddedToOrder.price = price
-    #
-    #             #  if the added-product already doesnt exist in the order, add it to the order
-    #             except ObjectDoesNotExist:
-    #                 productAddedToOrder = MobileserverOrderProduct.objects.create\
-    #                 (order=order, product=product, quantity=int(quantity), price=float(price))
-    #         #   if order doesn't contain any products
-    #         # add the product to the order
-    #         else:
-    #             productAddedToOrder = MobileserverOrderProduct.objects.create\
-    #                 (order=order, product=product, quantity=int(quantity), price=float(price))
-    #
-    #         productAddedToOrder.save()
-    #
-    #         serializedData = OrderProductSerializer(productAddedToOrder)
-    #         return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
-    #     else:
-    #         print("Changing order failed for\n"+order.__str__())
-    # # if the order doesn't exist
-    # # create it and add the product to the order
-    # except ObjectDoesNotExist:
 
     if address_id is None:
         address = None
@@ -207,7 +174,7 @@ def create_order(request):
 
     print("Created order id:"+str(order.id))
     serializedData = OrderSerializer(order)
-    print serializedData.data
+    print(serializedData.data)
     return JSONResponse(serializedData.data, status=status.HTTP_200_OK)
         # print("Order doesn't exist")
 
@@ -318,6 +285,73 @@ def change_order_status(order, status):
     print("change status of order "+str(order.id)+" from "+str(order.status)+" -> "+str(status))
     order.status = status
     order.save()
+
+
+
+"""
+@api {post} shop/cancel/    Shop cancels order
+@apiVersion 1.0.0
+@apiName CancelOrder
+@apiGroup Orders
+
+@apiDescription If the shop refuses to deliver an order for any reason, i.e, Address is far. This function will cancel
+                the order, maintain the shop inventory, and notify the user that his order has NOT been accepted
+
+@apiParam {Number} order_id ID of order you want to change
+@apiParam {Number} shop_id  ID of the shop canceling the order
+
+@apiSuccess {String} success Order has been cancelled
+
+@apiUse ReqParamMiss
+@apiUse OrderNotFoundError
+@apiUse IsAuthenticated
+"""
+@api_view(['POST'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((IsAuthenticated,))
+def cancel_order_by_shop(request):
+    print (request.user)
+
+    if 'shop_id' not in request.POST and 'order_id' not in request.POST:
+        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    shop_id = request.POST.get('shop_id')
+    order_id = request.POST.get('order_id')
+
+    try:
+        shop = MobileserverShop.objects.get(pk=shop_id)
+    except ObjectDoesNotExist:
+        return JSONResponse({'error': ShopNotFound}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    try:
+        order = MobileserverOrder.objects.get(pk=order_id)
+    except ObjectDoesNotExist:
+        return JSONResponse({'error': OrderNotFound}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    if shop.owner is not request.user:
+        print("Not the shop owner")
+        return JSONResponse({'error': OrderNotFound}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    if order.shop is not shop:
+        print("Not the correct shop")
+
+    if order.status == ORDER_CANCELLED_BY_SHOP or order.status == ORDER_CANCELLED_BY_CUSTOMER:
+        print("Order has already been cancelled")
+
+    if order.status == ORDER_DELIVERED:
+        check_in_products_from_cancelled_order(order, shop)
+
+    change_order_status(order, ORDER_CANCELLED_BY_SHOP)
+    return JSONResponse({'success': order_id+' has been cancelled'}, status=status.HTTP_200_OK)
+
+
+def check_in_products_from_cancelled_order(order, shop):
+    products_list_in_order = MobileserverOrderProduct.objects.filter(order=order)
+    for order_entry in products_list_in_order:
+        inventory_entry = MobileserverShopproductinventory.objects.get(product=order_entry.product, shop=shop)
+        inventory_entry[0].stock += order_entry.quantity
+        inventory_entry[0].save()
+
 
 
 def checkout_order(request):

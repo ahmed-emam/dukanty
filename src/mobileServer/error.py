@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 #User related error
 MissingParameter = 100
 ParameterTypeInvalid = 101
+NotAuthorized = 102
 
 #Shop related error
 ShopNotFound = 200
@@ -20,6 +21,7 @@ ProductImageNotUploaded = 301
 ProductExists = 302
 
 #Order Related error
+OrderNotFound = 400
 
 #Device Push Related error
 
