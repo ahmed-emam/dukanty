@@ -65,3 +65,9 @@ class ProductImageNotUploaded(APIException):
 class ProductExists(APIException):
     status_code = 500
     default_detail = '302 - Product exists'
+
+# Order related exceptions
+
+class OrderNotFound(APIException):
+    status_code = 500
+    default_detail = '400 - Order is not found'
