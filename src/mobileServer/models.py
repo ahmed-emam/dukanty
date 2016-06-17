@@ -147,6 +147,18 @@ class MobileserverShop(models.Model):
     def __unicode__(self):
         return self.name
 
+'''
+This class represents product to product relationship, where product A consists of multiple instances
+of product B
+E.g.
+A box of snickers (A product with its own barcode),
+consists of many snickers bars (Another product with a different barcode)
+'''
+class ProductToProductRelation(models.Model):
+    parent = models.ForeignKey(MobileserverProduct, unique=True, on_delete=models.CASCADE)
+    child = models.ForeignKey(MobileserverProduct, on_delete=models.CASCADE)
+    quantity = models.PositiveSmallIntegerField()
+
 
 class Image(models.Model):
     product = models.ForeignKey(MobileserverProduct, on_delete=models.CASCADE)
