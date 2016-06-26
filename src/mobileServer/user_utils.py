@@ -6,10 +6,10 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.renderers import JSONRenderer
-from src.mobileServer.error import *
-from src.mobileServer.serializer import *
-from src.mobileServer.models import *
-from src.users.models import UsersCustomUser
+from mobileServer.error import *
+from mobileServer.serializer import *
+from mobileServer.models import *
+from users.models import UsersCustomUser
 
 class JSONResponse(HttpResponse):
     """
