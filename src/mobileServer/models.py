@@ -155,8 +155,8 @@ A box of snickers (A product with its own barcode),
 consists of many snickers bars (Another product with a different barcode)
 '''
 class ProductToProductRelation(models.Model):
-    parent = models.ForeignKey(MobileserverProduct, unique=True, on_delete=models.CASCADE)
-    child = models.ForeignKey(MobileserverProduct, on_delete=models.CASCADE)
+    parent = models.ForeignKey(MobileserverProduct, unique=True, on_delete=models.CASCADE, related_name='parent')
+    child = models.ForeignKey(MobileserverProduct, on_delete=models.CASCADE, related_name='child')
     quantity = models.PositiveSmallIntegerField()
 
 
