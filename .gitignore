@@ -5,6 +5,7 @@ src/dukanty/settings.py*
 src/users/migrations/*
 .idea
 push_code_digital_ocean.sh
+src/.idea
 
 # Python 
 *.pyc

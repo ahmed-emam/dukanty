@@ -8,7 +8,8 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.renderers import JSONRenderer
 from mobileServer.error import *
 from mobileServer.serializer import *
-
+from mobileServer.models import *
+from users.models import UsersCustomUser
 
 class JSONResponse(HttpResponse):
     """
@@ -134,6 +135,8 @@ def add_address(request, order=None):
 @apiUse ReqParamMiss
 """
 @api_view(['POST'])
+@authentication_classes((TokenAuthentication,))
+@permission_classes((AllowAny,))
 def edit_address(request):
     if 'address_id' not in request.POST:
         return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
