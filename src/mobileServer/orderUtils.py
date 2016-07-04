@@ -10,7 +10,8 @@ from mobileServer.serializer import *
 from mobileServer.user_utils import add_address
 from mobileServer.error import *
 from mobileServer.models import *
-
+from mobileServer.query_wrapper import *
+from mobileServer.exceptions import *
 
 #Order Status
 
@@ -83,7 +84,7 @@ TODO: notify the shop of order made
 @apiSuccess {String} Success Added image for <code>product_id</code>
 
 @apiUse ProductNotFoundError
-@apiUse ReqParamMiss
+@apiUse MissingParameter
 @apiUse ShopNotFoundError
 @apiUse UserNotFoundError
 @apiUse AddressNotFoundError
@@ -94,33 +95,37 @@ TODO: notify the shop of order made
 @permission_classes((IsAuthenticated,))
 #@csrf_exempt
 def create_order(request):
-    print("******REQUEST*******")
-    print(request.META)
-    print(request.POST)
-   # print(request.query_params)
-    print(request.user)
-    print("*********************")
+    # print("******REQUEST*******")
+    # print(request.META)
+    # print(request.POST)
+    # print(request.query_params)
+    # print(request.user)
+    # print("*********************")
 
     #   Data from the POST requests
 
-    if 'shop_id' not in request.POST or 'user_id' not in request.POST or 'product_list' not in request.POST\
-            or 'mobile' not in request.POST or 'name' not in request.POST:
-        return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    # if 'shop_id' not in request.POST or 'user_id' not in request.POST or 'product_list' not in request.POST\
+    #         or 'mobile' not in request.POST or 'name' not in request.POST:
+    #     return JSONResponse({'error': MissingParameter}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
     if 'address_id' not in request.POST:
-        #add address
+        # add address
         print("Address does not exist")
         address_id = None
     else:
+        # dont use the wrapper here
         address_id = request.POST.get('address_id')
 
-    shop_id = request.POST.get('shop_id')
-    username = request.POST.get('user_id')
-    product_list = request.POST.get('product_list')
-    mobile = request.POST.get('mobile')
-    name = request.POST.get('name')
-    total_price = request.POST.get('total_price')
-    print(shop_id+" "+username+" "+product_list)
+    # get the parameters, will raise MissingParameter if appropriate
+    shop_id = get_parameter(request.POST, 'shop_id')           # request.POST.get('shop_id')
+    username = get_parameter(request.POST, 'user_id')          # request.POST.get('user_id')
+    product_list = get_parameter(request.POST, 'product_list') # request.POST.get('product_list')
+    mobile = get_parameter(request.POST, 'mobile')             # request.POST.get('mobile')
+    name = get_parameter(request.POST, 'user_id')              # request.POST.get('name')
+    total_price = get_parameter(request.POST, 'total_price')   # request.POST.get('total_price')
+    
+    # print(shop_id+" "+username+" "+product_list)
 
     product_list = json.loads(product_list)
 
@@ -138,7 +143,7 @@ def create_order(request):
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'user doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    if address_id is None:
+    if (!address_id):
         address = None
     else:
         try:
@@ -428,3 +433,33 @@ def delete_order(request):
         return JSONResponse({'success': 'order '+int(order_id)+' got deleted'}, status=status.HTTP_200_OK)
     except ObjectDoesNotExist:
         return JSONResponse({'success': 'order '+int(order_id)+' does not exist'}, status=status.HTTP_200_OK)
+
+
+
+def check_out_order(order, order_product, status):
+    # get the shop
+    shop_db = order.shop
+    # get the product
+    product_db = order_product.product
+    # get the inventory
+    inventory_product = query_MobileserverShopproductinventory(shop=shop_db, product=product_db)
+
+    if   (status == 0):
+        pass
+    elif (status == 1):
+        if(order_product.quantity > inventory_product.stock):
+            # we should delete the order_product
+            raise StockInvalid
+        else:
+            inventory_product.stock -= order_product.quantity
+            inventory_product.save()
+    elif (status == 2):
+        pass
+    elif (status == 3):
+        pass
+    elif (status == 4):
+        inventory_product.stock += order_product.quantity
+        inventory_product.save()
+    else:
+        raise Exception # dont pass weird stuff (This will crash the server)
+

@@ -71,7 +71,7 @@ status:
 4 -> order cancelled
 '''
 class MobileserverOrder(models.Model):
-   # order_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    # order_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     totalprice = models.FloatField(db_column='totalPrice', default=0.0)  # Field name made lowercase.
     name = models.CharField(max_length=30)
     phone_number = models.CharField(_('Phone Number'), max_length=8)
