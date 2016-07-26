@@ -144,7 +144,7 @@ def create_order(request):
     except ObjectDoesNotExist:
         return JSONResponse({'error': 'user doesnt exist'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    if (!address_id):
+    if (not address_id):
         address = None
     else:
         try:
