@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600");
+
+body {
+	font-family: "Open Sans";
+}
+
+.top-container {
+	height: 90vh;
+}
+
+.top-container .row {
+	/*height: 100vh;*/
+}
+.top-container .inner {
+	padding-top: 100px; /* this padding needs to change */
+    height: 70vh;
+}
+
+#app-store{
+	width: 20%;
+}
+
+#mockup {
+	height: inherit;
+}
+.minor-container {
+	/*height: 40vh;*/
+}
+
+.info-container {
+	background-color: #1296a7
+}
+
+.footer {
+	background-color: #1296a7
+}

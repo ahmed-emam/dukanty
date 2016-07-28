@@ -8,10 +8,17 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
   </head>
   <body>
-    <select>
+<!--     <select>
       {% for sup in suppliers %}
         <option value="sup.name">{{sup}}</option>
       {% endfor %}
-    </select>
+    </select> -->
+    
+    <br>
+
+    Choose a supplier: <br>
+    {% for sup in suppliers %}
+      <a href="/dashboard/get_sales/{{sup}}">{{sup}}</a> <br>
+    {% endfor %}
   </body>
 </html>
