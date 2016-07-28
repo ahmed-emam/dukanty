@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'djoser',
     'push_notifications',
+    'dashboard',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -212,6 +213,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'mobileServer/templates/static/'),
+    os.path.join(BASE_DIR, 'dashboard/templates/static/'),
 )
 
 STATIC_URL = '/static/'
