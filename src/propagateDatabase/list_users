@@ -1,3 +1,3 @@
-test@test.com   3333333     djoser
-customer@customer.com   3333333     djoser
-shop@shop.com   3333333     djoser
+test@test.com   3333333		djoser		false
+customer@customer.com   3333333     djoser		false
+shop@shop.com   3333333     djoser		true

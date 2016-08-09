@@ -1,6 +1,6 @@
 import requests
-port = 80
-hostname = 'dukanty.com'
+port = 8000
+hostname = 'localhost'
 url = 'http://'+hostname+':'+str(port)+'/debug/addshop/'
 
 

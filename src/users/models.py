@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 from django.utils.http import urlquote
 from django.utils.translation import ugettext_lazy as _
 from django.core.mail import send_mail
-
 from django.utils import timezone
 
 
@@ -19,7 +18,7 @@ class CustomUserManager(BaseUserManager):
             raise ValueError('The given email must be set')
         email = self.normalize_email(email)
         user = self.model(email=email,
-                          is_admin=is_staff, is_active=False,
+                          is_admin=is_staff, is_active=True,
                           is_superuser=is_superuser, last_login=now,
                           date_joined=now, phone_number=phone_number,
                           **extra_fields)

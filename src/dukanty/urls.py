@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 from mobileServer import urls
 import dashboard.urls
 from rest_framework import routers
-
+import users.urls
 
 # router = routers.DefaultRouter()
 #makes sure that the API endpoints work
@@ -38,5 +38,6 @@ urlpatterns = [
     url(r'^rest-auth/', include('rest_auth.urls')),
     url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
     url(r'^dashboard/', include(dashboard.urls)),
-
+    url(r'^users/', include(users.urls)),
+    
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

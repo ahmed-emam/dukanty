@@ -122,7 +122,7 @@ class MobileserverProduct(models.Model):
     tags = TaggableManager()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    supplier = models.ForeignKey('users.UsersCustomuser')
     def __str__(self):
         return self.name+" by "+self.company
  

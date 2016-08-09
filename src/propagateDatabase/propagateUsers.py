@@ -1,18 +1,22 @@
+#!/usr/bin/env python
 import requests
-port = 80
-hostname = 'dukanty.com'
+port = 8000
+hostname = 'localhost'
 url = 'http://'+hostname+':'+str(port)+'/auth/register/'
 
 
 def main():
-    print("Propagating users")
+    print("Propagating users...")
     with open("list_users") as file:
         listOfShops = file.readlines()
-        # print (listOfShops)
         for row in listOfShops:
             row = row.strip().split()
-            # print(row)
-            payload = {'email': row[0], 'phone_number': row[1], 'password': row[2]}
+            print(row)
+            payload = {'email': row[0], 
+                       'phone_number': row[1],
+                       'password': row[2],
+                       'is_supplier': row[3]}
+
             request = requests.post(url, data=payload)
             print("Requested: "+request.url)
             print(request.status_code)
